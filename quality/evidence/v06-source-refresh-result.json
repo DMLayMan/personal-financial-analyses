@@ -1,0 +1,73 @@
+{
+  "scope": "disposable hosted local preview; provider access is run-specific",
+  "version": 6,
+  "attempts": [
+    {
+      "metric": "us10y",
+      "status": "failed",
+      "error": "The operation was aborted"
+    },
+    {
+      "metric": "us2y",
+      "status": "failed",
+      "error": "The operation was aborted"
+    },
+    {
+      "metric": "hy_oas",
+      "status": "failed",
+      "error": "The operation was aborted"
+    },
+    {
+      "metric": "brent_spot",
+      "status": "failed",
+      "error": "The operation was aborted"
+    },
+    {
+      "metric": "hsi",
+      "status": "succeeded",
+      "error": null
+    },
+    {
+      "metric": "sp500",
+      "status": "succeeded",
+      "error": null
+    },
+    {
+      "metric": "nasdaq",
+      "status": "succeeded",
+      "error": null
+    },
+    {
+      "metric": "hstech",
+      "status": "succeeded",
+      "error": null
+    },
+    {
+      "metric": "sse",
+      "status": "succeeded",
+      "error": null
+    },
+    {
+      "metric": "csi300",
+      "status": "succeeded",
+      "error": null
+    },
+    {
+      "metric": "vix",
+      "status": "succeeded",
+      "error": null
+    },
+    {
+      "metric": "usd_cny",
+      "status": "succeeded",
+      "error": null
+    },
+    {
+      "metric": "brent_futures",
+      "status": "succeeded",
+      "error": null
+    }
+  ],
+  "succeeded": 9,
+  "failed": 4
+}
