@@ -1,0 +1,26 @@
+# Local system files
+.DS_Store
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Runtime data and downloaded source material
+/data/
+/artifacts/
+/tmp/
+/research-pilot-2026-10-25/sources/
+
+# Future build and tool caches
+node_modules/
+.next/
+dist/
+build/
+.venv/
+__pycache__/
+.pytest_cache/
+coverage/
+*.log
