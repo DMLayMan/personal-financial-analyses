@@ -11,6 +11,8 @@ from pathlib import Path
 from .models import number, serial, earnings_scenario, bank_scenario, cumulative_quarter
 from .store import Store, digest, now, uid, dump
 from .monitoring import observations
+from .assurance import RUNNING_KERNEL, ACTUAL_LABELS, EVIDENCE_LABELS, integrity, temporal_actual, comparable_period
+from . import __version__
 
 
 class Conflict(ValueError):
@@ -111,6 +113,9 @@ class Research:
         payload = {k: v for k, v in data.items() if k not in ("id", "kind", "issuer", "created_at", "verification_status")}
         payload.update(value=value, currency=currency,
                        evidence_label=data.get("evidence_label", "fact_source_reported"))
+        if payload["evidence_label"] not in EVIDENCE_LABELS:
+            raise ValueError("未知证据类型；必须区分已报实际、管理层说法、预测与假设")
+        payload["period_start"] = data.get("period_start") or None
         item = self.store.add(db, "fact", issuer, payload)
         self.store.log(db, issuer, "提取候选事实", {"fact_id": item["id"], "metric": data["metric"]})
         return item
@@ -138,8 +143,11 @@ class Research:
         return out
 
     def fingerprint(self, db, issuer):
-        kinds = ("document", "fact", "fact_check", "event", "hypothesis", "gap_resolution")
-        return digest({kind: self.store.list(db, kind, issuer) for kind in kinds})
+        kinds = ("issuer", "document", "fact", "fact_check", "event", "hypothesis", "gap_resolution")
+        records = {kind: self.store.list(db, kind, issuer) for kind in kinds}
+        records["running_kernel"] = RUNNING_KERNEL
+        records["source_integrity"] = [(d["id"], integrity(d)) for d in records["document"]]
+        return digest(records)
 
     def expect(self, db, issuer, expected):
         if expected is None or self.store.revision(db, issuer) != int(expected):
@@ -155,22 +163,31 @@ class Research:
     def quality(self, db, issuer):
         company = self.issuer(db, issuer)
         facts = self.facts(db, issuer)
+        documents = self.store.list(db, "document", issuer)
+        source_integrity = {d["id"]: integrity(d) for d in documents}
         groups = defaultdict(list)
         for fact in facts:
-            if fact["status"] == "verified":
+            if fact["status"] == "verified" and fact.get("evidence_label") in ACTUAL_LABELS:
                 groups[fact_key(fact)].append(fact)
         conflicts = [dict(key=list(key), facts=[f["id"] for f in values],
                           metric=key[0], detail="同期间同口径存在不同值，不能自动选新值或平均")
                      for key, values in groups.items() if len({number(f["value"]) for f in values}) > 1]
         conflicted = {ident for c in conflicts for ident in c["facts"]}
         usable = [f for f in facts if f["status"] == "verified" and f["id"] not in conflicted
-                  and f.get("scope") == "consolidated" and f.get("currency") == company["currency"]]
+                  and f.get("scope") == "consolidated" and f.get("currency") == company["currency"]
+                  and source_integrity.get(f["document_id"]) == "matched" and temporal_actual(f)]
         # Stable published-time ordering; no synthetic averaging or latest-filed period guessing.
         usable.sort(key=lambda f: (f["period_end"], f["source"].get("published_at") or "", f["created_at"]))
         gaps = []
         def gap(key, title, why, priority="high", source="公司原始报告及附注", blocks="explanation", **extra):
             gaps.append(dict(key=key, title=title, why=why, priority=priority,
                              next_source=source, blocks=blocks, **extra))
+        for document in documents:
+            state = source_integrity[document["id"]]
+            if state != "matched":
+                gap("integrity:"+document["id"], "原件不可复核："+document["title"],
+                    "原件缺失、超出来源目录或校验值不匹配；相应条目已排除，需重新取证。状态："+state,
+                    source=document["url"], blocks="evidence")
         for conflict in conflicts:
             gap("conflict:" + digest(conflict["key"])[:12], "解决数字冲突：" + LABELS.get(conflict["metric"], conflict["metric"]),
                 conflict["detail"], blocks="model", fact_ids=conflict["facts"])
@@ -186,7 +203,8 @@ class Research:
             gap("required_common_equity", "补齐合并普通股权益", "普通股权益缺失会阻止银行剩余收益估值；不以全部权益代替。", blocks="model")
         if company.get("sector") != "bank" and not any(f["metric"] == "revenue" and annual(f) for f in usable):
             gap("required_annual_revenue", "补齐同口径年度盈利基线", "中期披露不能直接乘二；需要合并年度收入和归属利润。", blocks="model")
-        monitors = observations(usable)
+        monitors = observations([f for f in usable if f.get("evidence_label") in ACTUAL_LABELS
+                                 or f["metric"] in ("reported_fcf", "adjusted_fcf_ex_compute_prepayment")])
         for monitor in monitors:
             gap(monitor["key"], monitor["title"], monitor["mechanism"], source=monitor["next_source"],
                 blocks="cash_return", fact_ids=monitor["fact_ids"], rule=monitor["rule"])
@@ -203,10 +221,8 @@ class Research:
             item["handling"] = resolution
             item["state"] = "已记录处理，限制仍保留" if resolution else "待补证"
             if resolution and resolution.get("disposition") == "resolved":
-                accepted = {f["id"] for f in usable}
-                cited = resolution.get("fact_ids", [])
-                item["resolved"] = bool(cited and set(cited) <= accepted and item["blocks"] not in ("model", "evidence"))
-                item["state"] = "已有核验依据与人工回应，仍需结论审查" if item["resolved"] else "补证依据已失效，重新核查"
+                item["resolved"] = False
+                item["state"] = "补证回应待相关性与充分性审查；引用条目不能自动关闭经营未知"
             item["decision_impact"] = {
                 "model": "可能改变模型能否运行或价值范围，优先核查。",
                 "cash_return": "可能改变现金回报与融资韧性判断，不能仅看利润。",
@@ -217,6 +233,7 @@ class Research:
         active_gaps = [g for g in gaps if not g.get("resolved")]
         resolved_gaps = [g for g in gaps if g.get("resolved")]
         return dict(facts=facts, usable=usable, conflicts=conflicts, gaps=active_gaps, resolved_gaps=resolved_gaps, monitors=monitors,
+                    source_integrity=source_integrity,
                     verified=sum(f["status"] == "verified" for f in facts),
                     candidates=len(candidates), rejected=len(rejected))
 
@@ -234,7 +251,7 @@ class Research:
             raise ValueError("假设审议状态必须是明确布尔值")
         company = self.issuer(db, issuer)
         quality = self.quality(db, issuer)
-        facts = quality["usable"]
+        facts = [f for f in quality["usable"] if f.get("evidence_label") in ACTUAL_LABELS]
         bank = company.get("sector") == "bank"
         warnings = ["情景参数是研究假设，未从历史表现推导出未来成功概率。",
                     "未接入可靠现价、证券币种换算与市场共识；不能判断现价吸引力。",
@@ -272,7 +289,7 @@ class Research:
                                 "period_start", "period_end", "currency", "scope", "basis"))]
                     if same:
                         selected[metric] = same[-1]
-                prior = [p for p in pairs if 350 <= (date.fromisoformat(revenue["period_end"])-date.fromisoformat(p[0]["period_end"])).days <= 380]
+                prior = [p for p in pairs if comparable_period(revenue, p[0])]
                 if prior:
                     selected.update(prior_revenue=prior[-1][0], prior_net_income=prior[-1][1])
             else:
@@ -284,6 +301,18 @@ class Research:
             raise ValueError("必须保留下行、基准、上行三个情景")
         if confirmed and len(rationale.strip()) < 12:
             raise ValueError("确认假设需至少十二字符的经营依据和适用边界")
+        critical = {"common_equity"} if bank else {"revenue", "net_income", "net_income_common", "earnings_for_eps"}
+        baseline_date = selected.get("common_equity", selected.get("revenue", {})).get("period_end", "")
+        by_id = {f["id"]: f for f in quality["facts"]}
+        for conflict in quality["conflicts"]:
+            affected = [by_id[i] for i in conflict["facts"] if by_id[i]["metric"] in critical]
+            if any(f["period_end"] >= baseline_date and (bank or annual(f)) for f in affected):
+                issues.append("较新或当前基线有关键数字冲突，禁止回退旧年度替代；先解决冲突。")
+        for fact in quality["facts"]:
+            if (fact["metric"] in critical and fact["period_end"] >= baseline_date
+                    and (bank or annual(fact)) and quality["source_integrity"].get(fact["document_id"]) != "matched"):
+                issues.append("关键原件完整性未通过，禁止使用旧基线掩盖来源问题。")
+                break
         if not issues:
             for key in ("downside", "base", "upside"):
                 if bank:
@@ -296,13 +325,13 @@ class Research:
         # disclosed annual base. A half-year is never silently annualized.
         if not bank:
             latest_revenues = [f for f in facts if f["metric"] == "revenue" and f.get("period_start")]
-            if latest_revenues:
-                recent = latest_revenues[-1]
-                comparison = [f for f in latest_revenues
-                              if int(f["period_end"][:4]) == int(recent["period_end"][:4])-1
-                              and f["period_end"][5:] == recent["period_end"][5:]
-                              and f["period_start"][5:] == recent["period_start"][5:]
-                              and all(f.get(k) == recent.get(k) for k in ("currency", "scope", "basis"))]
+            comparable = [(current, prior) for current in latest_revenues for prior in latest_revenues
+                          if comparable_period(current, prior)]
+            if comparable:
+                comparable.sort(key=lambda pair: (pair[0]["period_end"],
+                    -(date.fromisoformat(pair[0]["period_end"])-date.fromisoformat(pair[0]["period_start"])).days))
+                recent, prior = comparable[-1]
+                comparison = [prior]
                 selected["latest_revenue"] = recent
                 if comparison and number(comparison[-1]["value"]) > 0:
                     selected["latest_comparative_revenue"] = comparison[-1]
@@ -340,12 +369,13 @@ class Research:
             checks.append(dict(name="银行普通股口径", result="通过", detail="使用普通股权益；仍需净盈余和资本约束审查"))
         if quality["conflicts"]:
             warnings.append("存在未解事实冲突，冲突值已排除；其他无冲突模型可继续，结论保持有条件。")
-        model = dict(engine_version="0.2.0", fingerprint=self.fingerprint(db, issuer),
+        model = dict(engine_version=__version__, kernel_digest=RUNNING_KERNEL, fingerprint=self.fingerprint(db, issuer),
                      baseline_as_of=selected.get("common_equity", selected.get("revenue", {})).get("period_end"),
                      currency=company["currency"], model_type="bank_residual_income" if bank else "earnings_scenario",
                      assumptions=assumptions, assumptions_confirmed=confirmed, rationale=rationale,
                      inputs=inputs, scenarios=scenarios, diagnostics=serial(diagnostics), checks=checks,
                      issues=issues, warnings=warnings,
+                     support_assessment="illustrative_only", research_quality="not_validated",
                      status="blocked" if issues else "conditional" if not confirmed else "review_required")
         model["warnings"].append("情景折现起点为基线报告期末；尚未将已过去月份的实际与预测滚动衔接，不称为当前公允价值。")
         return self.store.add(db, "model_run", issuer, model)
@@ -357,7 +387,7 @@ class Research:
         for key in ("strongest_counter", "response", "falsifier"):
             if len(data.get(key, "").strip()) < 12:
                 raise ValueError("反方、回应和推翻条件各需至少十二字符")
-        facts = {f["id"]: f for f in self.facts(db, issuer)}
+        facts = {f["id"]: f for f in self.quality(db, issuer)["usable"]}
         refs = data.get("fact_ids", [])
         if not isinstance(refs, list) or not refs or any(i not in facts or facts[i]["status"] != "verified" for i in refs):
             raise ValueError("审查至少关联一条该公司的已核验事实")
@@ -388,12 +418,15 @@ class Research:
         operating = "混合或尚不能判断"
         if growth is not None:
             operating = "最近可比期间收入增长；利润与现金持续性待验证" if number(growth) > 0 else "最近可比期间收入承压；原因与持续性待验证"
+        if q["monitors"]:
+            operating = "经营信号混合：收入变化与现金回报风险需分别检验，不能仅凭收入确认改善"
         if review["verdict"] == "refuted":
             operating = "原研究假设受反证，需要撤回或重建"
         conclusion = self.store.add(db, "conclusion", issuer, dict(
             version=len(prior)+1, previous_id=prior[-1]["id"] if prior else None,
             review_actor=review["reviewed_by"],
             reason=reason, fingerprint=fingerprint, run_id=run["id"], review_id=review["id"],
+            kernel_digest=RUNNING_KERNEL, permitted_use="流程与敏感性研究；研究结论有效性未通过验收",
             hypothesis=self.current_hypothesis(db, issuer), operating_direction=operating,
             security_direction="无法判断现价吸引力：缺少可比现价、证券股本及充分估值依据",
             business_quality="当前保留主假设与反方，未把局部财务核验升级为护城河已证实",

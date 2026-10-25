@@ -1,0 +1,392 @@
+{
+  "run_at": "2026-10-25T05:07:27.790090+00:00",
+  "command": "scripts/quality_gate.py --live",
+  "tested_base_commit": "edfda4910351d0197b906133b7bacde7013bd25b",
+  "working_tree_dirty": true,
+  "python": "3.12.14",
+  "source_manifest": {
+    "fixtures/companies.json": "d56c84c7859cc3bb960e24cb9a203f91e0826d3b0655442c8d29e426fc8f7822",
+    "pfa/__init__.py": "1d672107aaecf75c362eefb527fa3dc6579679fd0bb48728d34c5a38e619405d",
+    "pfa/assurance.py": "36ccef18afc4499e724ee1bf9b6d25b95cd9175a39b81fd99c18221e3dcbf886",
+    "pfa/models.py": "8ff2a20748d688114847d93a527d8ba8405ff29d128a360582c443b78b4239b1",
+    "pfa/monitoring.py": "8ecd727e1b1d37491c53160d13cbb52d1c3dbb4bf3ee197be8a37b84b8addb71",
+    "pfa/research.py": "0617cf41381c7501ed9a0dd80735b991e7b851bbec0a3b91c52692086f8de2ab",
+    "pfa/server.py": "7f9f69e66b6cc93306e5279910a0756d57c5c2fc0f5b3fab790bdc3ebf63d1a4",
+    "pfa/service.py": "430ac1334ed3007b2fe2293f08f43bcf15ac5e56fccdf83d687b52aa4fca62a5",
+    "pfa/sources.py": "1d7597e953b69d5f04b135017e6ad9fc32b0bccf0ac165236153414be276c0d5",
+    "pfa/store.py": "c46c4904438c93e379096bd5cb04291b4534777eabe175d22d7eacba52766377",
+    "quality/features.json": "76806e52b58ec08d23edac47bcb21f8b00cc4ac0bb1909daab10a36ee8b75adc",
+    "requirements.txt": "0d54aed8d581d3122fbb3c27f179280bac42f768567876dff9939543217b26aa",
+    "scripts/backup.py": "94a46200c5f3cecaa858075286f7920fd2c8f1ba7f977b5cc01598d75ef4c5d6",
+    "scripts/quality_gate.py": "22bae4c5b0646a01e12574c560805563789c7b0abbc4a236812916f4ad977163",
+    "scripts/start.sh": "1c2d01768cf1e48e140f2619b693147fcf9274ef4a5436870151ca7513ac2770",
+    "scripts/validate.py": "ffd9f5233f5ac62394153a0fdc8029184fe674fda2870b33e58560f091f24a91",
+    "static/app.js": "2262a35f5d02420f08d80f83c78e27d5b967c3a741cc7e87e8c026659a501f49",
+    "static/index.html": "e1168d0cc74188b9875bbd3c6c850cc8587c8e3e50968165cc839831b4038b9a",
+    "static/styles.css": "7bda3291a7cd65ace2f0c07b2aa62e9646c4e561ae517271de85215de6308afe",
+    "tests/test_audit_controls.py": "a14cbfa9e903d88ade00e3e9f90588da26f1b2cd820a491a7386ab0ce83240ae",
+    "tests/test_release_controls.py": "ebd501c3468a261afc25a6b3fd6a004c7dfdb32d25b9a335338ebf4a5555d0a8",
+    "tests/test_research.py": "b946f9abf4dc015a64913e883557acdb59a28cae60fc32255ea391fb5c03cd25"
+  },
+  "kernel_digest": "1d805126cecc48b635dc3b4e2b84841fa78e9749b6620edf15827f3e7ffb59d2",
+  "tests_run": 40,
+  "test_results": [
+    {
+      "test": "test_audit_controls.AuditControls.test_annual_growth_requires_matching_accounting_basis",
+      "result": "passed"
+    },
+    {
+      "test": "test_audit_controls.AuditControls.test_future_period_cannot_supply_historical_actual_baseline",
+      "result": "passed"
+    },
+    {
+      "test": "test_audit_controls.AuditControls.test_half_year_growth_does_not_use_eighteen_month_comparative",
+      "result": "passed"
+    },
+    {
+      "test": "test_audit_controls.AuditControls.test_latest_comparable_ytd_not_hidden_by_unmatched_quarter",
+      "result": "passed"
+    },
+    {
+      "test": "test_audit_controls.AuditControls.test_review_rejects_conflicted_evidence",
+      "result": "passed"
+    },
+    {
+      "test": "test_audit_controls.AuditControls.test_scenario_assumption_cannot_supply_actual_model_baseline",
+      "result": "passed"
+    },
+    {
+      "test": "test_audit_controls.AuditControls.test_validation_fails_required_output_when_raw_hashes_pass",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.LocalService.test_owned_background_lifecycle_and_application_routes",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.LocalService.test_wrong_instance_never_stops_another_process",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.QualityReportControls.test_failed_report_cannot_be_revalidated_as_success",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.QualityReportControls.test_healthy_old_kernel_cannot_pass_runtime_verification",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.ReleaseControls.test_cashflow_risk_does_not_become_positive_business_conclusion",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.ReleaseControls.test_code_policy_change_invalidates_existing_conclusion",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.ReleaseControls.test_confirmed_transcription_of_guidance_is_not_historical_actual",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.ReleaseControls.test_latest_conflict_blocks_instead_of_silently_using_old_year",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.ReleaseControls.test_raw_integrity_participates_in_model_and_staleness_gates",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.ReleaseControls.test_turnaround_path_does_not_treat_loss_as_negative_dividend",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.ReleaseControls.test_unrelated_fact_does_not_close_business_unknown",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.FinancialLogic.test_bank_ke_g_and_terminal_retention",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.FinancialLogic.test_bank_roe_equal_cost_is_book_value",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.FinancialLogic.test_cumulative_precision_and_scope",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.FinancialLogic.test_flat_profit_valuation_known_annuity",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.FinancialLogic.test_non_finite_inputs_and_ssrf_rejected",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.HttpAcceptance.test_api_real_mutation_csrf_and_local_host",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_candidates_not_model_inputs_conflicts_not_averaged",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_cashflow_alert_and_adjustment_are_traceable",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_database_backup_recovery",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_eps_reconciled_profit_kept_distinct_for_valuation",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_followup_needs_evidence_and_reopens_when_evidence_withdrawn",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_jobs_deduplicate_fail_visibly_and_recover",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_missing_adjacent_year_not_reported_as_annual_growth",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_new_event_and_new_assumptions_invalidate_conclusion",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_raw_tampering_detected",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_refuted_thesis_changes_action_and_keeps_old_version",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_rejecting_critical_bank_input_blocks_model",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_review_requires_current_model_and_verified_evidence",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_revision_conflict_rolls_back",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_seeding_twice_does_not_duplicate",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_six_company_chain_and_gates",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_wrong_money_unit_rejected",
+      "result": "passed"
+    }
+  ],
+  "feature_checks": [
+    {
+      "id": "F01",
+      "implementation_status": "implemented",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "运行质量单独验收；健康不代表数据新鲜或判断正确"
+    },
+    {
+      "id": "F02",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "单次取数通过，持续覆盖与限额恢复未验收"
+    },
+    {
+      "id": "F03",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "规则可挡部分错误，原文语义与完整性仍需独立裁定"
+    },
+    {
+      "id": "F04",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "相关性与充分性的评审功能尚未完成，禁止引用存在即自动关闭"
+    },
+    {
+      "id": "F05",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "诊断已实现，完整经营到预测的驱动桥未实现"
+    },
+    {
+      "id": "F06",
+      "implementation_status": "illustrative",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "通用参数未承保；约91%终值占比；仅示例敏感性"
+    },
+    {
+      "id": "F07",
+      "implementation_status": "illustrative",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "RI代数可核对；ROE/Ke与资本规划无充分依据"
+    },
+    {
+      "id": "F08",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "身份/引用门槛不能证明金融论证质量；尚无独立专家评价"
+    },
+    {
+      "id": "F09",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "经营质量、证券现价与账户适宜性仍不充分；不提供总置信分"
+    },
+    {
+      "id": "F10",
+      "implementation_status": "implemented",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "工程通过与研究通过分开；历史回滚和跨版本迁移仍待完善"
+    },
+    {
+      "id": "F11",
+      "implementation_status": "planned",
+      "functional_checks": "not_implemented",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "现有六家已用于开发，不能算盲测；候选题待独立裁定"
+    },
+    {
+      "id": "F12",
+      "implementation_status": "planned",
+      "functional_checks": "not_implemented",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "尚无前瞻结果，禁止从六家流程或历史解释推投资绩效"
+    }
+  ],
+  "source_checks": [
+    {
+      "issuer": "msft",
+      "title": "Microsoft FY2026 Form 10-K（含FY2025比较数）",
+      "sha256_match": true
+    },
+    {
+      "issuer": "cost",
+      "title": "Costco FY2026 Form 10-K（含FY2025比较数）",
+      "sha256_match": true
+    },
+    {
+      "issuer": "tencent",
+      "title": "Tencent 2025 Annual Report",
+      "sha256_match": true
+    },
+    {
+      "issuer": "tencent",
+      "title": "Tencent 2026 Interim Results Announcement",
+      "sha256_match": true
+    },
+    {
+      "issuer": "byd",
+      "title": "比亚迪2025年年度报告",
+      "sha256_match": true
+    },
+    {
+      "issuer": "byd",
+      "title": "比亚迪2026年半年度报告",
+      "sha256_match": true
+    },
+    {
+      "issuer": "byd",
+      "title": "比亚迪2026年9月产销快报",
+      "sha256_match": true
+    },
+    {
+      "issuer": "catl",
+      "title": "宁德时代2025年度报告",
+      "sha256_match": true
+    },
+    {
+      "issuer": "catl",
+      "title": "宁德时代2026半年度报告",
+      "sha256_match": true
+    },
+    {
+      "issuer": "catl",
+      "title": "宁德时代2026第三季度报告",
+      "sha256_match": true
+    },
+    {
+      "issuer": "cmb",
+      "title": "招商银行2025年度报告A股版",
+      "sha256_match": true
+    },
+    {
+      "issuer": "cmb",
+      "title": "招商银行2026半年度报告A股版",
+      "sha256_match": true
+    }
+  ],
+  "local_runtime": {
+    "passed": true,
+    "checks": [
+      {
+        "route": "/api/healthz",
+        "passed": true
+      },
+      {
+        "route": "/",
+        "passed": true
+      },
+      {
+        "route": "/app.js",
+        "passed": true
+      },
+      {
+        "route": "/api/bootstrap",
+        "passed": true
+      },
+      {
+        "route": "/api/companies/catl",
+        "passed": true
+      }
+    ]
+  },
+  "runtime_kernel_matches": true,
+  "functional_passed": true,
+  "permitted_use": "local_evidence_and_illustrative_scenarios",
+  "research_decision_ready": false,
+  "research_quality": "not_validated",
+  "prediction_calibration": "not_evaluated",
+  "limitations": [
+    "测试不等于语义、行业方法或投资效果验收",
+    "六家公司及公开题已用于开发，不属于真正盲测",
+    "资料哈希不证明提取、口径、机制和预测正确",
+    "持续来源更新、独立专家与前瞻效果尚未验证"
+  ]
+}

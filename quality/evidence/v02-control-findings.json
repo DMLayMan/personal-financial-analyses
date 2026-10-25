@@ -1,0 +1,115 @@
+{
+  "run_at": "2026-10-25T04:49:31.932077+00:00",
+  "reviewer_posture": "同模型分工审查，非独立机构复核",
+  "scope": "只读源码、需求和验收控制审查；隔离合成反例与临时数据库；未外部重新核验253个数据值",
+  "baseline_tests": {
+    "command": ".venv/bin/python -m unittest tests.test_audit_controls -v",
+    "total": 7,
+    "failed_as_expected_before_remediation": 7,
+    "evidence": "baseline-test-results.txt"
+  },
+  "findings": [
+    {
+      "id": "CTRL-01",
+      "severity": "P1",
+      "finding_type": "Formula/control defect",
+      "location": "pfa/research.py:140-142,343,419-420",
+      "finding": "证据指纹不含运行代码、监测规则或发行人配置，控制规则改变后旧模型和结论仍被标记为非stale。",
+      "reproduction": "发布CATL结论后，仅在进程内将observations规则替换为空，活动monitor从1降为0、缺口从5降为4，旧model/conclusion stale均false。",
+      "expected": "规则、模型引擎及研究配置版本进入兼容性指纹，变化需要明确复核。",
+      "risk": "系统可能继续展示按旧准则形成的结论为当前有效，AC-09不能覆盖内核变更。",
+      "test": "主线程负责kernel fingerprint回归；独立复现rule_change_not_invalidating",
+      "unproven": "本次用可逆monkeypatch模拟版本变化，没有改生产代码，尚未测试跨版本迁移。"
+    },
+    {
+      "id": "CTRL-02",
+      "severity": "P1",
+      "finding_type": "Formula/control defect",
+      "location": "pfa/research.py:111-114,166-167,251-265,317-319",
+      "finding": "记录类型标签不参与模型准入；明确scenario_assumption可核验后充当历史事实。",
+      "reproduction": "同2026年度口径复制收入、净利，evidence_label=scenario_assumption，quote明确非历史实际，check verified后被选为revenue/net_income/valuation_earnings/latest_revenue。",
+      "expected": "核验应表示来源转录真实性，实际/管理层指引/预测/假设分类另作准入控制；模型输入保留证据类别。",
+      "risk": "情景假设可被洗成已核验实际，提高模型可运行状态而失去事实与预测分层。",
+      "test": "test_scenario_assumption_cannot_supply_actual_model_baseline",
+      "unproven": "这是隔离人工反例；没有发现六家公司现有真实基线已混入预测。"
+    },
+    {
+      "id": "CTRL-03",
+      "severity": "P1",
+      "finding_type": "Formula/control defect",
+      "location": "pfa/research.py:99-103,166-169,251-260,298-309",
+      "finding": "事实实际期间没有未来日期与来源公开时间一致性约束。",
+      "reproduction": "关联2026年公开文档的2099全年收入和净利可加入并核验，baseline_as_of=2099-12-31，issues为空，仍生成3个情景。",
+      "expected": "实际数据需要信息截止点，period_end与首次公开/取得时间一致；预测作为预测保存。",
+      "risk": "错误期间或未来预测可变成最新实际基线，也阻止可信历史回放。",
+      "test": "test_future_period_cannot_supply_historical_actual_baseline",
+      "unproven": "没有声称已完成point-in-time回放审计；文档本身声明point_in_time=false。"
+    },
+    {
+      "id": "CTRL-04",
+      "severity": "P1",
+      "finding_type": "Not comparable without bridge",
+      "location": "pfa/research.py:301-305",
+      "finding": "中期同比只比较起始月日，不核对起始年份/时长。",
+      "reproduction": "BYD上年18个月收入2024-01-01至2025-06-30被选为2026H1可比基期，合成值使latest_revenue_growth=343.815421。",
+      "expected": "同比的起止年份关系和期间长度均可比，变更财年需要明确桥接。",
+      "risk": "会产生数量级错误的经营增长解释。",
+      "test": "test_half_year_growth_does_not_use_eighteen_month_comparative",
+      "unproven": "合成反例用于期间控制，没有替代公司真实披露。"
+    },
+    {
+      "id": "CTRL-05",
+      "severity": "P1",
+      "finding_type": "Not comparable without bridge",
+      "location": "pfa/research.py:275-277,323-326",
+      "finding": "年度同比仅核对期末间隔，不核对跨年的会计口径。",
+      "reproduction": "向MSFT添加上年度IFRS合成收入与净利，当前US GAAP收入与IFRS比较形成revenue_growth=330.839。",
+      "expected": "跨期比较需要相同会计/单位/范围/时长或显式桥接；每年内部收入利润可匹配不等于跨年可比。",
+      "risk": "模型输出会计基准不可比的增长数字，而年度与口径check仍显示通过。",
+      "test": "test_annual_growth_requires_matching_accounting_basis",
+      "unproven": "没有对实际MSFT披露会计口径提出质疑；反例用于选择控制。"
+    },
+    {
+      "id": "CTRL-06",
+      "severity": "P2",
+      "finding_type": "Formula/control defect",
+      "location": "pfa/research.py:360-363",
+      "finding": "反方审查证据只要求status=verified，未排除当前已发生冲突、无法usable的事实。",
+      "reproduction": "同期间收入增加1产生冲突，原fact已被quality排除；review引用该fact仍被接受为supported。",
+      "expected": "审查支持引用当前可用证据，冲突记录可作为反证讨论但不能满足已接纳支持证据门槛。",
+      "risk": "声称已完成反方核验的步骤仍可只依赖未解决的冲突数字。",
+      "test": "test_review_rejects_conflicted_evidence",
+      "unproven": "未证明supported这个标志已导致投资建议；publish仍使用有条件研究结论。"
+    },
+    {
+      "id": "CTRL-07",
+      "severity": "P1",
+      "finding_type": "Missing forecast refresh",
+      "location": "pfa/research.py:298-309,387",
+      "finding": "最新无可比单季掩盖同报告中已有的最新可比累计期间；结论退回年度增长。",
+      "reproduction": "现有CATL真实fixture同时有2026/2025可比9M收入和仅当前Q3单季收入；模型选无比较Q3，latest_revenue_growth缺失而保留旧年度17.04%。9M可比增长应为56.1926%。",
+      "expected": "保留最新披露及最近可比期间两个维度；Q3无对比不应抹去同日9M比较。",
+      "risk": "近期诊断遗漏且用户得到较旧经营变化口径。",
+      "test": "test_latest_comparable_ytd_not_hidden_by_unmatched_quarter",
+      "unproven": "该lane没有重新核对CATL原件数值；只验证已接纳数据上的期间选择。"
+    },
+    {
+      "id": "CTRL-08",
+      "severity": "P1",
+      "finding_type": "Formula/control defect",
+      "location": "scripts/validate.py:27-49,62-76",
+      "finding": "验收退出码只取决于raw哈希，没有把必要输出与语义失败纳入通过标准。",
+      "reproduction": "在隔离seed撤回所有CMB common_equity；12/12哈希仍通过，CMB model_status=blocked/scenarios=0，但validate.main无异常、exit0并生成报告。",
+      "expected": "验收明确区分通过/失败/受限，必要模型输出缺失导致对应验收失败和非零退出。",
+      "risk": "持续集成或人工可把原件完整性/结构跑通误读为六家完整研究链通过。",
+      "test": "test_validation_fails_required_output_when_raw_hashes_pass",
+      "unproven": "原始test_six_company_chain会发现固定fixture的场景数变化；本发现针对validate.py本身的通过定义。"
+    }
+  ],
+  "remaining_limits": [
+    "自动化文字长度/引用ID/原件哈希不能证明事实与论断的语义相关性，仍需逐条claim-to-evidence复核。",
+    "未开展外部接口多日稳定性、源站限流或恢复负载实验。",
+    "未证明完整基本面预测、估值、真实盈利表现或历史回放。",
+    "没有修改生产数据库、原始文档、应用源码、原测试或docs；按主线程追加授权仅新增tests/test_audit_controls.py。"
+  ]
+}

@@ -50,6 +50,8 @@ def earnings_scenario(revenue, margin, assumptions):
             sales = revenue * (1 + growth) ** year
             net_margin = margin + change * Decimal(year) / 5
             profit = sales * net_margin
+            if profit < 0:
+                raise ValueError("该盈利分配情景不支持亏损期；不能把亏损乘分配率当作负股息，需要融资和稀释模型。")
             distribution = profit * payout
             present = distribution / (1 + discount) ** year
             pv_distributions += present

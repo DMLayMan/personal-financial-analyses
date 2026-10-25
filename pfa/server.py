@@ -4,6 +4,9 @@ import json
 import mimetypes
 import secrets
 import threading
+import os
+import sqlite3
+import signal
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse, parse_qs
@@ -11,15 +14,17 @@ from urllib.parse import urlparse, parse_qs
 from .research import Research, Conflict
 from .sources import Jobs, document_text
 from .store import Store
+from . import __version__
+from .assurance import RUNNING_KERNEL
 
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def make_server(research, jobs, port=8765):
+def make_server(research, jobs, port=8765, instance_id="unmanaged", worker=None):
     token = secrets.token_urlsafe(32)
     class Handler(BaseHTTPRequestHandler):
-        server_version = "PersonalFinancialAnalyses/0.2"
+        server_version = "PersonalFinancialAnalyses/" + __version__
 
         def log_message(self, fmt, *args):
             if str(args[1] if len(args)>1 else "").startswith("5"):
@@ -45,8 +50,17 @@ def make_server(research, jobs, port=8765):
             url = urlparse(self.path)
             parts = url.path.strip("/").split("/")
             try:
+                if url.path == "/api/healthz":
+                    with sqlite3.connect(str(research.store.path), timeout=1) as db:
+                        db.execute("SELECT COUNT(*) FROM records").fetchone()
+                    alive = worker.is_alive() if worker is not None else True
+                    return self.send(200 if alive else 503, dict(
+                        status="ready" if alive else "degraded", version=__version__,
+                        kernel_digest=RUNNING_KERNEL,
+                        instance_id=instance_id, pid=os.getpid(), database="readable",
+                        worker="running" if worker is not None and alive else "not_attached"))
                 if url.path == "/api/bootstrap":
-                    return self.send(200, dict(csrf=token, companies=research.dashboard(), version="0.2.0", ai="规则与人工审议；未配置外部模型服务"))
+                    return self.send(200, dict(csrf=token, companies=research.dashboard(), version=__version__, ai="规则与人工审议；未配置外部模型服务"))
                 if len(parts) == 3 and parts[:2] == ["api", "companies"]:
                     return self.send(200, research.view(parts[2]))
                 if len(parts) == 3 and parts[:2] == ["api", "documents"]:
@@ -109,6 +123,7 @@ def main():
     parser = argparse.ArgumentParser(description="Personal Financial Analyses local research terminal")
     parser.add_argument("--port", type=int, default=8765)
     parser.add_argument("--db", default=str(ROOT/"data/pfa.sqlite3"))
+    parser.add_argument("--instance-id", default="foreground")
     args = parser.parse_args()
     research = Research(Store(args.db))
     research.seed(ROOT/"fixtures/companies.json")
@@ -125,7 +140,11 @@ def main():
             stopping.wait(2)
     worker = threading.Thread(target=work, daemon=True)
     worker.start()
-    server = make_server(research, jobs, args.port)
+    server = make_server(research, jobs, args.port, args.instance_id, worker)
+    def terminate(signum, frame):
+        stopping.set()
+        threading.Thread(target=server.shutdown, daemon=True).start()
+    signal.signal(signal.SIGTERM, terminate)
     print(f"Personal Financial Analyses http://127.0.0.1:{server.server_port}", flush=True)
     print("Local only · public evidence · no external AI service or paid data", flush=True)
     try:

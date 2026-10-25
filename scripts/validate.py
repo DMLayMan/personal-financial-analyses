@@ -67,13 +67,24 @@ def main():
             exists=p.is_file()
             match=exists and hashlib.sha256(p.read_bytes()).hexdigest()==doc["sha256"]
             checks.append(dict(issuer=company["id"],document=doc["title"],exists=exists,sha256_match=match))
-    result = dict(run_at=now(), scope="实现与研究流程验收，不是预测绩效", source_checks=checks, companies=walkthrough(r))
+    companies = walkthrough(r)
+    functional_checks = [dict(issuer=c["issuer"], passed=c["scenarios"] == 3
+                              and c["model_status"] != "blocked" and bool(c["review_id"])
+                              and bool(c["conclusion_id"]), expected="三情景、有效模型、关联审查和条件记录")
+                         for c in companies]
+    functional_passed = (len(companies) == 6 and {c["issuer"] for c in companies} == set(RESPONSES)
+                         and all(c["passed"] for c in functional_checks)
+                         and bool(checks) and all(c["sha256_match"] for c in checks))
+    result = dict(run_at=now(), scope="实现与研究流程验收，不是预测绩效", source_checks=checks,
+                  companies=companies, functional_checks=functional_checks,
+                  functional_passed=functional_passed, research_quality="not_evaluated",
+                  investment_decision_ready=False)
     path=Path(args.output);path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n")
     print(json.dumps(dict(companies=len(result["companies"]),raw_documents=len(checks),
                          raw_hashes_passed=sum(c["sha256_match"] for c in checks),output=str(path)),ensure_ascii=False))
-    if not all(c["sha256_match"] for c in checks):
-        raise SystemExit("部分原件缺失或校验失败，不能声明来源包完整。")
+    if not functional_passed:
+        raise SystemExit("必需模型产物或原件检查失败，详见报告；不会仅凭哈希通过宣告整链通过。")
 
 
 if __name__ == "__main__":

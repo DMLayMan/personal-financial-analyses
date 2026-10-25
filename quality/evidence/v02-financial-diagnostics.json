@@ -1,0 +1,639 @@
+{
+  "as_of": "2026-10-25",
+  "scope": "financial-method audit, not investment advice or revised forecasts",
+  "source_hashes": {
+    "pfa/models.py": "15317faba2a90ba00221a0946c790984c2ec592400624b75ac4edd73de12d735",
+    "pfa/research.py": "41a8d429de1c0d418ce7855900e9978abfdb15795cd14316b258a5502a9c91b6",
+    "fixtures/companies.json": "d56c84c7859cc3bb960e24cb9a203f91e0826d3b0655442c8d29e426fc8f7822"
+  },
+  "companies": [
+    {
+      "issuer": "msft",
+      "baseline_as_of": "2026-06-30",
+      "baseline_age_days": 117,
+      "latest_fact_period_end": "2026-06-30",
+      "default_assumptions": {
+        "downside": {
+          "growth": "-0.02",
+          "margin_change": "-0.01",
+          "terminal_pe": "10",
+          "discount_rate": "0.14",
+          "payout": "0.2"
+        },
+        "base": {
+          "growth": "0.05",
+          "margin_change": "0",
+          "terminal_pe": "18",
+          "discount_rate": "0.12",
+          "payout": "0.3"
+        },
+        "upside": {
+          "growth": "0.10",
+          "margin_change": "0.01",
+          "terminal_pe": "25",
+          "discount_rate": "0.10",
+          "payout": "0.4"
+        }
+      },
+      "status": "conditional",
+      "diagnostics": {
+        "latest_revenue_growth": "0.177886867998466584316565149",
+        "net_margin": "0.4030538905915217921944075290",
+        "revenue_growth": "0.177886867998466584316565149",
+        "net_income_growth": "0.313427999057270798962997879",
+        "cash_conversion": "1.367748543914347023155313311",
+        "cfo_less_cash_capex": "66987000000",
+        "cash_capex_to_cfo": "0.6338207560062317216497663104",
+        "margin_100bp_profit_sensitivity": "3318390000.00"
+      },
+      "valuation_earnings": [
+        {
+          "role": "net_income",
+          "fact_id": "fact_26173197bf8048a6",
+          "value": "133749000000",
+          "currency": "USD",
+          "period_start": "2025-07-01",
+          "period_end": "2026-06-30",
+          "source_id": "document_87f3a05d12b04557",
+          "locator": "10-K iXBRL #F_f60b152c-a7e2-422b-9310-68f1fbe9e3b0 ; context=C_29985a27-1d12-4b7e-9a06-156523f6e71e ; us-gaap:NetIncomeLoss",
+          "basis": "US GAAP"
+        },
+        {
+          "role": "valuation_earnings",
+          "fact_id": "fact_26173197bf8048a6",
+          "value": "133749000000",
+          "currency": "USD",
+          "period_start": "2025-07-01",
+          "period_end": "2026-06-30",
+          "source_id": "document_87f3a05d12b04557",
+          "locator": "10-K iXBRL #F_f60b152c-a7e2-422b-9310-68f1fbe9e3b0 ; context=C_29985a27-1d12-4b7e-9a06-156523f6e71e ; us-gaap:NetIncomeLoss",
+          "basis": "US GAAP"
+        }
+      ],
+      "base_total_equity": "1909487909527.301788330078125226013",
+      "base_terminal_share": "0.9130667288704335015380101788528636",
+      "fact_count": 30,
+      "metrics": [
+        "capex_cash",
+        "cash",
+        "debt",
+        "debt_current",
+        "debt_noncurrent",
+        "eps",
+        "equity",
+        "net_income",
+        "operating_cash_flow",
+        "operating_profit",
+        "revenue",
+        "share_based_compensation",
+        "shares_diluted",
+        "shares_outstanding",
+        "short_term_investments"
+      ]
+    },
+    {
+      "issuer": "cost",
+      "baseline_as_of": "2026-08-30",
+      "baseline_age_days": 56,
+      "latest_fact_period_end": "2026-08-30",
+      "default_assumptions": {
+        "downside": {
+          "growth": "-0.02",
+          "margin_change": "-0.01",
+          "terminal_pe": "10",
+          "discount_rate": "0.14",
+          "payout": "0.2"
+        },
+        "base": {
+          "growth": "0.05",
+          "margin_change": "0",
+          "terminal_pe": "18",
+          "discount_rate": "0.12",
+          "payout": "0.3"
+        },
+        "upside": {
+          "growth": "0.10",
+          "margin_change": "0.01",
+          "terminal_pe": "25",
+          "discount_rate": "0.10",
+          "payout": "0.4"
+        }
+      },
+      "status": "conditional",
+      "diagnostics": {
+        "net_margin": "0.03043337709546962929732083364",
+        "revenue_growth": "0.101436953875778879866296074",
+        "net_income_growth": "0.139152981849611063094209162",
+        "cash_conversion": "1.714394103620203771948840234",
+        "cfo_less_cash_capex": "9382000000",
+        "cash_capex_to_cfo": "0.4068407409749004235948662831",
+        "margin_100bp_profit_sensitivity": "3031540000.00"
+      },
+      "valuation_earnings": [
+        {
+          "role": "net_income",
+          "fact_id": "fact_0c7bbeb4f41d4cb6",
+          "value": "9226000000",
+          "currency": "USD",
+          "period_start": "2025-09-01",
+          "period_end": "2026-08-30",
+          "source_id": "document_04457637a1d84065",
+          "locator": "10-K iXBRL #f-81 ; context=c-1 ; us-gaap:NetIncomeLoss",
+          "basis": "US GAAP"
+        },
+        {
+          "role": "valuation_earnings",
+          "fact_id": "fact_0c7bbeb4f41d4cb6",
+          "value": "9226000000",
+          "currency": "USD",
+          "period_start": "2025-09-01",
+          "period_end": "2026-08-30",
+          "source_id": "document_04457637a1d84065",
+          "locator": "10-K iXBRL #f-81 ; context=c-1 ; us-gaap:NetIncomeLoss",
+          "basis": "US GAAP"
+        }
+      ],
+      "base_total_equity": "131716390053.7490844726562500185676",
+      "base_terminal_share": "0.9130667288704335015380101788528639",
+      "fact_count": 30,
+      "metrics": [
+        "capex_cash",
+        "cash",
+        "debt",
+        "debt_current",
+        "debt_noncurrent",
+        "eps",
+        "equity",
+        "net_income",
+        "operating_cash_flow",
+        "operating_profit",
+        "revenue",
+        "share_based_compensation",
+        "shares_diluted",
+        "shares_outstanding",
+        "short_term_investments"
+      ]
+    },
+    {
+      "issuer": "tencent",
+      "baseline_as_of": "2025-12-31",
+      "baseline_age_days": 298,
+      "latest_fact_period_end": "2026-06-30",
+      "default_assumptions": {
+        "downside": {
+          "growth": "-0.02",
+          "margin_change": "-0.01",
+          "terminal_pe": "10",
+          "discount_rate": "0.14",
+          "payout": "0.2"
+        },
+        "base": {
+          "growth": "0.05",
+          "margin_change": "0",
+          "terminal_pe": "18",
+          "discount_rate": "0.12",
+          "payout": "0.3"
+        },
+        "upside": {
+          "growth": "0.10",
+          "margin_change": "0.01",
+          "terminal_pe": "25",
+          "discount_rate": "0.10",
+          "payout": "0.4"
+        }
+      },
+      "status": "conditional",
+      "diagnostics": {
+        "latest_revenue_growth": "0.100725325491185813906278290",
+        "net_margin": "0.2990850876469539723797032587",
+        "revenue_growth": "0.138596031545292211972004841",
+        "net_income_growth": "0.158543434686947694939533062",
+        "cash_conversion": "1.347844263972033694772329013",
+        "cfo_less_cash_capex": "190171000000",
+        "cash_capex_to_cfo": "0.3724806303868643005160830485",
+        "margin_100bp_profit_sensitivity": "7517660000.00"
+      },
+      "valuation_earnings": [
+        {
+          "role": "net_income",
+          "fact_id": "fact_9f0e3fc9393e4ff6",
+          "value": "224842000000",
+          "currency": "CNY",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "source_id": "document_0d3871af373049de",
+          "locator": "PDF p130, profit attributable to equity holders",
+          "basis": "IFRS"
+        },
+        {
+          "role": "valuation_earnings",
+          "fact_id": "fact_a0a56466f29b44f9",
+          "value": "223270000000",
+          "currency": "CNY",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "source_id": "document_0d3871af373049de",
+          "locator": "PDF p208, Note13(b)",
+          "basis": "IFRS"
+        }
+      ],
+      "base_total_equity": "3187548060622.215270996093750485172",
+      "base_terminal_share": "0.9130667288704335015380101788528634",
+      "fact_count": 45,
+      "metrics": [
+        "adjusted_fcf_ex_compute_prepayment",
+        "borrowings",
+        "capex_cash",
+        "cash",
+        "cash_intangibles_prepaid",
+        "cash_ppe_prepaid",
+        "debt",
+        "earnings_for_eps",
+        "eps",
+        "lease_cash",
+        "media_cash",
+        "net_income",
+        "notes_payable",
+        "operating_cash_flow",
+        "reported_fcf",
+        "revenue",
+        "shares_diluted"
+      ]
+    },
+    {
+      "issuer": "byd",
+      "baseline_as_of": "2025-12-31",
+      "baseline_age_days": 298,
+      "latest_fact_period_end": "2026-09-30",
+      "default_assumptions": {
+        "downside": {
+          "growth": "-0.02",
+          "margin_change": "-0.01",
+          "terminal_pe": "10",
+          "discount_rate": "0.14",
+          "payout": "0.2"
+        },
+        "base": {
+          "growth": "0.05",
+          "margin_change": "0",
+          "terminal_pe": "18",
+          "discount_rate": "0.12",
+          "payout": "0.3"
+        },
+        "upside": {
+          "growth": "0.10",
+          "margin_change": "0.01",
+          "terminal_pe": "25",
+          "discount_rate": "0.10",
+          "payout": "0.4"
+        }
+      },
+      "status": "conditional",
+      "diagnostics": {
+        "latest_revenue_growth": "-0.0712816726593792256746769565",
+        "net_margin": "0.04057269122916175657496753733",
+        "revenue_growth": "0.034567517869957057335509254",
+        "net_income_growth": "-0.1896770102785920307834587600",
+        "cash_conversion": "1.812915911458044327631895279",
+        "cfo_less_cash_capex": "-97672309000",
+        "cash_capex_to_cfo": "2.651668394223277966293841822",
+        "margin_100bp_profit_sensitivity": "8039649580.00"
+      },
+      "valuation_earnings": [
+        {
+          "role": "net_income",
+          "fact_id": "fact_782e28a3d4ef4acf",
+          "value": "32619022000",
+          "currency": "CNY",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "source_id": "document_f7ee0c0f9bb74333",
+          "locator": "PDF p126",
+          "basis": "PRC GAAP"
+        },
+        {
+          "role": "valuation_earnings",
+          "fact_id": "fact_0dc4a132ab5841ef",
+          "value": "32326907000",
+          "currency": "CNY",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "source_id": "document_f7ee0c0f9bb74333",
+          "locator": "PDF p216 Note60",
+          "basis": "PRC GAAP"
+        }
+      ],
+      "base_total_equity": "461519996926.4330863952636718188622",
+      "base_terminal_share": "0.9130667288704335015380101788528635",
+      "fact_count": 50,
+      "metrics": [
+        "capex_cash",
+        "cash",
+        "current_noncurrent_liabilities",
+        "earnings_for_eps",
+        "eps",
+        "export_vehicles",
+        "inventory",
+        "long_borrowings",
+        "monetary_funds",
+        "net_income",
+        "notes_payable",
+        "operating_cash_flow",
+        "revenue",
+        "shares_diluted",
+        "shares_outstanding",
+        "short_borrowings",
+        "vehicles"
+      ]
+    },
+    {
+      "issuer": "catl",
+      "baseline_as_of": "2025-12-31",
+      "baseline_age_days": 298,
+      "latest_fact_period_end": "2026-09-30",
+      "default_assumptions": {
+        "downside": {
+          "growth": "-0.02",
+          "margin_change": "-0.01",
+          "terminal_pe": "10",
+          "discount_rate": "0.14",
+          "payout": "0.2"
+        },
+        "base": {
+          "growth": "0.05",
+          "margin_change": "0",
+          "terminal_pe": "18",
+          "discount_rate": "0.12",
+          "payout": "0.3"
+        },
+        "upside": {
+          "growth": "0.10",
+          "margin_change": "0.01",
+          "terminal_pe": "25",
+          "discount_rate": "0.10",
+          "payout": "0.4"
+        }
+      },
+      "status": "conditional",
+      "diagnostics": {
+        "net_margin": "0.1704058755620113742533387288",
+        "revenue_growth": "0.170406466069682213285896157",
+        "net_income_growth": "0.422834455835194710649679507",
+        "cash_conversion": "1.845119342894770206434838650",
+        "cfo_less_cash_capex": "90875424000",
+        "cash_capex_to_cfo": "0.3178544041538753548247739592",
+        "margin_100bp_profit_sensitivity": "4237018340.00"
+      },
+      "valuation_earnings": [
+        {
+          "role": "net_income",
+          "fact_id": "fact_b16094dc6ead4fda",
+          "value": "72201282000",
+          "currency": "CNY",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "source_id": "document_711068c7c869447e",
+          "locator": "PDF第11页",
+          "basis": "CAS"
+        },
+        {
+          "role": "valuation_earnings",
+          "fact_id": "fact_b16094dc6ead4fda",
+          "value": "72201282000",
+          "currency": "CNY",
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31",
+          "source_id": "document_711068c7c869447e",
+          "locator": "PDF第11页",
+          "basis": "CAS"
+        }
+      ],
+      "base_total_equity": "1030792566907.948493957519531475409",
+      "base_terminal_share": "0.9130667288704335015380101788528632",
+      "fact_count": 47,
+      "metrics": [
+        "accounts_receivable",
+        "capex_cash",
+        "cash",
+        "common_equity",
+        "cost_of_sales",
+        "debt",
+        "eps",
+        "inventory",
+        "net_income",
+        "net_income_adjusted",
+        "operating_cash_flow",
+        "prepayments",
+        "revenue",
+        "shares_outstanding"
+      ]
+    },
+    {
+      "issuer": "cmb",
+      "baseline_as_of": "2026-06-30",
+      "baseline_age_days": 117,
+      "latest_fact_period_end": "2026-06-30",
+      "default_assumptions": {
+        "downside": {
+          "roe": "0.09",
+          "discount_rate": "0.14",
+          "payout": "0.3",
+          "terminal_growth": "0.01"
+        },
+        "base": {
+          "roe": "0.12",
+          "discount_rate": "0.12",
+          "payout": "0.35",
+          "terminal_growth": "0.02"
+        },
+        "upside": {
+          "roe": "0.14",
+          "discount_rate": "0.11",
+          "payout": "0.4",
+          "terminal_growth": "0.025"
+        }
+      },
+      "status": "conditional",
+      "diagnostics": {
+        "latest_nim": "0.0183",
+        "latest_credit_cost": "0.0069",
+        "latest_net_income": "75143000000",
+        "latest_net_interest_income": "112022000000",
+        "latest_cet1": "0.1407",
+        "roe_100bp_profit_sensitivity": "11450440000.00"
+      },
+      "valuation_earnings": [],
+      "base_total_equity": "1145044000000.0000000000",
+      "base_terminal_share": null,
+      "fact_count": 51,
+      "metrics": [
+        "bvps",
+        "cet1",
+        "common_equity",
+        "credit_cost",
+        "earning_assets_avg",
+        "eps",
+        "loans",
+        "net_income",
+        "net_income_parent",
+        "net_interest_income",
+        "nim",
+        "npl_ratio",
+        "revenue",
+        "roe",
+        "shares_outstanding"
+      ],
+      "base_price_to_book": "1.0000000000",
+      "terminal_payout": "0.8333333333333333333333333333333333"
+    }
+  ],
+  "illustrative_audit_sensitivities": [
+    {
+      "label": "Illustrative audit sensitivity; synthetic adverse input in cloned database",
+      "issuer": "byd",
+      "metric": "net_income",
+      "period_end": "2026-06-30",
+      "input_value": "-100000000000",
+      "changed_facts": 1,
+      "scenarios_unchanged": true,
+      "before_base_equity": "461519996926.4330863952636718188622",
+      "after_base_equity": "461519996926.4330863952636718188622",
+      "status": "conditional",
+      "issue_count": 0
+    },
+    {
+      "label": "Illustrative audit sensitivity; synthetic adverse input in cloned database",
+      "issuer": "catl",
+      "metric": "operating_cash_flow",
+      "period_end": "2026-09-30",
+      "input_value": "-100000000000",
+      "changed_facts": 1,
+      "scenarios_unchanged": true,
+      "before_base_equity": "1030792566907.948493957519531475409",
+      "after_base_equity": "1030792566907.948493957519531475409",
+      "status": "conditional",
+      "issue_count": 0
+    },
+    {
+      "label": "Illustrative audit sensitivity; synthetic adverse input in cloned database",
+      "issuer": "tencent",
+      "metric": "reported_fcf",
+      "period_end": "2026-06-30",
+      "input_value": "-100000000000",
+      "changed_facts": 1,
+      "scenarios_unchanged": true,
+      "before_base_equity": "3187548060622.215270996093750485172",
+      "after_base_equity": "3187548060622.215270996093750485172",
+      "status": "conditional",
+      "issue_count": 0
+    },
+    {
+      "label": "Illustrative audit sensitivity; synthetic adverse input in cloned database",
+      "issuer": "cmb",
+      "metric": "nim",
+      "period_end": "2026-06-30",
+      "input_value": "0.0001",
+      "changed_facts": 1,
+      "scenarios_unchanged": true,
+      "before_base_equity": "1145044000000.0000000000",
+      "after_base_equity": "1145044000000.0000000000",
+      "status": "conditional",
+      "issue_count": 0
+    },
+    {
+      "label": "Illustrative audit sensitivity; synthetic adverse input in cloned database",
+      "issuer": "cmb",
+      "metric": "cet1",
+      "period_end": "2026-06-30",
+      "input_value": "0.0001",
+      "changed_facts": 1,
+      "scenarios_unchanged": true,
+      "before_base_equity": "1145044000000.0000000000",
+      "after_base_equity": "1145044000000.0000000000",
+      "status": "conditional",
+      "issue_count": 0
+    }
+  ],
+  "independent_bank_formula_checks": [
+    {
+      "scenario": "downside",
+      "independent_ddm": "615194919435.328274022448867190086700651055667",
+      "residual_income_output": "615194919435.3282740224488671900866",
+      "difference": "1.00651055667E-22",
+      "terminal_payout": "0.8888888888888888888888888888888889",
+      "explicit_payout": "0.3"
+    },
+    {
+      "scenario": "base",
+      "independent_ddm": "1145044000000.000000000000000000000",
+      "residual_income_output": "1145044000000.0000000000",
+      "difference": "0E-21",
+      "terminal_payout": "0.8333333333333333333333333333333333",
+      "explicit_payout": "0.35"
+    },
+    {
+      "scenario": "upside",
+      "independent_ddm": "1651666847960.64914992042467677029007693350664",
+      "residual_income_output": "1651666847960.649149920424676770290",
+      "difference": "7.693350664E-23",
+      "terminal_payout": "0.8214285714285714285714285714285714",
+      "explicit_payout": "0.4"
+    }
+  ],
+  "catl_comparable_revenue_control": {
+    "latest_growth_emitted": null,
+    "fallback_annual_growth": "0.170406466069682213285896157",
+    "available_9m_yoy": "0.561925744351382957579620904"
+  },
+  "confirmation_control": {
+    "assumptions_confirmed": true,
+    "status": "review_required",
+    "rationale": "这是一段没有任何参数来源的示例理由。"
+  },
+  "negative_distribution_control": {
+    "label": "Illustrative audit sensitivity; synthetic turnaround",
+    "rows": [
+      {
+        "year": 1,
+        "revenue": "100",
+        "net_margin": "-0.06",
+        "net_income": "-6.00",
+        "distribution": "-1.8000",
+        "pv_distribution": "-1.607142857142857142857142857142857"
+      },
+      {
+        "year": 2,
+        "revenue": "100",
+        "net_margin": "-0.02",
+        "net_income": "-2.00",
+        "distribution": "-0.6000",
+        "pv_distribution": "-0.4783163265306122448979591836734694"
+      },
+      {
+        "year": 3,
+        "revenue": "100",
+        "net_margin": "0.02",
+        "net_income": "2.00",
+        "distribution": "0.6000",
+        "pv_distribution": "0.4270681486880466472303206997084548"
+      },
+      {
+        "year": 4,
+        "revenue": "100",
+        "net_margin": "0.06",
+        "net_income": "6.00",
+        "distribution": "1.8000",
+        "pv_distribution": "1.143932541128696376509787588504790"
+      },
+      {
+        "year": 5,
+        "revenue": "100",
+        "net_margin": "0.10",
+        "net_income": "10.00",
+        "distribution": "3.0000",
+        "pv_distribution": "1.702280567155798179330041054322604"
+      }
+    ],
+    "total_equity": "103.3246561026469625751175105610757"
+  }
+}

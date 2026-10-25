@@ -2,9 +2,9 @@
 
 Personal Financial Analyses 是面向个人深度研究与中长期投资的商业与金融分析终端，覆盖美股、港股和 A 股。项目以研究问题、原始证据、经营机制、盈利与估值、风险和持续复核为主线。
 
-本地首版0.2已实现：资料获取、候选与核验、补证、盈利估值情景、反方与结论版本。六家公司使用12份公开原文、253条选定记录验收，运行中的资料、模型与结论保存在本机数据库。流程通过不代表完整投资研究、预测校准或持续数据服务已经完成。
+当前0.3可用于本地来源台账、历史算术、示例敏感性与人工研究记录。自查发现0.2在补证、期间、证据分类、验收和交付上存在实质缺陷，已补反例及控制。个股经营驱动、盈利承保、当前公允价值和投资效果仍未通过研究质量验收，见[自查报告](docs/quality/review-2026-10-25.md)。
 
-直接运行 `./scripts/start.sh`，打开 `http://127.0.0.1:8765`。首次安装和操作说明见[本地运行指南](docs/local-development.md)。
+直接运行 `./scripts/start.sh` 启动独立后台服务，打开 `http://127.0.0.1:8765`。查看状态用 `.venv/bin/python -m pfa.service status`。用户服务在交付后继续运行，电脑重启后需重新启动；详见[本地运行手册](docs/operations/local-service.md)。
 
 ## 项目信息
 
@@ -13,9 +13,9 @@ Personal Financial Analyses 是面向个人深度研究与中长期投资的商�
 | 英文名称 | Personal Financial Analyses |
 | 中文工作名 | 个人金融分析终端 |
 | 仓库标识 | personal-financial-analyses |
-| 当前版本 | 0.2.0 |
+| 当前版本 | 0.3.0 |
 | 基线日期 | 2026年10月25日 |
-| 当前阶段 | 本地研究流程已实现，继续深化研究与数据能力 |
+| 当前阶段 | 修复控制与访问；按公司深化经营驱动和研究验证 |
 
 英文名称保留用户指定的 `Analyses`。中文工作名对本次口述中的“个人分金融分析终端”作去除重复字的整理；不影响英文项目标识。
 
@@ -24,6 +24,12 @@ Personal Financial Analyses 是面向个人深度研究与中长期投资的商�
 | 文档 | 内容与使用方式 |
 | --- | --- |
 | [用户需求](docs/requirements.md) | 用户目标、原始要求、确认程度、范围和验收条件，是需求依据 |
+| [当前质量判定](docs/quality/review-2026-10-25.md) | 实际反例、整改、六家公司研究差距与允许用途 |
+| [每项功能与验收](docs/quality/feature-plan.md) | 12项功能、六公司驱动桥、事前门槛及实施顺序 |
+| [验证标准](docs/quality/verification-standard.md) | 软件、原文、语义、金融方法、保留集、前瞻及运行分别评估 |
+| [审查参考](docs/quality/references.md) | CFA、2026模型风险指导、NYU估值与SRE原始材料 |
+| [最新功能检查](quality/latest-functional.json) | 实际运行、源码摘要和逐项结果；单独保留研究未验证状态 |
+| [0.3交付验收](docs/validation/local-v0.3.md) | 反例整改、当前功能检查与交付后的访问验证 |
 | [本地运行指南](docs/local-development.md) | 启动、研究操作、模型边界、测试、导出与备份恢复 |
 | [首版验收](docs/validation/local-v0.2.md) | 六家实际流程、原文与异常验收边界 |
 | [本地运行决定](docs/decisions/0001-local-runtime.md) | Python、SQLite及与原设计建议的关系 |
@@ -46,3 +52,5 @@ Personal Financial Analyses 是面向个人深度研究与中长期投资的商�
 沿用当前工作目录的 Git 仓库。文档、应用与测试代码、已标记来源的公开选定字段进入版本控制；运行数据库、下载原件、缓存和凭据保留在 Git 之外。0.1保留文档基线，0.2新增本地实现。
 
 当前未配置远端。远端托管位置、归属和可见性在需要同步或协作前确定。
+
+后续开发须按[AGENTS.md](AGENTS.md)登记功能合同并留存验证结果。可运行 `.venv/bin/python scripts/quality_gate.py --live` 更新本地功能检查；该检查不会把测试通过升级为投资判断可靠。

@@ -1,0 +1,394 @@
+{
+  "run_at": "2026-10-25T04:46:42.339397+00:00",
+  "purpose": "Independent workstream by the same model; not an independent institution audit.",
+  "source_revision": "edfda4910351d0197b906133b7bacde7013bd25b",
+  "source_hashes": {
+    "pfa/research.py": "41a8d429de1c0d418ce7855900e9978abfdb15795cd14316b258a5502a9c91b6",
+    "pfa/monitoring.py": "8ecd727e1b1d37491c53160d13cbb52d1c3dbb4bf3ee197be8a37b84b8addb71",
+    "pfa/sources.py": "1d7597e953b69d5f04b135017e6ad9fc32b0bccf0ac165236153414be276c0d5",
+    "scripts/validate.py": "b100565e832820b9f0107aec805faff22593e3e219a77759e071bd89ab891c8d"
+  },
+  "findings": {
+    "rule_change_not_invalidating": {
+      "before_monitor_count": 1,
+      "after_monitor_count": 0,
+      "before_gap_count": 5,
+      "after_gap_count": 4,
+      "conclusion_stale_after_rule_change": false,
+      "model_stale_after_rule_change": false,
+      "stored_fingerprint": "bd4a31f3c792aa404b713a508d1eeeb7adba7de8e10374eaad4f0753e9e2b35b",
+      "engine_version": "0.2.0",
+      "expected": "Changed governing monitoring/model rules should require an explicit compatibility check or re-review."
+    },
+    "assumptions_admitted_as_actuals": {
+      "synthetic_fact_ids": [
+        "fact_02b4a7cb65fa4a79",
+        "fact_4c92d4796ccb4d1a"
+      ],
+      "selected_inputs": [
+        {
+          "role": "revenue",
+          "fact_id": "fact_02b4a7cb65fa4a79",
+          "value": "331839000000",
+          "currency": "USD",
+          "period_start": "2025-07-01",
+          "period_end": "2026-06-30",
+          "source_id": "document_6eb6a1a7cb9843bc",
+          "locator": "10-K iXBRL #F_a62216e4-4826-4209-89af-643bc5c2df10 ; context=C_29985a27-1d12-4b7e-9a06-156523f6e71e ; us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "basis": "US GAAP",
+          "source_evidence_label": "scenario_assumption",
+          "source_quote": "AUDIT: explicit analyst scenario assumption; not a reported historical actual."
+        },
+        {
+          "role": "net_income",
+          "fact_id": "fact_4c92d4796ccb4d1a",
+          "value": "133749000000",
+          "currency": "USD",
+          "period_start": "2025-07-01",
+          "period_end": "2026-06-30",
+          "source_id": "document_6eb6a1a7cb9843bc",
+          "locator": "10-K iXBRL #F_f60b152c-a7e2-422b-9310-68f1fbe9e3b0 ; context=C_29985a27-1d12-4b7e-9a06-156523f6e71e ; us-gaap:NetIncomeLoss",
+          "basis": "US GAAP",
+          "source_evidence_label": "scenario_assumption",
+          "source_quote": "AUDIT: explicit analyst scenario assumption; not a reported historical actual."
+        },
+        {
+          "role": "valuation_earnings",
+          "fact_id": "fact_4c92d4796ccb4d1a",
+          "value": "133749000000",
+          "currency": "USD",
+          "period_start": "2025-07-01",
+          "period_end": "2026-06-30",
+          "source_id": "document_6eb6a1a7cb9843bc",
+          "locator": "10-K iXBRL #F_f60b152c-a7e2-422b-9310-68f1fbe9e3b0 ; context=C_29985a27-1d12-4b7e-9a06-156523f6e71e ; us-gaap:NetIncomeLoss",
+          "basis": "US GAAP",
+          "source_evidence_label": "scenario_assumption",
+          "source_quote": "AUDIT: explicit analyst scenario assumption; not a reported historical actual."
+        },
+        {
+          "role": "operating_cash_flow",
+          "fact_id": "fact_4911954e47d14bc0",
+          "value": "182935000000",
+          "currency": "USD",
+          "period_start": "2025-07-01",
+          "period_end": "2026-06-30",
+          "source_id": "document_6eb6a1a7cb9843bc",
+          "locator": "10-K iXBRL #F_1bf2d932-9a21-41e8-9d22-32533c8ae3e5 ; context=C_29985a27-1d12-4b7e-9a06-156523f6e71e ; us-gaap:NetCashProvidedByUsedInOperatingActivities",
+          "basis": "US GAAP",
+          "source_evidence_label": "fact_source_reported",
+          "source_quote": "182,935"
+        },
+        {
+          "role": "capex_cash",
+          "fact_id": "fact_7ce32932d97849da",
+          "value": "115948000000",
+          "currency": "USD",
+          "period_start": "2025-07-01",
+          "period_end": "2026-06-30",
+          "source_id": "document_6eb6a1a7cb9843bc",
+          "locator": "10-K iXBRL #F_09f41249-b58f-478b-a38c-f33fcdfa87ec ; context=C_29985a27-1d12-4b7e-9a06-156523f6e71e ; us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+          "basis": "US GAAP",
+          "source_evidence_label": "fact_source_reported",
+          "source_quote": "115,948"
+        },
+        {
+          "role": "prior_revenue",
+          "fact_id": "fact_0150b43c9de3419a",
+          "value": "281724000000",
+          "currency": "USD",
+          "period_start": "2024-07-01",
+          "period_end": "2025-06-30",
+          "source_id": "document_6eb6a1a7cb9843bc",
+          "locator": "10-K iXBRL #F_d3febf44-5717-45d3-a565-dab944f2f096 ; context=C_7575f467-7692-4974-a3da-f27e7e8e1c47 ; us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "basis": "US GAAP",
+          "source_evidence_label": "fact_source_reported",
+          "source_quote": "281,724"
+        },
+        {
+          "role": "prior_net_income",
+          "fact_id": "fact_a9a2f0c6948f4171",
+          "value": "101832000000",
+          "currency": "USD",
+          "period_start": "2024-07-01",
+          "period_end": "2025-06-30",
+          "source_id": "document_6eb6a1a7cb9843bc",
+          "locator": "10-K iXBRL #F_0aa760ad-88a0-40f9-b28a-9129929565ec ; context=C_7575f467-7692-4974-a3da-f27e7e8e1c47 ; us-gaap:NetIncomeLoss",
+          "basis": "US GAAP",
+          "source_evidence_label": "fact_source_reported",
+          "source_quote": "101,832"
+        },
+        {
+          "role": "latest_revenue",
+          "fact_id": "fact_02b4a7cb65fa4a79",
+          "value": "331839000000",
+          "currency": "USD",
+          "period_start": "2025-07-01",
+          "period_end": "2026-06-30",
+          "source_id": "document_6eb6a1a7cb9843bc",
+          "locator": "10-K iXBRL #F_a62216e4-4826-4209-89af-643bc5c2df10 ; context=C_29985a27-1d12-4b7e-9a06-156523f6e71e ; us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "basis": "US GAAP",
+          "source_evidence_label": "scenario_assumption",
+          "source_quote": "AUDIT: explicit analyst scenario assumption; not a reported historical actual."
+        },
+        {
+          "role": "latest_comparative_revenue",
+          "fact_id": "fact_0150b43c9de3419a",
+          "value": "281724000000",
+          "currency": "USD",
+          "period_start": "2024-07-01",
+          "period_end": "2025-06-30",
+          "source_id": "document_6eb6a1a7cb9843bc",
+          "locator": "10-K iXBRL #F_d3febf44-5717-45d3-a565-dab944f2f096 ; context=C_7575f467-7692-4974-a3da-f27e7e8e1c47 ; us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "basis": "US GAAP",
+          "source_evidence_label": "fact_source_reported",
+          "source_quote": "281,724"
+        }
+      ],
+      "model_status": "conditional",
+      "model_issues": [],
+      "selected_scenario_assumptions": [
+        "revenue",
+        "net_income",
+        "valuation_earnings",
+        "latest_revenue"
+      ],
+      "expected": "Facts verified as accurately transcribed assumptions must remain assumptions and cannot supply historical actual baselines."
+    },
+    "future_actuals_admitted": {
+      "run_at": "2026-10-25T04:46:42.447220+00:00",
+      "synthetic_fact_ids": [
+        "fact_8e0d42526b4844c5",
+        "fact_bf09579564814531"
+      ],
+      "source_published_at": "2026-07-29",
+      "baseline_as_of": "2099-12-31",
+      "model_status": "conditional",
+      "issues": [],
+      "scenarios": 3,
+      "inputs": [
+        {
+          "role": "revenue",
+          "fact_id": "fact_8e0d42526b4844c5",
+          "value": "1000000000000",
+          "currency": "USD",
+          "period_start": "2099-01-01",
+          "period_end": "2099-12-31",
+          "source_id": "document_7e40939d370f473e",
+          "locator": "10-K iXBRL #F_d3febf44-5717-45d3-a565-dab944f2f096 ; context=C_7575f467-7692-4974-a3da-f27e7e8e1c47 ; us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "basis": "US GAAP",
+          "source_evidence_label": "fact_source_reported",
+          "source_quote": "AUDIT SYNTHETIC: 2099 forecast, unavailable as an actual in 2026."
+        },
+        {
+          "role": "net_income",
+          "fact_id": "fact_bf09579564814531",
+          "value": "300000000000",
+          "currency": "USD",
+          "period_start": "2099-01-01",
+          "period_end": "2099-12-31",
+          "source_id": "document_7e40939d370f473e",
+          "locator": "10-K iXBRL #F_0aa760ad-88a0-40f9-b28a-9129929565ec ; context=C_7575f467-7692-4974-a3da-f27e7e8e1c47 ; us-gaap:NetIncomeLoss",
+          "basis": "US GAAP",
+          "source_evidence_label": "fact_source_reported",
+          "source_quote": "AUDIT SYNTHETIC: 2099 forecast, unavailable as an actual in 2026."
+        },
+        {
+          "role": "valuation_earnings",
+          "fact_id": "fact_bf09579564814531",
+          "value": "300000000000",
+          "currency": "USD",
+          "period_start": "2099-01-01",
+          "period_end": "2099-12-31",
+          "source_id": "document_7e40939d370f473e",
+          "locator": "10-K iXBRL #F_0aa760ad-88a0-40f9-b28a-9129929565ec ; context=C_7575f467-7692-4974-a3da-f27e7e8e1c47 ; us-gaap:NetIncomeLoss",
+          "basis": "US GAAP",
+          "source_evidence_label": "fact_source_reported",
+          "source_quote": "AUDIT SYNTHETIC: 2099 forecast, unavailable as an actual in 2026."
+        },
+        {
+          "role": "latest_revenue",
+          "fact_id": "fact_8e0d42526b4844c5",
+          "value": "1000000000000",
+          "currency": "USD",
+          "period_start": "2099-01-01",
+          "period_end": "2099-12-31",
+          "source_id": "document_7e40939d370f473e",
+          "locator": "10-K iXBRL #F_d3febf44-5717-45d3-a565-dab944f2f096 ; context=C_7575f467-7692-4974-a3da-f27e7e8e1c47 ; us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "basis": "US GAAP",
+          "source_evidence_label": "fact_source_reported",
+          "source_quote": "AUDIT SYNTHETIC: 2099 forecast, unavailable as an actual in 2026."
+        }
+      ],
+      "expected": "Future-period forecast cannot become a historical actual baseline; require an information cutoff and separate actual/forecast class."
+    },
+    "duration_mismatch_compared": {
+      "synthetic_fact_id": "fact_1a85f822ec79421b",
+      "diagnostics": {
+        "latest_revenue_growth": "343.815421",
+        "net_margin": "0.04057269122916175657496753733",
+        "revenue_growth": "0.034567517869957057335509254",
+        "net_income_growth": "-0.1896770102785920307834587600",
+        "cash_conversion": "1.812915911458044327631895279",
+        "cfo_less_cash_capex": "-97672309000",
+        "cash_capex_to_cfo": "2.651668394223277966293841822",
+        "margin_100bp_profit_sensitivity": "8039649580.00"
+      },
+      "relevant_inputs": [
+        {
+          "role": "latest_revenue",
+          "fact_id": "fact_4608623f5d504971",
+          "value": "344815421000",
+          "currency": "CNY",
+          "period_start": "2026-01-01",
+          "period_end": "2026-06-30",
+          "source_id": "document_36f08f6fb3eb48be",
+          "locator": "PDF p67, consolidated income statement",
+          "basis": "PRC GAAP",
+          "source_evidence_label": "fact_source_reported",
+          "source_quote": "revenue: 344,815,421"
+        },
+        {
+          "role": "latest_comparative_revenue",
+          "fact_id": "fact_1a85f822ec79421b",
+          "value": "1000000000",
+          "currency": "CNY",
+          "period_start": "2024-01-01",
+          "period_end": "2025-06-30",
+          "source_id": "document_36f08f6fb3eb48be",
+          "locator": "PDF p67, consolidated income statement",
+          "basis": "PRC GAAP",
+          "source_evidence_label": "fact_source_reported",
+          "source_quote": "AUDIT SYNTHETIC: 18 months, deliberately incomparable to H1."
+        }
+      ],
+      "expected": "Reject 18-month/H1 comparison and retain only an equal-duration prior period or explicit bridge."
+    },
+    "cross_basis_annual_growth": {
+      "diagnostics": {
+        "latest_revenue_growth": "0.177886867998466584316565149",
+        "net_margin": "0.4030538905915217921944075290",
+        "revenue_growth": "330.839",
+        "net_income_growth": "1336.49",
+        "cash_conversion": "1.367748543914347023155313311",
+        "cfo_less_cash_capex": "66987000000",
+        "cash_capex_to_cfo": "0.6338207560062317216497663104",
+        "margin_100bp_profit_sensitivity": "3318390000.00"
+      },
+      "relevant_inputs": [
+        {
+          "role": "revenue",
+          "fact_id": "fact_638b11bbcafe47f8",
+          "value": "331839000000",
+          "currency": "USD",
+          "period_start": "2025-07-01",
+          "period_end": "2026-06-30",
+          "source_id": "document_d281fc19865b49f3",
+          "locator": "10-K iXBRL #F_a62216e4-4826-4209-89af-643bc5c2df10 ; context=C_29985a27-1d12-4b7e-9a06-156523f6e71e ; us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "basis": "US GAAP",
+          "source_evidence_label": "fact_source_reported",
+          "source_quote": "331,839"
+        },
+        {
+          "role": "net_income",
+          "fact_id": "fact_b662f43b828f487d",
+          "value": "133749000000",
+          "currency": "USD",
+          "period_start": "2025-07-01",
+          "period_end": "2026-06-30",
+          "source_id": "document_d281fc19865b49f3",
+          "locator": "10-K iXBRL #F_f60b152c-a7e2-422b-9310-68f1fbe9e3b0 ; context=C_29985a27-1d12-4b7e-9a06-156523f6e71e ; us-gaap:NetIncomeLoss",
+          "basis": "US GAAP",
+          "source_evidence_label": "fact_source_reported",
+          "source_quote": "133,749"
+        },
+        {
+          "role": "prior_revenue",
+          "fact_id": "fact_5e2fced3b1214dad",
+          "value": "1000000000",
+          "currency": "USD",
+          "period_start": "2024-07-01",
+          "period_end": "2025-06-30",
+          "source_id": "document_d281fc19865b49f3",
+          "locator": "10-K iXBRL #F_d3febf44-5717-45d3-a565-dab944f2f096 ; context=C_7575f467-7692-4974-a3da-f27e7e8e1c47 ; us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "basis": "IFRS (audit synthetic)",
+          "source_evidence_label": "fact_source_reported",
+          "source_quote": "AUDIT SYNTHETIC: alternative accounting basis, no reconciliation bridge."
+        },
+        {
+          "role": "prior_net_income",
+          "fact_id": "fact_6091017fb4874912",
+          "value": "100000000",
+          "currency": "USD",
+          "period_start": "2024-07-01",
+          "period_end": "2025-06-30",
+          "source_id": "document_d281fc19865b49f3",
+          "locator": "10-K iXBRL #F_0aa760ad-88a0-40f9-b28a-9129929565ec ; context=C_7575f467-7692-4974-a3da-f27e7e8e1c47 ; us-gaap:NetIncomeLoss",
+          "basis": "IFRS (audit synthetic)",
+          "source_evidence_label": "fact_source_reported",
+          "source_quote": "AUDIT SYNTHETIC: alternative accounting basis, no reconciliation bridge."
+        }
+      ],
+      "checks": [
+        {
+          "name": "年度与口径",
+          "result": "通过",
+          "detail": "收入与净利严格同期间同范围；未年度化中期数据"
+        }
+      ],
+      "expected": "Cross-year growth must use equal accounting definitions/scope/periods or a documented bridge."
+    },
+    "review_accepts_conflicted_fact": {
+      "accepted_review_id": "review_1b687450c2434f0b",
+      "cited_fact_id": "fact_23bc44ea3cce40d8",
+      "cited_fact_in_usable": false,
+      "conflicts": [
+        {
+          "key": [
+            "revenue",
+            "2025-07-01",
+            "2026-06-30",
+            "USD",
+            "USD",
+            "consolidated",
+            "US GAAP"
+          ],
+          "facts": [
+            "fact_23bc44ea3cce40d8",
+            "fact_3424657c9c8e4e70"
+          ],
+          "metric": "revenue",
+          "detail": "同期间同口径存在不同值，不能自动选新值或平均"
+        }
+      ],
+      "expected": "Review support must cite current usable, relevant evidence, with unresolved conflicts explicitly treated as unresolved."
+    },
+    "validation_exit_success_with_blocked_model": {
+      "exit_code": 0,
+      "stdout": "{\"companies\": 6, \"raw_documents\": 12, \"raw_hashes_passed\": 12, \"output\": \"/var/folders/7q/lymnq5ss2j38_pn40vmzpvbc0000gn/T/pfa-controls-audit-a4vymqx6/validation-output.json\"}\n",
+      "bank_result": {
+        "issuer": "cmb",
+        "verified": 47,
+        "documents": 2,
+        "model_id": "model_run_f63a905dae26486c",
+        "review_id": "review_6ec5cac062b64661",
+        "conclusion_id": "conclusion_24fa19c868a24bc8",
+        "scenarios": 0,
+        "model_status": "blocked",
+        "diagnostics": {
+          "latest_nim": "0.0183",
+          "latest_credit_cost": "0.0069",
+          "latest_net_income": "75143000000",
+          "latest_net_interest_income": "112022000000",
+          "latest_cet1": "0.1407"
+        },
+        "monitors": [],
+        "open_gaps": 5,
+        "assumptions_confirmed": false,
+        "account_action": "未提供账户约束，不形成个性化仓位动作"
+      },
+      "hash_checks_passed": 12,
+      "hash_checks_total": 12,
+      "expected": "Gate claims on explicit semantic/required-output criteria; a blocked required model must fail that acceptance criterion even when every raw file hash matches."
+    }
+  }
+}

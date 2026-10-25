@@ -176,7 +176,10 @@ class ResearchCase(ResearchFixture):
                          reason='没有可引用证据时不能仅因为写了文字就关闭研究缺口。',fact_ids=[])
         self.command('msft','gap',gap_key='ai_return',disposition='resolved',
                      reason='这是验收中的有条件补证回应，引用已核验资料并保留经营解释边界，结论仍需审查。',fact_ids=[fact['id']])
-        self.assertIn('ai_return',[g['key'] for g in self.r.view('msft')['quality']['resolved_gaps']])
+        # The former assertion expected closure from any cited fact. That was the
+        # audit defect: transcription does not establish semantic sufficiency.
+        self.assertIn('ai_return',[g['key'] for g in self.r.view('msft')['quality']['gaps']])
+        self.assertEqual(self.r.view('msft')['quality']['resolved_gaps'],[])
         self.command('msft','check',fact_id=fact['id'],status='rejected',reason='验收撤回补证依据，需要重新打开已处理的研究缺口。')
         self.assertIn('ai_return',[g['key'] for g in self.r.view('msft')['quality']['gaps']])
 
