@@ -1,0 +1,26 @@
+{
+  "as_of": "2026-10-25",
+  "price_as_of": "2026-10-23",
+  "version": 1,
+  "investment_ready": false,
+  "publications": [
+    {
+      "id": "byd-2026-10-25",
+      "title": "比亚迪：恢复、现金与A/H定价",
+      "company_id": "byd",
+      "description": "季度恢复、研发与汇兑、现金与融资、海外政策、A/H价格条件及反方审查。",
+      "route": "/research/byd-2026-10-25.html",
+      "path": "research/2026-10-25/byd-deep-dive.html",
+      "sha256": "a78510e75becb019aaae9bcce313347a27dba46f2603acfa6a5c04f183bd37df"
+    },
+    {
+      "id": "ai-2026-10-25",
+      "title": "AI全栈：从电力到应用的资本与回报",
+      "company_id": null,
+      "description": "八层产业、全球上市与私募资本、现金循环、单位经济性及40标的价格索引。",
+      "route": "/research/ai-2026-10-25.html",
+      "path": "research/2026-10-25/ai-full-stack.html",
+      "sha256": "1f2da8a6779c5b90a0e485e657aefccba504b874b1eee532acfe2be93a1d651c"
+    }
+  ]
+}

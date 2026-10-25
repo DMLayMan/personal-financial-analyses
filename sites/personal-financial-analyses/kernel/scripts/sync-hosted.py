@@ -4,7 +4,7 @@ import hashlib,json,shutil
 ROOT=Path(__file__).resolve().parents[1]
 SITE=ROOT/'sites/personal-financial-analyses'
 paths=[]
-for directory in ('pfa','knowledge','static','docs','tests','scripts'):
+for directory in ('pfa','knowledge','static','docs','tests','scripts','research'):
     paths.extend(p for p in (ROOT/directory).rglob('*') if p.is_file() and p.suffix in ('.py','.json','.js','.html','.css','.md') and '__pycache__' not in p.parts)
 paths += [ROOT/'fixtures/companies.json',ROOT/'quality/features.json',ROOT/'quality/latest-functional.json',ROOT/'requirements.txt']
 # Include the authored deployment files named in the functional manifest too.

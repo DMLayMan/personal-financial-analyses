@@ -1,0 +1,1175 @@
+{
+  "schema": "pfa.research.ai_models_applications.v1",
+  "as_of": "2026-10-25",
+  "posture": "Sector research evidence handoff; preliminary underwrite; no target prices or ownership recommendation",
+  "public_only": true,
+  "sources": [
+    {
+      "id": "openai-round",
+      "title": "OpenAI financing announcement",
+      "published_at": "2026-03-31",
+      "period": "2026-03-31 snapshot",
+      "url": "https://openai.com/index/accelerating-the-next-phase-ai/",
+      "audit_status": "issuer_claims_no_public_audit",
+      "read_scope": "Financing terms and company-reported monthly revenue; not GAAP annual financials",
+      "primary": true,
+      "body_reviewed": true,
+      "retrieval_status": "web_body_reviewed_raw_download_failed",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "anthropic-round",
+      "title": "Anthropic Series H",
+      "published_at": "2026-05-28",
+      "period": "May 2026 snapshot",
+      "url": "https://www.anthropic.com/news/series-h",
+      "audit_status": "issuer_claims_no_public_audit",
+      "read_scope": "Financing, overlapping prior commitments, revenue run rate and infrastructure agreements",
+      "primary": true,
+      "body_reviewed": true,
+      "sha256": "14e29a288337ad6f8ba0e2afbe8c062d40083a4645b5d2f77e865a118ad4a1c3",
+      "bytes": 170415,
+      "mime": "text/html; charset=utf-8",
+      "retrieval_status": "downloaded",
+      "final_url": "https://www.anthropic.com/news/series-h"
+    },
+    {
+      "id": "anthropic-s1",
+      "title": "Anthropic confidential draft S1",
+      "published_at": "2026-06-01",
+      "period": "2026-06-01 filing announcement",
+      "url": "https://www.anthropic.com/news/confidential-draft-s1-sec",
+      "audit_status": "transaction_announcement",
+      "read_scope": "IPO proposal; no completed offering or listing established",
+      "primary": true,
+      "body_reviewed": true,
+      "sha256": "0447571e3e5b144ddc24c7cdb394aa0b1b6d380f7f1f72823f07767cfe05c23f",
+      "bytes": 158761,
+      "mime": "text/html; charset=utf-8",
+      "retrieval_status": "downloaded",
+      "final_url": "https://www.anthropic.com/news/confidential-draft-s1-sec"
+    },
+    {
+      "id": "xai-acquisition",
+      "title": "xAI joins SpaceX",
+      "published_at": "2026-02-02",
+      "period": "2026-02-02 acquisition",
+      "url": "https://x.ai/news/xai-joins-spacex",
+      "audit_status": "transaction_announcement",
+      "read_scope": "Acquisition identity",
+      "primary": true,
+      "body_reviewed": true,
+      "sha256": "d8dd4074745964ad3bb4bb8c5ea5a8ffa0d8b4e399d3d45b8a1f16a6ca581b7f",
+      "bytes": 123616,
+      "mime": "text/html; charset=utf-8",
+      "retrieval_status": "downloaded",
+      "final_url": "https://x.ai/news/xai-joins-spacex"
+    },
+    {
+      "id": "spacex-ipo",
+      "title": "SpaceX IPO pricing",
+      "published_at": "2026-06-11",
+      "period": "IPO expected to trade 2026-06-12",
+      "url": "https://ir.spacex.com/updates/releases-details/2026/Space-Exploration-Technologies-Corp--Announces-Pricing-of-Initial-Public-Offering/default.aspx",
+      "audit_status": "transaction_announcement",
+      "read_scope": "IPO price, shares, ticker; current price supplied by parent market-data workstream",
+      "primary": true,
+      "body_reviewed": true,
+      "retrieval_status": "web_body_reviewed_raw_download_failed",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "id": "minimax-ipo",
+      "title": "MiniMax IPO allotment results",
+      "published_at": "2026-01-08",
+      "period": "Dealings commencement 2026-01-09",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0108/2026010801342.pdf",
+      "audit_status": "transaction_announcement",
+      "read_scope": "Pages 1-3 identity, share classes and IPO date",
+      "primary": true,
+      "body_reviewed": true,
+      "sha256": "3e3b57fb2e2a121ddd0678801ed80388fb7ec16dbfe9bb899b9c6699822a89fe",
+      "bytes": 1350338,
+      "mime": "application/pdf",
+      "retrieval_status": "downloaded",
+      "final_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0108/2026010801342.pdf"
+    },
+    {
+      "id": "minimax-h1",
+      "title": "MiniMax H1 results",
+      "published_at": "2026-08-26",
+      "period": "Six months ended 2026-06-30",
+      "url": "https://www.minimax.cn/news/minimax-%E5%8F%91%E5%B8%83-2026-%E5%B9%B4%E4%B8%AD%E6%9C%9F%E4%B8%9A%E7%BB%A9-1787744159",
+      "audit_status": "unaudited",
+      "read_scope": "Income statement, business split, adjusted loss bridge and balance sheet",
+      "primary": true,
+      "body_reviewed": true,
+      "sha256": "049f8661297a0dd10cbb5c8eb06c1cf4f6de0201fe1d42003ea8ef6122983e7f",
+      "bytes": 184919,
+      "mime": "text/html; charset=utf-8",
+      "retrieval_status": "downloaded",
+      "final_url": "https://www.minimax.cn/news/minimax-%E5%8F%91%E5%B8%83-2026-%E5%B9%B4%E4%B8%AD%E6%9C%9F%E4%B8%9A%E7%BB%A9-1787744159"
+    },
+    {
+      "id": "zai-h1",
+      "title": "Z.AI H1 results announcement",
+      "published_at": "2026-08-31",
+      "period": "Six months ended 2026-06-30",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0831/2026083101540_c.pdf",
+      "audit_status": "unaudited",
+      "read_scope": "Financial summary and product mix; full operating cash-flow statement not found in this announcement",
+      "primary": true,
+      "body_reviewed": true,
+      "sha256": "d691f249a992de12fde567168d9b0a3260eb2eafe8afdb81850fd828ea250211",
+      "bytes": 2471373,
+      "mime": "application/pdf",
+      "retrieval_status": "downloaded",
+      "final_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0831/2026083101540_c.pdf"
+    },
+    {
+      "id": "zai-financing-terms",
+      "title": "Z.AI placing and convertible terms",
+      "published_at": "2026-09-13",
+      "period": "Agreements dated 2026-09-12",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0913/2026091300025.pdf",
+      "audit_status": "transaction_announcement",
+      "read_scope": "Placing price, zero coupon, USD settlement, maturity and conversion terms",
+      "primary": true,
+      "body_reviewed": true,
+      "sha256": "503a97a5ee5e0c4b2e92a57bd1295cc8f00ea8823992fc2fbf94cbe9403876ae",
+      "bytes": 787336,
+      "mime": "application/pdf",
+      "retrieval_status": "downloaded",
+      "final_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0913/2026091300025.pdf"
+    },
+    {
+      "id": "zai-financing-complete",
+      "title": "Z.AI placing and convertible completion",
+      "published_at": "2026-09-18",
+      "period": "Placing 2026-09-16 and bonds 2026-09-18",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0918/2026091800399.pdf",
+      "audit_status": "transaction_announcement",
+      "read_scope": "All four pages; actual proceeds and pro-forma fully converted share table",
+      "primary": true,
+      "body_reviewed": true,
+      "sha256": "88223adb9b2abf1949844fe57c626fb2bb481aeab739c3655a2433dd292516b1",
+      "bytes": 571527,
+      "mime": "application/pdf",
+      "retrieval_status": "downloaded",
+      "final_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0918/2026091800399.pdf"
+    },
+    {
+      "id": "msft-q4",
+      "title": "Microsoft FY26 Q4 release",
+      "published_at": "2026-07-29",
+      "period": "Quarter and fiscal year ended 2026-06-30",
+      "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+      "audit_status": "earnings_release_not_an_audit_opinion",
+      "read_scope": "P&L, annual/quarter cash flow and investment-gain adjustment disclosures",
+      "primary": true,
+      "body_reviewed": true,
+      "sha256": "55922ef8dd21e98036d031014bcca9eab8acc71af9bda701847222325692f60b",
+      "bytes": 809098,
+      "mime": "text/html; charset=utf-8",
+      "retrieval_status": "downloaded",
+      "final_url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast"
+    },
+    {
+      "id": "msft-call",
+      "title": "Microsoft FY26 Q4 official call",
+      "published_at": "2026-07-29",
+      "period": "FY26 Q4; FY27 and CY26 guidance",
+      "url": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4",
+      "audit_status": "management_statement_and_guidance",
+      "read_scope": "CFO capital-expenditure, useful-life and lease-classification discussion",
+      "primary": true,
+      "body_reviewed": true,
+      "sha256": "5f5cc3a4f9b2da7561262a80804fe0ed4103cea6d1112ca2ebd62266e1e5473f",
+      "bytes": 273638,
+      "mime": "text/html; charset=utf-8",
+      "retrieval_status": "downloaded",
+      "final_url": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4"
+    },
+    {
+      "id": "goog-q2",
+      "title": "Alphabet Q2 SEC earnings exhibit",
+      "published_at": "2026-07-22",
+      "period": "Quarter ended 2026-06-30; TTM June 2026 cash flow",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+      "audit_status": "unaudited",
+      "read_scope": "Income, cash flow, financing and cloud segment tables",
+      "primary": true,
+      "body_reviewed": true,
+      "sha256": "4b1a0b8f2647903924286adfac2a92d7a33cf63b83209f4db15b63a1c7744eef",
+      "bytes": 371608,
+      "mime": "text/html",
+      "retrieval_status": "downloaded",
+      "final_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm"
+    },
+    {
+      "id": "amzn-q2",
+      "title": "Amazon Q2 results",
+      "published_at": "2026-07-30",
+      "period": "Quarter ended 2026-06-30; TTM June 2026 cash flow",
+      "url": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx",
+      "audit_status": "unaudited",
+      "read_scope": "AWS segment, investment income and TTM cash generation",
+      "primary": true,
+      "body_reviewed": true,
+      "retrieval_status": "web_body_reviewed_raw_download_failed",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "id": "meta-q3",
+      "title": "Meta Q3 results",
+      "published_at": "2026-10-21",
+      "period": "Quarter ended 2026-09-30; FY2026 guidance",
+      "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/default.aspx",
+      "audit_status": "unaudited",
+      "read_scope": "Latest released quarter, litigation charge, cash flow and guidance",
+      "primary": true,
+      "body_reviewed": true,
+      "retrieval_status": "web_body_reviewed_raw_download_failed",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "id": "pltr-q2",
+      "title": "Palantir Q2 results",
+      "published_at": "2026-08-03",
+      "period": "Quarter ended 2026-06-30; FY2026 guidance",
+      "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000039/a2026q2ex991pressrelease.htm",
+      "audit_status": "unaudited",
+      "read_scope": "Revenue, commercial/government split, GAAP versus adjusted operating income and cash flow",
+      "primary": true,
+      "body_reviewed": true,
+      "retrieval_status": "official_SEC_body_read_via_web",
+      "prior_attempt": {
+        "url": "https://investors.palantir.com/news-details/2026/Palantir-Reports",
+        "retrieval_status": "downloaded_html_shell_not_full_release",
+        "sha256": "27874b155bd75cb453028d0f21440af0acc2f5c0dd5679b2d1cec69445c47e58",
+        "bytes": 6701
+      },
+      "notes": "根研究者补读正式附件；保留原IR脚本壳失败记录。"
+    },
+    {
+      "id": "now-q2",
+      "title": "ServiceNow Q2 results",
+      "published_at": "2026-07-22",
+      "period": "Quarter ended 2026-06-30",
+      "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-Reports-Second-Quarter-2026-Financial-Results/default.aspx",
+      "audit_status": "unaudited",
+      "read_scope": "AI ACV, revenue, GAAP and non-GAAP margin and free-cash-flow bridge",
+      "primary": true,
+      "body_reviewed": true,
+      "retrieval_status": "web_body_reviewed_raw_download_failed",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "id": "now-calendar",
+      "title": "ServiceNow Q3 date",
+      "published_at": "2026-10-07",
+      "period": "Next earnings scheduled 2026-10-28",
+      "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-to-Announce-Third-Quarter-2026-Financial-Results-on-October-28/default.aspx",
+      "audit_status": "calendar_announcement",
+      "read_scope": "Used to exclude future Q3 results at cutoff",
+      "primary": true,
+      "body_reviewed": true,
+      "retrieval_status": "web_body_reviewed_raw_download_failed",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "id": "crm-q2",
+      "title": "Salesforce FY27 Q2 results",
+      "published_at": "2026-08-26",
+      "period": "Quarter ended 2026-07-31",
+      "url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx",
+      "audit_status": "unaudited",
+      "read_scope": "AI ARR changed scope, acquisitions, investment gains, debt-funded buyback and cash flow",
+      "primary": true,
+      "body_reviewed": true,
+      "retrieval_status": "web_body_reviewed_raw_download_failed",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "id": "adbe-q3",
+      "title": "Adobe FY26 Q3 earnings PDF",
+      "published_at": "2026-09-10",
+      "period": "Quarter ended 2026-08-28",
+      "url": "https://www.adobe.com/cc-shared/assets/investor-relations/pdfs/01906202/au56y4ter.pdf",
+      "audit_status": "unaudited",
+      "read_scope": "Financial statements, AI-first ARR growth without dollar denominator and guidance",
+      "primary": true,
+      "body_reviewed": true,
+      "sha256": "95197d4998ce1675d2148a705cf2df7a128955745349cf21757a193253c3f8b8",
+      "bytes": 251125,
+      "mime": "application/pdf",
+      "retrieval_status": "downloaded",
+      "final_url": "https://www.adobe.com/cc-shared/assets/investor-relations/pdfs/01906202/au56y4ter.pdf"
+    },
+    {
+      "id": "baba-q1",
+      "title": "Alibaba June quarter results",
+      "published_at": "2026-08-20",
+      "period": "Quarter ended 2026-06-30",
+      "url": "https://data.alibabagroup.com/ecms-files/1532295521/fa5d65fc-9b3e-4e82-a8fc-4ce1c3e2c407/Alibaba%20Group%20Announces%20June%20Quarter%202026%20Results.pdf",
+      "audit_status": "unaudited",
+      "read_scope": "New segment structure and recast comparatives, AI Labs loss, cloud profitability, cash flow",
+      "primary": true,
+      "body_reviewed": true,
+      "sha256": "e12a8508845c899f18b2049246470c5da2515fe8212fa16c9a449392e2cfabba",
+      "bytes": 493574,
+      "mime": "application/pdf",
+      "retrieval_status": "downloaded",
+      "final_url": "https://data.alibabagroup.com/ecms-files/1532295521/fa5d65fc-9b3e-4e82-a8fc-4ce1c3e2c407/Alibaba%20Group%20Announces%20June%20Quarter%202026%20Results.pdf"
+    },
+    {
+      "id": "baba-placing",
+      "title": "Alibaba HK share placing completion",
+      "published_at": "2026-08-26",
+      "period": "2026-08-26 completed transaction",
+      "url": "https://www.alibabagroup.com/en-US/document-2029365886510432256",
+      "audit_status": "transaction_announcement",
+      "read_scope": "Completed new ordinary-share issuance and stated use of proceeds",
+      "primary": true,
+      "body_reviewed": true,
+      "sha256": "d289220fd45ca017a6575b0c8c0751fcd71dc93795dbfc15802f25248dc63eef",
+      "bytes": 90371,
+      "mime": "text/html; charset=utf-8",
+      "retrieval_status": "downloaded",
+      "final_url": "https://www.alibabagroup.com/en-US/document-2029365886510432256"
+    },
+    {
+      "id": "tencent-h1",
+      "title": "Tencent H1 results announcement",
+      "published_at": "2026-08-12",
+      "period": "Quarter and six months ended 2026-06-30",
+      "url": "https://www.tencent.com/wp-content/uploads/2026/08/E700_IRA.pdf",
+      "audit_status": "unaudited_interim",
+      "read_scope": "Page17 liquidity; quarterly CFO/Capex/FCF/prepayments; page18 income statement",
+      "primary": true,
+      "body_reviewed": true,
+      "sha256": "6ae9083e568a17ea49c796c5f6d15741a5ab720b0d98e8e97291292a29385119",
+      "bytes": 746938,
+      "mime": "application/pdf",
+      "retrieval_status": "downloaded",
+      "final_url": "https://www.tencent.com/wp-content/uploads/2026/08/E700_IRA.pdf"
+    },
+    {
+      "id": "bidu-q2",
+      "title": "Baidu Q2 results",
+      "published_at": "2026-08-18",
+      "period": "Quarter ended 2026-06-30",
+      "url": "https://ir.baidu.com/news-releases/news-release-details/baidu-announces-second-quarter-2026-results",
+      "audit_status": "unaudited",
+      "read_scope": "AI business categories, cloud sequential change, group cash-flow headers and robotaxi claims",
+      "primary": true,
+      "body_reviewed": true,
+      "retrieval_status": "web_body_reviewed_raw_download_failed",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "dbx-aug",
+      "title": "Databricks August financing and run-rate announcement",
+      "published_at": "2026-08-13",
+      "period": "Latest financing and Q2 run rate",
+      "url": "https://www.databricks.com/company/newsroom/press-releases/databricks-grows-80-yoy-surpasses-7b-revenue-run-rate-scales",
+      "audit_status": "issuer_claims_no_public_audit",
+      "read_scope": "Current $190bn round supersedes February $134bn financing snapshot",
+      "primary": true,
+      "body_reviewed": true,
+      "sha256": "c0204e3b8d505261d1e7f6a9537f4a8fa6af33f314661729f313632e2a00235a",
+      "bytes": 759623,
+      "mime": "text/html; charset=utf-8",
+      "retrieval_status": "downloaded",
+      "final_url": "https://www.databricks.com/company/newsroom/press-releases/databricks-grows-80-yoy-surpasses-7b-revenue-run-rate-scales"
+    },
+    {
+      "id": "snorkel-sep",
+      "title": "Snorkel AI Series E announcement",
+      "published_at": "2026-09-22",
+      "period": "2026-09-22 round",
+      "url": "https://snorkel.ai/blog/data-2-0-and-the-research-era-of-ai-data/",
+      "audit_status": "issuer_claims_no_public_audit",
+      "read_scope": "Funding of data/evaluation layer; not earnings proof",
+      "primary": true,
+      "body_reviewed": true,
+      "sha256": "793f40a3c3a96a17fdf78cb0aa21ef0e0fe03d5ff438e4531a893794973d9e9a",
+      "bytes": 295729,
+      "mime": "text/html; charset=UTF-8",
+      "retrieval_status": "downloaded",
+      "final_url": "https://snorkel.ai/blog/data-2-0-and-the-research-era-of-ai-data/"
+    },
+    {
+      "id": "kingsoft-h1",
+      "title": "金山办公2026半年报",
+      "published_at": "2026-08-20",
+      "period": "Six months ended2026-06-30",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-20/1225482678.PDF",
+      "audit_status": "unaudited",
+      "read_scope": "Pages6,13-14 reported/扣非/company adjusted profit definitions, cash flow and WPS365 revenue",
+      "primary": true,
+      "body_reviewed": true,
+      "sha256": "ec2322dc3a4461eef43045361391c0efe5673794302e329d03c7bbb8a3ad15a4",
+      "bytes": 1332059,
+      "mime": "application/pdf",
+      "retrieval_status": "downloaded",
+      "final_url": "https://static.cninfo.com.cn/finalpage/2026-08-20/1225482678.PDF"
+    },
+    {
+      "id": "iflytek-q3",
+      "title": "科大讯飞2026三季报",
+      "published_at": "2026-10-20",
+      "period": "Q3 and nine months ended2026-09-30",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-20/1225611744.pdf",
+      "audit_status": "unaudited",
+      "read_scope": "All13pages financial summary, share placing and nine-month P&L/cash flow",
+      "primary": true,
+      "body_reviewed": true,
+      "sha256": "a7097be388e098e38640f419ea5c8484748e0aa0f87aa84b5ab647bb1188b9bc",
+      "bytes": 210058,
+      "mime": "application/pdf",
+      "retrieval_status": "downloaded",
+      "final_url": "https://static.cninfo.com.cn/finalpage/2026-10-20/1225611744.pdf"
+    }
+  ],
+  "data_handling": "Every numeric group inherits published date, period, audit status and URL from source_id. USD/RMB/HKD billion unless stated. Source hash establishes consistency only. Raw originals excluded from Git. Company run rate, ACV and ARR are not audited full-year GAAP revenue.",
+  "market_data": "Current prices, market caps, FX and harmonized valuation denominators are owned by the parent market-data lane. No dated private round is a current quoted public EV.",
+  "model_capital_status": [
+    {
+      "name": "OpenAI",
+      "status": "Nonlisted public-market exposure only indirect in retrieved primary evidence; do not treat IPO discussion as completed",
+      "source_ids": [
+        "openai-round"
+      ],
+      "funding": {
+        "committed_USDbn": 122,
+        "post_money_equity_USDbn": 852,
+        "announced": "2026-03-31"
+      },
+      "issuer_metric": {
+        "monthly_revenue_USDbn": 2,
+        "not": "audited annual revenue"
+      },
+      "judgment": "Financing commitments and cloud partners support funding access, but no complete audited cash-burn/obligation bridge; equity terms and actual funded cash remain essential."
+    },
+    {
+      "name": "Anthropic",
+      "status": "Confidential S1 announced; proposed IPO is not a completed listing",
+      "source_ids": [
+        "anthropic-round",
+        "anthropic-s1"
+      ],
+      "funding": {
+        "SeriesH_USDbn": 65,
+        "post_money_equity_USDbn": 965,
+        "included_prior_hyperscaler_commitments_USDbn": 15
+      },
+      "issuer_metric": {
+        "revenue_run_rate_USDbn": 47,
+        "not": "GAAP annual revenue"
+      },
+      "judgment": "Do not add prior commitments twice; large capacity agreements are obligations/availability rather than proof of utilized paid demand."
+    },
+    {
+      "name": "xAI / SpaceX",
+      "status": "xAI acquired 2026-02-02; SpaceX IPO pricing 2026-06-11, SPCX trading expected 2026-06-12; mixed space/connectivity/AI public exposure",
+      "source_ids": [
+        "xai-acquisition",
+        "spacex-ipo"
+      ],
+      "IPO": {
+        "price_USD": 135,
+        "new_ClassA_shares": 555555555
+      },
+      "judgment": "A SpaceX market multiple cannot be assigned wholly to xAI. Standalone xAI operating profitability, intercompany allocations and minority rights require segment-level evidence."
+    },
+    {
+      "name": "MiniMax",
+      "status": "Hong Kong listed 00100; IPO Jan9 2026, dual-class and commercialization-stage flags apply",
+      "source_ids": [
+        "minimax-ipo",
+        "minimax-h1"
+      ],
+      "facts": {
+        "H1_revenue_USDm": 116.573,
+        "H1_gross_profit_USDm": 20.813,
+        "H1_gross_margin_pct": 17.9,
+        "H1_adjusted_loss_USDm": 293.0,
+        "H1_GAAP_loss_USDm": 357.997,
+        "H1_RnD_USDm": 296.87,
+        "cash_equivalents_USDm": 930.905,
+        "reported_broad_cash_balance_USDm": 1322.8,
+        "bank_borrowings_USDm": 133.555
+      },
+      "judgment": "Revenue +283.1% does not close the profitability gap; broad treasury is not unrestricted cash, adjusted loss is not cash burn. API/enterprise share 63.4% changes mix; token volume is not realized net price."
+    },
+    {
+      "name": "Z.AI / 智谱",
+      "status": "Hong Kong listed 02513; future A-share IPO discussions are not an existing A-share security",
+      "source_ids": [
+        "zai-h1",
+        "zai-financing-terms",
+        "zai-financing-complete"
+      ],
+      "facts": {
+        "H1_revenue_RMBm": 953.892,
+        "H1_gross_profit_RMBm": 251.611,
+        "H1_RnD_RMBm": 2131.171,
+        "H1_period_loss_RMBm": 2071.992,
+        "H1_adjusted_loss_RMBm": 1964.138,
+        "API_revenue_RMBm": 825.176,
+        "API_share_pct": 86.5
+      },
+      "capital": {
+        "Sept_placing_new_shares": 21965000,
+        "Sept_placing_HKD_per_share": 714,
+        "Sept_placing_net_HKDbn": 15.66413,
+        "CB_principal_RMBbn": 20.14,
+        "CB_net_proceeds_USDbn": 3.01077,
+        "CB_coupon_pct": 0,
+        "CB_maturity_year": 2027,
+        "CB_initial_conversion_HKD": 892.5,
+        "actual_post_placing_shares": 487588090,
+        "fully_converted_proforma_shares": 513953116
+      },
+      "judgment": "API mix rose as local deployment shrank: GP margin roughly26.4%, adjusted loss widened despite lower headline net loss. Cash financing buys capacity; 2027 USD settlement creates refinancing/FX or dilution risk, rather than free zero-interest capital."
+    },
+    {
+      "name": "DeepSeek",
+      "status": "No verified listed security or current completed financing terms established in retrieved original sources",
+      "source_ids": [],
+      "facts": {},
+      "judgment": "Do not repeat 2025 claims of no outside funding. Conflicting 2026 aggregator/media figures are not admitted; current financing, recognized revenue, cash burn and ownership are unresolved."
+    },
+    {
+      "name": "Databricks",
+      "status": "Private in retrieved evidence, current completed round announced Aug13",
+      "source_ids": [
+        "dbx-aug"
+      ],
+      "facts": {
+        "new_financing_USDbn": 5,
+        "announced_equity_valuation_USDbn": 190,
+        "revenue_run_rate_USDbn": 7
+      },
+      "judgment": "Data/governance/routing can capture spend across models; positive adjusted TTM FCF is an issuer claim without a public full cash bridge. Run-rate and private equity valuation cannot be compared with public EV/GAAP sales without adjustment."
+    }
+  ],
+  "hyperscalers": [
+    {
+      "name": "Microsoft",
+      "tickers": [
+        "MSFT"
+      ],
+      "source_ids": [
+        "msft-q4",
+        "msft-call"
+      ],
+      "currency": "USD",
+      "actual_period": "FY26Q4 ended2026-06-30",
+      "actual": {
+        "revenue_bn": 90.007,
+        "operating_income_bn": 40.603,
+        "CFO_bn": 55.441,
+        "cash_PPE_bn": 35.802,
+        "cash_FCF_derived_bn": 19.639,
+        "reported_capex_including_new_finance_leases_bn": 41,
+        "new_finance_leases_bn": 5.6,
+        "FY26_CFO_bn": 182.935,
+        "FY26_cash_PPE_bn": 115.948,
+        "FY26_cash_FCF_derived_bn": 66.987,
+        "Cloud_GM_pct": 65,
+        "RPO_bn": 678
+      },
+      "guidance": {
+        "CY2026_reported_capex_bn": 175,
+        "prior_reported_guide_bn": 190,
+        "not": "economic capex cut"
+      },
+      "earnings_quality": "Company non-GAAP adjusts OpenAI, but $3.2bn Anthropic gain remains. FY27 building useful lives15->25 years and finance-to-operating lease reclassification change accounting presentation; economic investment stated unchanged. RPO growth84% vs25% excluding OpenAI indicates concentration."
+    },
+    {
+      "name": "Alphabet",
+      "tickers": [
+        "GOOGL",
+        "GOOG"
+      ],
+      "source_ids": [
+        "goog-q2"
+      ],
+      "currency": "USD",
+      "actual_period": "Q2 ended2026-06-30",
+      "actual": {
+        "revenue_bn": 119.8,
+        "Cloud_revenue_bn": 24.8,
+        "Cloud_growth_pct": 82,
+        "net_income_bn": 112.193,
+        "other_income_bn": 97.983,
+        "CFO_bn": 39.069,
+        "cash_PPE_bn": 44.924,
+        "cash_FCF_derived_bn": -5.855,
+        "TTM_CFO_bn": 185.675,
+        "TTM_cash_PPE_bn": 132.402,
+        "TTM_cash_FCF_derived_bn": 53.273,
+        "net_common_stock_proceeds_bn": 30.499,
+        "mandatory_convertible_preferred_proceeds_bn": 19.063,
+        "operating_income_bn": 40.77,
+        "common_stockholders_net_income_bn": 112.107,
+        "preferred_dividend_bn": 0.086,
+        "Cloud_operating_income_bn": 8.814,
+        "Alphabet_level_activities_operating_loss_bn": 5.789
+      },
+      "earnings_quality": "Mark-to-market gains dominate net profit; normalize before P/E. Equity/preferred financing, capital commitments and ordinary-share claims must enter capitalization. $40bn ATM authorization had no sales atJun30; authorization is not cash. Other-income gains are pretax: do not subtract97.983 directly from after-tax112.193; use the specific tax bridge. Cloud segment OP excludes shared Alphabet-level AI R&D and other costs;8.814bn is not independent standalone AI profit. Ordinary equity uses112.107bn after86m preferred dividend, not consolidated112.193bn."
+    },
+    {
+      "name": "Amazon",
+      "tickers": [
+        "AMZN"
+      ],
+      "source_ids": [
+        "amzn-q2"
+      ],
+      "currency": "USD",
+      "actual_period": "Q2 ended2026-06-30 with TTM cash flow",
+      "actual": {
+        "revenue_bn": 200.606,
+        "operating_income_bn": 27.461,
+        "AWS_revenue_bn": 42.232,
+        "AWS_operating_income_bn": 16.621,
+        "AWS_growth_pct": 36.7,
+        "net_income_rounded_bn": 62.6,
+        "pretax_other_income_primarily_Anthropic_bn": 53.4,
+        "TTM_CFO_bn": 161.4,
+        "TTM_FCF_bn": -7.6
+      },
+      "issuer_claims": {
+        "AWS_AI_annualized_business_USDbn_lower_bound": 25,
+        "chips_annualized_business_USDbn_lower_bound": 25,
+        "additive": false
+      },
+      "earnings_quality": "AI and chips run rates overlap and are not separate GAAP segments; Anthropic revaluation cannot fund cash Capex. $220bn CY2026 capex guidance was not tied to an original call in this lane; omitted from verified guide table."
+    },
+    {
+      "name": "Meta",
+      "tickers": [
+        "META"
+      ],
+      "source_ids": [
+        "meta-q3"
+      ],
+      "currency": "USD",
+      "actual_period": "Q3 ended2026-09-30, releasedOct21",
+      "actual": {
+        "revenue_bn": 64.601,
+        "operating_income_bn": 12.988,
+        "litigation_charge_bn": 9.89,
+        "operating_income_ex_charge_derived_bn": 22.878,
+        "CFO_bn": 32.79,
+        "capex_including_finance_lease_principal_bn": 34.91,
+        "FCF_bn": -2.12,
+        "ad_impression_growth_pct": 10,
+        "ad_price_growth_pct": 14
+      },
+      "guidance": {
+        "FY2026_capex_USDbn": [
+          135,
+          145
+        ]
+      },
+      "earnings_quality": "GAAP margin20% includes litigation; charge-adjusted arithmetic35.4% still needs other normalization. AI-driven advertising attribution is management interpretation; all capex is not standalone AI investment."
+    },
+    {
+      "name": "Alibaba",
+      "tickers": [
+        "BABA",
+        "9988.HK"
+      ],
+      "source_ids": [
+        "baba-q1",
+        "baba-placing"
+      ],
+      "currency": "RMB",
+      "actual_period": "Quarter ended2026-06-30; Aug26 financing separately",
+      "actual": {
+        "revenue_bn": 268.953,
+        "AI_Cloud_Compute_revenue_bn": 48.437,
+        "AI_Cloud_Compute_adj_EBITA_bn": 5.628,
+        "AI_Labs_Apps_revenue_bn": 3.338,
+        "AI_Labs_Apps_adj_EBITA_bn": -13.861,
+        "CFO_bn": 22.945,
+        "cash_capex_bn": 67.678,
+        "company_defined_FCF_bn": -44.67,
+        "intersegment_revenue_elimination_bn": 18.27
+      },
+      "capital": {
+        "new_shares_Aug26": 710000000,
+        "placing_HKD_per_share": 112.7,
+        "gross_HKDbn": 80
+      },
+      "earnings_quality": "Segments redefined with recast comparison; do not mix old Cloud Intelligence. Cloud profit coexists with model/apps loss, intersegment eliminations prevent double counting; Aug26 equity funding changes ordinary-share denominator."
+    },
+    {
+      "name": "Tencent",
+      "tickers": [
+        "0700.HK"
+      ],
+      "source_ids": [
+        "tencent-h1"
+      ],
+      "currency": "RMB",
+      "actual_period": "Q2 ended2026-06-30",
+      "actual": {
+        "revenue_bn": 204.785,
+        "operating_profit_bn": 67.276,
+        "attributable_profit_bn": 56.022,
+        "quarter_CFO_rounded_bn": 52.7,
+        "capex_payments_rounded_bn": 59.3,
+        "media_content_payments_rounded_bn": 5.0,
+        "lease_payments_rounded_bn": 2.2,
+        "company_defined_FCF_rounded_bn": -13.8,
+        "FCF_ex_compute_prepayments_company_adjusted_bn": 37.6
+      },
+      "earnings_quality": "Q2 CFO is52.7bn;154.061bn is H1 and cannot substitute. Excluding prepayments explains timing but does not undo the cash payment or establish return; ad/app AI has no separate audited P&L."
+    },
+    {
+      "name": "Baidu",
+      "tickers": [
+        "BIDU",
+        "9888.HK"
+      ],
+      "source_ids": [
+        "bidu-q2"
+      ],
+      "currency": "RMB",
+      "actual_period": "Q2 ended2026-06-30",
+      "actual": {
+        "group_revenue_bn": 31.325,
+        "General_Business_revenue_bn": 25.2,
+        "AI_powered_business_bn": 12.5,
+        "AI_cloud_infra_bn": 7.3,
+        "AI_cloud_yoy_pct": 50,
+        "AI_cloud_qoq_pct": -17,
+        "legacy_business_bn": 10.4,
+        "group_CFO_bn": 3.436,
+        "group_cash_capex_bn": 11.39,
+        "group_FCF_bn": -7.954
+      },
+      "earnings_quality": "AI business+25% coexists with GeneralBusiness−4% and legacy−23%; AI categories are management taxonomy, not all incremental revenue. Robotaxi permits/cities/autonomouskm are not paid-trip cash returns."
+    }
+  ],
+  "applications": [
+    {
+      "name": "Palantir",
+      "ticker": "PLTR",
+      "source_id": "pltr-q2",
+      "period": "Q2June30",
+      "unit": "USD bn",
+      "actual": {
+        "revenue": 1.935464,
+        "growth_pct": 93,
+        "US_commercial": 0.764,
+        "US_commercial_growth_pct": 149,
+        "GAAP_OP": 0.912004,
+        "adjusted_OP": 1.194472,
+        "CFO": 1.216167,
+        "adjusted_FCF": 1.220359
+      },
+      "guidance": {
+        "FY2026_revenue": [
+          8.15,
+          8.158
+        ],
+        "FY2026_adjusted_FCF": [
+          4.5,
+          4.7
+        ]
+      },
+      "judgment": "Strong actual growth/operating profitability supports distribution/ontology/workflow monetization. Total revenue is not AI-only; SBC and government/project concentration remain relevant; valuation must survive slowing growth."
+    },
+    {
+      "name": "ServiceNow",
+      "ticker": "NOW",
+      "source_id": "now-q2",
+      "period": "Q2June30",
+      "unit": "USD bn",
+      "actual": {
+        "revenue": 3.987,
+        "subscription": 3.877,
+        "cRPO": 13.2,
+        "GAAP_OP": 0.162,
+        "adjusted_OP": 1.173,
+        "CFO": 0.587,
+        "cash_capex": 0.114,
+        "raw_cash_FCF_derived": 0.473,
+        "adjusted_FCF": 0.634,
+        "business_combination_cash_addback": 0.161
+      },
+      "issuer_metric": {
+        "AI_ACV_lower_bound": 1,
+        "is_GAAP_AI_revenue": false
+      },
+      "judgment": "Workflow access and governance are potential moat; AI ACV does not prove realized margin. GAAP4% and adjusted29.5% OP margins differ materially; acquisition growth and recurring SBC need bridge. Oct28Q3 is future at cutoff."
+    },
+    {
+      "name": "Salesforce",
+      "ticker": "CRM",
+      "source_id": "crm-q2",
+      "period": "FY27Q2July31",
+      "unit": "USD bn",
+      "actual": {
+        "revenue_rounded": 11.3,
+        "Informatica_revenue_contribution": 0.456,
+        "GAAP_OP_margin_pct": 20.5,
+        "adjusted_OP_margin_pct": 34.1,
+        "CFO": 1.269,
+        "cash_capex": 0.171,
+        "cash_FCF": 1.098,
+        "investment_gains": 2.613,
+        "SBC": 0.906
+      },
+      "issuer_metric": {
+        "Agentforce_Data360_ARR_approx": 3.9,
+        "Agentforce_ARR_lower_bound": 1.5,
+        "changed_scope": "FromQ2 includesSlackbotandHeadless360"
+      },
+      "capital": {
+        "debt_financed_ASR": 25
+      },
+      "judgment": "Growth11% contains roughly4pointsInformatica. Expanded AI ARR is not a clean like-for-like adoption series; buybacks and investment gains can lift EPS while ordinary operating growth is weaker."
+    },
+    {
+      "name": "Adobe",
+      "ticker": "ADBE",
+      "source_id": "adbe-q3",
+      "period": "FY26Q3Aug28",
+      "unit": "USD bn",
+      "actual": {
+        "revenue": 6.76,
+        "GAAP_OP": 2.354,
+        "nonGAAP_OP": 2.97,
+        "CFO": 2.52,
+        "RPO": 22.16
+      },
+      "issuer_metric": {
+        "AI_first_ARR_growth_pct_lower_bound": 150,
+        "AI_ARR_dollar_denominator_disclosed": false
+      },
+      "judgment": "AI features can strengthen format/workflow distribution but model-native creation threatens seats and pricing. Need net paid retention and incremental ARPU, not product MAU or ARR percentage without base."
+    },
+    {
+      "name": "金山办公",
+      "ticker": "688111.SH",
+      "source_id": "kingsoft-h1",
+      "period": "H1 ended2026-06-30",
+      "unit": "RMB bn",
+      "actual": {
+        "revenue": 3.3132625992,
+        "revenue_growth_pct": 24.69,
+        "attributable_profit": 2.51759433093,
+        "attributable_profit_growth_pct": 236.94,
+        "profit_ex_nonrecurring": 2.48737543121,
+        "company_adjusted_attributable_profit": 1.0867968,
+        "company_adjusted_profit_growth_pct": 28.29,
+        "CFO": 0.64269327351,
+        "CFO_growth_pct": -12.96,
+        "WPS365_revenue": 0.4966542,
+        "WPS365_revenue_growth_pct": 60.84
+      },
+      "earnings_quality": "扣非 profit still contains large fund-related investment income; company adjusted profit removes SBC, fund investment gains and related tax, so it is not an automatically accepted owner-earnings figure. Management says investment-gain prepaid income tax depressed cash flow; actual cash remains paid. WPS365 is an AI/collaboration bundle, not pure incremental AI revenue.",
+      "judgment": "Existing workflow and paid subscriptions support a distribution moat; quantify net AI upsell and inference cost before attributing bundle growth to AI. Use normalized core earnings rather than the headline237% net-profit growth."
+    },
+    {
+      "name": "科大讯飞",
+      "ticker": "002230.SZ",
+      "source_id": "iflytek-q3",
+      "period": "Q3 and9M ended2026-09-30",
+      "unit": "RMB bn",
+      "actual": {
+        "Q3_revenue": 6.56446350859,
+        "Q3_revenue_growth_pct": 7.99,
+        "Q3_attributable_profit": 0.22572804054,
+        "Q3_profit_ex_nonrecurring": -0.12613141994,
+        "9M_revenue": 18.18723650346,
+        "9M_revenue_growth_pct": 7.05,
+        "9M_attributable_profit": 0.02188721144,
+        "9M_profit_ex_nonrecurring": -0.76299921937,
+        "9M_CFO": 0.26408801565,
+        "9M_cash_longterm_assets": 3.47782081971,
+        "9M_cash_after_longterm_assets_derived": -3.21373280406,
+        "9M_financing_cash_net": 6.05893852711
+      },
+      "capital": {
+        "new_shares_Apr24": 90232348,
+        "issue_price_RMB": 44.33,
+        "net_placing_RMBbn": 3.98055249391,
+        "post_placing_shares": 2402079841
+      },
+      "judgment": "Headline9M profit turns positive while扣非 remains negative and CFO barely covers a fraction of cash long-term investment. Funded liquidity is distinct from end-user profitability; education/medical/model/consumer mix, government receivables and capitalized development require further bridge. No all-company revenue equals standalone model sales assertion."
+    }
+  ],
+  "layer_economics": [
+    {
+      "layer": "Foundation models / open weights / API",
+      "rent_now": "Product scarcity, brand, coding/enterprise distribution and model-specific task success can support premium pricing; public loss data show revenue growth alone has not proven durable excess returns.",
+      "listed_direct": [
+        "00100.HK MiniMax",
+        "02513.HK Z.AI"
+      ],
+      "listed_indirect": [
+        "MSFT",
+        "AMZN",
+        "GOOGL",
+        "META",
+        "BABA/9988.HK",
+        "BIDU/9888.HK",
+        "0700.HK",
+        "SPCX mixed SpaceX/xAI"
+      ],
+      "valuation": "Bridge ordinary equity to existing debt, preferred, lease and CB claims; separately model compute-prepayment assets/customer prepayment obligations, committed fulfillment costs and future funding/dilution scenarios. Undrawn capacity and all prepayments are not automatically current EV debt. Avoid charging the same future cost in both EV bridge and DCF. Sustainable gross profit/cohort contribution and cash runway precede EV/sales; private postmoney is not EV.",
+      "strongest_counter": "Better models, inference optimization and enterprise contracts could make contribution improve faster than price erosion; today’s training burn may seed scale economics.",
+      "falsifier": "Realized net price falls faster than cost per accepted task while external paid revenue/retention fail to compensate; capital requirement outgrows funded unrestricted resources."
+    },
+    {
+      "layer": "Data, middleware, inference optimization, evaluation and security",
+      "rent_now": "Data access, lineage, policy, observability and cross-model cost routing become scarce when raw inference commoditizes. Generic orchestration can be bundled away.",
+      "private_examples": [
+        "Databricks",
+        "Snorkel AI",
+        "LangChain (financials not verified)"
+      ],
+      "listed_examples": [
+        "SNOW",
+        "MDB",
+        "ESTC",
+        "688111.SH 金山办公 (mixed applications exposure; financial AI split not verified)",
+        "002230.SZ 科大讯飞 (mixed models/devices/software; financial AI split not verified)"
+      ],
+      "valuation": "Consumption revenue net of underlying cloud/model pass-through, NRR and GP/FCF, integration and switching costs; avoid counting resold inference twice.",
+      "strongest_counter": "Cloud/model vendors can bundle tooling, open-source components lower switching costs and usage growth can carry low gross profit.",
+      "falsifier": "Usage/queries rise without retained net revenue or GP; multi-cloud customer adoption stagnates; acquisition rather than organic expansion explains growth."
+    },
+    {
+      "layer": "Enterprise workflow / agents / vertical software",
+      "rent_now": "Installed distribution, permissions, proprietary operational context, action rights and accountable ROI can retain rent. Thin prompt/UI wrappers lack protection.",
+      "listed_examples": [
+        "PLTR",
+        "NOW",
+        "CRM",
+        "ADBE",
+        "688111.SH",
+        "002230.SZ"
+      ],
+      "valuation": "Organic ARR/revenue, gross/net retention, seat and ARPU decomposition, accepted-task contribution, normalized OP/FCF after SBC/dilution and implementation support.",
+      "strongest_counter": "Frontier labs enter the workflow, agents reduce seats and usage pricing transfers productivity savings to buyers.",
+      "falsifier": "AI ARR grows through scope changes/acquisitions while organic net retention or per-task economics deteriorate; customers do not renew once pilots end."
+    },
+    {
+      "layer": "Consumer, ads, commerce and search",
+      "rent_now": "Distribution, recommendation data and ad auctions monetize AI indirectly; cash profits can fund training/app subsidies.",
+      "listed_examples": [
+        "META",
+        "GOOGL",
+        "0700.HK",
+        "9988.HK",
+        "9888.HK"
+      ],
+      "valuation": "Incremental ad yield/conversion and user retention versus total inference/acquisition costs; normalize investment gains and legal/tax effects.",
+      "strongest_counter": "AI substitutes for search/commerce clicks, inference expense rises faster than monetization, and regulation/IP can impair distribution.",
+      "falsifier": "Engagement grows but paid conversion/revenue per inference and free cash deteriorate after cohort and mix controls."
+    },
+    {
+      "layer": "Embodied / edge AI / robotics / autonomy",
+      "rent_now": "No uniform proof of scaled profitable humanoid demand; robotics platforms must bridge hardware reliability, field labor and regulation.",
+      "listed_examples": [
+        "BIDU/9888.HK robotaxi",
+        "TSLA mixed autos/energy/autonomy",
+        "UBTECH 9880.HK (financials not extracted)",
+        "Horizon Robotics 9660.HK (financials not extracted)",
+        "300024.SZ 机器人 and002747.SZ 埃斯顿 (industrial automation; not pure humanoid revenue)"
+      ],
+      "valuation": "Paid deployments/order acceptance -> intervention minutes/uptime -> all-in cost per productive hour/trip -> warranty, insurance and replacement fleet Capex -> after-financing FCF. Stage gates and SOTP rather than TAM times arbitrary share.",
+      "strongest_counter": "Foundation-policy improvements and cheap hardware may accelerate adoption rapidly, but demo autonomy and shipped units do not show paid customer ROI.",
+      "falsifier": "Paid deployments lack verified customer acceptance, collections or renewals; order cancellation rights are unknown or extensive; supervision, useful-life or reliability assumptions fail. Lack of deposits alone does not invalidate an otherwise legitimate enterprise order."
+    }
+  ],
+  "unit_economics": {
+    "type": "illustrative_assumptions_not_company_forecasts",
+    "model_formula": "Contribution per token = realized net price - variable cost. Gross margin = contribution / realized net price.",
+    "examples": [
+      {
+        "base_price": 1,
+        "base_cost": 0.7,
+        "price_change_pct": -50,
+        "cost_change_pct": -80,
+        "new_price": 0.5,
+        "new_cost": 0.14,
+        "base_contribution": 0.3,
+        "new_contribution": 0.36,
+        "new_GM_pct": 72
+      },
+      {
+        "base_price": 1,
+        "base_cost": 0.7,
+        "price_change_pct": -70,
+        "cost_change_pct": -40,
+        "new_price": 0.3,
+        "new_cost": 0.42,
+        "new_contribution": -0.12
+      }
+    ],
+    "application_formula": "All-in accepted task cost=(tokens + tools + infrastructure + review + expected failure/remediation cost)/accepted completion probability. Compare against customer incremental value; token price alone is insufficient.",
+    "judgment": "Lower inference prices can widen app contribution, expand demand and move rent from models to workflows; equally, it can cannibalize API revenue and hardware utilization. Direction depends on demand elasticity, cost reduction, task reliability and financing."
+  },
+  "capital_cycle": {
+    "mechanism": "Supplier invests equity/credit in model customer -> customer commits to cloud -> cloud books backlog/receivables -> hyperscaler buys chips/power -> vendors recognize revenue. These are linked cash flows, not independent final demand.",
+    "concrete_evidence": [
+      "OpenAI round lists hyperscalers and compute suppliers; committed capital not all funded cash",
+      "Anthropic SeriesH includes prior Amazon/hyperscaler commitments; avoid duplicate financing",
+      "Microsoft RPO growth84% vs25% excludingOpenAI",
+      "Amazon/Alphabet investment markups materially inflate net earnings",
+      "Alibaba new AI segments show cloud profit plus app loss with intersegment eliminations"
+    ],
+    "not_concluded": "Cross-investment alone does not prove fake revenue or fraud; require related-party, contract termination, credit, collection and outside-customer demand evidence.",
+    "downside_chain": "Paid demand misses -> model losses and down-rounds -> customer financing fails -> compute contract renegotiation/default -> cloud collection/backlog disappointment -> GPU residual collateral falls -> secured funding haircuts -> forced asset sales -> capacity price falls and equity dilution."
+  },
+  "research_judgment": {
+    "direction": "Positive on AI usage and selected distribution/workflow monetization; mixed on durable model profits and public-equity returns at current capital claims; no uniform sector buy view.",
+    "decision_hinge": "How much final external customer cash survives all compute/training, renewal and financing obligations per ordinary diluted share?",
+    "where_rent_is_visible": "AWS/other cloud operating income, installed software and ad distribution have current reported profit; stand-alone listed model labs show large losses. Neither observation guarantees future rank or investment return.",
+    "confidence": "High on arithmetic and disclosed transaction identity subject to review scope; medium on causal economic interpretations; low/unproven on future pricing power, model gross margins and investment performance. No numerical win probability assigned.",
+    "underwriting_gate": "Before a positive ownership conclusion, parent must combine current prices, diluted capital/EV including new financing, normalized earnings and cash economics, then stress price/mix, capacity utilization, hardware lives and funding closure. Research collection is not a completed forecast model.",
+    "master_investor_crosscheck": {
+      "Buffett_Munger_lens": "Circle of competence, cash earning power, durable moat, reinvestment returns, management capital allocation and margin of safety: model leaderboard/user counts do not answer owner earnings.",
+      "Graham_lens": "Separate security price from business narrative; prefer balance-sheet survivability and evidenced earning power over financing valuation anchoring.",
+      "Fisher_lens": "Long runway and product strength matter only with customer evidence, sales efficiency and disciplined economics.",
+      "limitation": "Analyst application of principles, not claims that any master has reviewed these firms or endorsed this conclusion."
+    }
+  },
+  "monitoring": [
+    {
+      "question": "Does AI adoption pay for itself?",
+      "observations": [
+        "External net paid revenue/cohort retention",
+        "Net inference price versus variable cost and accepted-task cost",
+        "Training R&D, leases, prepayments and cash consumption"
+      ],
+      "trigger": "If claimed usage/ARR accelerates while like-for-like revenue, GP or cash conversion worsens, reopen pricing/mix/subsidy thesis; do not upgrade automatically."
+    },
+    {
+      "question": "Is cloud demand financially independent and collectible?",
+      "observations": [
+        "RPO excluding frontier labs",
+        "Customer concentration and term/cancellation/credit clauses",
+        "Receivables/collections versus billings",
+        "Customer funding and actual capacity utilization"
+      ],
+      "trigger": "Backlog rises with collection deterioration or customer financing stress -> discount cash timing and review committed buildout; contractual commitment is not collected revenue."
+    },
+    {
+      "question": "Are adjusted metrics hiding cash or dilution?",
+      "observations": [
+        "GAAP to issuer-adjusted to analyst-normalized bridges",
+        "SBC and total diluted shares",
+        "Stock/preferred/CB/debt/lease transactions",
+        "Depreciation useful-life and finance/operating lease changes"
+      ],
+      "trigger": "Any new share or preferred/convertible claim, debt-funded buyback or accounting-life change requires refreshed ordinary-equity/cash bridge before valuation comparison."
+    },
+    {
+      "question": "Can frontier/private risks spill over to public suppliers?",
+      "observations": [
+        "Private round funded cash/conditions/preference terms",
+        "CB and secured-debt maturities",
+        "Collateral haircuts/GPU residual pricing",
+        "Compute prepay refundability and supplier obligations"
+      ],
+      "trigger": "Funding terms tighten, major counterparty cannot finance commitment, or collateral falls -> scenario loss of utilization/refinancing rather than assume perpetual backlog conversion."
+    },
+    {
+      "question": "Are operational agents/robots economically real?",
+      "observations": [
+        "Paid accepted outcomes rather than tool calls/km/demos",
+        "Human review and intervention burden",
+        "Liability/insurance/warranty/replacement cost",
+        "Cohort renewals and customer net ROI"
+      ],
+      "trigger": "Accepted task or productive hour cost fails customer alternative after supervision -> reduce scale/profit assumptions even when benchmark score improves."
+    }
+  ],
+  "missing_sources": [
+    {
+      "type": "not_obtained",
+      "item": "DeepSeek current completed financing, revenue, cash-flow, shareholder/valuation originals",
+      "effect": "No verified financial comparison or direct investment status claim; no stale no-outside-funding assumption."
+    },
+    {
+      "type": "not_obtained",
+      "item": "OpenAI/Anthropic full audited consolidated statements, detailed unit costs, liquidation terms and compute contract obligations",
+      "effect": "Monthly/annualized run rates and financing values cannot establish GAAP margin, funded runway or owner value."
+    },
+    {
+      "type": "body_exists_not_fully_extracted",
+      "item": "SpaceX 424B4 public body exceeds web tool length; full xAI segment financing and integration economics not extracted",
+      "effect": "IPO identity is confirmed through issuer release; standalone xAI valuation not supported."
+    },
+    {
+      "type": "not_extracted",
+      "item": "Z.AI full H1 cash flow and post-financing cash commitments; 2027 CB full redemption/FX schedule",
+      "effect": "Do not divide cash by adjusted loss for runway or assume mandatory conversion; title/initial terms and completion verified."
+    },
+    {
+      "type": "not_obtained",
+      "item": "Exact original Amazon CY2026 $220bn capex guidance transcript",
+      "effect": "Do not include $220bn as verified guidance; actual TTM cash figures available."
+    },
+    {
+      "type": "not_obtained",
+      "item": "Independent AI end-customer ROI/control tests, net price/cost per accepted task, project cohort returns",
+      "effect": "Management AI attribution and future margin/ROIC remain unproven."
+    },
+    {
+      "type": "not_extracted",
+      "item": "SNOW/MDB/ESTC and UBTECH/Horizon/industrial robotics issuer financial splits",
+      "effect": "Names indicate exposure map only; no assertion that all revenues/profits are AI or securities are attractively valued."
+    },
+    {
+      "type": "future_not_verifiable",
+      "item": "Durable frontier-model leadership, demand elasticity, 2027 refinancing/IPO outcome, future accepted-task economics",
+      "effect": "Maintain scenarios and falsifiers, no fabricated numerical confidence or forecasts."
+    },
+    {
+      "type": "market_data_separate_workstream",
+      "item": "Harmonized spot prices, EV/capital bridge, float/ownership, short interest, consensus",
+      "effect": "Parent integrates dated market snapshot; child figures alone are not current valuation or target price."
+    }
+  ],
+  "verification": {
+    "type": "public development/research check, not blind test or independent institution review",
+    "checks": [
+      "Published dates all <=2026-10-25",
+      "Actual periods and forward guidance separated",
+      "MSFT quarter55.441−35.802=19.639; annual182.935−115.948=66.987",
+      "GOOG Q2 39.069−44.924=−5.855; TTM185.675−132.402=53.273",
+      "META32.79−34.91=−2.12; litigation-adjusted OP12.988+9.89=22.878",
+      "NOW0.587−0.114=0.473; adjusted0.634diff0.161",
+      "CRM1.269−0.171=1.098",
+      "BIDU group3.436−11.390=−7.954 RMBbn, not USD columns",
+      "ZAI487588090+26365026=513953116 fully converted, not all shares already issued",
+      "Private revenue run rate and ACV not entered as GAAP annual revenue",
+      "New BABA segments and issuer metrics definition changes explicitly retained"
+    ],
+    "adversarial_corrections": [
+      "Consolidated vs common-shareholder Alphabet profit distinguished; pretax gain normalization requires tax bridge",
+      "Shared group R&D not assumed allocated into cloud profit",
+      "Prepayments and future financing not blanket-added as debt to current EV; prevent DCF double charge",
+      "Enterprise orders need acceptance/collections/cancelability evidence; absence of deposit alone is not false demand",
+      "金山扣非 is not equivalent to core normalized earnings; 讯飞cash investment and dilution retained"
+    ],
+    "raw_archive_scope": {
+      "original_full_downloads": 19,
+      "html_shell_downloads": 1,
+      "web_reviewed_but_raw_failed": 8,
+      "limitation": "Raw hashes establish consistency, not extraction validity. PLTR returned a JS shell and is not treated as the full release."
+    }
+  }
+}

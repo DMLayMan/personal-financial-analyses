@@ -701,6 +701,45 @@
       "method_review": "工程与控制审查；独立专业判断及投资效果未验证",
       "research_decision_ready": false,
       "permitted_use": "个人证据研究及示例情景"
+    },
+    {
+      "id": "F22",
+      "name": "比亚迪深度研究与AI全栈资本研究",
+      "status": "implemented_partial_research",
+      "decision": "在既有框架下区分业务景气、现金/融资、证券价格与未知，形成可追踪的专题研究",
+      "inputs": "截止2026-10-25的公司原始披露、官方政策/能源资料、官方融资上市公告、同日公开行情与已明确的情景假设",
+      "output": "两份完整可读HTML研究报告、资本层级地图、证据与假设来源登记、反方和跟踪清单",
+      "implementation_paths": [
+        "research/2026-10-25/contract.json",
+        "scripts/build_focus_reports.py",
+        "pfa/publications.py",
+        "docs/quality/focus-research-2026-10-25.md"
+      ],
+      "automated_tests": [
+        "test_focus_research.FocusResearch.test_byd_cash_and_share_bridges",
+        "test_focus_research.FocusResearch.test_continuous_ttm_and_no_future_financial_inputs",
+        "test_focus_research.FocusResearch.test_market_identity_dates_and_currency",
+        "test_focus_research.FocusResearch.test_unit_cost_includes_capital_and_utilization",
+        "test_focus_research.FocusResearch.test_reports_bound_to_catalog_and_failure_routes",
+        "test_focus_research.FocusResearch.test_capital_identity_and_unresolved_evidence_preserved"
+      ],
+      "failure_modes": [
+        "未来财报和待生效政策被写成已实现",
+        "A/H股本与币种或ADR换算错误",
+        "ARR/承诺融资/未实现投资收益冒充营业收入与现金",
+        "产业链收入层层加总成终端需求",
+        "缺行业预测和资本桥却给目标价"
+      ],
+      "acceptance": "重要事实可追原文及公开日；可复算BYD现金/EPS/股本桥与情景；AI覆盖能源至应用且区分上市、私募、融资与经营；不以工程测试替代投资效果",
+      "next_work": "逐公司完全稀释资本桥、正常化盈利、客户ROI和独立审议；按后续财报新增版本，不覆盖v1。",
+      "references": [
+        "Q1",
+        "Q10",
+        "Q15"
+      ],
+      "method_review": "同一AI体系交叉研究，非独立机构签字；预测未校准",
+      "research_decision_ready": false,
+      "permitted_use": "个人深度公司/行业研究与条件敏感性"
     }
   ]
 }

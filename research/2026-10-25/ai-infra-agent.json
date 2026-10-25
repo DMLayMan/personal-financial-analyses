@@ -1,0 +1,855 @@
+{
+  "metadata": {
+    "title": "AI行业基础设施：能源—机房—半导体—算力租赁",
+    "cutoff": "2026-10-25 Asia/Shanghai",
+    "market_reference_date": "2026-10-23",
+    "language": "zh-CN",
+    "role": "infrastructure research lane; merge with models/applications and market-price lane",
+    "sources_read": "Primary documents opened/read; PDFs locally extracted where download succeeds; SEC CompanyFacts public facts checked against issuer releases",
+    "use_boundary": "个人中长期证券研究。事实核验通过不代表投资结论、估值或预测已经验证；无仓位、无自动交易，无经校准概率。"
+  },
+  "overall_judgment": {
+    "direction": "产业需求正向；股权回报需分层，当前不支持全产业一揽子追涨或确定性目标价。",
+    "thesis": "2026年处在算力需求、物理瓶颈与融资驱动产能扩张交叠阶段。芯片/存储/配电冷却的真实经营利润已出现；其规模不能单独证明下游终端AI已经创造同量利润。应沿付费终端需求、云现金回报、设备制造、供电交付和融资现金流逐层勾稽。",
+    "conviction": {
+      "reported_facts": "high for opened filed tables; latest-release cutoff enforced",
+      "causal_mechanism": "medium; physical dependencies clear but company AI segmentation and contract economics incomplete",
+      "security_price_upside": "not underwritten; no calibrated confidence percentage"
+    },
+    "three_decisive_checks": [
+      "能交付电力与投用容量，是否转成可计费GPU小时/机架与现金回收。",
+      "真实运营利润与现金，是否被投资公允价值收益、客户预付、股权激励/调整项掩盖。",
+      "增长的每一单位资本由谁出、谁承担闲置/技术淘汰/利率风险、最后给普通股留下多少。"
+    ]
+  },
+  "energy_anchor": {
+    "source_ids": [
+      "IEA26"
+    ],
+    "fact_or_estimate": "IEA对2025年全数据中心用电的估计，不是独立电表全量统计",
+    "global_DC_electricity_2025_TWh": 485,
+    "forecast_2030_TWh": 950,
+    "forecast_2030_share_global_power_pct": 3,
+    "do_not_mix": [
+      "全数据中心 vs AI专用",
+      "全球 vs 美国/中国",
+      "服务器IT用电 vs 包含冷却/配电的设施用电",
+      "平均TWh能量 vs 峰值GW功率/区域并网容量",
+      "合同/规划GW vs 已通电/已计费容量",
+      "全公司Capex vs 纯AI/实际现金Capex/融资租赁"
+    ],
+    "revision": "950TWh来自2026-04更新；2025旧报告945TWh不是本轮最新。"
+  },
+  "layers": [
+    {
+      "layer": "能源、电网、储能与并网",
+      "economic_unit": "本地可交付MW、小时与合同净电价；供电稳定性/并网权比全球能耗总量更贴近利润。",
+      "profit_pool": "已有核电/燃气稀缺电力、输配电设备、系统服务；储能来自峰谷/容量/辅助服务和设备收入，不是凭空生产基荷。",
+      "market_stage": "发电合同与设备订单扩张；新电站和核电重启需多年Capex、许可和融资，远期合同折现且风险分配不同。监管公用事业的获准ROE逻辑与商用电厂不同。",
+      "bottlenecks": [
+        "电网接入与变压器/开关设备交期",
+        "燃机制造、燃料与排放/场地许可",
+        "24/7可用性，液冷及水资源约束"
+      ],
+      "representatives": [
+        "CEG.US",
+        "GEV.US",
+        "ETN.US",
+        "BYD 01211.HK/002594.SZ储能仅交叉，详比亚迪报告"
+      ],
+      "leading_indicators": [
+        "已批准与实际通电MW；取消/延期项目",
+        "PPA起始年、期限、固定/浮动价、可用性/违约责任",
+        "订单与产位预约转化、预付款和施工进度"
+      ],
+      "failure_transmission": "电力迟到使GPU闲置/确认收入延后，但设备债和租金可能先到期；成本也可能被合约转给客户，需逐合同判断。",
+      "source_ids": [
+        "IEA26",
+        "CEG26Q2",
+        "GEV26Q2"
+      ]
+    },
+    {
+      "layer": "数据中心供配电、UPS、机柜与冷却",
+      "economic_unit": "每MW或每机架设备收入、安装服务、维保/备件，减制造交付、现场缺陷和保修成本。",
+      "profit_pool": "认证可靠性、系统集成、替换件及服务；高密度机架增加单机价值但不能假定供应商比例永远上升。",
+      "market_stage": "真实盈利与扩产并存，预付款支持库存和交付；美股高订单和A股竞争利润压力可以同时成立。",
+      "bottlenecks": [
+        "配电设备交期与现场施工",
+        "高密度热管理/液冷泄漏、兼容性和客户认证",
+        "工厂扩产后供需周期反转"
+      ],
+      "representatives": [
+        "VRT.US",
+        "ETN.US",
+        "002837.SZ英维克"
+      ],
+      "leading_indicators": [
+        "有机收入/订单/积压转收入率",
+        "客户预收与库存/应收变动",
+        "液冷业务毛利而非单纯液冷收入、保修/退货、交期/价格"
+      ],
+      "source_ids": [
+        "VRT26Q2",
+        "ETN26Q2",
+        "ENVICOOL26H1"
+      ]
+    },
+    {
+      "layer": "GPU/ASIC/CPU系统与网络芯片",
+      "economic_unit": "可交付系统数量×实际ASP/毛利，减晶圆、HBM、封装、良率损失、互连和软件支持。客户以每任务/每可用token成本选择系统。",
+      "profit_pool": "架构生态、编译器/内核、集群可靠性、先进芯片与网络协同；定制ASIC可转移利润池但并非每个工作负载都经济。",
+      "market_stage": "巨额经营利润已形成，客户集中和代际转型/出口/融资循环放大变动；总公司GAAP利润和投资收益须拆分。",
+      "bottlenecks": [
+        "设计、工具链/算子迁移与用户采用",
+        "先进节点、HBM、封装和系统供应同步",
+        "集群吞吐/延迟/可用性，非峰值FLOPS"
+      ],
+      "representatives": [
+        "NVDA.US",
+        "AVGO.US",
+        "AMD.US观察名单",
+        "688041.SH海光"
+      ],
+      "leading_indicators": [
+        "订单取消/交付、实际收费利用率与租价",
+        "毛利、应收/库存/预付、客户融资来源",
+        "ASIC量产客户集中、单项目生命周期、性能/能效第三方实测"
+      ],
+      "source_ids": [
+        "NVDA27Q2",
+        "AVGO26Q3",
+        "HYGON26Q3"
+      ]
+    },
+    {
+      "layer": "代工、先进封装、HBM/存储与光互连",
+      "economic_unit": "合格晶圆/封装/内存位元/端口×ASP，减良率成本及折旧；不能把不同层收入加总为终端AI市场。",
+      "profit_pool": "制程/封装良率与认证形成门槛；HBM位元需求/堆叠和光连接升级可提高内容量，短缺不保证永续利润。",
+      "market_stage": "稀缺扩产与高周期利润阶段；同时面临客户议价、软件效率/架构改型及未来产能过剩。",
+      "bottlenecks": [
+        "先进节点与封装、HBM测试认证",
+        "制造工具/海外扩产成本和地缘",
+        "光链路的良率、散热、客户认证及代际替换"
+      ],
+      "representatives": [
+        "TSM.US/2330.TW",
+        "MU.US",
+        "000660.KR SK hynix观察名单",
+        "300308.SZ中际旭创、300502.SZ新易盛为后续待核验名单"
+      ],
+      "leading_indicators": [
+        "先进节点/封装排期与利用率、单位良率成本",
+        "库存、DRAM/NAND/HBM ASP与位元出货、LTAs条件",
+        "800G/1.6T真实交付占比、客户认证与每端口毛利"
+      ],
+      "limitations": "本轮光模块未完成最新原始财报/价格及AI分部勾稽；港股半导体非自动等价领先节点AI代工。",
+      "source_ids": [
+        "TSMC26Q3",
+        "TSMC26CALL",
+        "MU26FY",
+        "IEA26"
+      ]
+    },
+    {
+      "layer": "机房托管与GPU云/算力租赁",
+      "economic_unit": "托管以可用面积/千瓦、上架和合同单位回报；GPU云以可服务GPU小时、付费利用率/保留容量收费和租价，扣电费、机房租赁、人员、折旧替换与融资。",
+      "profit_pool": "电力/场址控制、交付速度、可靠性/调度及客户连接；低价融资与长期合同可能决定谁保留股权回报。",
+      "market_stage": "规模高增长与巨大融资需求并存，股权、可转债、设备债、客户预付和租赁共同扩产，收入倍数不代表股权便宜。",
+      "bottlenecks": [
+        "通电交付/合同起租时点",
+        "大客户信用、机型经济寿命/残值",
+        "利率/再融资、客户与供应商投资交叉"
+      ],
+      "representatives": [
+        "CRWV.US",
+        "GDS.US/09698.HK",
+        "MSFT/AMZN/GOOGL、BABA/腾讯详平台模型线"
+      ],
+      "leading_indicators": [
+        "已通电vs已计费容量与paid utilization",
+        "租价/续约/客户集中、提前终止条款、违约责任",
+        "CFO扣预收、Capex及设备融资桥、债务到期/浮息、稀释和未起租承诺"
+      ],
+      "source_ids": [
+        "CRWV26Q2",
+        "CRWV26Q2FILING",
+        "GDS26Q2"
+      ]
+    }
+  ],
+  "company_anchors": [
+    {
+      "name": "NVIDIA",
+      "symbols": [
+        "NVDA.US"
+      ],
+      "source_ids": [
+        "NVDA27Q2",
+        "NVDA26FY"
+      ],
+      "actual": {
+        "period": "FY27Q2 ended2026-07-26",
+        "currency": "USD bn except EPS/percent",
+        "revenue": 96.221,
+        "data_center_revenue": 89.0,
+        "gaap_gross_margin_pct": 75.0,
+        "gaap_eps": 2.46,
+        "adjusted_eps": 2.22
+      },
+      "guidance": {
+        "period": "FY27Q3",
+        "revenue_usd_bn": 108,
+        "range_pct": 2,
+        "China_DC_compute_assumed": false
+      },
+      "ttm": {
+        "through": "2026-07-26",
+        "USD_bn": {
+          "revenue": 302.97,
+          "gaap_net_income": 192.88,
+          "operating_income": 197.579,
+          "CFO": 134.36,
+          "CFO_less_PPE_intangibles_and_principal": 126.886,
+          "pre_tax_equity_security_gains": 30.552
+        },
+        "sum_quarter_gaap_eps": 7.91
+      },
+      "normalization": "GAAP利润含重大股权投资收益。FY27非GAAP已纳入股权激励，老FY26公告原始调整口径不同；不能拼接老调整EPS。H1 CFO74.421bn低于净利118.010bn，应检查应收/库存/预付及投资现金流。",
+      "capital_market_judgment": "平台、软硬件生态与系统交付是现存优势；价格包含进一步放量/利润持续要求。不能因报告期GAAP P/E下降判便宜。公司与客户的融资/投资关联需要穿透，但不直接证明收入虚假。",
+      "kill_test": "付费终端需求弱而云端削Capex/ASIC替代、GPU小时价格持续下跌、应收与库存增速持续高于收入、出口/制造约束或软件迁移降低租金。",
+      "balance_sheet_definition": {
+        "period": "2026-07-26",
+        "USD_bn": {
+          "cash_and_equivalents": 22.443,
+          "marketable_debt_securities": 34.143,
+          "marketable_equity_securities": 42.783,
+          "interest_bearing_debt_total": 33.366
+        },
+        "warning": "债务总额33.366已含1.000 current和32.366 noncurrent，不可重复相加。只扣现金会忽略流动债券，股权投资也不可无风险等同现金；税负/流动性/承诺另审。完整EV未完成。"
+      }
+    },
+    {
+      "name": "Broadcom",
+      "symbols": [
+        "AVGO.US"
+      ],
+      "source_ids": [
+        "AVGO26Q3",
+        "AVGO25FY"
+      ],
+      "actual": {
+        "period": "FY26Q3 ended2026-08-02",
+        "currency": "USD bn except EPS",
+        "revenue": 29.591,
+        "AI_semiconductor_revenue_company_definition": 16.7,
+        "gaap_operating_income": 15.955,
+        "gaap_eps": 2.68,
+        "adjusted_eps": 3.32,
+        "CFO": 14.197,
+        "cash_capex": 0.532
+      },
+      "guidance": {
+        "period": "FY26Q4",
+        "revenue_usd_bn": 34.8,
+        "AI_semi_revenue_usd_bn": 21.7
+      },
+      "ttm": {
+        "through": "2026-08-02",
+        "USD_bn": {
+          "revenue": 89.104,
+          "gaap_net_income": 38.265,
+          "operating_income": 42.814,
+          "CFO": 40.653,
+          "cash_capex": 1.25,
+          "CFO_less_cash_capex": 39.403
+        },
+        "sum_quarter_gaap_eps": 7.83
+      },
+      "capital_market_judgment": "定制ASIC和网络承接大客户降TCO需求，但设计赢单不等于无限议价权；集中客户和设计周期形成跳跃风险。VMware现金流在全公司估值里，不能全部当AI芯片价值。",
+      "kill_test": "大客户自研/换供应商、项目推迟、单一大项目收入集中且回款/毛利恶化。"
+    },
+    {
+      "name": "TSMC",
+      "symbols": [
+        "TSM.US ADR",
+        "2330.TW"
+      ],
+      "source_ids": [
+        "TSMC26Q3",
+        "TSMC26CALL"
+      ],
+      "actual": {
+        "period": "2026Q3 ended2026-09-30; TIFRS",
+        "revenue_TWD_bn": 1494.243,
+        "revenue_USD_bn": 46.72,
+        "net_income_TWD_bn": 763.064,
+        "diluted_eps_TWD": 29.43,
+        "eps_USD_ADR": 4.6,
+        "gross_margin_pct": 66.4,
+        "operating_margin_pct": 58.7,
+        "N2_wafer_revenue_pct": 8,
+        "nodes_7nm_and_below_wafer_revenue_pct": 79
+      },
+      "guidance": {
+        "period": "2026Q4/FY26",
+        "Q4_revenue_USD_bn": [
+          52.3,
+          54.3
+        ],
+        "FY26_capex_USD_bn": [
+          60,
+          64
+        ],
+        "FY26_overseas_fab_margin_dilution_ppt": 2
+      },
+      "capital_market_judgment": "GPU或ASIC路线切换均可能用领先制程、封装和制造规模，较少押注单一模型。但N2、海外制造及庞大新增Capex意味着利润率/资本回报并非产能越多越好；HPC不等于纯AI。",
+      "kill_test": "先进节点排期转弱、封装松动并降价、利用率跌而折旧攀升、海外/地缘冲击。",
+      "source_conflict": "带日期Q3发行人公告及SEC均66.4%；官方季度汇总的搜索摘要67.7%属于Q2口径，未沿用。"
+    },
+    {
+      "name": "Micron",
+      "symbols": [
+        "MU.US"
+      ],
+      "source_ids": [
+        "MU26FY"
+      ],
+      "actual": {
+        "period": "FY26Q4 ended2026-09-03",
+        "revenue_USD_bn": 54.229,
+        "GAAP_gross_margin_pct": 86.8,
+        "CFO_USD_bn": 43.973,
+        "net_capex_USD_bn": 10.774
+      },
+      "capital_market_judgment": "HBM资格认证与供给短缺可以产生高租金，但报表覆盖DRAM/NAND/HBM，不是纯HBM。极高周期利润下低P/E可是假便宜；应以中周期ASP、位元成本、Capex/扩产及客户LTAs作压力估值。",
+      "kill_test": "库存上行、供给扩产/良率提升快于需求、客户延迟/重新谈价、下一代产品认证失利。"
+    },
+    {
+      "name": "Vertiv",
+      "symbols": [
+        "VRT.US"
+      ],
+      "source_ids": [
+        "VRT26Q2",
+        "VRT25FY",
+        "VRT26Q3DATE"
+      ],
+      "actual": {
+        "period": "2026Q2 ended2026-06-30",
+        "revenue_USD_bn": 3.2743,
+        "GAAP_operating_income_USD_bn": 0.6379,
+        "GAAP_EPS": 1.27,
+        "adjusted_EPS": 1.52,
+        "H1_CFO_USD_bn": 1.8666,
+        "H1_deferred_revenue_operating_cash_increase_USD_bn": 1.8227
+      },
+      "ttm": {
+        "through": "2026-06-30",
+        "USD_bn": {
+          "revenue": 11.4796,
+          "gaap_net_income": 1.732,
+          "operating_income": 2.1746,
+          "CFO": 3.3542,
+          "cash_capex": 0.4244,
+          "CFO_less_cash_capex": 2.9298
+        },
+        "sum_quarter_gaap_eps": 4.42
+      },
+      "capital_market_judgment": "电力/热管理与高功率机架迭代受益，但现金流显著受预收款推动；预收为后续履约资金，不能全部资本化为永久自由现金。设备、服务/替换件和交付可靠性决定持久性。",
+      "cutoff_guard": "Q3 scheduled2026-10-28，研究截止日没有Q3实际。",
+      "kill_test": "预付款增长逆转同时库存上升，供货延迟，液冷良率/泄漏责任、兼容性或客户标准切换损害利润。"
+    },
+    {
+      "name": "Eaton",
+      "symbols": [
+        "ETN.US"
+      ],
+      "source_ids": [
+        "ETN26Q2",
+        "ETN25FY"
+      ],
+      "actual": {
+        "period": "2026Q2 ended2026-06-30",
+        "revenue_USD_bn": 8.531,
+        "GAAP_EPS": 2.11,
+        "adjusted_EPS": 3.15,
+        "Electrical_Americas_revenue_USD_bn": 4.0,
+        "Electrical_Americas_rolling_12m_orders_growth_pct": 41,
+        "electrical_backlog_growth_pct": 43
+      },
+      "ttm": {
+        "through": "2026-06-30",
+        "USD_bn": {
+          "revenue": 30.026,
+          "parent_net_income": 3.829,
+          "CFO": 4.95,
+          "cash_capex": 1.016,
+          "CFO_less_cash_capex": 3.934
+        },
+        "sum_quarter_gaap_eps": 9.83
+      },
+      "capital_market_judgment": "配电/电气认证与安装基础带来瓶颈收益；但公司含航空等业务、并购/重组/未来分拆，GAAP和调整EPS差距大，应审并购资本成本与债务，而非直接贴AI倍数。",
+      "kill_test": "电气积压无法兑现/取消，产能交付后订单/价格降、收购协同不达且负债负担持续。"
+    },
+    {
+      "name": "GE Vernova",
+      "symbols": [
+        "GEV.US"
+      ],
+      "source_ids": [
+        "GEV26Q2"
+      ],
+      "actual": {
+        "period": "2026Q2 ended2026-06-30",
+        "revenue_USD_bn": 11.104,
+        "CFO_USD_bn": 5.492,
+        "FCF_company_definition_USD_bn": 5.107,
+        "gas_firm_equipment_backlog_GW": 53,
+        "gas_slot_reservations_GW": 63
+      },
+      "capital_market_judgment": "可交付燃机和电网设备是瓶颈；116GW必须拆成53GW订单+63GW产位预约。季度FCF受营运资金/预付款大幅拉动；交货周期、风电亏损与执行成本仍影响普通股回报。",
+      "cutoff_guard": "Q3 scheduled2026-10-28，未使用。",
+      "kill_test": "预约不转订单、预收退回、制造/现场调试推迟、原材料/保修成本压低积压订单的真实利润。"
+    },
+    {
+      "name": "Constellation",
+      "symbols": [
+        "CEG.US"
+      ],
+      "source_ids": [
+        "CEG26Q2"
+      ],
+      "actual": {
+        "period": "2026Q2 ended2026-06-30",
+        "GAAP_EPS": 1.42,
+        "adjusted_operating_EPS": 2.55,
+        "diluted_shares_m": 360,
+        "prior_year_diluted_shares_m": 314
+      },
+      "forward_contracts": {
+        "additional_nuclear_PPA_MW": 920,
+        "tenor_years": [
+          15,
+          20
+        ],
+        "delivery_starts_years": [
+          2029,
+          2032
+        ],
+        "Crane_restart_expected": 2027
+      },
+      "capital_market_judgment": "已有核电现金流与远期PPA能捕获稀缺可用电力，但合同起始年、套保/电价与Calpine并购后股数都重要。2029–2032PPA不能计2026收入；核电/燃气/商用发电全公司不是AI纯分部。",
+      "kill_test": "重启监管/工期成本失控、长期PPA价格与资本成本不匹配、并购债务/稀释抵消增长。"
+    },
+    {
+      "name": "CoreWeave",
+      "symbols": [
+        "CRWV.US"
+      ],
+      "source_ids": [
+        "CRWV26Q2",
+        "CRWV26Q2FILING"
+      ],
+      "actual": {
+        "period": "2026Q2/H1 ended2026-06-30",
+        "USD_bn": {
+          "Q2_revenue": 2.575,
+          "Q2_adjusted_EBITDA": 1.51,
+          "Q2_GAAP_operating_income": -0.049,
+          "Q2_net_interest_expense": 0.64,
+          "H1_CFO": 3.663,
+          "H1_cash_PPE_software_purchases": 14.117,
+          "H1_CFO_less_cash_PPE": -10.454,
+          "H1_net_financing_cash": 13.985,
+          "debt_current_plus_noncurrent": 35.068,
+          "operating_lease_liability": 16.319,
+          "not_yet_commenced_undiscounted_lease_payments": 35.5
+        },
+        "Q2_top3_customer_revenue_pct": [
+          36,
+          26,
+          10
+        ]
+      },
+      "company_claim": {
+        "backlog_USD_bn": 104,
+        "condition": "包含RPO及其他估计合同收入，须满足交付及服务可用性，不是已确认收入/净现金。"
+      },
+      "capital_market_judgment": "收入与EBITDA高增长伴随折旧、利息和扩产现金缺口；设备债、租赁、客户预付、股权融资的期限需要逐项对齐。经营租赁现值与未起租未折现支付不同口径，不可随意相加成单一债务；股权价值必须经融资/稀释桥。",
+      "kill_test": "项目通电迟、合同起算晚、租金或付费利用率不达回本线，客户资金受限，融资市场收紧或抵押资产残值降低。",
+      "limitation": "未逐GPU代际核成本/租价/实际利用率，不能给可信的股权目标价或由收入倍数断言便宜。"
+    },
+    {
+      "name": "GDS 万国数据",
+      "symbols": [
+        "GDS.US ADS",
+        "09698.HK"
+      ],
+      "source_ids": [
+        "GDS26Q2"
+      ],
+      "actual": {
+        "period": "2026Q2 ended2026-06-30",
+        "revenue_RMB_bn": 3.08795,
+        "revenue_yoy_pct": 6.5,
+        "GAAP_gross_margin_pct": 21.5,
+        "prior_GAAP_gross_margin_pct": 23.8,
+        "adjusted_EBITDA_RMB_bn": 1.406,
+        "net_income_RMB_bn": 0.837624,
+        "equity_method_results_RMB_bn": 0.9599
+      },
+      "normalization": "权益法收益主要来自DayOne SeriesC融资形成的投资稀释收益，净利润跳升不能外推核心IDC经营。电费占比升高压低毛利。",
+      "capital_market_judgment": "土地/建筑/电力托管与GPU资产租赁不同；要看实际投用面积、上架、每平米/千瓦回报、C-REIT现金回收及留存权益，不能把DayOne业务全额并入国内GDS收入估值。"
+    },
+    {
+      "name": "英维克",
+      "symbols": [
+        "002837.SZ"
+      ],
+      "source_ids": [
+        "ENVICOOL26H1"
+      ],
+      "actual": {
+        "period": "2026H1 ended2026-06-30",
+        "revenue_RMB": 3016714649.18,
+        "revenue_yoy_pct": 17.24,
+        "parent_net_income_RMB": 184767516.83,
+        "parent_profit_yoy_pct": -14.32,
+        "CFO_RMB": 61871999.03
+      },
+      "company_explanation": "国内业务占比较高且竞争激烈，区域/产品组合使机房温控毛利率同比下降；海外营收增快但占比仍低。",
+      "capital_market_judgment": "产品有液冷全链条覆盖与储能温控交叉，但不是所有收入是AI；这是“AI强景气≠各环节利润同步增长”的原文反证。"
+    },
+    {
+      "name": "海光信息",
+      "symbols": [
+        "688041.SH"
+      ],
+      "source_ids": [
+        "HYGON26Q3"
+      ],
+      "actual": {
+        "period": "2026前三季 ended2026-09-30; unaudited",
+        "revenue_RMB": 14954710229.13,
+        "revenue_yoy_pct": 57.58,
+        "parent_net_income_RMB": 2846508812.66,
+        "profit_yoy_pct": 45.12,
+        "CFO_RMB": -2442780168.86,
+        "R_and_D_RMB": 4472044952.74,
+        "R_and_D_pct_revenue": 29.9,
+        "deducted_parent_profit_RMB": 2584242015.98
+      },
+      "capital_market_judgment": "国产CPU/DCU需求和产品迭代带来收入，但经营现金转化明显落后利润。必须穿透应收、库存、采购预付、客户验收与资本化，不能仅以收入/政策证明可持续回报；未把CPU与DCU/AI收入混同。"
+    }
+  ],
+  "valuation_work": {
+    "data_file": "infra-valuation-inputs.json",
+    "reproducible_extraction": "infra_ttm_extract.py",
+    "method": "四家报表TTM用最近完整年度+本年累计−可比上年累计；EPS为连续四季度报告稀释EPS之和，保留四舍五入/加权股数差异；不是最新单季×4。",
+    "verified_inputs": "NVDA/AVGO/VRT/ETN：收入、GAAP净利、经营利润、CFO、现金Capex、四季度GAAP EPS、报告期实际股数。每项保存tag、期间、accn、filed。",
+    "price_handling": "由主线提供2026-10-23 Yahoo参考日价；IEX日K只交叉核对，不用异常bid/ask。",
+    "example_only": {
+      "symbol": "NVDA",
+      "parent_reference_price_USD": 210.96,
+      "reported_quarter_EPS_sum": 7.91,
+      "reported_PE_approx": 26.67,
+      "cashflow_yield_using_reported_24_1bn_shares_pct_approx": 2.5,
+      "warning": "报告利润含股权收益；股数截至Aug21而价格为Oct23，非当日完整稀释市值。此倍数不构成便宜结论。"
+    },
+    "limits": [
+      "尚未建立完整盈利预测/DCF，不能给高确信目标价。",
+      "全公司估值不是AI分部估值，需SOTP及债务/租赁一致处理。",
+      "CFO减现金Capex未必是可分配普通股现金；工作资本、融资租赁、替换Capex、投资和收购/债偿另桥。",
+      "不将不同会计标准/会计年度的单季EPS直接横排成可比估值。"
+    ]
+  },
+  "unit_economics": [
+    {
+      "name": "电费",
+      "classification": "analyst illustrative assumptions, not company forecast",
+      "formula": "IT_MW * electrical_load_factor * PUE * 8760 * USD_per_MWh",
+      "example_inputs": {
+        "IT_MW": 1,
+        "electrical_load_factor": 0.8,
+        "PUE": 1.2,
+        "USD_per_MWh": 50
+      },
+      "annual_MWh": 8409.6,
+      "annual_cost_USD": 420480,
+      "caveat": "电负载率不是可计费GPU利用率；空载仍耗电。实际电价、需量费、合同和PUE各不相同。"
+    },
+    {
+      "name": "GPU云回本",
+      "classification": "mechanism framework; no underwritten company inputs",
+      "revenue": "serviceable_GPU_hours * paid_utilization * realized_rental_rate + distinct_capacity/service_fees; reserved/usage billing must be separated",
+      "diagnostic_breakeven_paid_utilization": "(economic_annual_capital_charge + fixed_operating_cost)/(8760*(realized_rental_per_GPU_hour-variable_cost_per_GPU_hour))",
+      "caveat": "设备自有/租赁采用一致资本成本口径，不重复扣租金与同资产折旧；再做利息、债务本金、Capex与稀释的普通股现金桥。缺实际租价/机型成本/利用率，不给CRWV伪精确IRR。"
+    },
+    {
+      "name": "发电项目",
+      "classification": "mechanism framework",
+      "formula": "contracted_MWh * net_power_spread - cash_O&M - maintenance_capex - tax; discount at project risk then bridge financing to common equity",
+      "caveat": "远期起始合同、商用电价与监管获准回报不可混用；储能装机功率MW与能量MWh分开。"
+    }
+  ],
+  "crosschecks_and_adversarial_review": [
+    {
+      "question": "供应商繁荣能否证明应用已经盈利？",
+      "test": "同一笔融资可能支付云租赁、GPU、代工、电力等多次流转；终端付费与留存/净增收益在模型应用线另核。",
+      "result": "不能；不相加各层营收/Capex/融资为AI终端需求。"
+    },
+    {
+      "question": "公司报表利润/现金是否能直接当AI经营回报？",
+      "evidence": [
+        "NVDA重大股权投资收益",
+        "VRT/GEV客户预付款现金改善",
+        "GDS DayOne融资稀释收益",
+        "CRWV EBITDA与GAAP经营/利息/现金Capex差距",
+        "英维克收入增而利润降；海光利润增但CFO为负"
+      ],
+      "result": "需分经营、金融资产、工作资本、融资与分部。"
+    },
+    {
+      "question": "IEA/供应商一致看强需求是否独立验证？",
+      "test": "IEA有综合政策情景；公司IR有订单/销售利益；TSMC声称实地核查下游项目，不是本研究独立核实。",
+      "result": "原始事实可交叉，供需预测仍有共同假设与利益相关；不能当三家独立审计。"
+    },
+    {
+      "question": "为什么不用历史一次泡沫经验直接判空？",
+      "result": "通信/光纤/能源建设的过剩史提醒资本回报和期限错配，但AI当前收入/现金及约束需具体量化；历史类比不替代当前证据。"
+    }
+  ],
+  "alert_rules": [
+    {
+      "priority": "critical",
+      "trigger": "出口/制裁、关键能源/制造事故、主要客户违约或融资停止",
+      "response": "核一手原文与适用范围→冻结旧估值关键输入→检查合同/资产/流动性暴露，等待补证后更新。"
+    },
+    {
+      "priority": "high",
+      "trigger": "通电/交付比基准延后一个季度或更多",
+      "threshold_type": "analyst review condition, not calibrated automatic trade",
+      "response": "重排收入起算、租金/利息/折旧时点及现金跑道；逐合同确认责任。"
+    },
+    {
+      "priority": "high",
+      "trigger": "连续两个季度paid utilization低于公司已核回本假设，或续约租价/毛利明显偏离",
+      "threshold_type": "requires actual underwritten company baseline first",
+      "response": "重算残值、债务覆盖和普通股稀释，保留旧预测与失败记录。"
+    },
+    {
+      "priority": "high",
+      "trigger": "订单/积压增长与回款/交付背离；预收款逆转伴随库存/应收增长",
+      "response": "区分订单、预约、可撤销承诺与已履约；不要将所有现金恶化解释成成长。"
+    },
+    {
+      "priority": "monitor",
+      "trigger": "资本支出、租赁和合作方投资一起上升而终端付费/增量经营利润跟不上",
+      "response": "绘资金来源/去向与依赖图，对同一资金循环去重。"
+    }
+  ],
+  "downside_chain": "终端付费/收益低于预期→模型厂融资受限或云收紧资源→GPU云利用率/租价及合同交付下降→设备债/租赁现金缺口与稀释→芯片/内存/光模块订单调整/库存→电网/电站项目延后与部分资产沉没。长期合同/预付、垂直整合和客户信用可隔离部分风险，不能假设全链同方向同幅度。",
+  "open_gaps": [
+    {
+      "state": "资料未取得/部分原文未归档",
+      "items": [
+        "GDS原件本地下载403，web全文读取已成功。",
+        "区域电网实际已通电/排队取消及可计费算力时间序列未取得；不能把全球预测代替项目实际。",
+        "光模块最新正式季报和可比价格/分部单位经济未完成。"
+      ]
+    },
+    {
+      "state": "原文部分披露但未完整勾稽",
+      "items": [
+        "最新价格日期的实际稀释股数、可转债/期权、完整EV租赁口径与公司分部估值。",
+        "各公司AI收入/客户资金往来的统一去重口径；很多公司不单列。"
+      ]
+    },
+    {
+      "state": "经营机制未被公开数据充分识别",
+      "items": [
+        "逐GPU机型成本、实际租价、可计费利用率、合同终止/担保细节和经济寿命。",
+        "终端AI增量收益对全行业Capex回报的弹性。"
+      ]
+    },
+    {
+      "state": "未来尚不能验证",
+      "items": [
+        "2030用电、FY26/FY27指引与长约交付、HBM短缺期限、资本回报和投资目标价。"
+      ]
+    }
+  ],
+  "source_register": [
+    {
+      "id": "IEA26",
+      "url": "https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary",
+      "published": "2026-04-16",
+      "location": "Executive summary; energy demand and bottlenecks sections",
+      "period": "2025 estimated actual; 2030 forecast",
+      "type": "public intergovernmental sector research",
+      "interest": "政策与情景建模机构；模型假设并非可交付项目合同"
+    },
+    {
+      "id": "NVDA27Q2",
+      "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Second-Quarter-Fiscal-2027/",
+      "published": "2026-08-26",
+      "location": "Financial summary; consolidated cash flows; non-GAAP reconciliation",
+      "period": "quarter and half-year ended 2026-07-26",
+      "type": "issuer financial release",
+      "interest": "公司有销售、融资和估值诉求；历史报表与管理层指引分开"
+    },
+    {
+      "id": "NVDA26FY",
+      "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/",
+      "published": "2026-02-25",
+      "location": "FY and Q4 income/cash flow tables",
+      "period": "FY ended 2026-01-25",
+      "type": "issuer financial release"
+    },
+    {
+      "id": "AVGO26Q3",
+      "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+      "published": "2026-09-02",
+      "location": "Q3 results, cash flow table and Q4 outlook",
+      "period": "quarter and nine months ended 2026-08-02",
+      "type": "issuer financial release"
+    },
+    {
+      "id": "AVGO25FY",
+      "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-fourth-quarter-and-fiscal-year-2025",
+      "published": "2025-12-11",
+      "location": "Annual/Q4 results tables",
+      "period": "FY ended 2025-11-02",
+      "type": "issuer financial release"
+    },
+    {
+      "id": "TSMC26Q3",
+      "url": "https://pr.tsmc.com/english/news/3346",
+      "published": "2026-10-15",
+      "location": "Q3 results and Q4 outlook; TIFRS",
+      "period": "quarter ended 2026-09-30",
+      "type": "issuer financial release",
+      "crosscheck": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000726/a3q26e_withguidancexfinal.htm"
+    },
+    {
+      "id": "TSMC26CALL",
+      "url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/eba4fac72873bf546b669bd2b5d973df5c93215d/TSMC%203Q26%20Transcript.pdf",
+      "published": "2026-10-15",
+      "location": "PDF pp3–5",
+      "period": "Q3 actual; FY26/FY27+ outlook",
+      "type": "issuer-hosted LSEG transcript of management call",
+      "archive": "infra-tsmc-q3-call-2026.pdf"
+    },
+    {
+      "id": "MU26FY",
+      "url": "https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Fiscal-Fourth-Quarter-and-Full-Year-2026-Results/default.aspx",
+      "published": "2026-09-30",
+      "location": "Q4/FY GAAP statements and cash flow table",
+      "period": "FY ended 2026-09-03",
+      "type": "issuer financial release"
+    },
+    {
+      "id": "VRT26Q2",
+      "url": "https://www.sec.gov/Archives/edgar/data/1674101/000162828026050323/q22026exhibit991vrt07292026.htm",
+      "published": "2026-07-29",
+      "location": "Q2 results, operating cash flows and deferred revenues",
+      "period": "quarter and half-year ended 2026-06-30",
+      "type": "issuer release filed with SEC",
+      "crosscheck": "https://www.sec.gov/Archives/edgar/data/1674101/000162828026050609/vrt-20260630.htm"
+    },
+    {
+      "id": "VRT25FY",
+      "url": "https://investors.vertiv.com/news/news-details/2026/Vertiv-Reports-Strong-Fourth-Quarter-with-Organic-Orders-Growth-of-252-and-Diluted-EPS-Growth-of-200-Adjusted-Diluted-EPS-37/",
+      "published": "2026-02-11",
+      "location": "Annual/Q4 GAAP results and cash flows",
+      "period": "FY ended 2025-12-31",
+      "type": "issuer financial release"
+    },
+    {
+      "id": "VRT26Q3DATE",
+      "url": "https://investors.vertiv.com/news/news-details/2026/Vertiv-Announces-Date-of-Third-Quarter-2026-Earnings-Release-and-Conference-Call/",
+      "published": "2026-10",
+      "location": "Release schedule: 2026-10-28",
+      "period": "future event after research cutoff",
+      "type": "issuer schedule; no Q3 actual used"
+    },
+    {
+      "id": "ETN26Q2",
+      "url": "https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-second-quarter-2026-results.html",
+      "published": "2026-07-31 SEC filing date; page body publication date not independently resolved",
+      "location": "Q2 results and Electrical Americas/Global; GAAP to adjusted EPS",
+      "period": "quarter and half-year ended 2026-06-30",
+      "type": "issuer financial release",
+      "filing_accn": "0001551182-26-000030"
+    },
+    {
+      "id": "ETN25FY",
+      "url": "https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-fourth-quarter-2025-results.html",
+      "published": "2026-02-26",
+      "location": "Q4/FY GAAP EPS and annual statements",
+      "period": "FY ended 2025-12-31",
+      "type": "issuer financial release"
+    },
+    {
+      "id": "GEV26Q2",
+      "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000147/gevpressrelease2q26.htm",
+      "published": "2026-07-22",
+      "location": "Q2 financial results and gas power equipment backlog/slot reservation discussion",
+      "period": "quarter ended 2026-06-30",
+      "type": "issuer release filed with SEC"
+    },
+    {
+      "id": "CEG26Q2",
+      "url": "https://www.constellationenergy.com/news/2026/08/constellation-reports-second-quarter-2026-results.html",
+      "published": "2026-08-06",
+      "location": "Q2 GAAP/adjusted results and nuclear PPA/Crane updates",
+      "period": "quarter ended 2026-06-30",
+      "type": "issuer financial release"
+    },
+    {
+      "id": "CRWV26Q2",
+      "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000362/coreweave2q26earningspress.htm",
+      "published": "2026-08-11",
+      "location": "Highlights; income, cash flow and balance sheet tables; lines14–39,137–156,229–267",
+      "period": "quarter and half-year ended 2026-06-30",
+      "type": "issuer release filed with SEC"
+    },
+    {
+      "id": "CRWV26Q2FILING",
+      "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000366/crwv-20260630.htm",
+      "published": "2026-08; exact filing date not independently resolved in this lane; document covers June30 and existed before cutoff",
+      "location": "Notes Revenue concentration; Leases; MD&A financing; lines590–603,964–1039,1716+",
+      "period": "quarter and half-year ended 2026-06-30",
+      "type": "SEC 10-Q"
+    },
+    {
+      "id": "GDS26Q2",
+      "url": "https://investors.gds-services.com/system/files-encrypted/nasdaq_kms/assets/2026/08/13/7-36-49/GDS%202Q26%20Earnings%20Release_0813%201200.pdf",
+      "published": "2026-08-13",
+      "location": "PDF pp1–5 and14; net income/DayOne equity-method result explanation p4",
+      "period": "quarter ended 2026-06-30",
+      "type": "issuer financial release",
+      "archive_status": "Original PDF readable by web tool; local download HTTP403; no local hash"
+    },
+    {
+      "id": "ENVICOOL26H1",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225495981.PDF",
+      "published": "2026-08-25",
+      "location": "PDF pp6–9; financial metrics p7; business explanation p9",
+      "period": "half-year ended 2026-06-30",
+      "type": "CNINFO issuer interim report",
+      "archive": "infra-envicool-h1-2026.pdf"
+    },
+    {
+      "id": "HYGON26Q3",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-20/1225611145.PDF",
+      "published": "2026-10-20",
+      "location": "PDF pp1–3; financial and R&D tables; unaudited",
+      "period": "quarter and nine months ended 2026-09-30",
+      "type": "CNINFO issuer quarterly report",
+      "archive": "infra-hygon-9m-2026.pdf"
+    }
+  ],
+  "quality_scope": "这是一条同模型分工研究线，不是独立机构审查；查原文和算术输入不等于因果/预测准确。未修改共享核心、Git或部署。"
+}

@@ -186,6 +186,11 @@ function marketChannelPanel() {
 function sourceMap() {
   return `<div class="note">先确定要回答的问题，再选拥有原始证据的来源。来源目录、一次读取、字段核验和持续覆盖是四种不同状态。</div><section class="card section-gap"><h2>核心来源地图</h2><div class="table-wrap"><table><thead><tr><th>来源</th><th>用于哪项判断</th><th>市场 / 频率</th><th>当前覆盖与缺口</th></tr></thead><tbody>${state.platform.sources.map((s) => `<tr><td>${link(s.url, s.name + " ↗")}</td><td>${esc(s.purpose)}</td><td>${esc(s.region)}<br>${esc(s.frequency)}</td><td>${esc(s.status)}</td></tr>`).join("")}</tbody></table></div></section><section class="card section-gap"><h2>看板序列的真实可得性</h2><div class="table-wrap"><table><thead><tr><th>指标 / 提供路径</th><th>观察与取得</th><th>最近状态</th><th>关键限制</th></tr></thead><tbody>${state.markets.entries.map((m) => `<tr><td>${link(m.source_url, m.name + " ↗")}<div class="meta">${esc(m.provider)}</div></td><td>${esc(m.date || "未取得")}<br><span class="meta">${m.provenance ? when(m.provenance.retrieved_at) : m.provider === "derived" ? "见输入序列" : "目录入口"}</span></td><td>${esc(m.last_attempt?.status || m.state)}${m.last_attempt?.error ? `<p class="source-failure">${esc(m.last_attempt.error)}</p>` : ""}</td><td>${esc(m.lag)}</td></tr>`).join("")}</tbody></table></div><div class="button-row section-gap">${docButton("sources", "完整数据源文档")}${docButton("markets", "定义、缺失与更新合同")}</div></section>`;
 }
+function researchPublications() {
+  const p = state.platform.research_publications;
+  if (!p?.publications?.length) return "";
+  return `<section class="card section-gap"><div class="card-heading"><h2>专题深度研究 · ${esc(p.as_of)}</h2>${tag("有日期的研究版本 · 未评级", "neutral")}</div><p class="muted">原文证据、盈利与现金传导、定价条件、反方与下一验证。价格参考 ${esc(p.price_as_of)}；后续新证据应形成新版本。</p><div class="industry-grid">${p.publications.map(r=>`<article class="industry-card"><h3>${esc(r.title)}</h3><p>${esc(r.description)}</p><a class="primary" href="${esc(r.route)}" target="_blank" rel="noopener">阅读完整专题报告 ↗</a></article>`).join("")}</div></section>`;
+}
 function renderCases() {
   const d = state.industries;
   const filtered = d.industries.filter(
@@ -199,6 +204,7 @@ function renderCases() {
       "行业与公司研究",
       "先选择经济机制与行业指标，再把方法应用到公司。每份报告连接事实、假设、反方与下一验证。",
     ) +
+    researchPublications() +
     `<div class="note"><strong>行业分类口径</strong><p>${esc(d.classification)}</p>现阶段已有行业手册和报告结构，六家经营到预测的驱动模型仍待逐项完成。</div><div class="filter-row section-gap"><button data-industry-group="all" class="${state.industryGroup === "all" && !state.industryId ? "selected" : ""}">全部行业 · 六家公司</button>${d.groups.map((g) => `<button data-industry-group="${g.id}" class="${state.industryGroup === g.id ? "selected" : ""}">${esc(g.name)}</button>`).join("")}</div><div class="industry-grid section-gap">${filtered
       .map(
         (i) =>

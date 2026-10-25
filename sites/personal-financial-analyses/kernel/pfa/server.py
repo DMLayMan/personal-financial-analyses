@@ -72,6 +72,12 @@ def make_server(research, jobs, port=8765, instance_id="unmanaged", worker=None,
                     return self.send(200,html.encode(),'text/html; charset=utf-8',content_policy(html))
                 if url.path == "/api/platform":
                     return self.send(200, platform.overview())
+                if parts[0]=='research':
+                    from .publications import publication
+                    item=publication(url.path)
+                    if item is None:return self.send(404,{'error':'报告不存在'})
+                    html,policy=item
+                    return self.send(200,html,'text/html; charset=utf-8',policy)
                 if url.path == "/api/industries":
                     return self.send(200, platform.industries())
                 if url.path == "/api/markets":

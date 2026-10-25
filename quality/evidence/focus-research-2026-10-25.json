@@ -1,0 +1,29 @@
+{
+  "origin": "https://personal-financial-analyses-wktt.august247wk.chatgpt.site",
+  "reports": [
+    {
+      "route": "/research/byd-2026-10-25.html",
+      "canonical_route": "/research/byd-2026-10-25",
+      "private_gate": true,
+      "authored_sha256": "a78510e75becb019aaae9bcce313347a27dba46f2603acfa6a5c04f183bd37df",
+      "authored_content_exact": true,
+      "edge_extra": "Cloudflare JS detection append"
+    },
+    {
+      "route": "/research/ai-2026-10-25.html",
+      "canonical_route": "/research/ai-2026-10-25",
+      "private_gate": true,
+      "authored_sha256": "1f2da8a6779c5b90a0e485e657aefccba504b874b1eee532acfe2be93a1d651c",
+      "authored_content_exact": true,
+      "edge_extra": "Cloudflare JS detection append"
+    }
+  ],
+  "kernel_files": 115,
+  "source_parity": true,
+  "cloud_version": 1,
+  "cloud_files": 97,
+  "data_mutation": false,
+  "browser_login": "production shows ChatGPT sign-in; full authenticated UI not claimed",
+  "local_browser": "both reports rendered, industry links and price filter checked",
+  "research_decision_ready": false
+}

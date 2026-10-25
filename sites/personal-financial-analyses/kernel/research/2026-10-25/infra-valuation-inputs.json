@@ -1,0 +1,1178 @@
+[
+  {
+    "symbol": "NVDA",
+    "latest_period_end": "2026-07-26",
+    "market_price_asof": "2026-10-23 Yahoo reference daily price supplied separately by parent; IEX only cross-check; no quote fetched here",
+    "ttm_revenue": {
+      "value": "302970000000",
+      "formula": "previous FY + current YTD - comparable prior YTD",
+      "tag": "Revenues",
+      "inputs": [
+        {
+          "start": "2025-01-27",
+          "end": "2026-01-25",
+          "val": 215938000000,
+          "accn": "0001045810-26-000021",
+          "fy": 2026,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-25",
+          "frame": "CY2025"
+        },
+        {
+          "start": "2026-01-26",
+          "end": "2026-07-26",
+          "val": 177837000000,
+          "accn": "0001045810-26-000075",
+          "fy": 2027,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-08-26"
+        },
+        {
+          "start": "2025-01-27",
+          "end": "2025-07-27",
+          "val": 90805000000,
+          "accn": "0001045810-26-000075",
+          "fy": 2027,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-08-26"
+        }
+      ]
+    },
+    "ttm_net_income": {
+      "value": "192880000000",
+      "formula": "previous FY + current YTD - comparable prior YTD",
+      "tag": "NetIncomeLoss",
+      "inputs": [
+        {
+          "start": "2025-01-27",
+          "end": "2026-01-25",
+          "val": 120067000000,
+          "accn": "0001045810-26-000021",
+          "fy": 2026,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-25"
+        },
+        {
+          "start": "2026-01-26",
+          "end": "2026-07-26",
+          "val": 118010000000,
+          "accn": "0001045810-26-000075",
+          "fy": 2027,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-08-26"
+        },
+        {
+          "start": "2025-01-27",
+          "end": "2025-07-27",
+          "val": 45197000000,
+          "accn": "0001045810-26-000075",
+          "fy": 2027,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-08-26"
+        }
+      ]
+    },
+    "ttm_operating_income": {
+      "value": "197579000000",
+      "formula": "previous FY + current YTD - comparable prior YTD",
+      "tag": "OperatingIncomeLoss",
+      "inputs": [
+        {
+          "start": "2025-01-27",
+          "end": "2026-01-25",
+          "val": 130387000000,
+          "accn": "0001045810-26-000021",
+          "fy": 2026,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-25",
+          "frame": "CY2025"
+        },
+        {
+          "start": "2026-01-26",
+          "end": "2026-07-26",
+          "val": 117270000000,
+          "accn": "0001045810-26-000075",
+          "fy": 2027,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-08-26"
+        },
+        {
+          "start": "2025-01-27",
+          "end": "2025-07-27",
+          "val": 50078000000,
+          "accn": "0001045810-26-000075",
+          "fy": 2027,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-08-26"
+        }
+      ]
+    },
+    "ttm_operating_cash": {
+      "value": "134360000000",
+      "formula": "previous FY + current YTD - comparable prior YTD",
+      "tag": "NetCashProvidedByUsedInOperatingActivities",
+      "inputs": [
+        {
+          "start": "2025-01-27",
+          "end": "2026-01-25",
+          "val": 102718000000,
+          "accn": "0001045810-26-000021",
+          "fy": 2026,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-25",
+          "frame": "CY2025"
+        },
+        {
+          "start": "2026-01-26",
+          "end": "2026-07-26",
+          "val": 74421000000,
+          "accn": "0001045810-26-000075",
+          "fy": 2027,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-08-26"
+        },
+        {
+          "start": "2025-01-27",
+          "end": "2025-07-27",
+          "val": 42779000000,
+          "accn": "0001045810-26-000075",
+          "fy": 2027,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-08-26"
+        }
+      ]
+    },
+    "ttm_cash_capex": {
+      "missing": true,
+      "inputs": [
+        null,
+        null,
+        null
+      ]
+    },
+    "actual_shares": {
+      "end": "2026-08-21",
+      "val": 24100000000,
+      "accn": "0001045810-26-000075",
+      "fy": 2027,
+      "fp": "Q2",
+      "form": "10-Q",
+      "filed": "2026-08-26",
+      "frame": "CY2026Q3I"
+    },
+    "ttm_gaap_diluted_eps_quarter_sum": "7.91",
+    "eps_inputs": [
+      {
+        "start": "2025-07-28",
+        "end": "2025-10-26",
+        "val": 1.3,
+        "accn": "0001045810-25-000230",
+        "fy": 2026,
+        "fp": "Q3",
+        "form": "10-Q",
+        "filed": "2025-11-19",
+        "frame": "CY2025Q3"
+      },
+      {
+        "start": "2025-10-27",
+        "end": "2026-01-25",
+        "val": "1.76",
+        "filed": "2026-02-25",
+        "form": "earnings_release",
+        "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/"
+      },
+      {
+        "start": "2026-01-26",
+        "end": "2026-04-26",
+        "val": 2.39,
+        "accn": "0001045810-26-000052",
+        "fy": 2027,
+        "fp": "Q1",
+        "form": "10-Q",
+        "filed": "2026-05-20",
+        "frame": "CY2026Q1"
+      },
+      {
+        "start": "2026-04-27",
+        "end": "2026-07-26",
+        "val": 2.46,
+        "accn": "0001045810-26-000075",
+        "fy": 2027,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2026-08-26",
+        "frame": "CY2026Q2"
+      }
+    ],
+    "eps_method_note": "sum of four reported diluted quarterly EPS; rounding and period weighted shares differ, not exact annual-EPS-minus-YTD arithmetic and not latest-quarter annualization",
+    "caveat": "reported historical multiples; reported shares predate price, no present-day share roll-forward or full diluted capitalization assumption",
+    "balance_sheet_inputs": {
+      "CashAndCashEquivalentsAtCarryingValue": {
+        "end": "2026-07-26",
+        "val": 22443000000,
+        "accn": "0001045810-26-000075",
+        "fy": 2027,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2026-08-26",
+        "frame": "CY2026Q2I"
+      },
+      "LongTermDebt": {
+        "end": "2026-07-26",
+        "val": 33366000000,
+        "accn": "0001045810-26-000075",
+        "fy": 2027,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2026-08-26",
+        "frame": "CY2026Q2I"
+      },
+      "LongTermDebtCurrent": {
+        "end": "2026-07-26",
+        "val": 1000000000,
+        "accn": "0001045810-26-000075",
+        "fy": 2027,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2026-08-26",
+        "frame": "CY2026Q2I"
+      },
+      "LongTermDebtNoncurrent": {
+        "end": "2026-07-26",
+        "val": 32366000000,
+        "accn": "0001045810-26-000075",
+        "fy": 2027,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2026-08-26",
+        "frame": "CY2026Q2I"
+      },
+      "OperatingLeaseLiability": {
+        "end": "2026-07-26",
+        "val": 5494000000,
+        "accn": "0001045810-26-000075",
+        "fy": 2027,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2026-08-26",
+        "frame": "CY2026Q2I"
+      },
+      "OperatingLeaseLiabilityCurrent": {
+        "end": "2026-07-26",
+        "val": 509000000,
+        "accn": "0001045810-26-000075",
+        "fy": 2027,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2026-08-26",
+        "frame": "CY2026Q2I"
+      },
+      "OperatingLeaseLiabilityNoncurrent": {
+        "end": "2026-07-26",
+        "val": 4985000000,
+        "accn": "0001045810-26-000075",
+        "fy": 2027,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2026-08-26",
+        "frame": "CY2026Q2I"
+      }
+    },
+    "ttm_cfo_minus_cash_capex_and_capex_principal": "126886000000",
+    "cashflow_bridge_inputs": {
+      "fy26_cfo": "102718000000",
+      "fy27_h1_cfo": "74421000000",
+      "fy26_h1_cfo": "42779000000",
+      "fy26_ppe_and_intangibles": "6042000000",
+      "fy27_h1_ppe_and_intangibles": "4434000000",
+      "fy26_h1_ppe_and_intangibles": "3122000000",
+      "fy26_capex_principal": "101000000",
+      "fy27_h1_capex_principal": "92000000",
+      "fy26_h1_capex_principal": "73000000"
+    },
+    "normalization_warning": "FY27 non-GAAP includes SBC whereas originally published FY26 non-GAAP excluded SBC; do not splice unlike non-GAAP EPS. TTM gains on equity securities pre-tax = FY26 8.918bn + FY27H1 23.707bn - FY26H1 2.073bn = 30.552bn. Full company GAAP net income is not pure AI operating profit."
+  },
+  {
+    "symbol": "AVGO",
+    "latest_period_end": "2026-08-02",
+    "market_price_asof": "2026-10-23 Yahoo reference daily price supplied separately by parent; IEX only cross-check; no quote fetched here",
+    "ttm_revenue": {
+      "value": "89104000000",
+      "formula": "previous FY + current YTD - comparable prior YTD",
+      "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "inputs": [
+        {
+          "start": "2024-11-04",
+          "end": "2025-11-02",
+          "val": 63887000000,
+          "accn": "0001730168-25-000121",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2025-12-18",
+          "frame": "CY2025"
+        },
+        {
+          "start": "2025-11-03",
+          "end": "2026-08-02",
+          "val": 71089000000,
+          "accn": "0001730168-26-000080",
+          "fy": 2026,
+          "fp": "Q3",
+          "form": "10-Q",
+          "filed": "2026-09-10"
+        },
+        {
+          "start": "2024-11-04",
+          "end": "2025-08-03",
+          "val": 45872000000,
+          "accn": "0001730168-26-000080",
+          "fy": 2026,
+          "fp": "Q3",
+          "form": "10-Q",
+          "filed": "2026-09-10"
+        }
+      ]
+    },
+    "ttm_net_income": {
+      "value": "38265000000",
+      "formula": "previous FY + current YTD - comparable prior YTD",
+      "tag": "ProfitLoss",
+      "inputs": [
+        {
+          "start": "2024-11-04",
+          "end": "2025-11-02",
+          "val": 23126000000,
+          "accn": "0001730168-25-000121",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2025-12-18",
+          "frame": "CY2025"
+        },
+        {
+          "start": "2025-11-03",
+          "end": "2026-08-02",
+          "val": 29747000000,
+          "accn": "0001730168-26-000080",
+          "fy": 2026,
+          "fp": "Q3",
+          "form": "10-Q",
+          "filed": "2026-09-10"
+        },
+        {
+          "start": "2024-11-04",
+          "end": "2025-08-03",
+          "val": 14608000000,
+          "accn": "0001730168-26-000080",
+          "fy": 2026,
+          "fp": "Q3",
+          "form": "10-Q",
+          "filed": "2026-09-10"
+        }
+      ]
+    },
+    "ttm_operating_income": {
+      "value": "42814000000",
+      "formula": "previous FY + current YTD - comparable prior YTD",
+      "tag": "OperatingIncomeLoss",
+      "inputs": [
+        {
+          "start": "2024-11-04",
+          "end": "2025-11-02",
+          "val": 25484000000,
+          "accn": "0001730168-25-000121",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2025-12-18",
+          "frame": "CY2025"
+        },
+        {
+          "start": "2025-11-03",
+          "end": "2026-08-02",
+          "val": 35306000000,
+          "accn": "0001730168-26-000080",
+          "fy": 2026,
+          "fp": "Q3",
+          "form": "10-Q",
+          "filed": "2026-09-10"
+        },
+        {
+          "start": "2024-11-04",
+          "end": "2025-08-03",
+          "val": 17976000000,
+          "accn": "0001730168-26-000080",
+          "fy": 2026,
+          "fp": "Q3",
+          "form": "10-Q",
+          "filed": "2026-09-10"
+        }
+      ]
+    },
+    "ttm_operating_cash": {
+      "value": "40653000000",
+      "formula": "previous FY + current YTD - comparable prior YTD",
+      "tag": "NetCashProvidedByUsedInOperatingActivities",
+      "inputs": [
+        {
+          "start": "2024-11-04",
+          "end": "2025-11-02",
+          "val": 27537000000,
+          "accn": "0001730168-25-000121",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2025-12-18",
+          "frame": "CY2025"
+        },
+        {
+          "start": "2025-11-03",
+          "end": "2026-08-02",
+          "val": 32950000000,
+          "accn": "0001730168-26-000080",
+          "fy": 2026,
+          "fp": "Q3",
+          "form": "10-Q",
+          "filed": "2026-09-10"
+        },
+        {
+          "start": "2024-11-04",
+          "end": "2025-08-03",
+          "val": 19834000000,
+          "accn": "0001730168-26-000080",
+          "fy": 2026,
+          "fp": "Q3",
+          "form": "10-Q",
+          "filed": "2026-09-10"
+        }
+      ]
+    },
+    "ttm_cash_capex": {
+      "value": "1250000000",
+      "formula": "previous FY + current YTD - comparable prior YTD",
+      "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+      "inputs": [
+        {
+          "start": "2024-11-04",
+          "end": "2025-11-02",
+          "val": 623000000,
+          "accn": "0001730168-25-000121",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2025-12-18",
+          "frame": "CY2025"
+        },
+        {
+          "start": "2025-11-03",
+          "end": "2026-08-02",
+          "val": 1013000000,
+          "accn": "0001730168-26-000080",
+          "fy": 2026,
+          "fp": "Q3",
+          "form": "10-Q",
+          "filed": "2026-09-10"
+        },
+        {
+          "start": "2024-11-04",
+          "end": "2025-08-03",
+          "val": 386000000,
+          "accn": "0001730168-26-000080",
+          "fy": 2026,
+          "fp": "Q3",
+          "form": "10-Q",
+          "filed": "2026-09-10"
+        }
+      ]
+    },
+    "actual_shares": {
+      "end": "2026-08-28",
+      "val": 4773629865,
+      "accn": "0001730168-26-000080",
+      "fy": 2026,
+      "fp": "Q3",
+      "form": "10-Q",
+      "filed": "2026-09-10",
+      "frame": "CY2026Q3I"
+    },
+    "ttm_gaap_diluted_eps_quarter_sum": "7.83",
+    "eps_inputs": [
+      {
+        "start": "2025-08-04",
+        "end": "2025-11-02",
+        "val": "1.74",
+        "filed": "2025-12-11",
+        "form": "earnings_release",
+        "source_url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-fourth-quarter-and-fiscal-year-2025"
+      },
+      {
+        "start": "2025-11-03",
+        "end": "2026-02-01",
+        "val": 1.5,
+        "accn": "0001730168-26-000016",
+        "fy": 2026,
+        "fp": "Q1",
+        "form": "10-Q",
+        "filed": "2026-03-11",
+        "frame": "CY2025Q4"
+      },
+      {
+        "start": "2026-02-02",
+        "end": "2026-05-03",
+        "val": 1.91,
+        "accn": "0001730168-26-000054",
+        "fy": 2026,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2026-06-09",
+        "frame": "CY2026Q1"
+      },
+      {
+        "start": "2026-05-04",
+        "end": "2026-08-02",
+        "val": 2.68,
+        "accn": "0001730168-26-000080",
+        "fy": 2026,
+        "fp": "Q3",
+        "form": "10-Q",
+        "filed": "2026-09-10",
+        "frame": "CY2026Q2"
+      }
+    ],
+    "eps_method_note": "sum of four reported diluted quarterly EPS; rounding and period weighted shares differ, not exact annual-EPS-minus-YTD arithmetic and not latest-quarter annualization",
+    "caveat": "reported historical multiples; reported shares predate price, no present-day share roll-forward or full diluted capitalization assumption",
+    "balance_sheet_inputs": {
+      "CashAndCashEquivalentsAtCarryingValue": {
+        "end": "2026-08-02",
+        "val": 23975000000,
+        "accn": "0001730168-26-000080",
+        "fy": 2026,
+        "fp": "Q3",
+        "form": "10-Q",
+        "filed": "2026-09-10",
+        "frame": "CY2026Q2I"
+      },
+      "LongTermDebt": {
+        "end": "2026-08-02",
+        "val": 59419000000,
+        "accn": "0001730168-26-000080",
+        "fy": 2026,
+        "fp": "Q3",
+        "form": "10-Q",
+        "filed": "2026-09-10",
+        "frame": "CY2026Q2I"
+      },
+      "LongTermDebtCurrent": {
+        "end": "2026-08-02",
+        "val": 2252000000,
+        "accn": "0001730168-26-000080",
+        "fy": 2026,
+        "fp": "Q3",
+        "form": "10-Q",
+        "filed": "2026-09-10",
+        "frame": "CY2026Q2I"
+      },
+      "LongTermDebtNoncurrent": {
+        "end": "2026-08-02",
+        "val": 57167000000,
+        "accn": "0001730168-26-000080",
+        "fy": 2026,
+        "fp": "Q3",
+        "form": "10-Q",
+        "filed": "2026-09-10",
+        "frame": "CY2026Q2I"
+      }
+    },
+    "ttm_cfo_minus_cash_capex": "39403000000"
+  },
+  {
+    "symbol": "VRT",
+    "latest_period_end": "2026-06-30",
+    "market_price_asof": "2026-10-23 Yahoo reference daily price supplied separately by parent; IEX only cross-check; no quote fetched here",
+    "ttm_revenue": {
+      "value": "11479600000",
+      "formula": "previous FY + current YTD - comparable prior YTD",
+      "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "inputs": [
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "val": 10229900000,
+          "accn": "0001674101-26-000008",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-13",
+          "frame": "CY2025"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-06-30",
+          "val": 5923800000,
+          "accn": "0001628280-26-050609",
+          "fy": 2026,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-07-29"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-06-30",
+          "val": 4674100000,
+          "accn": "0001628280-26-050609",
+          "fy": 2026,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-07-29"
+        }
+      ]
+    },
+    "ttm_net_income": {
+      "value": "1732000000",
+      "formula": "previous FY + current YTD - comparable prior YTD",
+      "tag": "NetIncomeLoss",
+      "inputs": [
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "val": 1332800000,
+          "accn": "0001674101-26-000008",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-13"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-06-30",
+          "val": 887900000,
+          "accn": "0001628280-26-050609",
+          "fy": 2026,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-07-29"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-06-30",
+          "val": 488700000,
+          "accn": "0001628280-26-050609",
+          "fy": 2026,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-07-29"
+        }
+      ]
+    },
+    "ttm_operating_income": {
+      "value": "2174600000",
+      "formula": "previous FY + current YTD - comparable prior YTD",
+      "tag": "OperatingIncomeLoss",
+      "inputs": [
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "val": 1829700000,
+          "accn": "0001674101-26-000008",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-13",
+          "frame": "CY2025"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-06-30",
+          "val": 1078000000,
+          "accn": "0001628280-26-050609",
+          "fy": 2026,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-07-29"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-06-30",
+          "val": 733100000,
+          "accn": "0001628280-26-050609",
+          "fy": 2026,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-07-29"
+        }
+      ]
+    },
+    "ttm_operating_cash": {
+      "value": "3354200000",
+      "formula": "previous FY + current YTD - comparable prior YTD",
+      "tag": "NetCashProvidedByUsedInOperatingActivities",
+      "inputs": [
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "val": 2113800000,
+          "accn": "0001674101-26-000008",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-13",
+          "frame": "CY2025"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-06-30",
+          "val": 1866600000,
+          "accn": "0001628280-26-050609",
+          "fy": 2026,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-07-29"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-06-30",
+          "val": 626200000,
+          "accn": "0001628280-26-050609",
+          "fy": 2026,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-07-29"
+        }
+      ]
+    },
+    "ttm_cash_capex": {
+      "value": "424400000",
+      "formula": "previous FY + current YTD - comparable prior YTD",
+      "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+      "inputs": [
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "val": 220000000,
+          "accn": "0001674101-26-000008",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-13",
+          "frame": "CY2025"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-06-30",
+          "val": 285900000,
+          "accn": "0001628280-26-050609",
+          "fy": 2026,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-07-29"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-06-30",
+          "val": 81500000,
+          "accn": "0001628280-26-050609",
+          "fy": 2026,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-07-29"
+        }
+      ]
+    },
+    "actual_shares": {
+      "end": "2026-07-27",
+      "val": 384988173,
+      "accn": "0001628280-26-050609",
+      "fy": 2026,
+      "fp": "Q2",
+      "form": "10-Q",
+      "filed": "2026-07-29",
+      "frame": "CY2026Q2I"
+    },
+    "ttm_gaap_diluted_eps_quarter_sum": "4.42",
+    "eps_inputs": [
+      {
+        "start": "2025-07-01",
+        "end": "2025-09-30",
+        "val": 1.02,
+        "accn": "0001674101-25-000024",
+        "fy": 2025,
+        "fp": "Q3",
+        "form": "10-Q",
+        "filed": "2025-10-22",
+        "frame": "CY2025Q3"
+      },
+      {
+        "start": "2025-10-01",
+        "end": "2025-12-31",
+        "val": "1.14",
+        "filed": "2026-02-11",
+        "form": "earnings_release",
+        "source_url": "https://investors.vertiv.com/news/news-details/2026/Vertiv-Reports-Strong-Fourth-Quarter-with-Organic-Orders-Growth-of-252-and-Diluted-EPS-Growth-of-200-Adjusted-Diluted-EPS-37/"
+      },
+      {
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "val": 0.99,
+        "accn": "0001628280-26-026556",
+        "fy": 2026,
+        "fp": "Q1",
+        "form": "10-Q",
+        "filed": "2026-04-22",
+        "frame": "CY2026Q1"
+      },
+      {
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "val": 1.27,
+        "accn": "0001628280-26-050609",
+        "fy": 2026,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2026-07-29",
+        "frame": "CY2026Q2"
+      }
+    ],
+    "eps_method_note": "sum of four reported diluted quarterly EPS; rounding and period weighted shares differ, not exact annual-EPS-minus-YTD arithmetic and not latest-quarter annualization",
+    "caveat": "reported historical multiples; reported shares predate price, no present-day share roll-forward or full diluted capitalization assumption",
+    "balance_sheet_inputs": {
+      "CashAndCashEquivalentsAtCarryingValue": {
+        "end": "2026-06-30",
+        "val": 2810600000,
+        "accn": "0001628280-26-050609",
+        "fy": 2026,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2026-07-29",
+        "frame": "CY2026Q2I"
+      },
+      "LongTermDebt": {
+        "end": "2026-06-30",
+        "val": 2939800000,
+        "accn": "0001628280-26-050609",
+        "fy": 2026,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2026-07-29",
+        "frame": "CY2026Q2I"
+      },
+      "LongTermDebtCurrent": {
+        "end": "2026-06-30",
+        "val": 0,
+        "accn": "0001628280-26-050609",
+        "fy": 2026,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2026-07-29",
+        "frame": "CY2026Q2I"
+      },
+      "LongTermDebtNoncurrent": {
+        "end": "2026-06-30",
+        "val": 2939800000,
+        "accn": "0001628280-26-050609",
+        "fy": 2026,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2026-07-29",
+        "frame": "CY2026Q2I"
+      },
+      "OperatingLeaseLiabilityCurrent": {
+        "end": "2026-06-30",
+        "val": 82000000,
+        "accn": "0001628280-26-050609",
+        "fy": 2026,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2026-07-29",
+        "frame": "CY2026Q2I"
+      }
+    },
+    "ttm_cfo_minus_cash_capex": "2929800000"
+  },
+  {
+    "symbol": "ETN",
+    "latest_period_end": "2026-06-30",
+    "market_price_asof": "2026-10-23 Yahoo reference daily price supplied separately by parent; IEX only cross-check; no quote fetched here",
+    "ttm_revenue": {
+      "value": "30026000000",
+      "formula": "previous FY + current YTD - comparable prior YTD",
+      "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "inputs": [
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "val": 27448000000,
+          "accn": "0001551182-26-000007",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-26",
+          "frame": "CY2025"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-06-30",
+          "val": 15982000000,
+          "accn": "0001551182-26-000030",
+          "fy": 2026,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-07-31"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-06-30",
+          "val": 13404000000,
+          "accn": "0001551182-26-000030",
+          "fy": 2026,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-07-31"
+        }
+      ]
+    },
+    "ttm_net_income": {
+      "value": "3829000000",
+      "formula": "previous FY + current YTD - comparable prior YTD",
+      "tag": "NetIncomeLoss",
+      "inputs": [
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "val": 4087000000,
+          "accn": "0001551182-26-000007",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-26",
+          "frame": "CY2025"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-06-30",
+          "val": 1687000000,
+          "accn": "0001551182-26-000030",
+          "fy": 2026,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-07-31"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-06-30",
+          "val": 1945000000,
+          "accn": "0001551182-26-000030",
+          "fy": 2026,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-07-31"
+        }
+      ]
+    },
+    "ttm_operating_income": {
+      "missing": true,
+      "inputs": [
+        null,
+        null,
+        null
+      ]
+    },
+    "ttm_operating_cash": {
+      "value": "4950000000",
+      "formula": "previous FY + current YTD - comparable prior YTD",
+      "tag": "NetCashProvidedByUsedInOperatingActivities",
+      "inputs": [
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "val": 4472000000,
+          "accn": "0001551182-26-000007",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-26",
+          "frame": "CY2025"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-06-30",
+          "val": 1634000000,
+          "accn": "0001551182-26-000030",
+          "fy": 2026,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-07-31"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-06-30",
+          "val": 1156000000,
+          "accn": "0001551182-26-000030",
+          "fy": 2026,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-07-31"
+        }
+      ]
+    },
+    "ttm_cash_capex": {
+      "value": "1016000000",
+      "formula": "previous FY + current YTD - comparable prior YTD",
+      "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+      "inputs": [
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "val": 919000000,
+          "accn": "0001551182-26-000007",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-26",
+          "frame": "CY2025"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-06-30",
+          "val": 446000000,
+          "accn": "0001551182-26-000030",
+          "fy": 2026,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-07-31"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-06-30",
+          "val": 349000000,
+          "accn": "0001551182-26-000030",
+          "fy": 2026,
+          "fp": "Q2",
+          "form": "10-Q",
+          "filed": "2026-07-31"
+        }
+      ]
+    },
+    "actual_shares": {
+      "end": "2026-06-30",
+      "val": 388400000,
+      "accn": "0001551182-26-000030",
+      "fy": 2026,
+      "fp": "Q2",
+      "form": "10-Q",
+      "filed": "2026-07-31",
+      "frame": "CY2026Q2I"
+    },
+    "ttm_gaap_diluted_eps_quarter_sum": "9.83",
+    "eps_inputs": [
+      {
+        "start": "2025-07-01",
+        "end": "2025-09-30",
+        "val": 2.59,
+        "accn": "0001551182-25-000036",
+        "fy": 2025,
+        "fp": "Q3",
+        "form": "10-Q",
+        "filed": "2025-11-04",
+        "frame": "CY2025Q3"
+      },
+      {
+        "start": "2025-10-01",
+        "end": "2025-12-31",
+        "val": "2.91",
+        "filed": "2026-02-26",
+        "form": "earnings_release",
+        "source_url": "https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-fourth-quarter-2025-results.html"
+      },
+      {
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "val": 2.22,
+        "accn": "0001551182-26-000013",
+        "fy": 2026,
+        "fp": "Q1",
+        "form": "10-Q",
+        "filed": "2026-05-05",
+        "frame": "CY2026Q1"
+      },
+      {
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "val": 2.11,
+        "accn": "0001551182-26-000030",
+        "fy": 2026,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2026-07-31",
+        "frame": "CY2026Q2"
+      }
+    ],
+    "eps_method_note": "sum of four reported diluted quarterly EPS; rounding and period weighted shares differ, not exact annual-EPS-minus-YTD arithmetic and not latest-quarter annualization",
+    "caveat": "reported historical multiples; reported shares predate price, no present-day share roll-forward or full diluted capitalization assumption",
+    "balance_sheet_inputs": {
+      "CashAndCashEquivalentsAtCarryingValue": {
+        "end": "2026-06-30",
+        "val": 483000000,
+        "accn": "0001551182-26-000030",
+        "fy": 2026,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2026-07-31",
+        "frame": "CY2026Q2I"
+      },
+      "ShortTermInvestments": {
+        "end": "2026-06-30",
+        "val": 212000000,
+        "accn": "0001551182-26-000030",
+        "fy": 2026,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2026-07-31",
+        "frame": "CY2026Q2I"
+      },
+      "LongTermDebt": {
+        "end": "2026-06-30",
+        "val": 18520000000,
+        "accn": "0001551182-26-000030",
+        "fy": 2026,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2026-07-31",
+        "frame": "CY2026Q2I"
+      },
+      "ShortTermBorrowings": {
+        "end": "2026-06-30",
+        "val": 2091000000,
+        "accn": "0001551182-26-000030",
+        "fy": 2026,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2026-07-31",
+        "frame": "CY2026Q2I"
+      },
+      "OperatingLeaseLiabilityNoncurrent": {
+        "end": "2026-06-30",
+        "val": 715000000,
+        "accn": "0001551182-26-000030",
+        "fy": 2026,
+        "fp": "Q2",
+        "form": "10-Q",
+        "filed": "2026-07-31",
+        "frame": "CY2026Q2I"
+      }
+    },
+    "ttm_cfo_minus_cash_capex": "3934000000"
+  }
+]

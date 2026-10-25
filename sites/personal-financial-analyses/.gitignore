@@ -54,3 +54,5 @@ yarn-error.log*
 /public/cloud-worker.js
 /public/standalone.js
 /lib/terminal-html.ts
+
+/public/research/

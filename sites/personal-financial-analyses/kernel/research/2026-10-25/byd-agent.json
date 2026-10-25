@@ -1,0 +1,2095 @@
+{
+  "as_of": "2026-10-25",
+  "price_as_of": "2026-10-23",
+  "issuer": "BYD Company Limited",
+  "research_posture": "观察名单式深度研究；经营恢复有证据但现金资本回报与现价投资结论尚未承保",
+  "evidence_confidence": {
+    "reported_financials": "较高：原件选定数字和期间复核；H1未经审计，未重做审计",
+    "mechanism": "中等：分部、地域、现金补充表支持经营解释，仍缺终端/车型级利润与渠道库存",
+    "current_market_inputs": "中等：公共市场源一致，引用同日中间价；最新月报到9/30，非实时/同瞬间完整资本表",
+    "valuation": "偏低：诊断PE可复算，不足以证明便宜，未得到授权共识或经营预测与融资后现金回报"
+  },
+  "sources": [
+    {
+      "id": "B01",
+      "title": "比亚迪2025年度报告",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225045351.PDF",
+      "published_at": "2026-03-28",
+      "accessed_at": "2026-10-25T12:53:50.224975+00:00",
+      "period": "2025FY; 2024 comparable",
+      "type": "issuer_filing",
+      "evidence": "primary",
+      "notes": "",
+      "pages_used": [
+        11,
+        126,
+        130,
+        131,
+        216
+      ],
+      "sha256": "710d8b2e08e37ba521f1c4071d2c3e2369d3cadabc21a45073215d9f72138b0b",
+      "local_pdf": "data/research/2026-10-25/byd-originals/fy-2025.pdf",
+      "downloaded": true
+    },
+    {
+      "id": "B02",
+      "title": "比亚迪2026半年度报告",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531835.PDF",
+      "published_at": "2026-08-29",
+      "accessed_at": "2026-10-25T12:53:50.229170+00:00",
+      "period": "2026H1; 2025H1 comparable",
+      "type": "issuer_filing",
+      "evidence": "primary",
+      "notes": "Selected original data checked; not a full audit of all notes. CNINFO copy date not necessarily first public release date, HKEX interim results were 2026-08-28.",
+      "pages_used": [
+        7,
+        14,
+        25,
+        26,
+        57,
+        65,
+        66,
+        67,
+        71,
+        72,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        143,
+        144,
+        154,
+        158,
+        160,
+        161,
+        162,
+        167,
+        192,
+        193
+      ],
+      "sha256": "2648a8c4ebf637da4eeb79e58791c1faf457daa687914e325ff37d1b9676a48c",
+      "local_pdf": "data/research/2026-10-25/byd-originals/h1-2026.pdf",
+      "downloaded": true
+    },
+    {
+      "id": "B03",
+      "title": "2026年6月产销公告（HKEX）",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0701/2026070100033.pdf",
+      "published_at": "2026-07-01",
+      "accessed_at": "2026-10-25T12:53:50.230366+00:00",
+      "period": "2026-06; 2026YTD6",
+      "type": "issuer_filing",
+      "evidence": "primary",
+      "notes": "Unaudited operating update, not terminal registrations.",
+      "pages_used": [
+        1,
+        2
+      ],
+      "sha256": "4f2a7cd939b66e6d58e2f68a7ab1ef4ac21fc50fc2957a23cd116d0f96e8a0d1",
+      "local_pdf": "data/research/2026-10-25/byd-originals/sales-2026-06.pdf",
+      "downloaded": true
+    },
+    {
+      "id": "B04",
+      "title": "2026年9月产销公告（HKEX）",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1001/2026100100047.pdf",
+      "published_at": "2026-10-01",
+      "accessed_at": "2026-10-25T12:53:50.233803+00:00",
+      "period": "2026-09; 2026YTD9",
+      "type": "issuer_filing",
+      "evidence": "primary",
+      "notes": "Earlier than existing CNINFO 2026-10-08 path; volume is not revenue or end-customer demand.",
+      "pages_used": [
+        1,
+        2
+      ],
+      "sha256": "a5f1230cdb5a800cf0daa04140ca2b7998ce80c457de9bf8220f40f37fe6b197",
+      "local_pdf": "data/research/2026-10-25/byd-originals/sales-2026-09-hkex.pdf",
+      "downloaded": true
+    },
+    {
+      "id": "B05",
+      "title": "2026第三季度董事会通知",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1014/2026101400381.pdf",
+      "published_at": "2026-10-14",
+      "accessed_at": "2026-10-25T12:53:50.236734+00:00",
+      "period": "Board meeting 2026-10-29",
+      "type": "issuer_filing",
+      "evidence": "primary",
+      "notes": "Scheduled approval of Q3 results, not already reported Q3 earnings.",
+      "pages_used": [
+        1
+      ],
+      "sha256": "fa8e4791acb5b91bce7806e38feac37c3f6ec06076e946f1e03ab570826e31fd",
+      "local_pdf": "data/research/2026-10-25/byd-originals/q3-board-notice.pdf",
+      "downloaded": true
+    },
+    {
+      "id": "B06",
+      "title": "2026年9月股份变动月报",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1001/2026100100053.pdf",
+      "published_at": "2026-10-01",
+      "accessed_at": "2026-10-25T12:53:50.239081+00:00",
+      "period": "As of 2026-09-30",
+      "type": "issuer_filing",
+      "evidence": "primary",
+      "notes": "H and A share counts unchanged in September; current October post-month changes not exhaustively proven absent.",
+      "pages_used": [
+        1,
+        2
+      ],
+      "sha256": "4e6083bb1de575ab29264a3d52597a4e02fe3b8ba331f3eca5f220b74750a8c0",
+      "local_pdf": "data/research/2026-10-25/byd-originals/securities-2026-09.pdf",
+      "downloaded": true
+    },
+    {
+      "id": "B07",
+      "title": "新能源汽车出口退税调整公告2026年第29号",
+      "url": "https://szs.mof.gov.cn/zhengcefabu/202610/t20261012_4002592.htm",
+      "published_at": "2026-10-12",
+      "accessed_at": "2026-10-25T12:53:50.241395+00:00",
+      "period": "Effective 2027-04-01",
+      "type": "regulator",
+      "evidence": "primary",
+      "notes": "13% to 9% is announced future rate, not current effective rate; product scope must match annex/HS code."
+    },
+    {
+      "id": "B08",
+      "title": "新能源汽车出口退税调整附件1",
+      "url": "https://szs.mof.gov.cn/zhengcefabu/202610/P020261012324330026090.pdf",
+      "published_at": "2026-10-12",
+      "accessed_at": "2026-10-25T12:53:50.243611+00:00",
+      "period": "Effective 2027-04-01",
+      "type": "regulator",
+      "evidence": "primary",
+      "notes": "Includes BEV and specified plug-in-hybrid HS lines, not simply all group foreign revenue.",
+      "pages_used": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "sha256": "491bafda9dcfe105aa3df5fdc591ab6c28c8175097ec63a3a64991125e2e506c",
+      "local_pdf": "data/research/2026-10-25/byd-originals/export-vat-policy-annex.pdf",
+      "downloaded": true
+    },
+    {
+      "id": "B09",
+      "title": "税务总局天津：2026年新能源车购置税",
+      "url": "https://tianjin.chinatax.gov.cn/11200000000/0300/030005/20251229090659808.shtml",
+      "published_at": "2025-12-29",
+      "accessed_at": "2026-10-25T12:53:50.245729+00:00",
+      "period": "2026-01-01 through 2027-12-31",
+      "type": "regulator",
+      "evidence": "primary",
+      "notes": "Half rate, per-car tax reduction max15000CNY; not full exemption retained."
+    },
+    {
+      "id": "B10",
+      "title": "商务部中欧混动车、电动车磋商答问",
+      "url": "https://www.mofcom.gov.cn/syxwfb/art/2026/art_d6a5e2c4e62740868c7f1a7cd061f84a.html",
+      "published_at": "2026-10-12",
+      "accessed_at": "2026-10-25T12:53:50.247941+00:00",
+      "period": "2026 China-EU understanding",
+      "type": "regulator",
+      "evidence": "primary",
+      "notes": "Supports existence and principles of hybrid arrangement; does not establish BYD company quota or final product-level implementation."
+    },
+    {
+      "id": "B11",
+      "title": "欧委会价格承诺申报指引",
+      "url": "https://policy.trade.ec.europa.eu/news/commission-issues-guidance-document-submission-price-undertaking-offers-battery-electric-vehicles-2026-01-12_en",
+      "published_at": "2026-01-12",
+      "accessed_at": "2026-10-25T12:53:50.249998+00:00",
+      "period": "2026 guidance",
+      "type": "regulator",
+      "evidence": "primary",
+      "notes": "Individual submissions assessed; guidance does not itself repeal all duties."
+    },
+    {
+      "id": "B12",
+      "title": "欧委会2024最终反补贴税公告",
+      "url": "https://ec.europa.eu/commission/presscorner/api/files/document/print/en/ip_24_5589/IP_24_5589_EN.pdf",
+      "published_at": "2024-10-29",
+      "accessed_at": "2026-10-25T12:53:50.251999+00:00",
+      "period": "2024 tariff baseline",
+      "type": "regulator",
+      "evidence": "primary",
+      "notes": "BYD17.0% historical definitive countervailing baseline. Current company undertaking/review treatment not fully resolved in this packet; do not mechanically forecast unchanged rate."
+    },
+    {
+      "id": "B13",
+      "title": "SAFE人民币汇率中间价表",
+      "url": "https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do?COLLCC=546877760",
+      "published_at": "2026-10-23",
+      "accessed_at": "2026-10-25T12:53:50.254006+00:00",
+      "period": "2026-10-23 official midpoint",
+      "type": "regulator",
+      "evidence": "primary",
+      "notes": "HKD column85.696 is CNY per100HKD =>0.85696CNY/HKD; daily midpoint, not simultaneous tradeable closing FX."
+    },
+    {
+      "id": "B14",
+      "title": "经济通A股比亚迪行情",
+      "url": "https://www.etnet.com.hk/www/tc/ashares/quote_chart_interactive.php?code=002594",
+      "published_at": "2026-10-23",
+      "accessed_at": "2026-10-25T12:53:50.256123+00:00",
+      "period": "2026-10-23 close16:30 source timestamp",
+      "type": "public_market_vendor",
+      "evidence": "public_vendor",
+      "notes": "81.42CNY; exchange-sourced licensed display. May share upstream with other vendors, not independent economic evidence."
+    },
+    {
+      "id": "B15",
+      "title": "经济通H股比亚迪行情",
+      "url": "https://content.etnet.com.hk/content/cpyrevamp/sc/stock_quote.php?code=01211",
+      "published_at": "2026-10-23",
+      "accessed_at": "2026-10-25T12:53:50.258089+00:00",
+      "period": "2026-10-23 close16:15HKT source timestamp",
+      "type": "public_market_vendor",
+      "evidence": "public_vendor",
+      "notes": "71.60HKD; displayed P/E/market-cap not adopted because basis varies. H share class market cap is not full group equity value."
+    },
+    {
+      "id": "B16",
+      "title": "比亚迪2026第一季度报告",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0428/2026042803001.pdf",
+      "published_at": "2026-04-28",
+      "accessed_at": "2026-10-25T12:53:50.260024+00:00",
+      "period": "2026Q1 and 2025Q1",
+      "type": "issuer_filing",
+      "evidence": "primary",
+      "notes": "",
+      "pages_used": [
+        2,
+        4,
+        12,
+        13,
+        14,
+        15
+      ],
+      "sha256": "1e6a9bcf68b9c01be233dc08ac19f5b0f3e16df4e8cc2ab3bd45ff8ad1eb1b0a",
+      "local_pdf": "data/research/2026-10-25/byd-originals/q1-2026.pdf",
+      "downloaded": true
+    }
+  ],
+  "facts": [
+    {
+      "metric": "revenue",
+      "value": "344815421000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 67,
+      "definition": "revenue",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "revenue",
+      "value": "371280948000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 67,
+      "definition": "revenue",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "parent_net_income",
+      "value": "12325408000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 67,
+      "definition": "parent_net_income",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "parent_net_income",
+      "value": "15510533000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 67,
+      "definition": "parent_net_income",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "deducted_nonrecurring_parent_ni",
+      "value": "12373343000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 7,
+      "definition": "deducted_nonrecurring_parent_ni",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "deducted_nonrecurring_parent_ni",
+      "value": "13599741000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 7,
+      "definition": "deducted_nonrecurring_parent_ni",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "CFO",
+      "value": "37334744000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 71,
+      "definition": "CFO",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "CFO",
+      "value": "31833471000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 71,
+      "definition": "CFO",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "cash_capex",
+      "value": "44703066000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 71,
+      "definition": "cash_capex",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "cash_capex",
+      "value": "80524516000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 71,
+      "definition": "cash_capex",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "cost_of_sales",
+      "value": "279826859000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 67,
+      "definition": "cost_of_sales",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "cost_of_sales",
+      "value": "304415089000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 67,
+      "definition": "cost_of_sales",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "R&D_total",
+      "value": "28860958000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 167,
+      "definition": "R&D_total",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "R&D_total",
+      "value": "30880339000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 167,
+      "definition": "R&D_total",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "R&D_expensed",
+      "value": "23307152000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 167,
+      "definition": "R&D_expensed",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "R&D_expensed",
+      "value": "29596366000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 167,
+      "definition": "R&D_expensed",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "R&D_capitalized",
+      "value": "5553806000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 167,
+      "definition": "R&D_capitalized",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "R&D_capitalized",
+      "value": "1283973000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 167,
+      "definition": "R&D_capitalized",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "finance_expense",
+      "value": "5096026000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 154,
+      "definition": "finance_expense",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "finance_expense",
+      "value": "-3247033000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 154,
+      "definition": "finance_expense",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "FX_loss_or_gain",
+      "value": "4702801000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 154,
+      "definition": "FX_loss_or_gain",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "FX_loss_or_gain",
+      "value": "-3160428000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 154,
+      "definition": "FX_loss_or_gain",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "interest_expense",
+      "value": "1915063000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 154,
+      "definition": "interest_expense",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "interest_expense",
+      "value": "972045000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 154,
+      "definition": "interest_expense",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "interest_income",
+      "value": "1696913000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 154,
+      "definition": "interest_income",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "interest_income",
+      "value": "1078159000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 154,
+      "definition": "interest_income",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "pretax_profit",
+      "value": "14614087000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 67,
+      "definition": "pretax_profit",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "pretax_profit",
+      "value": "18910015000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 67,
+      "definition": "pretax_profit",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "income_tax",
+      "value": "2280028000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 67,
+      "definition": "income_tax",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "income_tax",
+      "value": "2871076000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 67,
+      "definition": "income_tax",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "consolidated_net_income",
+      "value": "12334059000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 161,
+      "definition": "consolidated_net_income",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "consolidated_net_income",
+      "value": "16038939000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 161,
+      "definition": "consolidated_net_income",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "government_grants_recognized_in_other_income",
+      "value": "6725939000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 154,
+      "definition": "government_grants_recognized_in_other_income",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "government_grants_recognized_in_other_income",
+      "value": "6410284000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 154,
+      "definition": "government_grants_recognized_in_other_income",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "working_capital_inventory_effect",
+      "value": "-53231176000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 161,
+      "definition": "working_capital_inventory_effect",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "working_capital_inventory_effect",
+      "value": "-25987262000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 161,
+      "definition": "working_capital_inventory_effect",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "working_capital_receivables_effect",
+      "value": "-4904943000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 161,
+      "definition": "working_capital_receivables_effect",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "working_capital_receivables_effect",
+      "value": "14995007000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 161,
+      "definition": "working_capital_receivables_effect",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "working_capital_payables_effect",
+      "value": "43195635000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 161,
+      "definition": "working_capital_payables_effect",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "working_capital_payables_effect",
+      "value": "-10055058000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 161,
+      "definition": "working_capital_payables_effect",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "investing_cashflow",
+      "value": "-55570464000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 71,
+      "definition": "investing_cashflow",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "investing_cashflow",
+      "value": "-74495747000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 71,
+      "definition": "investing_cashflow",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "financing_cashflow",
+      "value": "6387847000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 72,
+      "definition": "financing_cashflow",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "financing_cashflow",
+      "value": "49657739000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 72,
+      "definition": "financing_cashflow",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "cash_equivalents",
+      "value": "55619085000",
+      "unit": "CNY",
+      "period": "2026-06-30",
+      "source": "B02",
+      "page": 72,
+      "definition": "cash_equivalents",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "cash_equivalents",
+      "value": "68395197000",
+      "unit": "CNY",
+      "period": "2025-12-31",
+      "source": "B02",
+      "page": 72,
+      "definition": "cash_equivalents",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "monetary_funds",
+      "value": "58737867000",
+      "unit": "CNY",
+      "period": "2026-06-30",
+      "source": "B02",
+      "page": 65,
+      "definition": "monetary_funds",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "monetary_funds",
+      "value": "75424747000",
+      "unit": "CNY",
+      "period": "2025-12-31",
+      "source": "B02",
+      "page": 65,
+      "definition": "monetary_funds",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "restricted_monetary_funds",
+      "value": "2881818000",
+      "unit": "CNY",
+      "period": "2026-06-30",
+      "source": "B02",
+      "page": 135,
+      "definition": "restricted_monetary_funds",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "restricted_monetary_funds",
+      "value": "6697550000",
+      "unit": "CNY",
+      "period": "2025-12-31",
+      "source": "B02",
+      "page": 135,
+      "definition": "restricted_monetary_funds",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "trading_financial_assets",
+      "value": "69940449000",
+      "unit": "CNY",
+      "period": "2026-06-30",
+      "source": "B02",
+      "page": 65,
+      "definition": "trading_financial_assets",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "trading_financial_assets",
+      "value": "54532541000",
+      "unit": "CNY",
+      "period": "2025-12-31",
+      "source": "B02",
+      "page": 65,
+      "definition": "trading_financial_assets",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "inventory_net",
+      "value": "189990772000",
+      "unit": "CNY",
+      "period": "2026-06-30",
+      "source": "B02",
+      "page": 65,
+      "definition": "inventory_net",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "inventory_net",
+      "value": "138420580000",
+      "unit": "CNY",
+      "period": "2025-12-31",
+      "source": "B02",
+      "page": 65,
+      "definition": "inventory_net",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "trade_receivables",
+      "value": "50126342000",
+      "unit": "CNY",
+      "period": "2026-06-30",
+      "source": "B02",
+      "page": 65,
+      "definition": "trade_receivables",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "trade_receivables",
+      "value": "37004685000",
+      "unit": "CNY",
+      "period": "2025-12-31",
+      "source": "B02",
+      "page": 65,
+      "definition": "trade_receivables",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "trade_notes_payable",
+      "value": "53413166000",
+      "unit": "CNY",
+      "period": "2026-06-30",
+      "source": "B02",
+      "page": 136,
+      "definition": "trade_notes_payable",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "trade_notes_payable",
+      "value": "22463883000",
+      "unit": "CNY",
+      "period": "2025-12-31",
+      "source": "B02",
+      "page": 136,
+      "definition": "trade_notes_payable",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "trade_payables",
+      "value": "176356021000",
+      "unit": "CNY",
+      "period": "2026-06-30",
+      "source": "B02",
+      "page": 136,
+      "definition": "trade_payables",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "trade_payables",
+      "value": "186742375000",
+      "unit": "CNY",
+      "period": "2025-12-31",
+      "source": "B02",
+      "page": 136,
+      "definition": "trade_payables",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "contract_liabilities",
+      "value": "79796755000",
+      "unit": "CNY",
+      "period": "2026-06-30",
+      "source": "B02",
+      "page": 137,
+      "definition": "contract_liabilities",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "contract_liabilities",
+      "value": "51471055000",
+      "unit": "CNY",
+      "period": "2025-12-31",
+      "source": "B02",
+      "page": 137,
+      "definition": "contract_liabilities",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "short_borrowings",
+      "value": "37645979000",
+      "unit": "CNY",
+      "period": "2026-06-30",
+      "source": "B02",
+      "page": 136,
+      "definition": "short_borrowings",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "short_borrowings",
+      "value": "38484710000",
+      "unit": "CNY",
+      "period": "2025-12-31",
+      "source": "B02",
+      "page": 136,
+      "definition": "short_borrowings",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "long_borrowings_noncurrent",
+      "value": "61201246000",
+      "unit": "CNY",
+      "period": "2026-06-30",
+      "source": "B02",
+      "page": 66,
+      "definition": "long_borrowings_noncurrent",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "long_borrowings_noncurrent",
+      "value": "60705569000",
+      "unit": "CNY",
+      "period": "2025-12-31",
+      "source": "B02",
+      "page": 66,
+      "definition": "long_borrowings_noncurrent",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "bonds_payable_noncurrent",
+      "value": "14993800000",
+      "unit": "CNY",
+      "period": "2026-06-30",
+      "source": "B02",
+      "page": 66,
+      "definition": "bonds_payable_noncurrent",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "bonds_payable_noncurrent",
+      "value": "4997910000",
+      "unit": "CNY",
+      "period": "2025-12-31",
+      "source": "B02",
+      "page": 66,
+      "definition": "bonds_payable_noncurrent",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "lease_liabilities_total",
+      "value": "10871873000",
+      "unit": "CNY",
+      "period": "2026-06-30",
+      "source": "B02",
+      "page": 143,
+      "definition": "lease_liabilities_total",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "lease_liabilities_total",
+      "value": "10716454000",
+      "unit": "CNY",
+      "period": "2025-12-31",
+      "source": "B02",
+      "page": 143,
+      "definition": "lease_liabilities_total",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "other_equity_perpetual",
+      "value": "20846860000",
+      "unit": "CNY",
+      "period": "2026-06-30",
+      "source": "B02",
+      "page": 144,
+      "definition": "other_equity_perpetual",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "other_equity_perpetual",
+      "value": "18733984000",
+      "unit": "CNY",
+      "period": "2025-12-31",
+      "source": "B02",
+      "page": 144,
+      "definition": "other_equity_perpetual",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "short_financing_notes",
+      "value": "5022189000",
+      "unit": "CNY",
+      "period": "2026-06-30",
+      "source": "B02",
+      "page": 139,
+      "definition": "short_financing_notes",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "short_financing_notes",
+      "value": "5031145000",
+      "unit": "CNY",
+      "period": "2025-12-31",
+      "source": "B02",
+      "page": 139,
+      "definition": "short_financing_notes",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "parent_equity",
+      "value": "260818431000",
+      "unit": "CNY",
+      "period": "2026-06-30",
+      "source": "B02",
+      "page": 66,
+      "definition": "parent_equity",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "parent_equity",
+      "value": "246274606000",
+      "unit": "CNY",
+      "period": "2025-12-31",
+      "source": "B02",
+      "page": 66,
+      "definition": "parent_equity",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "minority_equity",
+      "value": "12552384000",
+      "unit": "CNY",
+      "period": "2026-06-30",
+      "source": "B02",
+      "page": 66,
+      "definition": "minority_equity",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "minority_equity",
+      "value": "12264579000",
+      "unit": "CNY",
+      "period": "2025-12-31",
+      "source": "B02",
+      "page": 66,
+      "definition": "minority_equity",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "warranty_provisions",
+      "value": "34043625000",
+      "unit": "CNY",
+      "period": "2026-06-30",
+      "source": "B02",
+      "page": 139,
+      "definition": "warranty_provisions",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "warranty_provisions",
+      "value": "31273284000",
+      "unit": "CNY",
+      "period": "2025-12-31",
+      "source": "B02",
+      "page": 139,
+      "definition": "warranty_provisions",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "construction_in_progress",
+      "value": "68990056000",
+      "unit": "CNY",
+      "period": "2026-06-30",
+      "source": "B02",
+      "page": 65,
+      "definition": "construction_in_progress",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "construction_in_progress",
+      "value": "48293781000",
+      "unit": "CNY",
+      "period": "2025-12-31",
+      "source": "B02",
+      "page": 65,
+      "definition": "construction_in_progress",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "auto_related_revenue",
+      "value": "275341358000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 26,
+      "definition": "auto_related_revenue",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "auto_related_revenue",
+      "value": "302506271000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 26,
+      "definition": "auto_related_revenue",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "electronic_revenue",
+      "value": "69404994000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 26,
+      "definition": "electronic_revenue",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "electronic_revenue",
+      "value": "68743903000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 26,
+      "definition": "electronic_revenue",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "group_foreign_revenue",
+      "value": "181268174000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 26,
+      "definition": "group_foreign_revenue",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "group_foreign_revenue",
+      "value": "135357667000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 26,
+      "definition": "group_foreign_revenue",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "group_domestic_revenue",
+      "value": "163547247000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 26,
+      "definition": "group_domestic_revenue",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "group_domestic_revenue",
+      "value": "235923281000",
+      "unit": "CNY",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 26,
+      "definition": "group_domestic_revenue",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "auto_related_gross_margin",
+      "value": ".2233",
+      "unit": "ratio",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 26,
+      "definition": "auto_related_gross_margin",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "auto_related_gross_margin",
+      "value": ".2035",
+      "unit": "ratio",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 26,
+      "definition": "auto_related_gross_margin",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "electronic_gross_margin",
+      "value": ".0504",
+      "unit": "ratio",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 26,
+      "definition": "electronic_gross_margin",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "electronic_gross_margin",
+      "value": ".0771",
+      "unit": "ratio",
+      "period": "2025H1",
+      "source": "B02",
+      "page": 26,
+      "definition": "electronic_gross_margin",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "auto_contract_foreign_revenue",
+      "value": "129487108000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 150,
+      "definition": "auto_contract_foreign_revenue",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "auto_contract_total_revenue",
+      "value": "275068371000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 150,
+      "definition": "auto_contract_total_revenue",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "auto_segment_profit_before_reconciliation",
+      "value": "11160544000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 193,
+      "definition": "Segment profit definition differs from consolidated PBT; exclusions in p192",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "electronics_segment_profit_before_reconciliation",
+      "value": "193589000",
+      "unit": "CNY",
+      "period": "2026H1",
+      "source": "B02",
+      "page": 193,
+      "definition": "Segment profit definition differs from consolidated PBT; not quoted BYD Electronic subsidiary net income",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "revenue",
+      "value": "803964958000",
+      "unit": "CNY",
+      "period": "2025FY",
+      "source": "B01",
+      "page": 126,
+      "definition": "revenue",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "parent_net_income",
+      "value": "32619022000",
+      "unit": "CNY",
+      "period": "2025FY",
+      "source": "B01",
+      "page": 126,
+      "definition": "parent_net_income",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "CFO",
+      "value": "59135544000",
+      "unit": "CNY",
+      "period": "2025FY",
+      "source": "B01",
+      "page": 130,
+      "definition": "CFO",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "cash_capex",
+      "value": "156807853000",
+      "unit": "CNY",
+      "period": "2025FY",
+      "source": "B01",
+      "page": 130,
+      "definition": "cash_capex",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "revenue",
+      "value": "777102455000",
+      "unit": "CNY",
+      "period": "2024FY",
+      "source": "B01",
+      "page": 126,
+      "definition": "revenue",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "parent_net_income",
+      "value": "40254346000",
+      "unit": "CNY",
+      "period": "2024FY",
+      "source": "B01",
+      "page": 126,
+      "definition": "parent_net_income",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "CFO",
+      "value": "133453873000",
+      "unit": "CNY",
+      "period": "2024FY",
+      "source": "B01",
+      "page": 130,
+      "definition": "CFO",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "cash_capex",
+      "value": "97359768000",
+      "unit": "CNY",
+      "period": "2024FY",
+      "source": "B01",
+      "page": 130,
+      "definition": "cash_capex",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "revenue",
+      "value": "150225314000",
+      "unit": "CNY",
+      "period": "2026Q1",
+      "source": "B16",
+      "page": 2,
+      "definition": "revenue",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "parent_net_income",
+      "value": "4084551000",
+      "unit": "CNY",
+      "period": "2026Q1",
+      "source": "B16",
+      "page": 2,
+      "definition": "parent_net_income",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "CFO",
+      "value": "2790305000",
+      "unit": "CNY",
+      "period": "2026Q1",
+      "source": "B16",
+      "page": 2,
+      "definition": "CFO",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "revenue",
+      "value": "170360448000",
+      "unit": "CNY",
+      "period": "2025Q1",
+      "source": "B16",
+      "page": 2,
+      "definition": "revenue",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "parent_net_income",
+      "value": "9154985000",
+      "unit": "CNY",
+      "period": "2025Q1",
+      "source": "B16",
+      "page": 2,
+      "definition": "parent_net_income",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "CFO",
+      "value": "8580961000",
+      "unit": "CNY",
+      "period": "2025Q1",
+      "source": "B16",
+      "page": 2,
+      "definition": "CFO",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "NEV_sales",
+      "value": "1808511",
+      "unit": "vehicles",
+      "period": "2026YTD6",
+      "source": "B03",
+      "page": 1,
+      "definition": "NEV_sales",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "NEV_sales",
+      "value": "2145954",
+      "unit": "vehicles",
+      "period": "2025YTD6",
+      "source": "B03",
+      "page": 1,
+      "definition": "NEV_sales",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "NEV_sales",
+      "value": "3131576",
+      "unit": "vehicles",
+      "period": "2026YTD9",
+      "source": "B04",
+      "page": 1,
+      "definition": "NEV_sales",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "NEV_sales",
+      "value": "3260146",
+      "unit": "vehicles",
+      "period": "2025YTD9",
+      "source": "B04",
+      "page": 1,
+      "definition": "NEV_sales",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "NEV_sales",
+      "value": "463561",
+      "unit": "vehicles",
+      "period": "2026-09",
+      "source": "B04",
+      "page": 1,
+      "definition": "NEV_sales",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "NEV_sales",
+      "value": "396270",
+      "unit": "vehicles",
+      "period": "2025-09",
+      "source": "B04",
+      "page": 1,
+      "definition": "NEV_sales",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "BEV_passenger_sales",
+      "value": "1629957",
+      "unit": "vehicles",
+      "period": "2026YTD9",
+      "source": "B04",
+      "page": 1,
+      "definition": "BEV_passenger_sales",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "PHEV_passenger_sales",
+      "value": "1448587",
+      "unit": "vehicles",
+      "period": "2026YTD9",
+      "source": "B04",
+      "page": 1,
+      "definition": "PHEV_passenger_sales",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "export_NEV",
+      "value": "180700",
+      "unit": "vehicles",
+      "period": "2026-09",
+      "source": "B04",
+      "page": 1,
+      "definition": "export_NEV",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "total_issued_shares",
+      "value": "9117197565",
+      "unit": "shares",
+      "period": "2026-09-30",
+      "source": "B06",
+      "page": 2,
+      "definition": "total_issued_shares",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "A_shares",
+      "value": "5433797565",
+      "unit": "shares",
+      "period": "2026-09-30",
+      "source": "B06",
+      "page": 2,
+      "definition": "A_shares",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "H_shares",
+      "value": "3683400000",
+      "unit": "shares",
+      "period": "2026-09-30",
+      "source": "B06",
+      "page": 2,
+      "definition": "H_shares",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "A_close",
+      "value": "81.42",
+      "unit": "CNY/share",
+      "period": "2026-10-23",
+      "source": "B14",
+      "page": null,
+      "definition": "A_close",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "H_close",
+      "value": "71.60",
+      "unit": "HKD/share",
+      "period": "2026-10-23",
+      "source": "B15",
+      "page": null,
+      "definition": "H_close",
+      "evidence_label": "fact_source_reported"
+    },
+    {
+      "metric": "HKD_CNY_midpoint",
+      "value": ".85696",
+      "unit": "CNY/HKD",
+      "period": "2026-10-23",
+      "source": "B13",
+      "page": null,
+      "definition": "HKD_CNY_midpoint",
+      "evidence_label": "fact_source_reported"
+    }
+  ],
+  "calculations": {
+    "TTM_parent_earnings": {
+      "formula": "FY2025 32619022000 - H12025 15510533000 + H12026 12325408000",
+      "value": "29433897000",
+      "notes": "Not normalized sustainable earnings",
+      "label": "derived_calculation"
+    },
+    "TTM_EPS_numerator": {
+      "formula": "FY2025 32326907000 - H12025 15311655000 + H12026 12294989000",
+      "value": "29310241000",
+      "notes": "EPS numerators include stock-profit and other-equity-holder allocations; not a consensus forecast",
+      "label": "derived_calculation"
+    },
+    "TTM_restricted_profit_deduction": {
+      "formula": "115007000 - 65937000 + 30419000",
+      "value": "79489000",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "TTM_other_equity_profit_deduction": {
+      "formula": "177108000 - 132941000 + 0",
+      "value": "44167000",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "TTM_current_issued_share_EPS": {
+      "formula": "29310241000 / 9117197565",
+      "value": "3.214830082493665914104823942",
+      "notes": "Current-issued-share diagnostic, not exact company-reported TTM weighted-average diluted EPS. Rounded disclosed rolling EPS =3.58-1.71+1.35≈3.22.",
+      "label": "derived_calculation"
+    },
+    "H_close_CNY": {
+      "formula": "71.60 * 0.85696",
+      "value": "61.3583360",
+      "notes": "Same-day official midpoint, not same-instant closing FX",
+      "label": "derived_calculation"
+    },
+    "A_diagnostic_TTM_PE": {
+      "formula": "81.42 / current-issued-share diagnostic EPS",
+      "value": "25.32637741676364926511522031",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "H_diagnostic_TTM_PE": {
+      "formula": "(71.60*0.85696) / current-issued-share diagnostic EPS",
+      "value": "19.08602769836153309008956972",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "A_premium_to_H": {
+      "formula": "81.42/(71.60*0.85696)-1",
+      "value": "0.326959062253578715042076760",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "A_class_marketcap_CNY": {
+      "formula": "81.42*5433797565",
+      "value": "442419797742.30",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "H_class_marketcap_HKD": {
+      "formula": "71.60*3683400000",
+      "value": "263731440000.00",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "mixed_class_group_marketcap_CNY": {
+      "formula": "A_price*A_shares + H_price*H_shares*same_day_reference_FX",
+      "value": "668427092564.7000000",
+      "notes": "Different prices for separate classes; not total shares priced at H nor H-class cap alone",
+      "label": "derived_calculation"
+    },
+    "H1_cash_after_total_capex": {
+      "formula": "37334744000-44703066000",
+      "value": "-7368322000",
+      "notes": "Screening cash measure, not maintenance FCF/FCFE; no second deduction of capitalized R&D",
+      "label": "derived_calculation"
+    },
+    "H1_2025_cash_after_total_capex": {
+      "formula": "31833471000-80524516000",
+      "value": "-48691045000",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "FY25_cash_after_total_capex": {
+      "formula": "59135544000-156807853000",
+      "value": "-97672309000",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "working_capital_three_item_effect": {
+      "formula": "-53231176000-4904943000+43195635000",
+      "value": "-14940484000",
+      "notes": "Original cash-flow adjustments, not balance-sheet change estimates",
+      "label": "derived_calculation"
+    },
+    "working_capital_three_item_effect_2025": {
+      "formula": "-25987262000+14995007000-10055058000",
+      "value": "-21047313000",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "CFO_without_payables_increase": {
+      "formula": "37334744000-43195635000",
+      "value": "-5860891000",
+      "notes": "Illustrative liquidity stress; not a valid new forecast, assumes all other items unchanged and payables contribution disappears",
+      "label": "derived_calculation"
+    },
+    "H1_cash_before_three_wc_items": {
+      "formula": "37334744000-(-14940484000)",
+      "value": "52275228000",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "Q2_revenue": {
+      "formula": "344815421000-150225314000",
+      "value": "194590107000",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "Q2_parent_NI": {
+      "formula": "12325408000-4084551000",
+      "value": "8240857000",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "Q2_prior_parent_NI": {
+      "formula": "15510533000-9154985000",
+      "value": "6355548000",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "Q2_parent_NI_yoy": {
+      "formula": "8240857000/6355548000-1",
+      "value": "0.296639880620837101694456560",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "Q2_CFO": {
+      "formula": "37334744000-2790305000",
+      "value": "34544439000",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "Q3_NEV_units": {
+      "formula": "3131576-1808511",
+      "value": "1323065",
+      "notes": "Operating volumes only; Q3 results due October29, not yet known",
+      "label": "derived_calculation"
+    },
+    "Q3_prior_NEV_units": {
+      "formula": "3260146-2145954",
+      "value": "1114192",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "Q3_unit_yoy": {
+      "formula": "1323065/1114192-1",
+      "value": "0.187465894567543116446716544",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "R&D_capitalization_rate_2026H1": {
+      "formula": "5553806000/28860958000",
+      "value": "0.1924331825714170679989208951",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "R&D_capitalization_rate_2025H1": {
+      "formula": "1283973000/30880339000",
+      "value": "0.04157898007531588302835665114",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "incremental_capitalized_R&D": {
+      "formula": "5553806000-1283973000",
+      "value": "4269833000",
+      "notes": "Accounting timing diagnostic, not cash outflow nor fully normalized earnings adjustment; amortization/tax/cohort treatment required",
+      "label": "derived_calculation"
+    },
+    "FX_pretax_yoy_drag": {
+      "formula": "4702801000-(-3160428000)",
+      "value": "7863229000",
+      "notes": "Not an unconditional add-back; foreign exposure/hedges recur",
+      "label": "derived_calculation"
+    },
+    "pretax_profit_excluding_FX_2026": {
+      "formula": "14614087000+4702801000",
+      "value": "19316888000",
+      "notes": "Diagnostic, not underwritten normalized profit",
+      "label": "derived_calculation"
+    },
+    "pretax_profit_excluding_FX_2025": {
+      "formula": "18910015000-3160428000",
+      "value": "15749587000",
+      "notes": "Diagnostic only; R&D capitalization and other changes remain",
+      "label": "derived_calculation"
+    },
+    "group_foreign_revenue_share": {
+      "formula": "181268174000/344815421000",
+      "value": "0.5256962506905977386666821957",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "auto_contract_foreign_revenue_share": {
+      "formula": "129487108000/275068371000",
+      "value": "0.4707451733881828238260079709",
+      "notes": "Contract revenue breakdown, not all auto segment rental revenues and not group overseas mix",
+      "label": "derived_calculation"
+    },
+    "cashflow_ending_cash_bridge": {
+      "formula": "68395197000+37334744000-55570464000+6387847000-928239000",
+      "value": "55619085000",
+      "notes": "",
+      "label": "derived_calculation"
+    },
+    "gross_financing_liabilities_including_leases": {
+      "formula": "37645979000+62291027000+15095564000+10871873000+5022189000",
+      "value": "130926632000",
+      "notes": "p160 includes current portions; do not add current noncurrent liabilities again",
+      "label": "derived_calculation"
+    },
+    "net_financing_liabilities_vs_CCE": {
+      "formula": "130926632000-55619085000",
+      "value": "75307547000",
+      "notes": "Excludes 69.940449bn trading financial assets, excludes equity-class perpetual20.84686bn and minority interests; dated June30, not current definitive EV",
+      "label": "derived_calculation"
+    },
+    "inventory_net_growth_since_year_end": {
+      "formula": "189990772000/138420580000-1",
+      "value": "0.372561594525900700603913089",
+      "notes": "",
+      "label": "derived_calculation"
+    }
+  },
+  "illustrative_profit_multiple_grid": [
+    {
+      "common_profit_CNY": "20000000000",
+      "assumed_PE": "15",
+      "value_CNY_per_share": "32.90484799316729515227961389",
+      "value_HKD_per_share": "38.39718072391627981735391837",
+      "upside_vs_A": "-0.5958628347682719829000293062",
+      "upside_vs_H": "-0.4637265262022865947296938775",
+      "status": "analyst_illustrative_sensitivity_not_target_or_forecast"
+    },
+    {
+      "common_profit_CNY": "20000000000",
+      "assumed_PE": "20",
+      "value_CNY_per_share": "43.87313065755639353637281852",
+      "value_HKD_per_share": "51.19624096522170642313855783",
+      "upside_vs_A": "-0.4611504463576959772000390749",
+      "upside_vs_H": "-0.2849687016030487929729251700",
+      "status": "analyst_illustrative_sensitivity_not_target_or_forecast"
+    },
+    {
+      "common_profit_CNY": "20000000000",
+      "assumed_PE": "25",
+      "value_CNY_per_share": "54.84141332194549192046602315",
+      "value_HKD_per_share": "63.99530120652713302892319729",
+      "upside_vs_A": "-0.3264380579471199715000488437",
+      "upside_vs_H": "-0.1062108770038109912161564624",
+      "status": "analyst_illustrative_sensitivity_not_target_or_forecast"
+    },
+    {
+      "common_profit_CNY": "30000000000",
+      "assumed_PE": "15",
+      "value_CNY_per_share": "49.35727198975094272841942084",
+      "value_HKD_per_share": "57.59577108587441972603087757",
+      "upside_vs_A": "-0.3937942521524079743500439592",
+      "upside_vs_H": "-0.1955897893034298920945408161",
+      "status": "analyst_illustrative_sensitivity_not_target_or_forecast"
+    },
+    {
+      "common_profit_CNY": "30000000000",
+      "assumed_PE": "20",
+      "value_CNY_per_share": "65.80969598633459030455922778",
+      "value_HKD_per_share": "76.79436144783255963470783675",
+      "upside_vs_A": "-0.1917256695365439658000586124",
+      "upside_vs_H": "0.072546947595426810540612245",
+      "status": "analyst_illustrative_sensitivity_not_target_or_forecast"
+    },
+    {
+      "common_profit_CNY": "30000000000",
+      "assumed_PE": "25",
+      "value_CNY_per_share": "82.26211998291823788069903472",
+      "value_HKD_per_share": "95.99295180979069954338479593",
+      "upside_vs_A": "0.010342913079320042749926734",
+      "upside_vs_H": "0.340683684494283513175765306",
+      "status": "analyst_illustrative_sensitivity_not_target_or_forecast"
+    },
+    {
+      "common_profit_CNY": "40000000000",
+      "assumed_PE": "15",
+      "value_CNY_per_share": "65.80969598633459030455922780",
+      "value_HKD_per_share": "76.79436144783255963470783677",
+      "upside_vs_A": "-0.1917256695365439658000586121",
+      "upside_vs_H": "0.072546947595426810540612245",
+      "status": "analyst_illustrative_sensitivity_not_target_or_forecast"
+    },
+    {
+      "common_profit_CNY": "40000000000",
+      "assumed_PE": "20",
+      "value_CNY_per_share": "87.74626131511278707274563706",
+      "value_HKD_per_share": "102.3924819304434128462771157",
+      "upside_vs_A": "0.077699107284608045599921850",
+      "upside_vs_H": "0.430062596793902414054149661",
+      "status": "analyst_illustrative_sensitivity_not_target_or_forecast"
+    },
+    {
+      "common_profit_CNY": "40000000000",
+      "assumed_PE": "25",
+      "value_CNY_per_share": "109.6828266438909838409320463",
+      "value_HKD_per_share": "127.9906024130542660578463946",
+      "upside_vs_A": "0.347123884105760056999902313",
+      "upside_vs_H": "0.787578245992378017567687075",
+      "status": "analyst_illustrative_sensitivity_not_target_or_forecast"
+    }
+  ],
+  "reverse_price_conditions": [
+    {
+      "assumed_PE": "15",
+      "common_profit_required_A_CNY": "49488148382.82",
+      "common_profit_required_H_CNY": "37294404771.4434560",
+      "label": "conditional_reverse_valuation_not_market_consensus"
+    },
+    {
+      "assumed_PE": "20",
+      "common_profit_required_A_CNY": "37116111287.115",
+      "common_profit_required_H_CNY": "27970803578.5825920",
+      "label": "conditional_reverse_valuation_not_market_consensus"
+    },
+    {
+      "assumed_PE": "25",
+      "common_profit_required_A_CNY": "29692889029.692",
+      "common_profit_required_H_CNY": "22376642862.8660736",
+      "label": "conditional_reverse_valuation_not_market_consensus"
+    }
+  ],
+  "thesis": [
+    {
+      "title": "经营出现边际恢复，不能把份额、销量和利润等同",
+      "judgment": "H1销量下降15.72%，9M仍降3.94%，但Q3单位量由原文累计差得同比+18.75%，Q2归母利润同比+29.66%。对短期恢复应比H1总数更积极，对可持续增长仍需谨慎。",
+      "support": [
+        "B02",
+        "B03",
+        "B04",
+        "B16"
+      ],
+      "falsifier": "10/29披露的Q3汽车经营利润/扣非和现金转化未随单位量改善，或恢复主要靠激进折扣与渠道堆货。"
+    },
+    {
+      "title": "海外与汽车毛利改善是真实结构线索，但不能把集团海外份额当汽车份额",
+      "judgment": "集团海外收入占52.57%；汽车合同收入海外占约47.07%，汽车相关毛利率22.33%高于上年20.35%。结构与制造优势支持韧性，但海外属地化成本、渠道和税制可能吃掉增量回报。",
+      "support": [
+        "B02"
+      ],
+      "falsifier": "海外终端注册/库存/售价与出厂出口脱节，海外毛利在本地成本/关税和退税变动后下降。"
+    },
+    {
+      "title": "现金改善主要来自少投和付款结构，仍需资本回报承保",
+      "judgment": "H1 CFO上升至373.35亿，但现金Capex后仍-73.68亿。上年同期-486.91亿的改善主要对应Capex减少358.21亿。库存增加净额达到约515.70亿，现金补充表存货占款532.31亿；经营应付贡献431.96亿。不是CFO很高就可分红。",
+      "support": [
+        "B01",
+        "B02"
+      ],
+      "falsifier": "后续库存/应收继续累积、经营应付不再提供现金或付款周期缩短，而投入/融资无法同步调整。"
+    },
+    {
+      "title": "正常化盈利须同时审查汇兑、研发资本化和政府支持",
+      "judgment": "汇兑同比拖累税前78.63亿，但研发资本化同比增加42.70亿，资本化率从4.16%升至19.24%；只剔除坏的汇兑而保留有利的费用资本化会高估改善。经常性政府补助计入其他收益67.26亿，不可无条件当永久增长或简单全数归零。",
+      "support": [
+        "B02"
+      ],
+      "falsifier": "扣除必要研发经济成本及正常化汇兑/补贴后，持续经营利润不足以覆盖增量资本成本。"
+    },
+    {
+      "title": "H股相对A股价格较低，但两者都在为盈利稳定和恢复付费",
+      "judgment": "同日参考FX下H股折61.36元、A股81.42元，A溢价32.7%。当前股数诊断TTM PE约19.09/25.33倍，反映不同准入、资金和风险溢价，不证明套利或低估。H股20倍对应约279.71亿可持续普通股利润，A股同倍数要求371.17亿。",
+      "support": [
+        "B01",
+        "B02",
+        "B06",
+        "B13",
+        "B14",
+        "B15"
+      ],
+      "falsifier": "实际可持续普通股利润因价格/资本/税收压力低于反推条件，且估值倍数同时下降。"
+    }
+  ],
+  "policy_events": [
+    {
+      "event": "2026-2027新能源汽车购置税减半",
+      "published": "2025-12-29",
+      "effective": "2026-01-01",
+      "status": "effective_rule",
+      "source": "B09",
+      "mechanism": "终端购车总成本上升→量价与促销负担→国内毛利/现金；不能把税负变化一比一当公司净利变化。"
+    },
+    {
+      "event": "新能源汽车出口退税13%降至9%",
+      "published": "2026-10-12",
+      "effective": "2027-04-01",
+      "status": "announced_not_effective",
+      "sources": [
+        "B07",
+        "B08"
+      ],
+      "mechanism": "适用中国出口FOB税基×4个百分点×不可转嫁比例→税前利润/现金；海外本地生产、非适用HS和电子收入不直接套用。每1000亿合规FOB税基、完全自担、全年适用时税前40亿；2027仅4月起，须按出口日期、数量与产品单列。",
+      "confidence": "公告较高，BYD公司量化净暴露中低"
+    },
+    {
+      "event": "中欧混动车与BEV贸易共识/价格承诺程序",
+      "published": "2026-10-12",
+      "status": "principles_confirmed_company_implementation_unresolved",
+      "sources": [
+        "B10",
+        "B11",
+        "B12"
+      ],
+      "mechanism": "欧盟可得市场/进口价格/本地生产投资要求→出口组合与毛利；媒体35万辆不作已核定公司配额。2024 BYD17%反补贴基准不能当永恒静态2027税率，更不能把1月通用指引当全面撤税。"
+    },
+    {
+      "event": "Q3董事会与业绩窗口",
+      "published": "2026-10-14",
+      "expected_date": "2026-10-29",
+      "status": "scheduled_not_reported",
+      "source": "B05",
+      "mechanism": "核Q3毛利、研发资本化/费用、汇兑、库存与经营应付；Q3销量已知而Q3利润未知。"
+    }
+  ],
+  "stress_tests": [
+    {
+      "name": "量价与毛利",
+      "formula": "单位量×每车净售价×毛利率−期间费用−税费；每1000亿汽车收入×毛利率下降1pct=税前10亿，未计二阶抵消",
+      "status": "diagnostic_unit_exposure",
+      "limit": "汽车分部还含电池/其他产品，不用集团收入÷整车销量假造ASP。"
+    },
+    {
+      "name": "库存占款",
+      "formula": "增量现金占款≈新增库存−有对应经营解释的应付融资；不能把期末账面差额当现金补充表金额",
+      "status": "cashflow_bridge",
+      "limit": "外币折算、减值、采购确认和合并变化使两者不同。"
+    },
+    {
+      "name": "应付支持消失",
+      "formula": "CFO373.34744亿−经营应付增加431.95635亿=−58.60891亿；再减总现金Capex447.03066亿=−505.63957亿",
+      "status": "illustrative_joint_liquidity_stress_not_forecast",
+      "limit": "将其他变量冻结，展示依赖而非预测付款会全部倒转。"
+    },
+    {
+      "name": "研发与汇兑双向正常化",
+      "formula": "本期税前146.14087亿+汇兑损失47.02801亿=193.16888亿；上年189.10015−汇兑收益31.60428=157.49587亿。再检查本期资本化相对基准及相应历史摊销，不能只做单边加回。",
+      "status": "accounting_diagnostic_not_underwritten_earnings",
+      "limit": "资本化发生额非现金数，税、摊销和cohort仍未知，不能从现金Capex后再扣55.54亿。"
+    },
+    {
+      "name": "FX费用与现金FX分列",
+      "formula": "损益表汇兑损失47.02801亿≠现金流汇率影响−9.28239亿；CCE桥只使用后者一次",
+      "status": "accounting_and_cash_scope_control",
+      "limit": "不把FX损失同时从利润/CFO和现金期末额重复扣除；净敞口、衍生品和实现/未实现仍需补证。"
+    }
+  ],
+  "monitoring": [
+    {
+      "frequency": "月度",
+      "metric": "NEV分BEV/PHEV、境内/出口、出厂/终端",
+      "trigger": "连续3个月累计同比与单月背离，或出口/批发增长而终端和库存恶化",
+      "action": "重开需求与价格/库存论点；三个月只是本研究筛查规则，未校准。"
+    },
+    {
+      "frequency": "季度",
+      "metric": "汽车/电子毛利、FX与研发资本化",
+      "trigger": "汽车毛利回落且研发资本化占比继续上升/资本化项目摊销拉长",
+      "action": "重做可持续利润，不以报告EPS单独确认恢复；行业阈值未量化承保。"
+    },
+    {
+      "frequency": "季度",
+      "metric": "CFO、现金Capex、存货/应收/应付、合同负债",
+      "trigger": "库存与应收增加而经营应付/预收支持减弱，现金投入后再次明显为负",
+      "action": "评估融资与普通股分配约束，核贸易融资、短票与永续赎回安排。"
+    },
+    {
+      "frequency": "事件",
+      "metric": "2027出口退税、欧盟实施文本/公司价格承诺、本地投产",
+      "trigger": "公司适用净暴露改变、产品目录/出口日期/地区数量明确",
+      "action": "按净FOB暴露、转嫁和本地成本更新经营桥；不把政策新闻直接变成买卖信号。"
+    },
+    {
+      "frequency": "2026Q4/2027Q1至2027Q2",
+      "metric": "中国出口报关日期、海外渠道库存、单车净价与退税承担",
+      "trigger": "2027-04-01前抢出口或渠道前置库存快速增加",
+      "action": "将出厂/报关量与终端销售分列，核退税切换后的订单、回款和海外库存；不把前置出货年化。"
+    }
+  ],
+  "semantic_conflicts": [
+    {
+      "field": "existing_fixture.notes_payable",
+      "existing_values": [
+        "2025-12-31 4997910000",
+        "2026-06-30 14993800000"
+      ],
+      "original_chinese": "应付债券",
+      "page": "B02 p66; B01 p124",
+      "actual_trade_notes": "B02 p66/p136 应付票据53413166000 at2026-06-30;22463883000 at2025-12-31",
+      "resolution": "Do not modify historical fixture in this subtask. New report uses explicit Chinese labels and bonds_payable_noncurrent vs trade_notes_payable separately."
+    },
+    {
+      "field": "cash_vs_monetary_funds_vs_investments",
+      "resolution": "CCE556.19085亿、货币资金587.37867亿、受限货币28.81818亿、交易性金融资产699.40449亿、非流动存单193.08438亿分别列；不把交易性资产全当现金、不再次从已经排除受限款的CCE扣受限货币。"
+    },
+    {
+      "field": "R&D_cash_capex_overlap",
+      "resolution": "p167资本化研发55.53806亿为发生额含潜在非现金/支付时滞；p71购建固定资产、无形资产和其他长期资产支付447.03066亿口径广，但报告未单列资本化研发现金组成。未独立勾稽时不再扣55.54亿，保留现金分类明细缺口。"
+    },
+    {
+      "field": "EPS_vs_parent_NI",
+      "resolution": "TTM归母294.33897亿；基本EPS分子TTM293.10241亿，扣限制利润0.79489亿和其他权益持有人0.44167亿。除当前已发行总股数是诊断，非精确加权TTM diluted EPS。"
+    },
+    {
+      "field": "segment_revenue_and_SOTP",
+      "resolution": "集团境外收入52.57%混含电子；汽车合同境外约47.07%。集团合并利润已包括控股子公司，不再把BYD电子全部市值/AI收入无扣除地叠加。集团分部利润定义p192也不等同上市子公司净利润。"
+    }
+  ],
+  "gaps": [
+    "车型/地区真正净价、促销/质保、终端注册和渠道库存；不能由出口数据自动确认真实终端需求。",
+    "海外项目产能cohort利用率、本地化单位成本及投入后的ROIC/FCFE；尚不足承保长期目标价。",
+    "研发资本化项目经济寿命、转无形资产后摊销及对应现金分类、同口径正常化利润。",
+    "受限资金、理财产品可变现性/期限、外部往来与贸易融资、永续分配及未来重置/赎回的完整资本桥；本报告给的是6/30诊断。",
+    "当前有效公司级欧盟承诺/配额分配和适用出口退税HS/FOB金额/税负转嫁比例。",
+    "未获得有授权、共同截止点的逐分析师一致预期；公共网站forwardPE不当作可追溯共识。",
+    "股本月报截止9/30，10月后续股份动作尚须日级公告复核；当前总股份诊断不冒称完备未来稀释数。"
+  ],
+  "overall_conclusion": "比亚迪的规模、海外经营与毛利韧性支持继续深研；Q2利润和Q3销量有边际恢复。当前最关键的审议是新增销量能否在关税/退税、研发经济成本、库存与海外建厂之后生成融资后现金回报。H股相对A股估值较低，但约19倍TTM并非无条件便宜。现阶段给予有条件观察研究姿态，不能据当前证据直接给出目标价或个性化仓位。",
+  "validation": {
+    "cfo_reconciliation_exact": true,
+    "cfo_sum_CNY": "37334744000.000000",
+    "cfo_original_CNY": "37334744000",
+    "ttm_numerator_bridge_exact": true,
+    "cash_balance_bridge_exact": true,
+    "source_downloads_match_prior_seed": true,
+    "source_numeric_fields_review": "selected primary lines only; not independent accounting audit",
+    "method_validated": false
+  }
+}

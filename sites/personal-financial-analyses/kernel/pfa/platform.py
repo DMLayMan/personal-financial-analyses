@@ -54,6 +54,7 @@ class Platform:
         data['features']=json.loads((ROOT/'quality/features.json').read_text())['features']
         data['read_at']=now()
         data['report_benchmarks']=json.loads((ROOT/'knowledge/report-benchmark.json').read_text())
+        data['research_publications']=json.loads((ROOT/'knowledge/research-publications.json').read_text())
         return data
 
     @staticmethod

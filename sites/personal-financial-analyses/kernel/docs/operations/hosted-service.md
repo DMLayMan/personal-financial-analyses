@@ -28,3 +28,19 @@
 - [Cloudflare Python Workers机制](https://developers.cloudflare.com/workers/languages/python/how-python-workers-work/)与[标准库边界](https://developers.cloudflare.com/workers/languages/python/stdlib/)：Python Workers虽可用，但Sites归档要求JS入口；不能以Cloudflare通用能力推定此托管接口支持Python入口。
 
 实施及上线结果在完成后追加。
+
+## 2026-10-25实际发布结果
+
+- 私有站点：[Personal Financial Analyses](https://personal-financial-analyses-wktt.august247wk.chatgpt.site)。Sites原生最终发布状态`succeeded`，托管源码提交`37ed569336a248a532ef7281c1c5810be2a4087d`。
+- 访问配置核实为owner、custom且允许名单仅owner。更换设备后使用同一ChatGPT账号登录；不依赖本机常开。
+- 数据云端v1，97份内容寻址文件，合计58,650,958字节；数据库SHA256为`77b0345a70ba89f4d3b89eeca07127668bdc35c753039b43ce32c94f46b1f52d`。原件与数据库不在Git。
+- 实际线上复核：匿名取源代码包被登录边界挡住、已部署壳、核心研究代码与本地一致、数据库摘要、三类原件抽样摘要均通过；从真实线上数据库用已审本地Python重建六份未评级草案。完整结果在`quality/evidence/v06-private-deployment-checks.json`。该重建不是登录后浏览器验收。
+- 线上浏览器：进入OpenAI登录后出现400，再转安全验证页；未绕过或降低权限。登录后正式浏览器验收仍待本人常用浏览器完成。可丢弃本地托管预览已经验证39项控制/公式基准、六份报告、PDF页定位、保存重载、并发冲突及真实公共源刷新（9个Yahoo序列成功、4个FRED序列超时；旧日期保留）。
+
+## 后续维护与恢复
+
+本轮安全边界只适用于owner-private；新增共享访问前须改造服务导入路径及记录权限。云端研究计算在浏览器Web Worker进行，没有外部AI。服务端只接受受限原文代理、摘要一致的内容对象和有前序版本的提交。数据库快照上限16MB、原件25MB、目录500项；达到上限会停止提交，不能静默截断。
+
+更新代码：先登记功能与反例，运行本地质量门槛；`scripts/sync-hosted.py`同步纯源码到站点的`kernel/`，准备并构建后使用Sites源代码帮助程序推送和私有发布。公开原件在数据导入阶段走私有服务接口，不混入源码或构建。部署源码和本地完整项目各有Git记录。发布工具保留的旧版本可用于代码回滚；数据修复先从内容寻址旧快照恢复到隔离目录做SQLite及原件检查，再以当前云端版本做显式新提交，不回写旧版本。
+
+`cloud_transfer.py`首次迁移器只接受云端v0，拒绝覆盖已有记录。`verify-private-site.py`通过stdin临时取得服务访问凭据，仅向明确本站发送，不跟随重定向；不保存凭据。保存冲突或网络未确认时，前端暂停继续修改，可导出研究数据库后重新载入；新原件如果尚未上传成功需重新获取。

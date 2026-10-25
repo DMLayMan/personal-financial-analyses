@@ -1,0 +1,428 @@
+{
+  "schema": "pfa.research.adversarial_review.v1",
+  "as_of": "2026-10-25",
+  "price_as_of": "2026-10-23",
+  "review_identity": "同一AI体系内的分工交叉审查；不是独立专家、审计机构或真实投委会复核。",
+  "scope": "比亚迪、AI基础设施及模型/应用研究输入。核算术和选定关键原文，评价真正可能翻转判断的反方；未重审每份原件、未审计财报、未完成逐公司盈利预测或投资绩效检验。",
+  "verdict": {
+    "source_research_use": "Ready with caveats：可用于带来源和未知的人工研究、历史算术及条件敏感性。",
+    "security_valuation_use": "Not ready：当前不能据此宣称完整目标价、普通股预期回报、全行业低估或账户仓位已获承保。",
+    "substantive_read": "比亚迪已报告利润/销量恢复和AI部分层级经营盈利均有正面证据；融资后普通股回报、利润正常化及当前价格是否有安全边际仍未解决。不能把审查程序成功当作这些经济问题已通过。"
+  },
+  "inputs": [
+    {
+      "path": "data/research/2026-10-25/byd-agent.json",
+      "sha256_at_review": "b0e992f3dbae7be4b8dc79a01e3f739c45ae138a9c36a183ef3aecc22580d064",
+      "hash_meaning": "仅文件一致性，不证明提取、因果或估值正确"
+    },
+    {
+      "path": "data/research/2026-10-25/infra-valuation-inputs.json",
+      "sha256_at_review": "16e3821945ee97f2aab372b56de663fbcd91497fa65f13552c0d84a9d84dbd77",
+      "hash_meaning": "仅文件一致性，不证明提取、因果或估值正确"
+    },
+    {
+      "path": "data/research/2026-10-25/ai-infra-agent.json",
+      "sha256_at_review": "4be5f10606eb453e7c39384e99b6336c1520643d4d5bc89afeff43b94f17c8bf",
+      "hash_meaning": "仅文件一致性，不证明提取、因果或估值正确"
+    },
+    {
+      "path": "data/research/2026-10-25/ai-apps-agent.json",
+      "sha256_at_review": "4ccdfab2d721da791d41374ef6521551a843a1c7d6cf45d3cb04343c65d8a005",
+      "hash_meaning": "仅文件一致性，不证明提取、因果或估值正确"
+    },
+    {
+      "path": "research/2026-10-25/market-snapshot.json",
+      "sha256_at_review": "2d19375e097f9bed88f3a202a7c62bd90423415c2ae4f45c2ec10a341a886cd9",
+      "hash_meaning": "仅文件一致性，不证明提取、因果或估值正确"
+    }
+  ],
+  "primary_checks": [
+    {
+      "id": "P-BYD",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531835.PDF",
+      "local_pdf": "data/research/2026-10-25/byd-originals/h1-2026.pdf",
+      "pages": [
+        154,
+        167
+      ],
+      "method": "公开web原件打开，并将本地同一PDF对应整页渲染后目视复核。",
+      "observed": {
+        "H1_2026_FX_loss_CNY": "4702801000",
+        "H1_2025_FX_gain_CNY": "3160428000",
+        "H1_2026_RnD_capitalized_CNY": "5553806000",
+        "H1_2025_RnD_capitalized_CNY": "1283973000",
+        "H1_2026_RnD_total_CNY": "28860958000",
+        "H1_2026_government_grants_in_other_income_CNY": "6725939000"
+      },
+      "result": "选定数字、6个月期间及千元转元相符。资本化项目是汽车项目，发生额不等于本期研发现金支付或净利润调整；未核验项目经济寿命与资本化条件实质。"
+    },
+    {
+      "id": "P-NVDA",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+      "location": "Note7 Other Income / Liquidity and Capital Resources / Note9 Debt",
+      "method": "公开SEC原文读取，财务表、投资收益解释和资金定义交叉。",
+      "observed_USD_bn": {
+        "H1_equity_security_gains": "23.707",
+        "H1_CFO": "74.421",
+        "cash_equivalents": "22.443",
+        "marketable_debt_securities": "34.143",
+        "total_debt_carrying_amount": "33.366"
+      },
+      "result": "GAAP含重大投资收益，同时强正的经营现金流真实存在。现金与短久期可交易债券需分列；不能仅净CCE就给最终净债或把总债与流动/非流动分项重复相加。"
+    },
+    {
+      "id": "P-GOOG",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+      "location": "Q2 highlights; segment results; income/cash-flow tables; equity financing section",
+      "method": "公开SEC原文读取。",
+      "observed_USD_bn": {
+        "Q2_other_income": "97.983",
+        "Q2_consolidated_net_income": "112.193",
+        "Q2_preferred_dividends": "0.086",
+        "Q2_common_stockholders_net_income": "112.107",
+        "Q2_operating_income": "40.770",
+        "Q2_Cloud_operating_income": "8.814",
+        "Q2_Alphabet_level_operating_loss": "5.789",
+        "Q2_CFO": "39.069",
+        "Q2_PPE_cash_payment": "44.924"
+      },
+      "result": "原输入合并净利正确，但普通股利润须扣优先股股息。other income是税前；Cloud利润不包括集团层共享AI研发等费用；强经营盈利与投资收益膨胀同时成立。"
+    }
+  ],
+  "auxiliary_official_checks": [
+    {
+      "url": "https://fgk.chinatax.gov.cn/zcfgk/c102416/c5252906/content.html",
+      "check": "财政部/税务总局2026年第29号：2027-04-01起新能源汽车退税13%降至9%，适用日期按出口报关单。原财政部直读超时后用同一官方文本交叉；不是多份独立证据。",
+      "result": "输入已正确区分已公告与尚未生效；公司净FOB暴露及转嫁仍未知。"
+    },
+    {
+      "url": "https://investors.vertiv.com/news/news-details/2026/Vertiv-Announces-Date-of-Third-Quarter-2026-Earnings-Release-and-Conference-Call/",
+      "check": "Q3结果安排2026-10-28，截止日仍未来。",
+      "result": "使用H1最新已报财务并非漏掉已发布Q3。"
+    },
+    {
+      "url": "https://www.eaton.com/us/en-us/company/investor-relations/financial-presentations-webcasts.html",
+      "check": "Q3结果安排2026-11-03，截止日仍未来。",
+      "result": "未把未来Q3当实际。"
+    }
+  ],
+  "findings": [
+    {
+      "id": "AR01",
+      "severity": "high",
+      "type": "Unresolved economic normalization",
+      "status": "open_gap_with_diagnostic_control",
+      "location": "byd-agent.json thesis[3], calculations FX/R&D",
+      "finding": "剔汇兑税前利润改善不能单独承保经营盈利恢复；但资本化上升也不能凭差额证明造假或利润质量全坏。",
+      "counterevidence": "Q2归母利润同比+29.66%、Q3出厂销量同比+18.75%，汽车相关H1毛利率22.33%对20.35%，支持恢复及结构韧性。研发项目阶段变化亦可能合理提高资本化。",
+      "reproducible_benchmark": {
+        "ex_FX_pretax_2026_CNY": "19316888000",
+        "ex_FX_pretax_2025_CNY": "15749587000",
+        "ex_FX_pretax_improvement_CNY": "3567301000",
+        "incremental_capitalization_CNY": "4269833000",
+        "difference_CNY": "-702532000",
+        "formula": "(14.614087+4.702801)-(18.910015-3.160428)-(5.553806-1.283973), CNY bn",
+        "meaning": "仅把两期当期资本化发生额同样费用化的税前诊断；尚须加回相应历史资本化摊销、税与归属，不能冒称正常化利润已下降。"
+      },
+      "conclusion_effect": "只能说已报告利润和出厂量边际恢复；可持续经营利润方向与强度未定。",
+      "recommended_fix": "保留双向正常化敏感性，取得项目cohort/摊销/现金分类；严禁只剔坏FX或直接从现金Capex后再扣研发资本化。",
+      "source_ids": [
+        "P-BYD"
+      ],
+      "remaining_gap": "资本化条件的实质、经济寿命、摊销及税桥原文未完整提取。"
+    },
+    {
+      "id": "AR02",
+      "severity": "high",
+      "type": "Fair treatment of counterevidence",
+      "status": "counterevidence_retained",
+      "location": "BYD recovery and cash thesis",
+      "finding": "不能仅凭H1利润下降或Capex后现金为负推出恢复不存在/融资即将失败；也不能把Q2报告利润反弹直接叫终端需求与经济利润同时改善。",
+      "counterevidence": "Q2收入仍同比约-3.15%；Q2利润、现金流及Q3出厂单位量反弹是更近期的正面证据。H1现金Capex降低及营运资本净占用改善也缓和现金压力。",
+      "reproducible_benchmark": {
+        "Q2_revenue_yoy": "-0.03150695424309615",
+        "CFO_before_inventory_receivable_payable_effects_2026_CNY": "52275228000",
+        "CFO_before_same_three_WC_effects_2025_CNY": "52880784000",
+        "three_WC_net_effect_2026_CNY": "-14940484000",
+        "three_WC_net_effect_2025_CNY": "-21047313000",
+        "interpretation": "剔选定三项WC后的现金生成大致持平而非大幅崩塌；这不是完整经营现金利润或新预测。"
+      },
+      "conclusion_effect": "维持有条件观察，而非单边悲观或确认长期恢复。",
+      "recommended_fix": "报告同时列累计与单季、量与价/毛利、渠道与终端，并在10/29后审Q3利润/库存/现金。CFO扣除全部应付贡献只是联合流动性压力，不是可持续FCF。",
+      "source_ids": [
+        "P-BYD"
+      ],
+      "remaining_gap": "车型净价、渠道库存、海外终端与Q3财务当时未得/未发布。",
+      "source_urls_from_owner_register": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0428/2026042803001.pdf",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0701/2026070100033.pdf",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1001/2026100100047.pdf"
+      ],
+      "additional_source_scope": "Q1及销量输入由来源负责人原文提取；本审查复算累计差，未再次逐页目视三份文件。"
+    },
+    {
+      "id": "AR03",
+      "severity": "high",
+      "type": "Not comparable without common-equity bridge",
+      "status": "open_gap_boundaries_retained",
+      "location": "BYD finance/liquidity and A/H valuation",
+      "finding": "H股市值不是全集团价值；现金、交易性金融资产、受限款、永续与少数股东不能混合处理。",
+      "counterevidence": "输入已分列A/H股数、同日参考FX、普通股EPS分子、CCE及总融资负债；并未把H股便宜或现金负值升级投资建议。",
+      "reproducible_benchmark": {
+        "A_class_marketcap_CNY": "442419797742.30",
+        "H_class_marketcap_HKD": "263731440000.00",
+        "mixed_class_marketcap_CNY": "668427092564.70",
+        "CCE_CNY": "55619085000",
+        "trading_financial_assets_CNY": "69940449000",
+        "gross_financing_liabilities_including_leases_CNY": "130926632000",
+        "equity_class_perpetual_CNY": "20846860000",
+        "warning": "仅CCE口径净债753.07547亿元不是最终EV桥；1255.59534亿元CCE+交易性资产也不等于全额无受限可用现金。"
+      },
+      "conclusion_effect": "A/H相对价格条件可算；绝对公允价值、普通股可分配现金及融资缺口尚不可定。",
+      "recommended_fix": "完整变现性/期限、永续合同分配和赎回、子公司持股归属及现价日股本桥；若另加BYD电子股权价值须去除合并盈利/资产的重复。",
+      "source_ids": [
+        "P-BYD"
+      ],
+      "remaining_gap": "10月股本动作、永续条款和资金可得性尚未全量复核。",
+      "source_urls_from_owner_register": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1001/2026100100053.pdf",
+        "https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do?COLLCC=546877760",
+        "https://www.etnet.com.hk/www/tc/ashares/quote_chart_interactive.php?code=002594",
+        "https://content.etnet.com.hk/content/cpyrevamp/sc/stock_quote.php?code=01211"
+      ],
+      "additional_source_scope": "证券数/价格/FX采用已列来源负责人输入复算，并未独立重新查询全部日级股份动作。"
+    },
+    {
+      "id": "AR04",
+      "severity": "high",
+      "type": "Unresolved earnings normalization",
+      "status": "open_gap_control_present",
+      "location": "NVDA/GOOG/AMZN/MSFT GAAP and AI profitability",
+      "finding": "GAAP利润含投资收益时，低P/E与净利增长不能单独证明AI经营回报；同时不能忽略真实经营利润和现金去判整个行业无盈利。",
+      "counterevidence": "NVDA H1 CFO74.421bn；GOOG Q2经营利润40.770bn、Cloud利润8.814bn；AWS等已报告经营利润可构成产业有真实盈利的反证，但不是纯AI全成本利润。",
+      "reproducible_benchmark": {
+        "NVDA_H1_equity_gains_USD_bn": "23.707",
+        "NVDA_TTM_equity_gains_USD_bn_from_owner_input": "30.552",
+        "GOOG_Q2_other_income_USD_bn": "97.983",
+        "GOOG_Q2_CFO_less_cash_PPE_USD_bn": "-5.855",
+        "warning": "税前收益不直接从税后净利扣；非现金投资收益调整后，不再从已调节的CFO扣一次。投资资产价值与其盈利资本化亦须防双计。"
+      },
+      "conclusion_effect": "必须保留经营盈利成立、普通股价值尚未承保这两个不同结论。",
+      "recommended_fix": "逐公司税后普通股正常化桥、投资/经营分拆及资本投入回报；公司调整EPS不自动视为分析者可持续盈利。",
+      "source_ids": [
+        "P-NVDA",
+        "P-GOOG"
+      ],
+      "remaining_gap": "投资收益相关税负、重分类、未来变现与完整可比正常化未完成。"
+    },
+    {
+      "id": "AR05",
+      "severity": "medium",
+      "type": "Capital source omission / potential EV error",
+      "status": "owner_remediation_requested",
+      "location": "infra-valuation-inputs.json NVDA balance_sheet_inputs",
+      "finding": "原资本字段未存marketable debt securities34.143bn；若只净CCE会把净现金企业算成净债。",
+      "counterevidence": "不应把全部非上市股权投资或AI客户权益当现金；短久期可交易债券也须保持定义和可得性。",
+      "reproducible_benchmark": {
+        "debt_less_CCE_USD_bn": "10.923",
+        "CCE_plus_marketable_debt_less_debt_USD_bn": "23.220",
+        "formula": "22.443+34.143-33.366",
+        "double_count_control": "33.366=1.000 current+32.366 noncurrent；三者不能求和。"
+      },
+      "conclusion_effect": "会改变EV/流动性判断，但目前倍数只是历史诊断，尚未见已发布错误EV结论。",
+      "recommended_fix": "资金字段补存债券和证券性质；租赁、投资和已承诺资金另列；不追认当前完整EV已通过。",
+      "source_ids": [
+        "P-NVDA"
+      ],
+      "remaining_gap": "完整现价日资本表与受限/承诺资金桥仍未完成。"
+    },
+    {
+      "id": "AR06",
+      "severity": "medium",
+      "type": "Common-equity numerator and segment allocation",
+      "status": "corrected_and_rechecked",
+      "location": "ai-apps-agent.json Alphabet actual / earnings_quality",
+      "finding": "初稿仅存112.193bn合并净利，普通股分子应扣0.086bn优先股股息；Cloud盈利也未承担全部集团共享AI成本。",
+      "counterevidence": "差额对当季利润规模很小，但关系到优先证券融资后的方法一致性。Cloud OP高增长是真实正面事实。",
+      "reproducible_benchmark": {
+        "common_profit_USD_bn": "112.107",
+        "formula": "112.193-0.086",
+        "Cloud_OP_USD_bn": "8.814",
+        "Alphabet_level_loss_USD_bn": "5.789"
+      },
+      "conclusion_effect": "纠正股权归属并阻止将Cloud利润当独立AI全成本利润。",
+      "recommended_fix": "已由来源负责人补字段、税前税后限制及分部成本说明；未来不能把全部集团共享成本机械归云，也不能遗漏。",
+      "source_ids": [
+        "P-GOOG"
+      ],
+      "remaining_gap": "共享成本因果分配及AI增量ROIC仍未知。"
+    },
+    {
+      "id": "AR07",
+      "severity": "high",
+      "type": "Potential double-counting in mechanism model",
+      "status": "owner_remediation_requested_no_numeric_error_observed",
+      "location": "ai-infra-agent.json unit_economics GPU breakeven",
+      "finding": "economic annual capital charge若是资本回收年金，含资本返还与资本回报；后文再做利息/本金/Capex必须另建现金桥，不能在同一回本净值全数再扣。paid utilization、可服务时数及电负载率也不能混作一个数。",
+      "counterevidence": "原稿已禁止同资产租金/折旧双扣，并未伪造CRWV每GPU参数或IRR；本审查是防后续落模误读。",
+      "reproducible_benchmark": {
+        "identity": "annual recovery=K*r/(1-(1+r)^(-n)); from operating cash to equity cash rebuild actual Capex/debt/lease schedule, rather than reusing an economic-charge net result",
+        "diagnostic_assumptions_only": {
+          "K_USD": 30000,
+          "years": 3,
+          "capital_cost": 0.1,
+          "fixed_cost_USD": 3000,
+          "rental_USD_per_hour": 2,
+          "incremental_variable_USD_per_hour": 0.3,
+          "availability": 1
+        },
+        "annual_recovery_USD": "12063.444108761329",
+        "required_paid_utilization": "1.011512497230817",
+        "warning": "纯审查反例，非CRWV/任何公司的成本、寿命、租价或预测。分母8760只对应100%可服务时数；闲置电耗归固定或负载曲线。"
+      },
+      "conclusion_effect": "没有公司承保参数时不能生成盈利利用率、目标价或可信IRR。",
+      "recommended_fix": "明确经济资本回收与会计/融资现金桥的切换；约定收费利用率的分母和reserved capacity billing；如回本利用率大于100%应显示不可行。",
+      "source_ids": [],
+      "remaining_gap": "各机型总安装成本、故障/可用率、净租价、空载耗电、经济淘汰和融资条款。"
+    },
+    {
+      "id": "AR08",
+      "severity": "medium",
+      "type": "Current EV claim classification",
+      "status": "corrected_and_rechecked",
+      "location": "ai-apps-agent.json layer_economics foundation models valuation",
+      "finding": "初稿“EV claims including prepayments and future financing”可能把所有预付/未提款融资直接加当前EV。",
+      "counterevidence": "客户预收可能是合法营运资金来源；供应商预付款可能是资产。履约成本和融资稀释需要分析，不能全部当现有金融债。",
+      "reproducible_benchmark": {
+        "control": "existing debt/preferred/CB/leases separately; customer performance obligation versus financial debt; supplier prepayment recoverability; future funding/dilution scenarios separately; same fulfillment cost not both EV debt and DCF outflow"
+      },
+      "conclusion_effect": "避免重复压低普通股价值及把融资额度误当实际到款。",
+      "recommended_fix": "负责人已修改为分桥处理，复读确认；下轮实际建模仍需逐合同检验。",
+      "source_ids": [],
+      "remaining_gap": "模型商完整已资到位现金、合同条款和未来资本需求仍缺。"
+    },
+    {
+      "id": "AR09",
+      "severity": "high",
+      "type": "Liquidity and cash-profit mismatch",
+      "status": "open_gap_with_scope_controls",
+      "location": "CoreWeave/Vertiv/GEV/GDS and software FCF",
+      "finding": "EBITDA、预收推动CFO、积压/预约及DayOne投资稀释收益不能替代普通股现金盈利；但预收并不自动无效，合同期限和客户信用可以缓冲风险。",
+      "counterevidence": "CRWV H1融资现金13.985bn覆盖部分扩张现金缺口，长期合同/预付可转移部分风险；VRT交付和服务有经营利润，不能因预收大就判现金造假。",
+      "reproducible_benchmark": {
+        "CRWV_H1_CFO_less_cash_PPE_USD_bn": "-10.454",
+        "CRWV_Q2_GAAP_OP_USD_bn": "-0.049",
+        "CRWV_Q2_interest_USD_bn": "0.640",
+        "CRWV_commenced_lease_PV_USD_bn": "16.319",
+        "CRWV_uncommenced_undiscounted_USD_bn": "35.5",
+        "warning": "两类租赁数不可直接相加成同口径债务；CFO减现金PPE不是完整FCFE；本项按来源负责人输入审查，未逐页独立复核CRWV全部附注。"
+      },
+      "conclusion_effect": "AI需求成立与设备/云普通股回报可脆弱并存。",
+      "recommended_fix": "债到期/租赁起算/客户合同交付/设备更新cohort统一现金桥；预收要看履约成本和维持增长所需资金，调整FCF与实际现金并列。",
+      "source_ids": [],
+      "remaining_gap": "客户违约/终止/担保细节和逐代GPU经济寿命未勾稽。",
+      "source_urls_from_owner_register": [
+        "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000366/crwv-20260630.htm",
+        "https://investors.vertiv.com/news/news-details/2026/Vertiv-Reports-Strong-Second-Quarter-2026-with-Diluted-EPS-Growth-of-53-Adjusted-Diluted-EPS-Growth-of-60-Raises-Full-Year-2026-Guidance-Across-All-Key-Metrics/default.aspx"
+      ]
+    },
+    {
+      "id": "AR10",
+      "severity": "medium",
+      "type": "Fair falsification criterion",
+      "status": "corrected_and_rechecked",
+      "location": "ai-apps-agent.json embodied AI falsifier",
+      "finding": "机器人积压没有不可退押金不足以单独证伪真实需求。",
+      "counterevidence": "合法企业采购可无押金；需要验收、付款、复购和取消权证据。",
+      "conclusion_effect": "防止用过严的融资条件先验否定真实客户订单。",
+      "recommended_fix": "负责人已改为验收/回款/复购和取消性，并明确缺押金本身不是订单失败。",
+      "source_ids": [],
+      "remaining_gap": "付费部署的人工干预、保险/保修和全寿命单位盈利仍缺。"
+    },
+    {
+      "id": "AR11",
+      "severity": "high",
+      "type": "Unsupported forecast / missing decision output",
+      "status": "explicitly_not_underwritten",
+      "location": "all price multiples and sensitivities",
+      "finding": "共同现价可获得，不等于经营预测、共识及稀释资本已完整；反推PE条件、单因素暴露和toy unit economics不可冒充目标价。",
+      "counterevidence": "BYD A/H价格及FX、四家报表TTM可复算，足以提供有用的当前价格诊断；无需为了填目标价而伪造共识或默认参数。",
+      "reproducible_benchmark": {
+        "NVDA_reported_PE": "26.67003792667509481668773704",
+        "NVDA_reported_cash_yield": "0.02495723953883216",
+        "formula": "126.886bn/(24.1bn*210.96)",
+        "limitations": "原报告股数Aug21、价格Oct23；GAAP含投资收益；CFO-PPE未含全部普通股资本义务。"
+      },
+      "conclusion_effect": "可表达需要何种可持续利润/现金才支持现价，不能给已验证公允价值或安全边际。",
+      "recommended_fix": "每个倍数保留证券/币种/期间/分子定义/股数日期；做统一截止日资本桥及有证据预测后重审。",
+      "source_ids": [
+        "P-NVDA"
+      ],
+      "remaining_gap": "最新完全稀释股数、逐分析师同截止共识和跨可信假设稳健估值尚缺。"
+    },
+    {
+      "id": "AR12",
+      "severity": "medium",
+      "type": "Coverage and author-selection limitation",
+      "status": "limitation_retained",
+      "location": "whole AI sector framing and source quality",
+      "finding": "代表公司地图可覆盖主要经济机制，不能叫所有产业及证券均已完成财务承保；供应商/IR与IEA预测存在共同上游假设。",
+      "counterevidence": "输入确有英维克收入增而利润降、海光现金弱、独立模型商亏损、GDS非经营收益等逆向样本，未只选赢家。",
+      "conclusion_effect": "不能由这些样本排名全市场未来赢家，也不能由同模型三条研究线宣称独立机构共识。",
+      "recommended_fix": "主稿标注框架覆盖与逐公司深核范围；半导体工具/EDA/网络/光学/ODM/机器人等未核部分继续列缺口。PLTR JS壳和8份403归档失败保留真实读取边界。",
+      "source_ids": [],
+      "remaining_gap": "外部客户ROI、失败/退出公司参考类和真正前瞻结算样本未建立。"
+    }
+  ],
+  "strongest_thesis_tests": {
+    "BYD_bull_can_be_right": "Q2利润和Q3销量恢复若转成车型净价/终端去库改善、同口径汽车利润及现金稳定，且新增海外资本回报覆盖资本成本，会增强恢复论点；届时不能固守H1悲观叙事。",
+    "BYD_bull_can_fail": "出厂量/出口增长被渠道库存、净价下降、研发经济成本、退税与海外建厂资本吞没；普通股可得现金不足以满足现价利润条件。",
+    "AI_bull_can_be_right": "有独立付费/留存的任务需求随成本下降扩张，已投入容量有高可计费利用率，单位经济收益足以覆盖更新和融资；云/软件已实现利润可支持持续投资。",
+    "AI_bull_can_fail": "终端收益和付款低于承诺、融资先到期、利用率与残值同时下滑，导致合同重谈、供应商库存和普通股稀释；硬件出货强不能单独阻止这条失败链。",
+    "AI_bear_can_fail": "资本交叉并不构成收入虚假；真实现金回收、独立客户盈利和供给约束可能使持久租金成立。不能用一次通信泡沫类比取代当前事实。"
+  },
+  "checks_performed": [
+    {
+      "check": "NVDA/AVGO/VRT/ETN所有含value/inputs的TTM报表指标用Decimal复算FY+currentYTD-priorYTD",
+      "result": "PASS: 与已存值一致；只证明所选输入算术，不证明tag选择、全量来源或未来盈利。"
+    },
+    {
+      "check": "BYD FX/R&D双向诊断、Q2收入、三个WC现金桥",
+      "result": "PASS: 复算值在上方；不是完整正常化利润或预测。"
+    },
+    {
+      "check": "GOOG合并净利减preferred dividend到普通股分子；CFO减cash PPE",
+      "result": "PASS:112.107bn / -5.855bn；已促成来源负责人修订。"
+    },
+    {
+      "check": "原文截图与选定表格数字",
+      "result": "BYD p154/p167目视核对；NVDA/GOOG官方HTML表格核对。未全量审计。"
+    },
+    {
+      "check": "源文件与代码修改",
+      "result": "只写本审查JSON和临时阅读图；未改共享代码/历史原件/Git，发布和质量门由主线负责。"
+    }
+  ],
+  "unresolved_priority": [
+    {
+      "state": "原文已有但未完整提取",
+      "item": "BYD研发cohort摊销/税、永续条款；各公司投资收益的specific tax桥；AI租赁与完全稀释资本表。"
+    },
+    {
+      "state": "口径未勾稽",
+      "item": "各公司现金Capex/租赁/预付/调整FCF/股权激励与普通股现金，AI分部与集团共享成本。"
+    },
+    {
+      "state": "资料未取得",
+      "item": "独立终端客户ROI、模型商完整审计现金与承诺、逐GPU实际成本/租价/付费利用率。"
+    },
+    {
+      "state": "经营机制未知",
+      "item": "效率提升带来的需求弹性是否足以抵消模型价格下降及硬件替换，BYD海外扩张长期ROIC。"
+    },
+    {
+      "state": "未来尚不能验证",
+      "item": "10/29 BYD及后续财报、2027融资/税制结果、长约交付与预测到期回报；无校准胜率。"
+    }
+  ]
+}

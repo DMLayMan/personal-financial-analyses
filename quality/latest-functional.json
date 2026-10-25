@@ -1,7 +1,7 @@
 {
-  "run_at": "2026-10-25T11:00:17.779713+00:00",
+  "run_at": "2026-10-25T13:30:03.199778+00:00",
   "command": "scripts/quality_gate.py --live",
-  "tested_base_commit": "31a794f8df94c78a351c2510c74ea2e9902eb5b0",
+  "tested_base_commit": "97227c18e062bb6310391005207249da6dfa1ad1",
   "working_tree_dirty": true,
   "python": "3.12.14",
   "source_manifest": {
@@ -10,6 +10,7 @@
     "knowledge/market-catalog.json": "9b23f3da92357d363d65d08d80ba9b385155a807667a85f78d6cfae2d8626908",
     "knowledge/platform.json": "2c281309130f09ad75e7a1979de84eb2d50e13609094a41dd5fdce1bc46d99f0",
     "knowledge/report-benchmark.json": "8ec6861dba6408c9dd68e7ddfea37bdcd5b1747ecf7394ccd9e9b9440a2c7a2b",
+    "knowledge/research-publications.json": "6b75151c047f8a719b98d86f0fe8ae25ed809af0db45e962f589ea95553f46ef",
     "pfa/__init__.py": "781b041e3de597cb2ae132122a3b05589a4222268373936452c55e59377121bf",
     "pfa/assurance.py": "2eefeca3cf3452321ea445bd1bba45f5490006f344ec80526c162f1b0df13519",
     "pfa/cloud_bridge.py": "b1134a34d198186b1cf51c62e1ced0fdbe099749f63d9e29fa3464dbe4637357",
@@ -18,23 +19,37 @@
     "pfa/markets.py": "3c8b534c9a4836080273265fdc902075e8e12e497af8e1a9d1e31994adbc0a06",
     "pfa/models.py": "8ff2a20748d688114847d93a527d8ba8405ff29d128a360582c443b78b4239b1",
     "pfa/monitoring.py": "8ecd727e1b1d37491c53160d13cbb52d1c3dbb4bf3ee197be8a37b84b8addb71",
-    "pfa/platform.py": "c13264b7f89cffced16bac64796c49d44cc43f436ab8a5a9b4a04b53e13c5717",
+    "pfa/platform.py": "1406217e23d034795b67c2c5e530c1094684959a7b14db8634575a88e84bc210",
+    "pfa/publications.py": "06e4ee6c863cb72d993cc47709a992e8be15df90f392b1016cab7f0022fd9088",
     "pfa/report_document.py": "042c4da87b6c6bf3e1933b50c102935aba7d898bb835d4b508b8bd5a9f0d2882",
     "pfa/reports.py": "dc6a3da20ae862452ad4683923834ebb4254bf62b92d8a5eabfab2e64780b24a",
     "pfa/research.py": "1dd7db8128a81b746f01b7e36bc67139d8d022687471e5eaf26816df2e034ece",
-    "pfa/server.py": "9ad2c9106fcb37d768587448ed57a97b3fc8201ab22a270da6ba848fc3601b24",
+    "pfa/server.py": "dbc2b543e96df22e3cb1ee208d2f0e7c0824f9525393e1fb5830545a65fd3efc",
     "pfa/service.py": "e11952cfe0b49b1ea6e34fb0057f794ca7e3753c0b5b5a7991529187d970c8af",
     "pfa/sources.py": "75fa58ddb6ffd07b1cf01b3206e33bb3eff226af799f96db37dc30baeb97922e",
     "pfa/store.py": "c46c4904438c93e379096bd5cb04291b4534777eabe175d22d7eacba52766377",
-    "quality/features.json": "3abd63d01d91866b4e0eb8aa00fcccea211c1688e265fc2e3fd32869888773a1",
+    "quality/features.json": "ebe3e36fda17ba3f8a782cd7ee8c3c30edab72e8c4086beb110f4df19609f217",
     "requirements.txt": "0d54aed8d581d3122fbb3c27f179280bac42f768567876dff9939543217b26aa",
+    "research/2026-10-25/adversarial-review.json": "57a71ce18270e792412a8bbb0f6a50a99e9d50e235d0403383b6488b9b22b960",
+    "research/2026-10-25/ai-apps-agent.json": "639a5b677b99eb681a96a64030f5031c531db2662b55fe728140b8127e9ddca8",
+    "research/2026-10-25/ai-full-stack.html": "1f2da8a6779c5b90a0e485e657aefccba504b874b1eee532acfe2be93a1d651c",
+    "research/2026-10-25/ai-infra-agent.json": "ddaeff7684c8c140833703adfc6aaae96e4ac5ee64a8c757ed2d1b359fe02b4f",
+    "research/2026-10-25/byd-agent.json": "b0e992f3dbae7be4b8dc79a01e3f739c45ae138a9c36a183ef3aecc22580d064",
+    "research/2026-10-25/byd-deep-dive.html": "a78510e75becb019aaae9bcce313347a27dba46f2603acfa6a5c04f183bd37df",
+    "research/2026-10-25/contract.json": "fb89bcf64b0997e0727dc30bd3dd13db21940566508ecc84b8d121d7a88ade08",
+    "research/2026-10-25/infra-valuation-inputs.json": "b2ede45a8b11e15a7e4a1cbe2c33633719b30b6c94f786af460c6f25a146945b",
+    "research/2026-10-25/market-snapshot.json": "2d19375e097f9bed88f3a202a7c62bd90423415c2ae4f45c2ec10a341a886cd9",
+    "research/2026-10-25/unit-economic-diagnostics.json": "1e4975aea208a24dfc0182a4d1a145d987d402ee5e4963195518d2434acb3b8e",
+    "research/2026-10-25/valuation-diagnostics.json": "e80311b9f9f703e5491b2ccf960b81829c5688fc2b8a88365519ee5b9bb7e843",
     "scripts/backup.py": "969e584c2db834977a82cec48b507c6ad6f305e2610fca2a3af114211f9d80b6",
+    "scripts/build_focus_reports.py": "0cf8d78147bac91b44ef192695fe6b8b81e0d343f282c8235f92d2d90f75316d",
     "scripts/check-hosted.py": "0394ff2b64efc1cd1304e44ddd351a7bb099fa35ed8c9c3912ae306627e7725f",
     "scripts/cloud_transfer.py": "59266cf4004001f9071bc1ef998ef7c4ac24234e712c5b5331b3223b1c9785db",
-    "scripts/quality_gate.py": "ed82e31b0d5f0c91ecbd41be4bed661e6c8f6ed591a5db79ad54e95f1d735f1f",
+    "scripts/quality_gate.py": "83b5f1039c067eddfb061b2d5ffcdf6f408ba8a2b6af9fff677fbcff0f81bf47",
     "scripts/refresh_markets.py": "f6de50536a3f1799215e370d07a66dc4c21012abd0af9e1507b029bd15c00f78",
+    "scripts/research_market_snapshot.py": "264978b836023a320f3943c08ee864ccef4794d801e58818f6ef63dc5232931b",
     "scripts/start.sh": "1c2d01768cf1e48e140f2619b693147fcf9274ef4a5436870151ca7513ac2770",
-    "scripts/sync-hosted.py": "8f16785d29e918eb2c963e75d75a363a5385f7835a6ddc64cda3ded8b5af5ea8",
+    "scripts/sync-hosted.py": "60db7e69a6067d861b1701abd1634ce413f02263d4293aea9ba656023d11903b",
     "scripts/validate.py": "ffd9f5233f5ac62394153a0fdc8029184fe674fda2870b33e58560f091f24a91",
     "scripts/verify-private-site.py": "07e6aba31b4e295cacdbd29033b69c188985a28bd65dd61914639e62c48d4663",
     "sites/personal-financial-analyses/.openai/hosting.json": "4512f31f29b80512a11eaca732a9352569c268b9522bd5173f628384ca554ad8",
@@ -59,17 +74,18 @@
     "sites/personal-financial-analyses/lib/utils.ts": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68",
     "sites/personal-financial-analyses/package-lock.json": "3770b5397e5d46050a670cec3cb650bfea64e00acb7c17f68edadc19d422dbb1",
     "sites/personal-financial-analyses/package.json": "d363dbc630aef00109c1874b2814771960f071ae035528e4fd95fd39b8ee3219",
-    "sites/personal-financial-analyses/scripts/prepare-terminal.mjs": "5a90453d6ebafb6d62fa691ed7b4ca1113fb1b96b36579c8f1cacf2147b16d8a",
+    "sites/personal-financial-analyses/scripts/prepare-terminal.mjs": "bc004b8b3e6bdc8a96447e98cd367938ec8d5cf0a5d80a63ab0b17ca28180e0a",
     "sites/personal-financial-analyses/tests/cloud-policy.test.mjs": "11812cd8ce2dd6f5d37bd054d339c683eda4779426a1b44963a41d14b79dcbeb",
     "sites/personal-financial-analyses/vite.config.ts": "22ff558b1636d251e076f74c1697c7166079861667af10922d6bc505cb8f8290",
     "static/app.js": "3b064712062a9d43940f5cad0b52cb87b78fa0f68f33c64bbbaf888f1ba22eab",
-    "static/evolution.js": "ab91a5b0bd97457fea7a777f1b4fa1ee7e6e962bde9d7b52a570c6a60337d70c",
+    "static/evolution.js": "5d9f3994ff3b8078306c4592b1052b17395b7ff56b1a3d9e1344c1af81aeec99",
     "static/index.html": "aa86d04418a9f8369fa5ab5db184f87ec69edb143cf67a9254d7ff0ecaed6136",
     "static/styles.css": "1253633dea545bf1d5247306974fb31def1a74a91e321b46ffd4209fa6b91ed1",
-    "static/workspace.js": "1a779bdd89180ff5d77b637d0de69393b2e4b863dfbd4941da62f911148b847c",
+    "static/workspace.js": "69ac6b63974a93c3ac2caf68ba02735164dafca848fcee1f9fea61fdcb8a9b57",
     "tests/test_audit_controls.py": "a14cbfa9e903d88ade00e3e9f90588da26f1b2cd820a491a7386ab0ce83240ae",
     "tests/test_cloud_bridge.py": "e60cef5a545af07007d9e2f5cf20a2a0cebf653db3054fbbe52167f7f07e4793",
     "tests/test_evolution.py": "2f218a3f0afa92704cd6011d39f37d9387b2b3b1e380daddf312635cd938ff59",
+    "tests/test_focus_research.py": "632bebf1863a8e780d15c4fdeca7d249c5b1107f00bcacb7cf3aa0e24d518bb2",
     "tests/test_information.py": "01c97546ee336152b7e4e4df5fc1d75c75bd1a4985171a5312e9205359b0e5eb",
     "tests/test_markets.py": "ccd8f20c3580f65b28ae3ab9dec354c047392b9873bd97d7bf20ba0358e90407",
     "tests/test_platform.py": "269435be8aef00c1f90c9f23b9ec743a510638fd80b98a0ea439114d45a9cf8d",
@@ -77,8 +93,8 @@
     "tests/test_research.py": "b946f9abf4dc015a64913e883557acdb59a28cae60fc32255ea391fb5c03cd25",
     "tests/test_workspace_api.py": "1a9ce93adf749fbc645e14ed29494f9d664b23fe65d3f60850df1a91c3e37c13"
   },
-  "kernel_digest": "45d9744a7423c81c519ee704abac97538bbc0f521dd08ea57a0ab267edd3f660",
-  "tests_run": 90,
+  "kernel_digest": "6a1a980d55bc3c6878b10673ad1d92bce406b9b086eb9a77c4a3222e8bbfe486",
+  "tests_run": 96,
   "test_results": [
     {
       "test": "test_audit_controls.AuditControls.test_annual_growth_requires_matching_accounting_basis",
@@ -194,6 +210,30 @@
     },
     {
       "test": "test_evolution.ReportContract.test_unmapped_new_issuer_exposes_template_gap",
+      "result": "passed"
+    },
+    {
+      "test": "test_focus_research.FocusResearch.test_byd_cash_and_share_bridges",
+      "result": "passed"
+    },
+    {
+      "test": "test_focus_research.FocusResearch.test_capital_identity_and_unresolved_evidence_preserved",
+      "result": "passed"
+    },
+    {
+      "test": "test_focus_research.FocusResearch.test_continuous_ttm_and_no_future_financial_inputs",
+      "result": "passed"
+    },
+    {
+      "test": "test_focus_research.FocusResearch.test_market_identity_dates_and_currency",
+      "result": "passed"
+    },
+    {
+      "test": "test_focus_research.FocusResearch.test_reports_bound_to_catalog_and_failure_routes",
+      "result": "passed"
+    },
+    {
+      "test": "test_focus_research.FocusResearch.test_unit_cost_includes_capital_and_utilization",
       "result": "passed"
     },
     {
@@ -609,6 +649,14 @@
       "missing_test_ids": [],
       "research_decision_ready": false,
       "method_review": "工程与控制审查；独立专业判断及投资效果未验证"
+    },
+    {
+      "id": "F22",
+      "implementation_status": "implemented_partial_research",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "同一AI体系交叉研究，非独立机构签字；预测未校准"
     }
   ],
   "source_checks": [
@@ -734,7 +782,7 @@
   "functional_passed": true,
   "cloud_policy_checks": {
     "passed": true,
-    "output": "✔ source identity and redirect targets stay on primary-source allowlist (0.618042ms)\n✔ snapshot manifest rejects traversal, duplicate and oversized files (0.179916ms)\n✔ cross-site and unmarked writes fail before persistence (19.703417ms)\n✔ empty and streaming oversized responses are rejected (0.798625ms)\n✔ content-address digest uses exact bytes (2.356208ms)\nℹ tests 5\nℹ suites 0\nℹ pass 5\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 84.993625\n"
+    "output": "✔ source identity and redirect targets stay on primary-source allowlist (0.5495ms)\n✔ snapshot manifest rejects traversal, duplicate and oversized files (0.1545ms)\n✔ cross-site and unmarked writes fail before persistence (16.473792ms)\n✔ empty and streaming oversized responses are rejected (0.80875ms)\n✔ content-address digest uses exact bytes (2.008042ms)\nℹ tests 5\nℹ suites 0\nℹ pass 5\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 73.084042\n"
   },
   "permitted_use": "local_evidence_and_illustrative_scenarios",
   "research_decision_ready": false,

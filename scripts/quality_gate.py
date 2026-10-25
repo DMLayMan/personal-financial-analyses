@@ -23,6 +23,7 @@ def source_manifest():
                      and p.suffix in ('.py','.sh','.html','.js','.css'))
     paths += [ROOT/'fixtures/companies.json',ROOT/'requirements.txt',ROOT/'quality/features.json']
     paths += list((ROOT/'knowledge').glob('*.json'))
+    paths += [p for p in (ROOT/'research').rglob('*') if p.is_file() and p.suffix in ('.json','.html')]
     site=ROOT/'sites/personal-financial-analyses'
     for directory in ('app','client','lib','tests','db','drizzle'):
         paths.extend(p for p in (site/directory).rglob('*') if p.is_file()

@@ -9,6 +9,14 @@ for(const [name,expected]of Object.entries(manifest)){
 await fs.writeFile(path.join(pub,'kernel.json'),JSON.stringify({files,manifest}));
 for(const name of ['app.js','workspace.js','evolution.js','styles.css'])await fs.copyFile(path.join('kernel/static',name),path.join(pub,name));
 for(const name of ['bridge.js','cloud-worker.js','standalone.js'])await fs.copyFile(path.join('client',name),path.join(pub,name));
+const publications=JSON.parse(files['knowledge/research-publications.json']);
+await fs.mkdir(path.join(pub,'research'),{recursive:true});
+for(const report of publications.publications){
+ if(!/^\/research\/[a-z0-9-]+\.html$/.test(report.route))throw new Error('Invalid publication route');
+ const bytes=await fs.readFile(path.join('kernel',report.path));
+ if(sha(bytes)!==report.sha256)throw new Error('Publication digest mismatch');
+ await fs.writeFile(path.join(pub,report.route.slice(1)),bytes);
+}
 let html=files['static/index.html'].replace(/    <script src="\/(workspace|evolution|app)\.js" defer><\/script>\n/g,'');
 html=html.replace('</head>','<script src="/bridge.js" defer></script></head>').replace(' 本地',' 云端').replace('仅本机访问','私有云端 · 按需更新').replace('LOCAL EDITION / 0.5','PRIVATE CLOUD / 0.6');
 await fs.writeFile('lib/terminal-html.ts','export const terminalHtml = '+JSON.stringify(html)+';\n');

@@ -1,0 +1,54 @@
+[
+  {
+    "symbol": "NVDA",
+    "price": "210.96",
+    "eps": "7.91",
+    "market_cap_proxy": "5084136000000.00",
+    "reported_pe": "26.67003792667509481668773704",
+    "cash_yield_proxy": "0.02495723953883216341970395757",
+    "reverse_terminal_eps": "11.2315104",
+    "reverse_cagr": "0.123967861701076252234257123",
+    "terminal_pe": "25",
+    "price_return": "0.1",
+    "horizon_years": 3
+  },
+  {
+    "symbol": "AVGO",
+    "price": "321.68",
+    "eps": "7.83",
+    "market_cap_proxy": "1535581254973.20",
+    "reported_pe": "41.08301404853128991060025543",
+    "cash_yield_proxy": "0.02565999023001077708399370167",
+    "reverse_terminal_eps": "17.1262432",
+    "reverse_cagr": "0.298075983806070251278378137",
+    "terminal_pe": "25",
+    "price_return": "0.1",
+    "horizon_years": 3
+  },
+  {
+    "symbol": "VRT",
+    "price": "194.32",
+    "eps": "4.42",
+    "market_cap_proxy": "74810901777.36",
+    "reported_pe": "43.96380090497737556561085973",
+    "cash_yield_proxy": "0.03916274139722567099482804512",
+    "reverse_terminal_eps": "10.3455968",
+    "reverse_cagr": "0.327734050360824121272288267",
+    "terminal_pe": "25",
+    "price_return": "0.1",
+    "horizon_years": 3
+  },
+  {
+    "symbol": "ETN",
+    "price": "366.11",
+    "eps": "9.83",
+    "market_cap_proxy": "142197124000.00",
+    "reported_pe": "37.24415055951169888097660224",
+    "cash_yield_proxy": "0.02766581973908276794683976871",
+    "reverse_terminal_eps": "19.4916964",
+    "reverse_cagr": "0.256315467658896760717377869",
+    "terminal_pe": "25",
+    "price_return": "0.1",
+    "horizon_years": 3
+  }
+]
