@@ -1,0 +1,748 @@
+{
+  "run_at": "2026-10-25T10:54:32.823490+00:00",
+  "command": "scripts/quality_gate.py --live",
+  "tested_base_commit": "31a794f8df94c78a351c2510c74ea2e9902eb5b0",
+  "working_tree_dirty": true,
+  "python": "3.12.14",
+  "source_manifest": {
+    "fixtures/companies.json": "d56c84c7859cc3bb960e24cb9a203f91e0826d3b0655442c8d29e426fc8f7822",
+    "knowledge/industries.json": "2964a5a4e42e8e371f74e5226846e9bc5aa4a08189b05df290081c9c81ec323f",
+    "knowledge/market-catalog.json": "9b23f3da92357d363d65d08d80ba9b385155a807667a85f78d6cfae2d8626908",
+    "knowledge/platform.json": "2c281309130f09ad75e7a1979de84eb2d50e13609094a41dd5fdce1bc46d99f0",
+    "knowledge/report-benchmark.json": "8ec6861dba6408c9dd68e7ddfea37bdcd5b1747ecf7394ccd9e9b9440a2c7a2b",
+    "pfa/__init__.py": "781b041e3de597cb2ae132122a3b05589a4222268373936452c55e59377121bf",
+    "pfa/assurance.py": "2eefeca3cf3452321ea445bd1bba45f5490006f344ec80526c162f1b0df13519",
+    "pfa/cloud_bridge.py": "b1134a34d198186b1cf51c62e1ced0fdbe099749f63d9e29fa3464dbe4637357",
+    "pfa/information.py": "64c0c3246a343fb5d1fa1c83b37d40d77896dda717597d32444c610d11a7e00e",
+    "pfa/knowledge.py": "95485dfafe23839a4be906c11dd40eab7da400dd083bf5da6ce50e724eb8a476",
+    "pfa/markets.py": "3c8b534c9a4836080273265fdc902075e8e12e497af8e1a9d1e31994adbc0a06",
+    "pfa/models.py": "8ff2a20748d688114847d93a527d8ba8405ff29d128a360582c443b78b4239b1",
+    "pfa/monitoring.py": "8ecd727e1b1d37491c53160d13cbb52d1c3dbb4bf3ee197be8a37b84b8addb71",
+    "pfa/platform.py": "c13264b7f89cffced16bac64796c49d44cc43f436ab8a5a9b4a04b53e13c5717",
+    "pfa/report_document.py": "042c4da87b6c6bf3e1933b50c102935aba7d898bb835d4b508b8bd5a9f0d2882",
+    "pfa/reports.py": "dc6a3da20ae862452ad4683923834ebb4254bf62b92d8a5eabfab2e64780b24a",
+    "pfa/research.py": "1dd7db8128a81b746f01b7e36bc67139d8d022687471e5eaf26816df2e034ece",
+    "pfa/server.py": "9ad2c9106fcb37d768587448ed57a97b3fc8201ab22a270da6ba848fc3601b24",
+    "pfa/service.py": "e11952cfe0b49b1ea6e34fb0057f794ca7e3753c0b5b5a7991529187d970c8af",
+    "pfa/sources.py": "75fa58ddb6ffd07b1cf01b3206e33bb3eff226af799f96db37dc30baeb97922e",
+    "pfa/store.py": "c46c4904438c93e379096bd5cb04291b4534777eabe175d22d7eacba52766377",
+    "quality/features.json": "3abd63d01d91866b4e0eb8aa00fcccea211c1688e265fc2e3fd32869888773a1",
+    "requirements.txt": "0d54aed8d581d3122fbb3c27f179280bac42f768567876dff9939543217b26aa",
+    "scripts/backup.py": "969e584c2db834977a82cec48b507c6ad6f305e2610fca2a3af114211f9d80b6",
+    "scripts/check-hosted.py": "0394ff2b64efc1cd1304e44ddd351a7bb099fa35ed8c9c3912ae306627e7725f",
+    "scripts/cloud_transfer.py": "59266cf4004001f9071bc1ef998ef7c4ac24234e712c5b5331b3223b1c9785db",
+    "scripts/quality_gate.py": "ed82e31b0d5f0c91ecbd41be4bed661e6c8f6ed591a5db79ad54e95f1d735f1f",
+    "scripts/refresh_markets.py": "f6de50536a3f1799215e370d07a66dc4c21012abd0af9e1507b029bd15c00f78",
+    "scripts/start.sh": "1c2d01768cf1e48e140f2619b693147fcf9274ef4a5436870151ca7513ac2770",
+    "scripts/sync-hosted.py": "8f16785d29e918eb2c963e75d75a363a5385f7835a6ddc64cda3ded8b5af5ea8",
+    "scripts/validate.py": "ffd9f5233f5ac62394153a0fdc8029184fe674fda2870b33e58560f091f24a91",
+    "sites/personal-financial-analyses/.openai/hosting.json": "4512f31f29b80512a11eaca732a9352569c268b9522bd5173f628384ca554ad8",
+    "sites/personal-financial-analyses/app/chatgpt-auth.ts": "4265a2e7c2dcb3a6f4b7026f762bf5b6e4caec76cc13c0a45987ee9a9f2e42cc",
+    "sites/personal-financial-analyses/app/cloud/[...path]/route.ts": "af4f15e3455b363fc495daae56ada2b6467561a5475ea6a576304f87af4474f5",
+    "sites/personal-financial-analyses/app/layout.tsx": "2e32276397fff0f14a6131b2a72a20eb17d760dc0ab56818a97bd1cc98532941",
+    "sites/personal-financial-analyses/app/reports/[issuer]/route.ts": "e7d9edaea164acbd13cc1e34fc4ed6005cb656df94a774f452e4143be0d34a8d",
+    "sites/personal-financial-analyses/app/route.ts": "0712c41cbf32f09326494a3ef608ed0b987b058a7b2cee9e82e22f1a947b69c0",
+    "sites/personal-financial-analyses/client/bridge.js": "6693c1b2be4fc778a00c6cb329b4c362653c8f96ac1673cee61f1c8bf1bb99ec",
+    "sites/personal-financial-analyses/client/cloud-worker.js": "b8c5eb0f033742189f34e3163e66cabeb2b9fa8c592e401ca1264c145279e275",
+    "sites/personal-financial-analyses/client/standalone.js": "16154214879a49d4d5a9f81cb38d9a4ea1984e05db5d0108a40b0916394042ba",
+    "sites/personal-financial-analyses/db/index.ts": "dc7610b00b918e0ffff1360a63626f16655ced3064b2eaf96095a4101fb14bcd",
+    "sites/personal-financial-analyses/db/schema.ts": "49dcbaf3c3cce3101a6c515097edb86d9b1b379a2dcef436dea3c04d37eda3de",
+    "sites/personal-financial-analyses/drizzle/0000_yielding_shadow_king.sql": "cf720ef360d561ecfeac38b92e80f78818b77c2cc9b1fe532c12ccaa6862f90f",
+    "sites/personal-financial-analyses/drizzle/meta/0000_snapshot.json": "3fc3d282e6ea275c8336a632f4418400a43d8935c5a86fdc6ccd427cc562c911",
+    "sites/personal-financial-analyses/drizzle/meta/_journal.json": "bff19c7dfeedc2d72661293c030c69c4a037e4cb46bad5d6c64ec8ca36098c9c",
+    "sites/personal-financial-analyses/lib/cloud-policy.mjs": "852d725546a7669e4cf5ac13ae75cfcc472711c4430ae50047883761ad9cd2f7",
+    "sites/personal-financial-analyses/lib/cloud.ts": "8ea6114886a20a7e6bb8cebf8b44966667fc0329c24006169e8d045ce6c3f574",
+    "sites/personal-financial-analyses/lib/connector-context.ts": "bbddff68689cb0f6926fecd4b8b96f12f2054277c296e97b0df07d4ad5ece24e",
+    "sites/personal-financial-analyses/lib/connector-preview.d.ts": "abd69a94f7f61f1359063bb557574faae35e8ff5a028cc4c04b9ee248ef52642",
+    "sites/personal-financial-analyses/lib/connectors.ts": "1c93d747e384c8e17e3e3dd5361b24412babf5eba2a11d2ae7a75f4e0924112c",
+    "sites/personal-financial-analyses/lib/utils.ts": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68",
+    "sites/personal-financial-analyses/package-lock.json": "3770b5397e5d46050a670cec3cb650bfea64e00acb7c17f68edadc19d422dbb1",
+    "sites/personal-financial-analyses/package.json": "d363dbc630aef00109c1874b2814771960f071ae035528e4fd95fd39b8ee3219",
+    "sites/personal-financial-analyses/scripts/prepare-terminal.mjs": "5a90453d6ebafb6d62fa691ed7b4ca1113fb1b96b36579c8f1cacf2147b16d8a",
+    "sites/personal-financial-analyses/tests/cloud-policy.test.mjs": "11812cd8ce2dd6f5d37bd054d339c683eda4779426a1b44963a41d14b79dcbeb",
+    "sites/personal-financial-analyses/vite.config.ts": "22ff558b1636d251e076f74c1697c7166079861667af10922d6bc505cb8f8290",
+    "static/app.js": "3b064712062a9d43940f5cad0b52cb87b78fa0f68f33c64bbbaf888f1ba22eab",
+    "static/evolution.js": "ab91a5b0bd97457fea7a777f1b4fa1ee7e6e962bde9d7b52a570c6a60337d70c",
+    "static/index.html": "aa86d04418a9f8369fa5ab5db184f87ec69edb143cf67a9254d7ff0ecaed6136",
+    "static/styles.css": "1253633dea545bf1d5247306974fb31def1a74a91e321b46ffd4209fa6b91ed1",
+    "static/workspace.js": "1a779bdd89180ff5d77b637d0de69393b2e4b863dfbd4941da62f911148b847c",
+    "tests/test_audit_controls.py": "a14cbfa9e903d88ade00e3e9f90588da26f1b2cd820a491a7386ab0ce83240ae",
+    "tests/test_cloud_bridge.py": "e60cef5a545af07007d9e2f5cf20a2a0cebf653db3054fbbe52167f7f07e4793",
+    "tests/test_evolution.py": "2f218a3f0afa92704cd6011d39f37d9387b2b3b1e380daddf312635cd938ff59",
+    "tests/test_information.py": "01c97546ee336152b7e4e4df5fc1d75c75bd1a4985171a5312e9205359b0e5eb",
+    "tests/test_markets.py": "ccd8f20c3580f65b28ae3ab9dec354c047392b9873bd97d7bf20ba0358e90407",
+    "tests/test_platform.py": "269435be8aef00c1f90c9f23b9ec743a510638fd80b98a0ea439114d45a9cf8d",
+    "tests/test_release_controls.py": "ebd501c3468a261afc25a6b3fd6a004c7dfdb32d25b9a335338ebf4a5555d0a8",
+    "tests/test_research.py": "b946f9abf4dc015a64913e883557acdb59a28cae60fc32255ea391fb5c03cd25",
+    "tests/test_workspace_api.py": "1a9ce93adf749fbc645e14ed29494f9d664b23fe65d3f60850df1a91c3e37c13"
+  },
+  "kernel_digest": "45d9744a7423c81c519ee704abac97538bbc0f521dd08ea57a0ab267edd3f660",
+  "tests_run": 90,
+  "test_results": [
+    {
+      "test": "test_audit_controls.AuditControls.test_annual_growth_requires_matching_accounting_basis",
+      "result": "passed"
+    },
+    {
+      "test": "test_audit_controls.AuditControls.test_future_period_cannot_supply_historical_actual_baseline",
+      "result": "passed"
+    },
+    {
+      "test": "test_audit_controls.AuditControls.test_half_year_growth_does_not_use_eighteen_month_comparative",
+      "result": "passed"
+    },
+    {
+      "test": "test_audit_controls.AuditControls.test_latest_comparable_ytd_not_hidden_by_unmatched_quarter",
+      "result": "passed"
+    },
+    {
+      "test": "test_audit_controls.AuditControls.test_review_rejects_conflicted_evidence",
+      "result": "passed"
+    },
+    {
+      "test": "test_audit_controls.AuditControls.test_scenario_assumption_cannot_supply_actual_model_baseline",
+      "result": "passed"
+    },
+    {
+      "test": "test_audit_controls.AuditControls.test_validation_fails_required_output_when_raw_hashes_pass",
+      "result": "passed"
+    },
+    {
+      "test": "test_cloud_bridge.CloudBridgeContract.test_failed_cached_request_never_supplies_source_bytes",
+      "result": "passed"
+    },
+    {
+      "test": "test_cloud_bridge.CloudBridgeContract.test_mutation_keeps_version_conflict_and_immutable_report",
+      "result": "passed"
+    },
+    {
+      "test": "test_cloud_bridge.CloudBridgeContract.test_six_company_reports_use_same_financial_kernel",
+      "result": "passed"
+    },
+    {
+      "test": "test_cloud_bridge.CloudBridgeContract.test_snapshot_is_consistent_sqlite",
+      "result": "passed"
+    },
+    {
+      "test": "test_cloud_bridge.CloudBridgeContract.test_unknown_route_does_not_mutate",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.KnowledgeContract.test_draft_does_not_replace_adopted_method",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.KnowledgeContract.test_revision_preserves_history_and_requires_reason",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_bank_common_profit_label_preserves_original_attribution",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_cash_signal_is_traceable_and_does_not_become_a_positive_thesis",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_fact_cutoff_is_not_latest_document_date",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_kernel_revision_requires_review_even_if_model_was_already_stale",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_market_change_marks_saved_report_for_review",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_method_revision_and_new_event_require_report_review",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_missing_model_never_becomes_an_investment_rating",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_newer_unrelated_document_does_not_hide_unread_filing",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_nonpositive_prior_keeps_absolute_change_without_fake_growth",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_platform_reference_is_not_presented_as_company_valuation_method",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_prior_market_revision_is_a_report_change",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_readable_report_escapes_untrusted_content",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_same_observation_refetch_does_not_change_economic_dependencies",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_stale_dependency_snapshot_is_rejected",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_unmapped_new_issuer_exposes_template_gap",
+      "result": "passed"
+    },
+    {
+      "test": "test_information.InformationContract.test_company_source_worker_does_not_consume_information_jobs",
+      "result": "passed"
+    },
+    {
+      "test": "test_information.InformationContract.test_duplicates_and_future_items_are_controlled",
+      "result": "passed"
+    },
+    {
+      "test": "test_information.InformationContract.test_feed_metadata_is_not_verified_financial_fact",
+      "result": "passed"
+    },
+    {
+      "test": "test_information.InformationContract.test_global_timeline_limit_does_not_hide_company_filings",
+      "result": "passed"
+    },
+    {
+      "test": "test_information.InformationContract.test_tampered_information_raw_is_marked_unavailable",
+      "result": "passed"
+    },
+    {
+      "test": "test_information.InformationContract.test_wrong_filer_identity_and_external_feed_links_are_rejected",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_curve_uses_common_dates_and_preserves_input_dates",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_failed_refresh_preserves_old_snapshot_and_labels_it",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_fred_csv_blank_is_missing_not_a_source_outage",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_future_quotes_and_missing_closes_are_not_prices",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_invalid_numeric_response_is_preserved_as_failure_evidence",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_macro_refresh_does_not_enter_company_source_queue",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_market_raw_payload_is_included_in_backup_and_restore",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_missing_values_not_forward_filled",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_rate_changes_use_basis_points",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_tampered_snapshot_is_quarantined",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_threshold_is_review_condition_not_company_direction",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_wrong_symbol_response_is_rejected",
+      "result": "passed"
+    },
+    {
+      "test": "test_platform.PlatformContract.test_each_case_has_industry_driver_and_report_contract",
+      "result": "passed"
+    },
+    {
+      "test": "test_platform.PlatformContract.test_planned_agent_capabilities_not_claimed_running",
+      "result": "passed"
+    },
+    {
+      "test": "test_platform.PlatformContract.test_report_preserves_stale_and_unvalidated_states",
+      "result": "passed"
+    },
+    {
+      "test": "test_platform.PlatformContract.test_sources_and_method_references_are_traceable",
+      "result": "passed"
+    },
+    {
+      "test": "test_platform.PlatformContract.test_three_axes_are_first_class",
+      "result": "passed"
+    },
+    {
+      "test": "test_platform.PlatformContract.test_verified_management_claim_is_not_reported_as_historical_actual",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.LocalService.test_owned_background_lifecycle_and_application_routes",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.LocalService.test_wrong_instance_never_stops_another_process",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.QualityReportControls.test_failed_report_cannot_be_revalidated_as_success",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.QualityReportControls.test_healthy_old_kernel_cannot_pass_runtime_verification",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.ReleaseControls.test_cashflow_risk_does_not_become_positive_business_conclusion",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.ReleaseControls.test_code_policy_change_invalidates_existing_conclusion",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.ReleaseControls.test_confirmed_transcription_of_guidance_is_not_historical_actual",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.ReleaseControls.test_latest_conflict_blocks_instead_of_silently_using_old_year",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.ReleaseControls.test_raw_integrity_participates_in_model_and_staleness_gates",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.ReleaseControls.test_turnaround_path_does_not_treat_loss_as_negative_dividend",
+      "result": "passed"
+    },
+    {
+      "test": "test_release_controls.ReleaseControls.test_unrelated_fact_does_not_close_business_unknown",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.FinancialLogic.test_bank_ke_g_and_terminal_retention",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.FinancialLogic.test_bank_roe_equal_cost_is_book_value",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.FinancialLogic.test_cumulative_precision_and_scope",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.FinancialLogic.test_flat_profit_valuation_known_annuity",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.FinancialLogic.test_non_finite_inputs_and_ssrf_rejected",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.HttpAcceptance.test_api_real_mutation_csrf_and_local_host",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_candidates_not_model_inputs_conflicts_not_averaged",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_cashflow_alert_and_adjustment_are_traceable",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_database_backup_recovery",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_eps_reconciled_profit_kept_distinct_for_valuation",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_followup_needs_evidence_and_reopens_when_evidence_withdrawn",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_jobs_deduplicate_fail_visibly_and_recover",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_missing_adjacent_year_not_reported_as_annual_growth",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_new_event_and_new_assumptions_invalidate_conclusion",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_raw_tampering_detected",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_refuted_thesis_changes_action_and_keeps_old_version",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_rejecting_critical_bank_input_blocks_model",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_review_requires_current_model_and_verified_evidence",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_revision_conflict_rolls_back",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_seeding_twice_does_not_duplicate",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_six_company_chain_and_gates",
+      "result": "passed"
+    },
+    {
+      "test": "test_research.ResearchCase.test_wrong_money_unit_rejected",
+      "result": "passed"
+    },
+    {
+      "test": "test_workspace_api.WorkspaceAPI.test_knowledge_and_report_snapshot_roundtrip_with_frozen_document",
+      "result": "passed"
+    },
+    {
+      "test": "test_workspace_api.WorkspaceAPI.test_market_refresh_requires_token_and_deduplicates",
+      "result": "passed"
+    },
+    {
+      "test": "test_workspace_api.WorkspaceAPI.test_new_mutations_keep_local_token_protection",
+      "result": "passed"
+    },
+    {
+      "test": "test_workspace_api.WorkspaceAPI.test_three_layers_reports_and_whitelisted_documents",
+      "result": "passed"
+    }
+  ],
+  "feature_checks": [
+    {
+      "id": "F01",
+      "implementation_status": "implemented",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "运行质量单独验收；健康不代表数据新鲜或判断正确"
+    },
+    {
+      "id": "F02",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "单次取数通过，持续覆盖与限额恢复未验收"
+    },
+    {
+      "id": "F03",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "规则可挡部分错误，原文语义与完整性仍需独立裁定"
+    },
+    {
+      "id": "F04",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "相关性与充分性的评审功能尚未完成，禁止引用存在即自动关闭"
+    },
+    {
+      "id": "F05",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "诊断已实现，完整经营到预测的驱动桥未实现"
+    },
+    {
+      "id": "F06",
+      "implementation_status": "illustrative",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "通用参数未承保；约91%终值占比；仅示例敏感性"
+    },
+    {
+      "id": "F07",
+      "implementation_status": "illustrative",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "RI代数可核对；ROE/Ke与资本规划无充分依据"
+    },
+    {
+      "id": "F08",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "身份/引用门槛不能证明金融论证质量；尚无独立专家评价"
+    },
+    {
+      "id": "F09",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "经营质量、证券现价与账户适宜性仍不充分；不提供总置信分"
+    },
+    {
+      "id": "F10",
+      "implementation_status": "implemented",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "工程通过与研究通过分开；历史回滚和跨版本迁移仍待完善"
+    },
+    {
+      "id": "F11",
+      "implementation_status": "planned",
+      "functional_checks": "not_implemented",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "现有六家已用于开发，不能算盲测；候选题待独立裁定"
+    },
+    {
+      "id": "F12",
+      "implementation_status": "planned",
+      "functional_checks": "not_implemented",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "尚无前瞻结果，禁止从六家流程或历史解释推投资绩效"
+    },
+    {
+      "id": "F13",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "本轮实现结构与公开数据示例；研究和预测有效性仍未验证"
+    },
+    {
+      "id": "F14",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "本轮实现结构与公开数据示例；研究和预测有效性仍未验证"
+    },
+    {
+      "id": "F15",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "本轮实现结构与公开数据示例；研究和预测有效性仍未验证"
+    },
+    {
+      "id": "F16",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "本轮实现结构与公开数据示例；研究和预测有效性仍未验证"
+    },
+    {
+      "id": "F17",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "证据观察与版本控制；行业预测、语义质量和前瞻效果未验证"
+    },
+    {
+      "id": "F18",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "证据观察与版本控制；行业预测、语义质量和前瞻效果未验证"
+    },
+    {
+      "id": "F19",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "证据观察与版本控制；行业预测、语义质量和前瞻效果未验证"
+    },
+    {
+      "id": "F20",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "工程与控制审查；独立专业判断及投资效果未验证"
+    },
+    {
+      "id": "F21",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "工程与控制审查；独立专业判断及投资效果未验证"
+    }
+  ],
+  "source_checks": [
+    {
+      "issuer": "msft",
+      "title": "Microsoft FY2026 Form 10-K（含FY2025比较数）",
+      "sha256_match": true
+    },
+    {
+      "issuer": "cost",
+      "title": "Costco FY2026 Form 10-K（含FY2025比较数）",
+      "sha256_match": true
+    },
+    {
+      "issuer": "tencent",
+      "title": "Tencent 2025 Annual Report",
+      "sha256_match": true
+    },
+    {
+      "issuer": "tencent",
+      "title": "Tencent 2026 Interim Results Announcement",
+      "sha256_match": true
+    },
+    {
+      "issuer": "byd",
+      "title": "比亚迪2025年年度报告",
+      "sha256_match": true
+    },
+    {
+      "issuer": "byd",
+      "title": "比亚迪2026年半年度报告",
+      "sha256_match": true
+    },
+    {
+      "issuer": "byd",
+      "title": "比亚迪2026年9月产销快报",
+      "sha256_match": true
+    },
+    {
+      "issuer": "catl",
+      "title": "宁德时代2025年度报告",
+      "sha256_match": true
+    },
+    {
+      "issuer": "catl",
+      "title": "宁德时代2026半年度报告",
+      "sha256_match": true
+    },
+    {
+      "issuer": "catl",
+      "title": "宁德时代2026第三季度报告",
+      "sha256_match": true
+    },
+    {
+      "issuer": "cmb",
+      "title": "招商银行2025年度报告A股版",
+      "sha256_match": true
+    },
+    {
+      "issuer": "cmb",
+      "title": "招商银行2026半年度报告A股版",
+      "sha256_match": true
+    }
+  ],
+  "local_runtime": {
+    "passed": true,
+    "checks": [
+      {
+        "route": "/api/healthz",
+        "passed": true
+      },
+      {
+        "route": "/",
+        "passed": true
+      },
+      {
+        "route": "/app.js",
+        "passed": true
+      },
+      {
+        "route": "/workspace.js",
+        "passed": true
+      },
+      {
+        "route": "/evolution.js",
+        "passed": true
+      },
+      {
+        "route": "/api/bootstrap",
+        "passed": true
+      },
+      {
+        "route": "/api/platform",
+        "passed": true
+      },
+      {
+        "route": "/api/knowledge",
+        "passed": true
+      },
+      {
+        "route": "/api/markets",
+        "passed": true
+      },
+      {
+        "route": "/api/information",
+        "passed": true
+      },
+      {
+        "route": "/api/industries",
+        "passed": true
+      },
+      {
+        "route": "/api/reports/catl",
+        "passed": true
+      },
+      {
+        "route": "/api/companies/catl",
+        "passed": true
+      }
+    ]
+  },
+  "runtime_kernel_matches": true,
+  "functional_passed": true,
+  "cloud_policy_checks": {
+    "passed": true,
+    "output": "✔ source identity and redirect targets stay on primary-source allowlist (0.525417ms)\n✔ snapshot manifest rejects traversal, duplicate and oversized files (0.1465ms)\n✔ cross-site and unmarked writes fail before persistence (18.319833ms)\n✔ empty and streaming oversized responses are rejected (0.91275ms)\n✔ content-address digest uses exact bytes (2.143459ms)\nℹ tests 5\nℹ suites 0\nℹ pass 5\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 73.860333\n"
+  },
+  "permitted_use": "local_evidence_and_illustrative_scenarios",
+  "research_decision_ready": false,
+  "research_quality": "not_validated",
+  "prediction_calibration": "not_evaluated",
+  "limitations": [
+    "测试不等于语义、行业方法或投资效果验收",
+    "六家公司及公开题已用于开发，不属于真正盲测",
+    "资料哈希不证明提取、口径、机制和预测正确",
+    "持续来源更新、独立专家与前瞻效果尚未验证"
+  ]
+}

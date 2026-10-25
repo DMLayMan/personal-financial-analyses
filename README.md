@@ -17,7 +17,7 @@ Personal Financial Analyses 是面向个人深度研究与中长期投资的商�
 | 英文名称 | Personal Financial Analyses |
 | 中文工作名 | 个人金融分析终端 |
 | 仓库标识 | personal-financial-analyses |
-| 当前版本 | 0.5.0 |
+| 当前版本 | 0.6.0 |
 | 基线日期 | 2026年10月25日 |
 | 当前阶段 | 三层平台、公开市场快照、行业手册及报告；继续深化经营驱动和研究验证 |
 
@@ -65,3 +65,11 @@ Personal Financial Analyses 是面向个人深度研究与中长期投资的商�
 当前未配置远端。远端托管位置、归属和可见性在需要同步或协作前确定。
 
 后续开发须按[AGENTS.md](AGENTS.md)登记功能合同并留存验证结果。可运行 `.venv/bin/python scripts/quality_gate.py --live` 更新本地功能检查；该检查不会把测试通过升级为投资判断可靠。
+
+## 私有远程版 0.6
+
+[打开 Personal Financial Analyses](https://personal-financial-analyses-wktt.august247wk.chatgpt.site)。仅本人使用 ChatGPT 登录，可在其他设备访问。站点托管源码在 `sites/personal-financial-analyses/`，身份保存在该目录的 `.openai/hosting.json`。
+
+云端保存研究数据库、原件和版本；浏览器复用同一Python研究内核。仅按需更新，关闭页面后不持续监测。本地与云端在首次迁移后分别版本化，没有自动双向同步。首次证据包约59MB，另需加载Python运行时。
+
+本轮修复事实/文件日期混用、未读披露遗漏、非正同比基数丢失、普通股利润标题和内核变更漏审；未将工程通过升级为行业预测或投资效果通过。见[深度审查](docs/quality/review-2026-10-25.md)、[远程运行](docs/operations/hosted-service.md)与[功能合同](docs/quality/feature-plan.md)。正式站点已部署并迁移；自动化浏览器被OpenAI登录安全验证阻挡，完整登录后的线上浏览器验收仍待本人常用浏览器确认。

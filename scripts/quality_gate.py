@@ -23,6 +23,13 @@ def source_manifest():
                      and p.suffix in ('.py','.sh','.html','.js','.css'))
     paths += [ROOT/'fixtures/companies.json',ROOT/'requirements.txt',ROOT/'quality/features.json']
     paths += list((ROOT/'knowledge').glob('*.json'))
+    site=ROOT/'sites/personal-financial-analyses'
+    for directory in ('app','client','lib','tests','db','drizzle'):
+        paths.extend(p for p in (site/directory).rglob('*') if p.is_file()
+                     and p.suffix in ('.ts','.tsx','.mjs','.js','.sql','.json')
+                     and p.name!='terminal-html.ts')
+    paths += [site/p for p in ('package.json','package-lock.json',
+              '.openai/hosting.json','scripts/prepare-terminal.mjs','vite.config.ts') if (site/p).is_file()]
     return {str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(paths)}
 
 
@@ -97,9 +104,11 @@ def main():
     live=doctor(args.port) if args.live else dict(passed=None,reason='not_requested')
     health=probe(args.port) if args.live else None
     runtime_matches=bool(health and health.get('kernel_digest')==RUNNING_KERNEL) if args.live else None
+    cloud=subprocess.run(['node','--test','tests/cloud-policy.test.mjs'],cwd=ROOT/'sites/personal-financial-analyses',
+                         text=True,capture_output=True)
     passed=(result.wasSuccessful() and not result.skipped
             and all(f['functional_checks']!='failed' for f in feature_checks)
-            and all(d['sha256_match'] for d in documents)
+            and all(d['sha256_match'] for d in documents) and cloud.returncode==0
             and (not args.live or live['passed'] and runtime_matches))
     revision=subprocess.run(['git','rev-parse','HEAD'],cwd=ROOT,text=True,capture_output=True).stdout.strip()
     dirty=bool(subprocess.run(['git','status','--porcelain'],cwd=ROOT,text=True,capture_output=True).stdout.strip())
@@ -108,6 +117,7 @@ def main():
         source_manifest=manifest,kernel_digest=RUNNING_KERNEL,tests_run=result.testsRun,
         test_results=result.evidence,feature_checks=feature_checks,source_checks=documents,
         local_runtime=live,runtime_kernel_matches=runtime_matches,functional_passed=bool(passed),
+        cloud_policy_checks=dict(passed=cloud.returncode==0,output=cloud.stdout+cloud.stderr),
         permitted_use='local_evidence_and_illustrative_scenarios',research_decision_ready=False,
         research_quality='not_validated',prediction_calibration='not_evaluated',
         limitations=['测试不等于语义、行业方法或投资效果验收','六家公司及公开题已用于开发，不属于真正盲测',

@@ -1,0 +1,13 @@
+{
+  "checks": [
+    "ordinary anonymous API rejected",
+    "unmarked mutation rejected",
+    "cross-origin mutation rejected",
+    "two writers: one success, one version conflict",
+    "immutable revisions retained",
+    "path traversal rejected before commit",
+    "failed operations did not advance head"
+  ],
+  "passed": true,
+  "scope": "local cloud persistence and boundary controls, not investment validation"
+}

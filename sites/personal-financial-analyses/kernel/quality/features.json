@@ -1,0 +1,706 @@
+{
+  "schema_version": 1,
+  "version": "0.5.0",
+  "as_of": "2026-10-25",
+  "allowed_use": "local_evidence_and_illustrative_scenarios",
+  "research_decision_ready": false,
+  "features": [
+    {
+      "id": "F01",
+      "name": "本地可访问与运行交付",
+      "status": "implemented",
+      "decision": "用户在交付后仍能进入工作台",
+      "inputs": "源码、虚拟环境、数据库、独立进程",
+      "output": "URL、健康、日志、启停与恢复状态",
+      "automated_tests": [
+        "test_release_controls.LocalService.test_owned_background_lifecycle_and_application_routes",
+        "test_release_controls.LocalService.test_wrong_instance_never_stops_another_process"
+      ],
+      "method_review": "运行质量单独验收；健康不代表数据新鲜或判断正确",
+      "acceptance": "后台脱离启动会话仍响应；重复启动不重复实例；不终止其他进程",
+      "next_work": "后续再评估开机启动、崩溃恢复与远程身份",
+      "references": [
+        "Q6",
+        "Q7",
+        "Q8"
+      ],
+      "research_decision_ready": false,
+      "implementation_paths": [
+        "pfa/service.py",
+        "pfa/server.py",
+        "scripts/start.sh"
+      ],
+      "failure_modes": [
+        "交付后进程退出",
+        "端口占用或停止其他进程",
+        "HTTP200但代表数据不可读"
+      ],
+      "permitted_use": "仅本地工程/资料/示例研究；不支持已验证投资结论"
+    },
+    {
+      "id": "F02",
+      "name": "公开资料获取及来源健康",
+      "status": "partial",
+      "decision": "找到需要的真实原文，暴露失败而非伪造无风险",
+      "inputs": "白名单HTTPS、取得时间、原件SHA256、任务状态",
+      "output": "原始版本与可读取状态",
+      "automated_tests": [
+        "test_research.ResearchCase.test_jobs_deduplicate_fail_visibly_and_recover",
+        "test_release_controls.ReleaseControls.test_raw_integrity_participates_in_model_and_staleness_gates"
+      ],
+      "method_review": "单次取数通过，持续覆盖与限额恢复未验收",
+      "acceptance": "空正文、失败、原件变更不进入无条件可信状态",
+      "next_work": "逐公司来源字段覆盖、稳定性与备用路径；连续运行另定范围",
+      "references": [
+        "Q1",
+        "Q6",
+        "Q9"
+      ],
+      "research_decision_ready": false,
+      "implementation_paths": [
+        "pfa/sources.py"
+      ],
+      "failure_modes": [
+        "错误正文当原文",
+        "抓取失败静默",
+        "本地原件被改写后仍可用"
+      ],
+      "permitted_use": "仅本地工程/资料/示例研究；不支持已验证投资结论"
+    },
+    {
+      "id": "F03",
+      "name": "证据分类、期间与原文核验",
+      "status": "partial",
+      "decision": "避免数字转录正确却用错问题、范围或期间",
+      "inputs": "报告、指引、共识、假设分类；原文定位与口径",
+      "output": "候选、局部核验、可用实际和冲突",
+      "automated_tests": [
+        "test_audit_controls.AuditControls.test_annual_growth_requires_matching_accounting_basis",
+        "test_audit_controls.AuditControls.test_half_year_growth_does_not_use_eighteen_month_comparative",
+        "test_audit_controls.AuditControls.test_scenario_assumption_cannot_supply_actual_model_baseline",
+        "test_audit_controls.AuditControls.test_future_period_cannot_supply_historical_actual_baseline"
+      ],
+      "method_review": "规则可挡部分错误，原文语义与完整性仍需独立裁定",
+      "acceptance": "跨会计口径或18个月/半年不得直接同比；预测不得当实际",
+      "next_work": "完成开发题的原文裁定与字段级提取；记录已存在未提取资料",
+      "references": [
+        "Q1",
+        "Q9"
+      ],
+      "research_decision_ready": false,
+      "implementation_paths": [
+        "pfa/assurance.py",
+        "pfa/research.py"
+      ],
+      "failure_modes": [
+        "预测或指引被核验后冒充实际",
+        "跨币种/范围/会计口径混比",
+        "18个月冒充半年"
+      ],
+      "permitted_use": "仅本地工程/资料/示例研究；不支持已验证投资结论"
+    },
+    {
+      "id": "F04",
+      "name": "主动补证与停止研究",
+      "status": "partial",
+      "decision": "优先获取能够区分解释或翻转决定的证据",
+      "inputs": "研究主张、关键缺口、反方、下一来源",
+      "output": "补证计划、停止理由、待语义审议回应",
+      "automated_tests": [
+        "test_release_controls.ReleaseControls.test_unrelated_fact_does_not_close_business_unknown"
+      ],
+      "method_review": "相关性与充分性的评审功能尚未完成，禁止引用存在即自动关闭",
+      "acceptance": "年度总收入不得单独关闭AI回报或会员质量未知",
+      "next_work": "增加主张→区分观察→证据→反方→审议的合同与专家判题",
+      "references": [
+        "Q1",
+        "Q2"
+      ],
+      "research_decision_ready": false,
+      "implementation_paths": [
+        "pfa/research.py"
+      ],
+      "failure_modes": [
+        "引用存在但无关",
+        "重复上游资料增加信心",
+        "补证无停止条件"
+      ],
+      "permitted_use": "仅本地工程/资料/示例研究；不支持已验证投资结论"
+    },
+    {
+      "id": "F05",
+      "name": "最新实际、事件传导与预测更新",
+      "status": "partial",
+      "decision": "新事实真正改变适用的盈利、现金、风险或估值假设",
+      "inputs": "同比可比组、行业暴露、转嫁、时滞和抵消",
+      "output": "期间诊断、事件缺口及实际→预测桥",
+      "automated_tests": [
+        "test_audit_controls.AuditControls.test_latest_comparable_ytd_not_hidden_by_unmatched_quarter",
+        "test_release_controls.ReleaseControls.test_cashflow_risk_does_not_become_positive_business_conclusion"
+      ],
+      "method_review": "诊断已实现，完整经营到预测的驱动桥未实现",
+      "acceptance": "最新可比9M不得被无比较单季掩盖；不将收入增长直接称经营改善",
+      "next_work": "先实现BYD/CATL/CMB压力桥，再覆盖MSFT/COST/腾讯；见六公司功能拆解",
+      "references": [
+        "Q1",
+        "Q2"
+      ],
+      "research_decision_ready": false,
+      "implementation_paths": [
+        "pfa/monitoring.py",
+        "pfa/research.py"
+      ],
+      "failure_modes": [
+        "未匹配单季掩盖可比累计",
+        "收入增而现金风险被忽略",
+        "新实际不改变相关预测"
+      ],
+      "permitted_use": "仅本地工程/资料/示例研究；不支持已验证投资结论"
+    },
+    {
+      "id": "F06",
+      "name": "非银行盈利与估值",
+      "status": "illustrative",
+      "decision": "解释利润、现金及资本回报和估值的依赖",
+      "inputs": "年度实际、权益调整、增长、净利率、分配、PE与Ke",
+      "output": "可复算股权价值情景和限制",
+      "automated_tests": [
+        "test_research.FinancialLogic.test_flat_profit_valuation_known_annuity",
+        "test_release_controls.ReleaseControls.test_turnaround_path_does_not_treat_loss_as_negative_dividend",
+        "test_release_controls.ReleaseControls.test_latest_conflict_blocks_instead_of_silently_using_old_year"
+      ],
+      "method_review": "通用参数未承保；约91%终值占比；仅示例敏感性",
+      "acceptance": "公式正确、拒绝亏损负股息及冲突回退；不升级当前公允价值",
+      "next_work": "逐参数来源、正常化桥、再投资/融资、滚动全年预测与独立估值",
+      "references": [
+        "Q2",
+        "Q3",
+        "Q4"
+      ],
+      "research_decision_ready": false,
+      "implementation_paths": [
+        "pfa/models.py",
+        "pfa/research.py"
+      ],
+      "failure_modes": [
+        "无依据的通用PE/Ke",
+        "权益或正常化调整重复",
+        "亏损当负股息",
+        "过时基线伪称当前价值"
+      ],
+      "permitted_use": "仅本地工程/资料/示例研究；不支持已验证投资结论"
+    },
+    {
+      "id": "F07",
+      "name": "银行普通股、信用与资本模型",
+      "status": "illustrative",
+      "decision": "判断可持续普通股回报是否覆盖资本成本",
+      "inputs": "普通股权益、ROE、Ke、分配与终值；后续接NIM/信用/RWA",
+      "output": "RI情景、资本约束缺口",
+      "automated_tests": [
+        "test_research.FinancialLogic.test_bank_roe_equal_cost_is_book_value",
+        "test_research.FinancialLogic.test_bank_ke_g_and_terminal_retention",
+        "test_research.ResearchCase.test_rejecting_critical_bank_input_blocks_model"
+      ],
+      "method_review": "RI代数可核对；ROE/Ke与资本规划无充分依据",
+      "acceptance": "不以总归母权益替普通股；无资本约束不得称可分配价值",
+      "next_work": "NII、信用迁徙、OCI、RWA/CET1→留存和分配勾稽",
+      "references": [
+        "Q2",
+        "Q5"
+      ],
+      "research_decision_ready": false,
+      "implementation_paths": [
+        "pfa/models.py",
+        "pfa/research.py"
+      ],
+      "failure_modes": [
+        "全部权益代普通股",
+        "息差/信用/资本压力不改变值",
+        "终值分配无资本约束"
+      ],
+      "permitted_use": "仅本地工程/资料/示例研究；不支持已验证投资结论"
+    },
+    {
+      "id": "F08",
+      "name": "反方与交叉审查",
+      "status": "partial",
+      "decision": "反方能改变主判断而不只是装饰",
+      "inputs": "当前适用证据、替代机制、实质回应与推翻条件",
+      "output": "分歧、审查版本及撤回动作",
+      "automated_tests": [
+        "test_audit_controls.AuditControls.test_review_rejects_conflicted_evidence",
+        "test_research.ResearchCase.test_refuted_thesis_changes_action_and_keeps_old_version"
+      ],
+      "method_review": "身份/引用门槛不能证明金融论证质量；尚无独立专家评价",
+      "acceptance": "冲突事实不能被审查门槛重新接纳；反方成立要保留原版并撤回",
+      "next_work": "建立证据相关性、最强反方和改判一致性的语义基准",
+      "references": [
+        "Q1",
+        "Q2"
+      ],
+      "research_decision_ready": false,
+      "implementation_paths": [
+        "pfa/research.py"
+      ],
+      "failure_modes": [
+        "冲突事实被审查门槛接纳",
+        "反方没有可推翻条件",
+        "字数或同模型赞成冒充充分性"
+      ],
+      "permitted_use": "仅本地工程/资料/示例研究；不支持已验证投资结论"
+    },
+    {
+      "id": "F09",
+      "name": "结论版本与允许用途",
+      "status": "partial",
+      "decision": "知道结论为何变化及哪里不具备决定条件",
+      "inputs": "输入、内核、原件状态、模型和审查版本",
+      "output": "可追溯条件记录和失效状态",
+      "automated_tests": [
+        "test_release_controls.ReleaseControls.test_code_policy_change_invalidates_existing_conclusion",
+        "test_research.ResearchCase.test_new_event_and_new_assumptions_invalidate_conclusion"
+      ],
+      "method_review": "经营质量、证券现价与账户适宜性仍不充分；不提供总置信分",
+      "acceptance": "规则/输入变化旧结论重审；未经校准不显示成功率",
+      "next_work": "补来源时效、公告窗口、参数承保和证券标识/价格/FX完整性",
+      "references": [
+        "Q1",
+        "Q2"
+      ],
+      "research_decision_ready": false,
+      "implementation_paths": [
+        "pfa/assurance.py",
+        "pfa/research.py"
+      ],
+      "failure_modes": [
+        "内核/原件变化旧结论不失效",
+        "未校准总置信分",
+        "删除失败或改写旧策略"
+      ],
+      "permitted_use": "仅本地工程/资料/示例研究；不支持已验证投资结论"
+    },
+    {
+      "id": "F10",
+      "name": "验收报告与备份恢复",
+      "status": "implemented",
+      "decision": "不以错误通过或无法恢复的资料交付用户",
+      "inputs": "隔离库、必需产物、原件、源码及测试记录",
+      "output": "逐项结果、使用限制与一致备份",
+      "automated_tests": [
+        "test_audit_controls.AuditControls.test_validation_fails_required_output_when_raw_hashes_pass",
+        "test_research.ResearchCase.test_database_backup_recovery",
+        "test_markets.MarketLogic.test_market_raw_payload_is_included_in_backup_and_restore"
+      ],
+      "method_review": "工程通过与研究通过分开；历史回滚和跨版本迁移仍待完善",
+      "acceptance": "哈希通过而必需模型失败必须exit非0；恢复需含原件",
+      "next_work": "完善数据迁移与上一版本应用恢复演练",
+      "references": [
+        "Q6",
+        "Q7"
+      ],
+      "research_decision_ready": false,
+      "implementation_paths": [
+        "scripts/validate.py",
+        "scripts/backup.py",
+        "scripts/quality_gate.py"
+      ],
+      "failure_modes": [
+        "哈希通过掩盖模型失败",
+        "恢复缺原件",
+        "使用未测试源码对应的旧报告"
+      ],
+      "permitted_use": "仅本地工程/资料/示例研究；不支持已验证投资结论"
+    },
+    {
+      "id": "F11",
+      "name": "研究质量开发集与保留集",
+      "status": "planned",
+      "decision": "用预写答案评价研究而非看完输出才定标准",
+      "inputs": "原文裁定题、未知问题、失败案例与未见样本",
+      "output": "严重错误、遗漏、弃权、改判及基准差异",
+      "automated_tests": [],
+      "method_review": "现有六家已用于开发，不能算盲测；候选题待独立裁定",
+      "acceptance": "答案由原文和专业复核确定；保留集不得回流调参后仍称未见",
+      "next_work": "先裁定12组开发问题，新增未见公司/期间/失败样本并固定比较方案",
+      "references": [
+        "Q1",
+        "Q2"
+      ],
+      "research_decision_ready": false,
+      "implementation_paths": [
+        "quality/evidence/public-development-cases.json"
+      ],
+      "failure_modes": [
+        "开发题假称盲测",
+        "用模型输出当答案",
+        "只选择成功大公司"
+      ],
+      "permitted_use": "仅本地工程/资料/示例研究；不支持已验证投资结论"
+    },
+    {
+      "id": "F12",
+      "name": "前瞻预测、风险与校准",
+      "status": "planned",
+      "decision": "判断预测能力、风险识别及决策效果是否真的有效",
+      "inputs": "事前事件/期限/结算、历史信息集、失败/弃权与基准",
+      "output": "分类型校准、覆盖、永久损失和联合压力",
+      "automated_tests": [],
+      "method_review": "尚无前瞻结果，禁止从六家流程或历史解释推投资绩效",
+      "acceptance": "不可改结算/删失败；未知与不可预测性保留",
+      "next_work": "预测登记、到期结算、参考类与简单基准比较；历史只作过程复盘",
+      "references": [
+        "Q1",
+        "Q2"
+      ],
+      "research_decision_ready": false,
+      "implementation_paths": [
+        "docs/research-methodology.md"
+      ],
+      "failure_modes": [
+        "改结算或删失败",
+        "相关事件当独立样本",
+        "事后知道结局冒充事前预测"
+      ],
+      "permitted_use": "仅本地工程/资料/示例研究；不支持已验证投资结论"
+    },
+    {
+      "id": "F13",
+      "name": "平台研究基础与三层导航",
+      "status": "partial",
+      "decision": "让用户先理解平台如何研究和审查，再进入案例",
+      "inputs": "研究规程、审查结论、能力状态、知识来源和扩展计划",
+      "output": "平台首页、方法、Agent职责、知识库、审查与路线图",
+      "automated_tests": [
+        "test_platform.PlatformContract.test_three_axes_are_first_class",
+        "test_platform.PlatformContract.test_planned_agent_capabilities_not_claimed_running",
+        "test_workspace_api.WorkspaceAPI.test_three_layers_reports_and_whitelisted_documents"
+      ],
+      "method_review": "本轮实现结构与公开数据示例；研究和预测有效性仍未验证",
+      "acceptance": "三层主导航在桌面和窄屏均固定左侧；方法、审查和未完成能力有来源",
+      "next_work": "将真实工作流版本与知识更新关联",
+      "references": [
+        "Q1",
+        "Q10"
+      ],
+      "research_decision_ready": false,
+      "implementation_paths": [
+        "pfa/platform.py",
+        "knowledge/platform.json",
+        "static/app.js",
+        "static/workspace.js",
+        "docs/three-layer-architecture.md"
+      ],
+      "failure_modes": [
+        "只堆公司或指标而无方法与传导",
+        "缺失数据被误称实时覆盖",
+        "计划中的Agent/模型被说成已运行"
+      ],
+      "permitted_use": "本地方法、公开数据观察与研究草稿",
+      "browser_acceptance": [
+        "662px三层入口左侧纵排",
+        "公司报告仍可进入",
+        "主区无页面级横向溢出"
+      ]
+    },
+    {
+      "id": "F14",
+      "name": "跨市场大盘与传导看板",
+      "status": "partial",
+      "decision": "识别市场环境变化如何影响行业和公司",
+      "inputs": "公开指标序列、频率、观察日、单位、来源及获取状态",
+      "output": "指数/利率/信用/汇率/商品/宏观指标、走势、变化和行业传导",
+      "automated_tests": [
+        "test_markets.MarketLogic.test_rate_changes_use_basis_points",
+        "test_markets.MarketLogic.test_missing_values_not_forward_filled",
+        "test_markets.MarketLogic.test_failed_refresh_preserves_old_snapshot_and_labels_it",
+        "test_markets.MarketLogic.test_curve_uses_common_dates_and_preserves_input_dates",
+        "test_markets.MarketLogic.test_future_quotes_and_missing_closes_are_not_prices",
+        "test_markets.MarketLogic.test_tampered_snapshot_is_quarantined",
+        "test_markets.MarketLogic.test_macro_refresh_does_not_enter_company_source_queue",
+        "test_markets.MarketLogic.test_threshold_is_review_condition_not_company_direction",
+        "test_workspace_api.WorkspaceAPI.test_market_refresh_requires_token_and_deduplicates",
+        "test_markets.MarketLogic.test_wrong_symbol_response_is_rejected",
+        "test_markets.MarketLogic.test_invalid_numeric_response_is_preserved_as_failure_evidence",
+        "test_markets.MarketLogic.test_fred_csv_blank_is_missing_not_a_source_outage"
+      ],
+      "method_review": "本轮实现结构与公开数据示例；研究和预测有效性仍未验证",
+      "acceptance": "利率与指数变动区分bp和%；缺失/滞后/失败显式显示；大盘波动不自动变成个股评级",
+      "next_work": "逐源完善A港美覆盖、授权、更新与历史版本",
+      "references": [
+        "Q11",
+        "Q13"
+      ],
+      "research_decision_ready": false,
+      "implementation_paths": [
+        "pfa/markets.py",
+        "knowledge/market-catalog.json",
+        "static/app.js",
+        "static/workspace.js",
+        "docs/three-layer-architecture.md"
+      ],
+      "failure_modes": [
+        "只堆公司或指标而无方法与传导",
+        "缺失数据被误称实时覆盖",
+        "计划中的Agent/模型被说成已运行"
+      ],
+      "permitted_use": "本地方法、公开数据观察与研究草稿"
+    },
+    {
+      "id": "F15",
+      "name": "重点数据与信息源地图",
+      "status": "partial",
+      "decision": "明确为每个研究问题应读什么资料和还有什么缺口",
+      "inputs": "原始披露、行业统计、央行/统计局、行情与研报能力状态",
+      "output": "按用途/地区/频率分类的来源与字段字典",
+      "automated_tests": [
+        "test_platform.PlatformContract.test_sources_and_method_references_are_traceable"
+      ],
+      "method_review": "本轮实现结构与公开数据示例；研究和预测有效性仍未验证",
+      "acceptance": "找到入口、读取成功、字段核验、持续更新和权限分开",
+      "next_work": "把字段缺口、取数任务与来源健康进一步关联",
+      "references": [
+        "Q1",
+        "Q11"
+      ],
+      "research_decision_ready": false,
+      "implementation_paths": [
+        "knowledge/platform.json",
+        "knowledge/market-catalog.json",
+        "pfa/platform.py",
+        "static/workspace.js",
+        "docs/three-layer-architecture.md"
+      ],
+      "failure_modes": [
+        "只堆公司或指标而无方法与传导",
+        "缺失数据被误称实时覆盖",
+        "计划中的Agent/模型被说成已运行"
+      ],
+      "permitted_use": "本地方法、公开数据观察与研究草稿"
+    },
+    {
+      "id": "F16",
+      "name": "行业分类与公司研究报告",
+      "status": "partial",
+      "decision": "按行业机制应用方法与Agent职责形成有证据的公司报告",
+      "inputs": "行业模板、公司原文、方法引用、财务输入与宏观渠道",
+      "output": "行业档案、KPI/驱动桥、案例目录、报告与后续验证",
+      "automated_tests": [
+        "test_platform.PlatformContract.test_each_case_has_industry_driver_and_report_contract",
+        "test_platform.PlatformContract.test_report_preserves_stale_and_unvalidated_states",
+        "test_platform.PlatformContract.test_verified_management_claim_is_not_reported_as_historical_actual"
+      ],
+      "method_review": "本轮实现结构与公开数据示例；研究和预测有效性仍未验证",
+      "acceptance": "六家公司都有行业驱动、方法、补证与报告结构；通用情景不称行业盈利模型已完成",
+      "next_work": "按公司补齐实际到预测的驱动桥及独立审议",
+      "references": [
+        "Q1",
+        "Q12",
+        "Q14"
+      ],
+      "research_decision_ready": false,
+      "implementation_paths": [
+        "knowledge/industries.json",
+        "pfa/platform.py",
+        "static/app.js",
+        "static/workspace.js",
+        "docs/three-layer-architecture.md"
+      ],
+      "failure_modes": [
+        "只堆公司或指标而无方法与传导",
+        "缺失数据被误称实时覆盖",
+        "计划中的Agent/模型被说成已运行",
+        "报告标明具体原页但点击只打开第一页"
+      ],
+      "permitted_use": "本地方法、公开数据观察与研究草稿",
+      "browser_acceptance": [
+        "三个市场代表报告可读",
+        "公司原页按钮跳到相应PDF页",
+        "旧结论和示例状态保留"
+      ]
+    },
+    {
+      "id": "F17",
+      "name": "知识方法的版本与适用范围",
+      "status": "partial",
+      "decision": "长期增加、修订、停用研究知识并追踪采用版本",
+      "inputs": "来源、适用对象、方法、失效条件和变更理由",
+      "output": "可增修知识条目、版本历史及报告方法引用",
+      "implementation_paths": [
+        "pfa/knowledge.py",
+        "static/evolution.js",
+        "docs/report-product-design.md"
+      ],
+      "automated_tests": [
+        "test_evolution.KnowledgeContract.test_revision_preserves_history_and_requires_reason",
+        "test_evolution.KnowledgeContract.test_draft_does_not_replace_adopted_method"
+      ],
+      "acceptance": "知识纳入不冒充独立方法验证；草案不覆盖已采用版本",
+      "next_work": "更多行业结构化驱动、专业裁定和迁移",
+      "failure_modes": [
+        "用版式和字数代替金融判断",
+        "新方法/事件/市场变化无版本提醒",
+        "人工纳入即宣称研究方法已验证",
+        "一次取数被当作持续实时覆盖"
+      ],
+      "method_review": "证据观察与版本控制；行业预测、语义质量和前瞻效果未验证",
+      "references": [
+        "Q1",
+        "Q10",
+        "Q15"
+      ],
+      "research_decision_ready": false,
+      "permitted_use": "本地知识迭代、信息线索、证据研究与报告草案"
+    },
+    {
+      "id": "F18",
+      "name": "公开信息流与接入状态",
+      "status": "partial",
+      "decision": "判断是否出现需检查的公告/政策变化，并明确实时覆盖缺口",
+      "inputs": "Fed官方RSS、SEC选定公司提交记录、公开行情状态",
+      "output": "可刷新信息流、来源健康、相关事件登记与时效说明",
+      "implementation_paths": [
+        "pfa/information.py",
+        "static/evolution.js",
+        "docs/report-product-design.md"
+      ],
+      "automated_tests": [
+        "test_information.InformationContract.test_duplicates_and_future_items_are_controlled",
+        "test_information.InformationContract.test_feed_metadata_is_not_verified_financial_fact",
+        "test_information.InformationContract.test_company_source_worker_does_not_consume_information_jobs",
+        "test_information.InformationContract.test_wrong_filer_identity_and_external_feed_links_are_rejected",
+        "test_information.InformationContract.test_tampered_information_raw_is_marked_unavailable",
+        "test_information.InformationContract.test_global_timeline_limit_does_not_hide_company_filings"
+      ],
+      "acceptance": "来源上游发布频率与应用刷新频率分开；取到标题不等于读懂公告",
+      "next_work": "港A公告稳定接入、事件相关性、授权实时源与持续更新",
+      "failure_modes": [
+        "用版式和字数代替金融判断",
+        "新方法/事件/市场变化无版本提醒",
+        "人工纳入即宣称研究方法已验证",
+        "一次取数被当作持续实时覆盖"
+      ],
+      "method_review": "证据观察与版本控制；行业预测、语义质量和前瞻效果未验证",
+      "references": [
+        "Q1",
+        "Q10",
+        "Q15"
+      ],
+      "research_decision_ready": false,
+      "permitted_use": "本地知识迭代、信息线索、证据研究与报告草案"
+    },
+    {
+      "id": "F19",
+      "name": "证据链报告与版本依赖",
+      "status": "partial",
+      "decision": "将方法、财务观察、事件和市场背景组成可审查的研究产出",
+      "inputs": "适用历史实际、同行业方法版本、当前市场快照、事件、模型和反方",
+      "output": "判断链、预测估值门槛、研究快照、改版原因和更新提示",
+      "implementation_paths": [
+        "pfa/reports.py",
+        "static/evolution.js",
+        "docs/report-product-design.md",
+        "pfa/report_document.py"
+      ],
+      "automated_tests": [
+        "test_evolution.ReportContract.test_market_change_marks_saved_report_for_review",
+        "test_evolution.ReportContract.test_same_observation_refetch_does_not_change_economic_dependencies",
+        "test_evolution.ReportContract.test_method_revision_and_new_event_require_report_review",
+        "test_evolution.ReportContract.test_missing_model_never_becomes_an_investment_rating",
+        "test_evolution.ReportContract.test_stale_dependency_snapshot_is_rejected",
+        "test_evolution.ReportContract.test_cash_signal_is_traceable_and_does_not_become_a_positive_thesis",
+        "test_evolution.ReportContract.test_readable_report_escapes_untrusted_content",
+        "test_evolution.ReportContract.test_unmapped_new_issuer_exposes_template_gap",
+        "test_evolution.ReportContract.test_platform_reference_is_not_presented_as_company_valuation_method",
+        "test_workspace_api.WorkspaceAPI.test_knowledge_and_report_snapshot_roundtrip_with_frozen_document",
+        "test_workspace_api.WorkspaceAPI.test_new_mutations_keep_local_token_protection",
+        "test_evolution.ReportContract.test_prior_market_revision_is_a_report_change",
+        "test_evolution.ReportContract.test_kernel_revision_requires_review_even_if_model_was_already_stale"
+      ],
+      "acceptance": "每项量化观察可追事实和公式，缺暴露不编利润变化；新报告不升级示例估值",
+      "next_work": "逐公司实际到预测、资本融资约束、预期差与独立专业复核",
+      "failure_modes": [
+        "用版式和字数代替金融判断",
+        "新方法/事件/市场变化无版本提醒",
+        "人工纳入即宣称研究方法已验证",
+        "一次取数被当作持续实时覆盖"
+      ],
+      "method_review": "证据观察与版本控制；行业预测、语义质量和前瞻效果未验证",
+      "references": [
+        "Q1",
+        "Q10",
+        "Q15"
+      ],
+      "research_decision_ready": false,
+      "permitted_use": "本地知识迭代、信息线索、证据研究与报告草案"
+    },
+    {
+      "id": "F20",
+      "name": "私有远程工作台及持久化",
+      "status": "partial",
+      "decision": "在其他设备登录同一私有平台并继续研究",
+      "inputs": "同版本Python研究内核、SQLite一致性快照、内容寻址原件、Sites身份",
+      "output": "三层工作台、云端研究版本、并发冲突与保存状态",
+      "implementation_paths": [
+        "docs/operations/hosted-service.md",
+        "pfa/cloud_bridge.py",
+        "sites/personal-financial-analyses/lib/cloud.ts",
+        "sites/personal-financial-analyses/client/cloud-worker.js"
+      ],
+      "automated_tests": [
+        "test_cloud_bridge.CloudBridgeContract.test_six_company_reports_use_same_financial_kernel",
+        "test_cloud_bridge.CloudBridgeContract.test_mutation_keeps_version_conflict_and_immutable_report",
+        "test_cloud_bridge.CloudBridgeContract.test_unknown_route_does_not_mutate",
+        "test_cloud_bridge.CloudBridgeContract.test_failed_cached_request_never_supplies_source_bytes",
+        "test_cloud_bridge.CloudBridgeContract.test_snapshot_is_consistent_sqlite"
+      ],
+      "failure_modes": [
+        "公开或匿名读取研究数据",
+        "客户端写入冲突覆盖新版本",
+        "换设备丢失研究记录",
+        "仅静态页面伪装完整应用"
+      ],
+      "acceptance": "私有部署终态成功；同源保护、持久化重载、冲突拒绝、六公司及原件核验实测",
+      "next_work": "记录真实上线与语义复核结果；未通过不升级为研究有效",
+      "references": [
+        "Q1",
+        "Q10"
+      ],
+      "method_review": "工程与控制审查；独立专业判断及投资效果未验证",
+      "research_decision_ready": false,
+      "permitted_use": "个人证据研究及示例情景"
+    },
+    {
+      "id": "F21",
+      "name": "披露覆盖与异常基数审查",
+      "status": "partial",
+      "decision": "不让新文件掩盖旧事实，也不隐藏亏损/零基数变化",
+      "inputs": "已核验实际、原文身份、公开信息元数据、可比期间",
+      "output": "事实/文件截止点分列，逐项未审披露，非正基数绝对变化",
+      "implementation_paths": [
+        "pfa/reports.py",
+        "docs/quality/review-2026-10-25.md"
+      ],
+      "automated_tests": [
+        "test_evolution.ReportContract.test_newer_unrelated_document_does_not_hide_unread_filing",
+        "test_evolution.ReportContract.test_fact_cutoff_is_not_latest_document_date",
+        "test_evolution.ReportContract.test_nonpositive_prior_keeps_absolute_change_without_fake_growth",
+        "test_evolution.ReportContract.test_bank_common_profit_label_preserves_original_attribution"
+      ],
+      "failure_modes": [
+        "用资料日期充当事实日期",
+        "拿到元数据即算正文已读",
+        "亏损和零基数被静默排除"
+      ],
+      "acceptance": "预写反例修复前失败；修复后保留未知、绝对变化与适用边界",
+      "next_work": "记录真实上线与语义复核结果；未通过不升级为研究有效",
+      "references": [
+        "Q1",
+        "Q10"
+      ],
+      "method_review": "工程与控制审查；独立专业判断及投资效果未验证",
+      "research_decision_ready": false,
+      "permitted_use": "个人证据研究及示例情景"
+    }
+  ]
+}

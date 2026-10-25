@@ -1,0 +1,15 @@
+{
+  "project_id": "appgprj_6addda0939bc8191b6d8ada213e97699",
+  "url": "https://personal-financial-analyses-wktt.august247wk.chatgpt.site",
+  "status": "succeeded",
+  "deployment_id": "appgdep_6adde10e2a8c81918a306cf4f477c5cc",
+  "version_id": "appgprj_6addda0939bc8191b6d8ada213e97699~appgver_0ee2e6cb18fc8191ae8523ea0260bc2e",
+  "updated_at": "2026-10-25T10:59:51.494563+00:00",
+  "source_commit": "37ed569336a248a532ef7281c1c5810be2a4087d",
+  "access": "owner_private",
+  "cloud_data_version": 1,
+  "files": 97,
+  "byte_count": 58650958,
+  "browser_login": "external_openai_auth_security_check_blocked",
+  "research_decision_ready": false
+}

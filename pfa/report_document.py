@@ -28,7 +28,7 @@ def document(report):
     parts=[f'<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(r["company"]["name"])} · 研究更新</title><style>{style}</style><body>',
         '<small>PERSONAL FINANCIAL ANALYSES / EVIDENCE RESEARCH UPDATE</small>',
         f'<h1>{esc(r["company"]["name"])} · 研究更新</h1><p>{esc(r["industry"]["name"])} / 报告币种 {esc(r["company"]["currency"])}</p>',
-        f'<p class="muted">生成 {esc(r["generated_at"])} · 公司原文公开截止 {esc(summary["fact_cutoff"] or "未确认")} · 研究依赖 {esc(r["dependency_digest"][:20])}</p>',
+        f'<p class="muted">生成 {esc(r["generated_at"])} · 已核验实际的最新公开日 {esc(summary["fact_cutoff"] or "未确认")} · 最新收录文件公开日 {esc(summary.get("document_cutoff") or "未确认")} · 不表示全部披露已审阅 · 研究依赖 {esc(r["dependency_digest"][:20])}</p>',
         '<div class="notice"><strong>研究草案 · 未评级 · 目标价未形成</strong><p>本稿用于证据观察、解释与下一验证。个股经营预测、当前证券定价及独立反方审议尚不完备；保存版本不改变用途。</p></div>',
         '<h2>研究摘要</h2>',f'<p>{esc(r["hypothesis"]["question"])}</p>',
         f'<div class="columns"><div><h3>经营观察</h3>{esc(summary["business_label"])}</div><div><h3>现金与资本</h3>{esc(summary["cash_label"])}</div><div><h3>证券经济性</h3>{esc(summary["pricing_label"])}</div></div>',

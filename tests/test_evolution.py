@@ -136,3 +136,48 @@ class ReportContract(unittest.TestCase):
         self.assertNotIn('method:gics',ids)
         self.assertNotIn('method:svb',ids)
         self.assertIn('method:svb',{m['entry_id'] for m in self.platform.report('cmb')['methods_applied']})
+
+    def test_newer_unrelated_document_does_not_hide_unread_filing(self):
+        from unittest.mock import patch
+        filing=dict(id='unread_filing',title='10-Q未读',url='https://www.sec.gov/Archives/unread.htm',
+            published_at='2026-08-01T12:00:00+00:00',verification='unreviewed_metadata',issuer='msft')
+        with self.store.tx() as db:
+            self.store.add(db,'document','msft',dict(title='较新但无财务证据的月度公告',url='https://www.microsoft.com/monthly',
+                published_at='2026-10-24',sha256='0'*64,retrieved_at='2026-10-24',local_path='data/raw/missing.pdf'))
+        with patch.object(self.platform.information,'related',return_value=[filing]):
+            report=self.platform.report('msft')
+        self.assertIn('unread_filing',[f['id'] for f in report['pending_disclosures']])
+
+    def test_fact_cutoff_is_not_latest_document_date(self):
+        with self.store.tx() as db:
+            self.store.add(db,'document','msft',dict(title='较新无事实文件',url='https://www.microsoft.com/new',
+                published_at='2026-10-24',sha256='0'*64,retrieved_at='2026-10-24',local_path='data/raw/missing.pdf'))
+        summary=self.platform.report('msft')['report_summary']
+        self.assertNotEqual(summary['fact_cutoff'],'2026-10-24')
+        self.assertEqual(summary['document_cutoff'],'2026-10-24')
+
+    def test_nonpositive_prior_keeps_absolute_change_without_fake_growth(self):
+        from pfa.reports import comparable_observations
+        for prior in ('-20','0'):
+            a=dict(id='new',metric='net_income',value='10',unit='USD',currency='USD',scope='consolidated',basis='GAAP',period_start='2026-01-01',period_end='2026-06-30')
+            b=dict(a,id='old',value=prior,period_start='2025-01-01',period_end='2025-06-30')
+            obs=comparable_observations([a,b])
+            self.assertEqual(len(obs),1)
+            self.assertIsNone(obs[0]['change'])
+            self.assertEqual(obs[0]['difference'],str(10-int(prior)))
+
+    def test_bank_common_profit_label_preserves_original_attribution(self):
+        report=self.platform.report('cmb')
+        finding=next(f for f in report['findings'] if '751.43' in f['observation'])
+        self.assertIn('普通股股东净利润',finding['title'])
+        current=next(f for f in report['financials'] if f['metric']=='net_income')
+        parent=next(f for f in report['financials'] if f['metric']=='net_income_parent')
+        self.assertEqual(current['label'],'普通股股东净利润')
+        self.assertNotEqual(current['label'],parent['label'])
+
+    def test_kernel_revision_requires_review_even_if_model_was_already_stale(self):
+        from unittest.mock import patch
+        self.save('catl')
+        with patch('pfa.reports.RUNNING_KERNEL','changed-report-policy',create=True):
+            report=self.platform.report('catl')
+        self.assertIn('kernel',report['report_delta']['changed_domains'])

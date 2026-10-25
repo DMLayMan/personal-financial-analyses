@@ -1,0 +1,12 @@
+======================================================================
+FAIL: test_kernel_revision_requires_review_even_if_model_was_already_stale (test_evolution.ReportContract.test_kernel_revision_requires_review_even_if_model_was_already_stale)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wktt/Documents/ChatGPT/Financial/tests/test_evolution.py", line 183, in test_kernel_revision_requires_review_even_if_model_was_already_stale
+    self.assertIn('kernel',report['report_delta']['changed_domains'])
+AssertionError: 'kernel' not found in []
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.305s
+
+FAILED (failures=1)

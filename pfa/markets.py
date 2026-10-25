@@ -87,8 +87,8 @@ def parse_yahoo(body, asof=None):
 
 
 class MarketBook:
-    def __init__(self, store, root=ROOT):
-        self.store, self.root = store, Path(root)
+    def __init__(self, store, root=ROOT, workers=3):
+        self.store, self.root, self.workers = store, Path(root), workers
 
     def capture(self, metric_id, points, mode, raw=None, **metadata):
         metric = METRICS[metric_id]
@@ -224,10 +224,13 @@ class MarketBook:
             ident=row['id']
             db.execute("UPDATE jobs SET status='running',attempts=attempts+1,updated_at=? WHERE id=?",(now(),ident))
         # Independent public requests run concurrently with conservative limits.
-        from concurrent.futures import ThreadPoolExecutor
         ids=[m['id'] for m in CATALOG['entries'] if m['provider'] in ('yahoo','fred_public')]
-        with ThreadPoolExecutor(max_workers=3) as pool:
-            results=list(pool.map(self.refresh_metric,ids))
+        if self.workers==1:
+            results=list(map(self.refresh_metric,ids))
+        else:
+            from concurrent.futures import ThreadPoolExecutor
+            with ThreadPoolExecutor(max_workers=self.workers) as pool:
+                results=list(pool.map(self.refresh_metric,ids))
         failed=[key for key,result in zip(ids,results) if result is None]
         with self.store.tx() as db:
             db.execute('UPDATE jobs SET status=?,error=?,updated_at=? WHERE id=?',

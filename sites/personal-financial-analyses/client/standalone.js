@@ -1,0 +1,5 @@
+'use strict';
+const worker=new Worker('/cloud-worker.js');let serial=0;const pending=new Map();
+function call(message){return new Promise((resolve,reject)=>{const id=++serial;pending.set(id,{resolve,reject});worker.postMessage({...message,id});});}
+worker.onmessage=({data})=>{if(data.type==='progress'){const s=document.querySelector('#cloud-status');if(s)s.textContent=data.message;return;}const p=pending.get(data.id);if(!p)return;pending.delete(data.id);data.error?p.reject(new Error(data.error)):p.resolve(data.result);};
+(async()=>{try{await call({type:'init'});const report=await call({path:'/api/reports/'+document.body.dataset.report+'/document'});if(report.status!==200)throw new Error(report.body.error);const doc=new DOMParser().parseFromString(report.body.html,'text/html');document.title=doc.title;document.head.append(...doc.head.querySelectorAll('style'));document.body.replaceChildren(...doc.body.childNodes);worker.terminate();}catch(e){document.querySelector('#cloud-status').textContent='报告生成失败：'+e.message;}})();

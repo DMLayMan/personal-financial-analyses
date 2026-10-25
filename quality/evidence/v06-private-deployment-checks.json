@@ -1,0 +1,80 @@
+{
+  "origin": "https://personal-financial-analyses-wktt.august247wk.chatgpt.site",
+  "cloud_version": 1,
+  "stored_files": 97,
+  "checks": [
+    {
+      "check": "anonymous source/data protected by Sites gate",
+      "passed": true
+    },
+    {
+      "check": "deployed terminal shell",
+      "passed": true
+    },
+    {
+      "check": "deployed financial source matches reviewed local source",
+      "passed": true
+    },
+    {
+      "check": "cloud database digest",
+      "passed": true
+    },
+    {
+      "check": "sample stored bytes: data/raw/",
+      "passed": true
+    },
+    {
+      "check": "sample stored bytes: data/market/raw/",
+      "passed": true
+    },
+    {
+      "check": "sample stored bytes: data/information/raw/",
+      "passed": true
+    },
+    {
+      "check": "six-company reports from actual remote database (local reviewed interpreter)",
+      "passed": true
+    }
+  ],
+  "reports": [
+    {
+      "issuer": "msft",
+      "findings": 3,
+      "financial_inputs": 15,
+      "not_rated": true
+    },
+    {
+      "issuer": "cost",
+      "findings": 3,
+      "financial_inputs": 15,
+      "not_rated": true
+    },
+    {
+      "issuer": "tencent",
+      "findings": 4,
+      "financial_inputs": 13,
+      "not_rated": true
+    },
+    {
+      "issuer": "byd",
+      "findings": 3,
+      "financial_inputs": 17,
+      "not_rated": true
+    },
+    {
+      "issuer": "catl",
+      "findings": 4,
+      "financial_inputs": 14,
+      "not_rated": true
+    },
+    {
+      "issuer": "cmb",
+      "findings": 3,
+      "financial_inputs": 15,
+      "not_rated": true
+    }
+  ],
+  "browser_login": "blocked_by_external_auth_security_check",
+  "research_decision_ready": false,
+  "scope": "remote private gate, source parity, persisted data and representative byte integrity; report reconstruction uses local Python, not remote browser sign-in"
+}

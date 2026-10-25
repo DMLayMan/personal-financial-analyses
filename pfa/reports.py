@@ -5,12 +5,13 @@ No broker target, generic parameter or fresh headline becomes an underwritten vi
 """
 from datetime import date
 from decimal import Decimal
-from .assurance import ACTUAL_LABELS, temporal_actual, comparable_period
+from .assurance import ACTUAL_LABELS, temporal_actual, comparable_period, RUNNING_KERNEL
 from .store import digest,now
 from .research import Conflict
 
 DOMAIN_NAMES={'company':'公司证据、模型或结论变化','methods':'采用的方法版本变化',
-              'market':'市场观察、日期或时效状态变化','events':'研究事件变化','industry':'行业手册变化'}
+              'market':'市场观察、日期或时效状态变化','events':'研究事件变化','industry':'行业手册变化',
+              'kernel':'研究内核与报告政策变化'}
 METRICS={'revenue':'营业收入','net_income':'报告归属净利润','operating_cash_flow':'经营现金流',
          'net_interest_income':'净利息收入'}
 
@@ -24,7 +25,7 @@ def comparable_observations(facts):
     observations=[]
     for metric,label in METRICS.items():
         rows=[f for f in facts if f['metric']==metric and f.get('period_start')]
-        pairs=[(a,b) for a in rows for b in rows if comparable_period(a,b) and Decimal(b['value'])>0]
+        pairs=[(a,b) for a in rows for b in rows if comparable_period(a,b)]
         if not pairs:continue
         latest=max(a['period_end'] for a,b in pairs)
         seen=set()
@@ -32,10 +33,10 @@ def comparable_observations(facts):
             identity=(current['period_start'],current['period_end'],current['basis'],current['scope'])
             if current['period_end']!=latest or identity in seen:continue
             seen.add(identity)
-            change=Decimal(current['value'])/Decimal(prior['value'])-1
-            observations.append(dict(metric=metric,label=label,current=current,prior=prior,
-                change=str(change),difference=str(Decimal(current['value'])-Decimal(prior['value'])),
-                formula='(同口径本期 / 上年同期 − 1) × 100%；没有将中期年度化',
+            change=Decimal(current['value'])/Decimal(prior['value'])-1 if Decimal(prior['value'])>0 else None
+            observations.append(dict(metric=metric,label=current.get('label',label),current=current,prior=prior,
+                change=str(change) if change is not None else None,difference=str(Decimal(current['value'])-Decimal(prior['value'])),
+                formula='(同口径本期 / 上年同期 − 1) × 100%；没有将中期年度化' if change is not None else '本期 − 上年同期；上年为零或亏损，百分比增长不适用',
                 fact_ids=[current['id'],prior['id']]))
     return observations
 
@@ -61,8 +62,9 @@ def findings(view,industry):
             counter=industry['opposition'],next_evidence=monitor['next_source'],methods=['method:owner_earnings','method:cfa']))
     # Keep more than one same-end period when both YTD and single quarter are comparable.
     for obs in observations:
-        c,p=obs['current'],obs['prior'];percent=(Decimal(obs['change'])*100).quantize(Decimal('.01'))
-        items.append(dict(kind='reported_comparison',title=f"{obs['label']}同比{percent:+}%",signal='reported_change',
+        c,p=obs['current'],obs['prior']
+        title=f"{obs['label']}同比{Decimal(obs['change'])*100:+.2f}%" if obs['change'] is not None else f"{obs['label']}变化 {amount(obs['difference'],c['unit'])}（基数非正）"
+        items.append(dict(kind='reported_comparison',title=title,signal='reported_change',
             observation=f"{c['period_start']}至{c['period_end']}：{amount(c['value'],c['unit'])}；上年同期 {amount(p['value'],p['unit'])}。{c['basis']} / {c['scope']}",
             fact_ids=obs['fact_ids'],formula=obs['formula'],change=obs['change'],
             transmission=industry['bridge'],financial_effect=f"报告值相差 {amount(obs['difference'],c['unit'])}；归因和正常化仍需核验。",
@@ -83,8 +85,12 @@ class ReportEngine:
         methods=self.knowledge.applicable(issuer,industry['id'])
         items,observations=findings(view,industry)
         information=self.information.related(issuer)
-        public_cutoff=max((d.get('published_at') or '' for d in view['documents']),default='')[:10]
-        unread=[i for i in information if i['published_at'][:10]>public_cutoff and i['verification']=='unreviewed_metadata']
+        document_cutoff=max((d.get('published_at') or '' for d in view['documents']),default='')[:10]
+        public_cutoff=max((f.get('source',{}).get('published_at') or '' for f in view['quality']['usable']
+                          if f.get('evidence_label') in ACTUAL_LABELS and temporal_actual(f)),default='')[:10]
+        # A newer unrelated document, or a broken archive, never certifies that
+        # an earlier filing's body and implications have been reviewed.
+        unread=[i for i in information if i.get('verification')!='reviewed_body']
         connected=any(s['issuer']==issuer and s['last_attempt'] and s['last_attempt']['status']=='succeeded'
                       and s['archive_integrity']=='matched' for s in self.information.read()['sources'])
         model=base['model']
@@ -93,11 +99,12 @@ class ReportEngine:
             dict(key='security_price',name='证券身份、当前价格/股数/FX及共同截止点',passed=False),
             dict(key='expectations',name='价格隐含预期及同口径共识/同业比较',passed=False),
             dict(key='counter_review',name='最强反方的专业语义审议',passed=False),
-            dict(key='new_disclosures',name='公司新披露覆盖及正文回看',passed=connected and not unread)]
+            dict(key='new_disclosures',name='公司新披露覆盖及正文回看',passed=False,
+                 reason='已连接元数据，正文覆盖仍需逐项审议。' if connected else '没有已核验的持续披露覆盖。')]
         # These gates describe today's actual capability; a saved snapshot cannot bypass them.
         gate=dict(investment_ready=False,checks=checks,missing=[c['name'] for c in checks if not c['passed']],
             scope='证据研究更新与历史算术；不是已承保的现价投资评级。')
-        dependencies=dict(company=dict(revision=view['revision'],model_id=model['id'] if model else None,
+        dependencies=dict(kernel=RUNNING_KERNEL,company=dict(revision=view['revision'],model_id=model['id'] if model else None,
             model_stale=bool(model and model.get('stale')),review_id=base['review']['id'] if base['review'] else None,
             conclusion_id=base['conclusion']['id'] if base['conclusion'] else None),
             methods={m['entry_id']:dict(version=m['version'],content=digest({k:m[k] for k in ('content','source_url','falsifier','applies_to','status')})) for m in methods},
@@ -118,7 +125,7 @@ class ReportEngine:
                 'mixed_or_cash_warning':'经营与现金信号需合并判断','reported_observations_only':'已有可比观察，持续性待证',
                 'insufficient_evidence':'经营方向证据不足'}[signal],
                 cash_label='存在待核查的现金/口径信号' if view['quality']['monitors'] else '完整现金与资本桥仍待补齐',
-                pricing_label='暂不评定现价吸引力',fact_cutoff=public_cutoff,
+                pricing_label='暂不评定现价吸引力',fact_cutoff=public_cutoff,document_cutoff=document_cutoff,
                 input_note='判断链使用下方事实ID和采用方法；市场变量目前为条件背景，尚无净暴露驱动的自动盈利重算。'),
             valuation_gate=gate,investment_output=dict(rating='not_rated',target_price=None,
                 reason='缺口保留，不搬用机构评级或通用参数生成目标价。'),

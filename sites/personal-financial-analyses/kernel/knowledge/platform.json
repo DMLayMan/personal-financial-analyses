@@ -1,0 +1,453 @@
+{
+  "version": "0.6",
+  "purpose": "面向个人中长期深度研究的金融分析平台；全球方法，美股/港股/A股分别适配。",
+  "axes": [
+    {
+      "id": "foundation",
+      "title": "平台与研究基础",
+      "subtitle": "理论、知识、工作流、审查及扩展",
+      "output": "研究如何成立，以及能力边界"
+    },
+    {
+      "id": "markets",
+      "title": "市场与信息看板",
+      "subtitle": "重要数据、来源与大盘变化",
+      "output": "发生了什么，如何传到行业和公司"
+    },
+    {
+      "id": "cases",
+      "title": "行业与公司研究",
+      "subtitle": "按行业应用方法，形成有证据的报告",
+      "output": "何种结论成立，哪些仍需补证"
+    }
+  ],
+  "principles": [
+    {
+      "title": "企业经济性",
+      "detail": "客户为什么付费、护城河如何被观察、增长需要什么资本、资本回报是否可持续。",
+      "refs": [
+        "buffett",
+        "owner_earnings",
+        "growth"
+      ]
+    },
+    {
+      "title": "可证伪的研究",
+      "detail": "每项判断有反方、区分性观察和失效条件；资料更多不自动提高信心。",
+      "refs": [
+        "cfa",
+        "munger"
+      ]
+    },
+    {
+      "title": "价格与回报",
+      "detail": "公司改善、证券便宜、适合持有分别判断；价格隐含预期需要适当模型和时点资料。",
+      "refs": [
+        "valuation",
+        "buffett"
+      ]
+    },
+    {
+      "title": "风险与历史",
+      "detail": "经营、融资、估值和被迫出售联合审查；保留失败和当时不可知，不承诺预测黑天鹅。",
+      "refs": [
+        "svb",
+        "munger"
+      ]
+    }
+  ],
+  "workflow": [
+    {
+      "id": "Q0",
+      "name": "研究立项",
+      "action": "明确公司/行业/事件、期限、决定用途和可选动作。",
+      "output": "有可能改变决定的问题"
+    },
+    {
+      "id": "Q1",
+      "name": "背景与策略",
+      "action": "读取市场条件、行业结构和投资策略；圈定能力边界。",
+      "output": "适用方法和关键暴露"
+    },
+    {
+      "id": "Q2",
+      "name": "取证与核验",
+      "action": "原始披露、行业与关系方资料，校验期间、单位、范围和版本。",
+      "output": "事实/指引/假设分层台账"
+    },
+    {
+      "id": "Q3",
+      "name": "竞争解释",
+      "action": "主假设与最强替代解释各自预期哪些观察。",
+      "output": "可区分的预测与反证"
+    },
+    {
+      "id": "Q4",
+      "name": "主动补证",
+      "action": "按能否翻转判断、可得性、时限与成本安排下一资料。",
+      "output": "补证、等待或停止理由"
+    },
+    {
+      "id": "Q5",
+      "name": "经营到财务",
+      "action": "行业KPI→收入/成本→现金/资本→融资与股本。",
+      "output": "可复算驱动桥及未知"
+    },
+    {
+      "id": "Q6",
+      "name": "估值与预期",
+      "action": "适当估值、价格隐含条件与共识差异；资料不足限制结论。",
+      "output": "情景、敏感性与定价缺口"
+    },
+    {
+      "id": "Q7",
+      "name": "反方审查",
+      "action": "核对最强反证、失败链、联合压力与失效条件。",
+      "output": "可实质修改结论的复核"
+    },
+    {
+      "id": "Q8",
+      "name": "结论与报告",
+      "action": "经营质量、经营方向、证券经济性、账户动作分别表达。",
+      "output": "条件结论、可信度理由与版本"
+    },
+    {
+      "id": "Q9",
+      "name": "监测与复盘",
+      "action": "关联指标、事件、下一验证；保留失败并结算前瞻预测。",
+      "output": "变更日志、弃权及校准状态"
+    }
+  ],
+  "agents": [
+    {
+      "id": "coordinator",
+      "name": "研究编排",
+      "inputs": "问题、期限、行业模板、已有结论",
+      "outputs": "依赖、补证队列、停止条件",
+      "current": "规则与人工支持；自主编排待实现",
+      "guard": "关键证据不可得则暂缓相应判断；不因已花时间而升级。"
+    },
+    {
+      "id": "collector",
+      "name": "资料获取",
+      "inputs": "字段计划和授权来源",
+      "outputs": "原件/快照、取得时间、读取失败",
+      "current": "公开资料获取部分实现",
+      "guard": "只能取允许来源，不把搜索摘要当原文核验。"
+    },
+    {
+      "id": "verifier",
+      "name": "证据核验",
+      "inputs": "提取候选、原页、单位与期间",
+      "outputs": "适用事实、冲突、引用和口径桥",
+      "current": "规则与人工支持；语义充分性待审议",
+      "guard": "原始披露、管理层说法、共识和假设分别保存。"
+    },
+    {
+      "id": "macro",
+      "name": "宏观与行业传导",
+      "inputs": "市场变量、政策、公司暴露",
+      "outputs": "直接/间接路径、时滞、抵消、待验证影响",
+      "current": "传导模板与快照；自动经济归因待实现",
+      "guard": "宏观相关性不能替代公司暴露；缺预期不可称超预期。"
+    },
+    {
+      "id": "modeler",
+      "name": "行业与财务建模",
+      "inputs": "同口径实际、业务驱动、资本/融资",
+      "outputs": "版本化预测、公式、情景、方法限制",
+      "current": "确定性示例模型已实现；行业预测桥待补",
+      "guard": "不能把通用PE或默认ROE称个股承保，亏损需融资/稀释模型。"
+    },
+    {
+      "id": "challenger",
+      "name": "反方与风险审查",
+      "inputs": "主论点、支持和反对证据、模型",
+      "outputs": "最强替代解释、推翻条件、实质回应",
+      "current": "个人分步复核；独立专业审查未验证",
+      "guard": "同一模型多次调用不等于独立团队，不按字数或赞成票评分。"
+    },
+    {
+      "id": "editor",
+      "name": "报告与结论更新",
+      "inputs": "已核验事实、模型、反方、缺口",
+      "outputs": "带来源、期间、方向、未知和下一验证的报告",
+      "current": "结构化记录已实现；自动语义写作未接入",
+      "guard": "不补造数字，不隐藏冲突；保留旧版，重要变化重开。"
+    }
+  ],
+  "agent_execution": {
+    "external_llm_configured": false,
+    "autonomous_research": false,
+    "description": "这里定义Agent职责合同和编排策略；当前主要由确定性规则与人工研究完成，没有运行中的独立AI分析团队。"
+  },
+  "knowledge_layers": [
+    {
+      "name": "理论与经验",
+      "content": "能力圈、资本回报、机会成本、价值与价格、历史失败",
+      "status": "公开来源与本地方法增修、采用/草案及版本历史"
+    },
+    {
+      "name": "会计与数据口径",
+      "content": "实际/指引/共识/假设、期间、币种、范围、修订与普通股权益",
+      "status": "规则已实现，完整语义核验待深化"
+    },
+    {
+      "name": "行业研究模板",
+      "content": "行业结构、KPI、利润现金桥、资本约束与同业比较",
+      "status": "六类研究手册，行业预测模型未完成"
+    },
+    {
+      "name": "时点证据与市场",
+      "content": "原文、快照、观察日、取得时间、缺失和来源健康",
+      "status": "选定原文与公开快照；持续覆盖未验证"
+    },
+    {
+      "name": "判断与复盘",
+      "content": "主假设、反方、报告、版本、推翻条件及前瞻结算",
+      "status": "日志与条件记录；预测校准未实现"
+    }
+  ],
+  "capabilities": [
+    {
+      "name": "来源与版本",
+      "state": "部分实现",
+      "detail": "公开原件、校验值、候选、核验、冲突及记录"
+    },
+    {
+      "name": "确定性计算",
+      "state": "示例可用",
+      "detail": "期间勾稽、现金桥、盈利分配及银行RI情景"
+    },
+    {
+      "name": "可视化",
+      "state": "本轮实现",
+      "detail": "三层导航、方法流程、来源矩阵、市场走势与行业传导"
+    },
+    {
+      "name": "行业与报告",
+      "state": "部分实现",
+      "detail": "行业手册、证据判断链、依赖/快照与可读HTML；经营预测桥待完成"
+    },
+    {
+      "name": "语义Agent研究",
+      "state": "未配置",
+      "detail": "尚未接外部模型、自主检索编排和独立专业复核"
+    },
+    {
+      "name": "预测与投资效果",
+      "state": "未验证",
+      "detail": "没有专家保留集或前瞻结算的合格结果"
+    },
+    {
+      "name": "知识与信息迭代",
+      "state": "部分实现",
+      "detail": "方法版本可维护，选定官方公告元数据可按需获取；未接连续实时流"
+    },
+    {
+      "name": "私有跨设备工作台",
+      "state": "本轮实现",
+      "detail": "浏览器执行同版本Python，云端保存研究记录与原件；按需获取，关闭页面不运行监控。"
+    }
+  ],
+  "review": {
+    "verdict": "可作为证据与计算工作台；研究方法和投资判断尚未通过质量验收。",
+    "findings": [
+      "0.2交付进程停止，已改独立后台服务与健康检查。",
+      "已修复跨口径/期间、假设当实际、冲突引用、无效通过等控制反例。",
+      "通用参数、实际到预测桥、语义反方和当前证券定价仍有重要缺口。",
+      "0.6修复文件日期冒充事实截止、未读披露遗漏和非正同比基数丢失；三项反例先失败再修复。",
+      "私有站点采用同版本Python内核与有版本云端保存；并发冲突拒绝覆盖，保存未确认暂停修改。"
+    ],
+    "limits": [
+      "测试通过不等于原文语义正确、行业方法有效或投资获利。",
+      "六家公司是开发样本；同模型分工不等于独立机构复核。",
+      "市场快照仅提供背景，不能自动给公司评级或称已被价格反映。"
+    ]
+  },
+  "roadmap": [
+    {
+      "stage": "本轮0.6",
+      "goal": "私有远程访问与报告细节控制",
+      "work": "云端持久化、同版本内核、保存状态、跨设备冲突、披露覆盖与异常基数审查"
+    },
+    {
+      "stage": "下一阶段",
+      "goal": "逐公司经营到预测桥",
+      "work": "优先BYD资金/投入、CATL现金转化、CMB信用/资本，再深化MSFT、COST、腾讯"
+    },
+    {
+      "stage": "持续建设",
+      "goal": "资料覆盖、研究充分性与定价",
+      "work": "来源稳定更新、关键KPI、参数依据、证券/价格/FX时点、反方语义基准"
+    },
+    {
+      "stage": "后续评价",
+      "goal": "真正未见和前瞻结果",
+      "work": "专家裁定、保留集、事件登记与结算；付费数据、独立语义研究和持续监控后续另定"
+    }
+  ],
+  "references": [
+    {
+      "id": "buffett",
+      "name": "巴菲特：能力圈、资本回报与买入价格",
+      "url": "https://www.berkshirehathaway.com/letters/1996.html",
+      "use": "先解释业务与关键未知，再评价回报及价格；不替作者预测当前公司。"
+    },
+    {
+      "id": "owner_earnings",
+      "name": "巴菲特：所有者收益",
+      "url": "https://www.berkshirehathaway.com/letters/1986.html",
+      "use": "维持投入和营运资本不能被净利或EBITDA替代，估计范围必须保留。"
+    },
+    {
+      "id": "munger",
+      "name": "芒格：多模型、激励与逆向思考",
+      "url": "https://www.stripe.press/poor-charlies-almanack/talk-four",
+      "use": "主动找失败机制和替代解释，不把模型赞成票当独立证据。"
+    },
+    {
+      "id": "cfa",
+      "name": "CFA：合理研究依据",
+      "url": "https://www.cfainstitute.org/standards/professionals/code-ethics-standards/standards-of-practice-v-a",
+      "use": "事实、来源时效、研究依据、第三方资料和结论范围分别检验。"
+    },
+    {
+      "id": "growth",
+      "name": "NYU：增长的资本投入与回报基础",
+      "url": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/invfables/growthdeterminants.htm",
+      "use": "增长需要再投资与回报解释；收入增长不自动等于价值增长。"
+    },
+    {
+      "id": "valuation",
+      "name": "NYU：PE的增长、风险与分配基础",
+      "url": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/lectures/pe.html",
+      "use": "倍数、增长和分配不能独立随意设定；当前通用参数仅示例。"
+    },
+    {
+      "id": "modelrisk",
+      "name": "2026 SR26-2：模型用途、验证与质疑",
+      "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+      "use": "借鉴模型用途限制与结果评价；主要面向银行，不作为个人平台认证或生成式AI有效性证明。"
+    },
+    {
+      "id": "terminal",
+      "name": "Bloomberg公开产品能力与终端导览",
+      "url": "https://professional.bloomberg.com/products/",
+      "use": "借鉴研究、数据、图表、经济与工作流的组合，不声称复制终端或已获得其数据。"
+    },
+    {
+      "id": "gics",
+      "name": "MSCI GICS行业层次",
+      "url": "https://www.msci.com/indexes/index-resources/gics",
+      "use": "借鉴多层行业组织；本项目用自定义研究分类，未取得正式GICS映射授权。"
+    },
+    {
+      "id": "svb",
+      "name": "美联储：2023 SVB审查",
+      "url": "https://www.federalreserve.gov/publications/review-of-the-federal-reserves-supervision-and-regulation-of-silicon-valley-bank.htm",
+      "use": "历史风险库按利率、期限错配、集中融资与流动性复盘；不将事后解释称事前预测。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "filings",
+      "name": "监管与公司原始披露",
+      "purpose": "实际财务、重大事项、治理与经营KPI",
+      "region": "美股/港股/A股",
+      "frequency": "季/半年/年度/事件",
+      "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+      "status": "六家公司局部原文；选定两家公司SEC提交记录按需获取，未形成全覆盖"
+    },
+    {
+      "id": "hkex",
+      "name": "HKEX披露易与公司IR",
+      "purpose": "港股公告、资本行动、财报与经营说明",
+      "region": "港股",
+      "frequency": "定期/事件",
+      "url": "https://www.hkexnews.hk/",
+      "status": "部分原文已读取，批量订阅未完成"
+    },
+    {
+      "id": "cninfo",
+      "name": "巨潮资讯",
+      "purpose": "A股原始公告、财报与产销资料",
+      "region": "A股",
+      "frequency": "定期/事件",
+      "url": "https://www.cninfo.com.cn/",
+      "status": "部分原文已读取，自动覆盖未完成"
+    },
+    {
+      "id": "fred",
+      "name": "FRED / 美联储",
+      "purpose": "利率、信用、FX与经济序列；按系列注明原始提供者",
+      "region": "美国/全球",
+      "frequency": "日/月/季度",
+      "url": "https://fred.stlouisfed.org/",
+      "status": "页面与CSV路径；实际成功/失败见序列状态，连续更新未验证"
+    },
+    {
+      "id": "yahoo",
+      "name": "Yahoo Finance公开行情",
+      "purpose": "选定指数/FX/商品近月期货延迟观察",
+      "region": "美股/港股/A股/全球",
+      "frequency": "交易日",
+      "url": "https://finance.yahoo.com/",
+      "status": "选定JSON本次可读；非承诺稳定或生产授权"
+    },
+    {
+      "id": "pbc",
+      "name": "人民银行 / CFETS",
+      "purpose": "政策、社融、货币信贷、汇率与银行间利率",
+      "region": "中国",
+      "frequency": "日/月/事件",
+      "url": "https://www.pbc.gov.cn/",
+      "status": "来源入口已定位，序列接入待实施"
+    },
+    {
+      "id": "nbs",
+      "name": "国家统计局",
+      "purpose": "PMI、CPI/PPI、工业、消费与地产",
+      "region": "中国",
+      "frequency": "月/季度",
+      "url": "https://www.stats.gov.cn/",
+      "status": "来源目录；尚未取入看板序列"
+    },
+    {
+      "id": "bls",
+      "name": "BLS / BEA",
+      "purpose": "通胀、就业、消费与经济增长",
+      "region": "美国",
+      "frequency": "月/季度",
+      "url": "https://www.bls.gov/cpi/",
+      "status": "来源目录；发布值/修订与历史时点待接入"
+    },
+    {
+      "id": "hkma",
+      "name": "金管局 / 香港统计处",
+      "purpose": "港元流动性、基础利率、信贷与物价",
+      "region": "香港",
+      "frequency": "日/月",
+      "url": "https://www.hkma.gov.hk/",
+      "status": "来源目录；字段和更新验收待实施"
+    },
+    {
+      "id": "industry",
+      "name": "行业原文与分类目录",
+      "purpose": "供需、价格、产能与竞争解释；MSCI链接仅支持分类方法，非经营数据",
+      "region": "全球",
+      "frequency": "按研究问题",
+      "url": "https://www.msci.com/indexes/index-resources/gics",
+      "status": "需逐行业选机构/同业/客户原文；外部行业统计尚未稳定接入"
+    },
+    {
+      "id": "consensus",
+      "name": "授权研报、一致预期及替代数据",
+      "purpose": "预期差、预测修正、分歧和经营替代观测",
+      "region": "全球",
+      "frequency": "按供应商",
+      "url": "https://professional.bloomberg.com/products/",
+      "status": "尚未采购/接入；不伪称机构研报或共识已经完整读取"
+    }
+  ]
+}

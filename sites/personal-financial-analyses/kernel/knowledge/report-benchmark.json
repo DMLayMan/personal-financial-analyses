@@ -1,0 +1,66 @@
+{
+  "checked_at": "2026-10-25",
+  "purpose": "借鉴公开机构研究的判断、参数与修订方式，不移植机构评级或声称取得完整付费研报。",
+  "samples": [
+    {
+      "id": "dbs_current",
+      "name": "DBS腾讯公开公司分析摘要",
+      "url": "https://www.dbs.bank.in/in/treasures/aics/templatedata/article/generic/data/en/GR/AXJ/700_HK.xml",
+      "posture": "官方公开网页摘要；未读取内部完整模型",
+      "observed": "经营投入连接费用及盈利预测修订，再说明估值口径、关键假设和风险。",
+      "application": "公司报告必须显示变化、利润/现金机制、模型依据和下一验证。",
+      "limit": "机构预测作为有日期的外部判断；不能成为平台自己的已核验实际或当前目标价。"
+    },
+    {
+      "id": "dbs_weekly",
+      "name": "DBS CIO Weekly：公司页与市场背景",
+      "url": "https://www.dbs.com/content/article/pdf/CIO/2025/202505/250528EquitiesWeekly.pdf",
+      "posture": "2025-05-28公开汇编；腾讯公司页为PDF第7页，历史结构样本",
+      "observed": "市场比较、公司判断、估值依据、风险及明确行情截止点同时出现。",
+      "application": "报告封面保留证据截止、证券/价格状态、经营判断、估值门槛与证据附录。",
+      "limit": "历史样本不当作当前机构观点；只保存方法摘要和链接，不重新分发原报告。"
+    },
+    {
+      "id": "gs_macro",
+      "name": "Goldman Sachs Top of Mind：Stablecoin Summer",
+      "url": "https://www.goldmansachs.com/pdfs/insights/goldman-sachs-research/stablecoin-summer/TopOfMind.pdf",
+      "posture": "2025-08-19官方公开删节版；用于宏观/主题研究结构",
+      "observed": "研究问题、不同观点、市场背景和跟踪变量并列。",
+      "application": "市场读数需要竞争解释与暴露传导，引用和图表不自动变成投资结论。",
+      "limit": "主题报告不等于个股覆盖；未借用其结论或私人数据。"
+    },
+    {
+      "id": "ubs_history",
+      "name": "UBS腾讯评级与目标价历史披露",
+      "url": "https://research.ibb.ubs.com/openaccess/compliance/325449_1_new.html",
+      "posture": "公开披露页，仅评级/价格/日期历史，不是完整研究正文",
+      "observed": "判断与目标价保留时间序列和披露背景。",
+      "application": "报告保存版本、输入、变更原因，保留旧版及失效状态。",
+      "limit": "该页不能支持重建UBS估值模型、当期盈利预测或反方充分性。"
+    }
+  ],
+  "report_contract": [
+    "摘要与用途",
+    "证据/市场截止及缺口",
+    "关键判断及事实→机制→财务→估值链",
+    "本轮变化与旧版对照",
+    "行业KPI与经营/资本预测",
+    "估值、预期差与参数来源",
+    "催化/反证/联合压力",
+    "版本、来源和未解决问题"
+  ],
+  "priorities": [
+    {
+      "stage": "已落地",
+      "item": "证据观察、采用方法版本、市场/事件依赖、草案快照和估值门槛"
+    },
+    {
+      "stage": "接下来优先",
+      "item": "BYD资金与投入、CATL出货/现金、CMB信用与资本的经营预测桥"
+    },
+    {
+      "stage": "仍需建设",
+      "item": "证券价格/股数/FX、预期差、稳定新闻覆盖与独立语义审议"
+    }
+  ]
+}

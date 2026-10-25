@@ -24,6 +24,7 @@ LIBRARY={
     'sources': ('数据来源与可得性', 'docs/data-sources.md'),
     'references': ('理论与公开依据', 'docs/references.md'),
     'operations': ('本地运行与部署', 'docs/operations/local-service.md'),
+    'cloud': ('私有站点架构与跨设备保存', 'docs/operations/hosted-service.md'),
     'report_design': ('报告内核与持续迭代设计', 'docs/report-product-design.md'),
     'benchmark': ('公开机构报告对照', 'docs/institutional-report-benchmark.md'),
 }

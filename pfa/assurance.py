@@ -13,7 +13,7 @@ EVIDENCE_LABELS = ACTUAL_LABELS | frozenset({
 
 
 def code_digest():
-    paths = ("research.py", "assurance.py", "models.py", "monitoring.py", "sources.py", "store.py", "platform.py", "markets.py", "knowledge.py", "information.py", "reports.py")
+    paths = ("research.py", "assurance.py", "models.py", "monitoring.py", "sources.py", "store.py", "platform.py", "markets.py", "knowledge.py", "information.py", "reports.py", "cloud_bridge.py")
     h = hashlib.sha256()
     for name in paths:
         h.update(name.encode())

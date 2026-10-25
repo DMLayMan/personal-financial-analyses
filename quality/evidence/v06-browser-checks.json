@@ -1,0 +1,63 @@
+{
+  "scope": "disposable local hosted runtime; production browser login remains externally blocked",
+  "checks": [
+    {
+      "check": "Microsoft 浏览器报告判断链与用途边界",
+      "passed": true
+    },
+    {
+      "check": "Costco 浏览器报告判断链与用途边界",
+      "passed": true
+    },
+    {
+      "check": "腾讯控股 浏览器报告判断链与用途边界",
+      "passed": true
+    },
+    {
+      "check": "比亚迪 浏览器报告判断链与用途边界",
+      "passed": true
+    },
+    {
+      "check": "宁德时代 浏览器报告判断链与用途边界",
+      "passed": true
+    },
+    {
+      "check": "招商银行 浏览器报告判断链与用途边界",
+      "passed": true
+    },
+    {
+      "check": "浏览器内核独立基准和控制反例37项",
+      "passed": true
+    },
+    {
+      "check": "报告保存收到云端v3确认",
+      "passed": true
+    },
+    {
+      "check": "重新加载后保留已存报告v1及原因",
+      "passed": true
+    },
+    {
+      "check": "普通股利润显示原文归属定义",
+      "passed": true
+    },
+    {
+      "check": "无披露线索保持未知而非无事件",
+      "passed": true
+    },
+    {
+      "check": "最终源包浏览器运行时39项控制/独立公式基准",
+      "passed": true
+    },
+    {
+      "check": "浏览器pypdf按指定PDF第11页读取现金流原文",
+      "passed": true
+    },
+    {
+      "check": "390px托管预览断点",
+      "passed": null,
+      "reason": "视口覆盖未作用于后台预览标签；实测仍为1280px，不计作手机验收"
+    }
+  ],
+  "controlLog": "浏览器运行时控制检查：通过；39 项。范围：公式、来源/期间、报告门槛与版本；不是投资效果验证。\n.......................................\n----------------------------------------------------------------------\nRan 39 tests in 0.603s\n\nOK\n"
+}

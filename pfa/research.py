@@ -30,6 +30,10 @@ LABELS = {
     "credit_cost": "信用成本", "roe": "普通股回报率（见期间）", "bvps": "普通股每股净资产",
     "share_based_compensation": "股份支付", "free_cash_flow_reported": "公司定义自由现金流",
     "earnings_for_eps": "每股收益勾稽利润分子（见调整定义）",
+    "net_income_parent": "归属于本行/母公司股东的净利润",
+    "short_term_investments": "短期投资", "debt_current": "一年内到期债务",
+    "debt_noncurrent": "非流动债务", "earning_assets_avg": "平均生息资产",
+    "cet1": "核心一级资本充足率", "npl_ratio": "不良贷款率", "loans": "贷款余额",
 }
 
 
@@ -137,8 +141,11 @@ class Research:
         out = []
         for fact in self.store.list(db, "fact", issuer):
             check = checks.get(fact["id"], {})
+            label=LABELS.get(fact["metric"],fact["metric"])
+            if fact['metric']=='net_income' and fact.get('quote','').strip()=='归属于本行普通股股东的净利润':
+                label='普通股股东净利润'
             out.append(dict(fact, status=check.get("status", "candidate"), check=check,
-                            label=LABELS.get(fact["metric"], fact["metric"]),
+                            label=label,
                             source=docs[fact["document_id"]]))
         return out
 

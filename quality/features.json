@@ -614,7 +614,8 @@
         "test_evolution.ReportContract.test_platform_reference_is_not_presented_as_company_valuation_method",
         "test_workspace_api.WorkspaceAPI.test_knowledge_and_report_snapshot_roundtrip_with_frozen_document",
         "test_workspace_api.WorkspaceAPI.test_new_mutations_keep_local_token_protection",
-        "test_evolution.ReportContract.test_prior_market_revision_is_a_report_change"
+        "test_evolution.ReportContract.test_prior_market_revision_is_a_report_change",
+        "test_evolution.ReportContract.test_kernel_revision_requires_review_even_if_model_was_already_stale"
       ],
       "acceptance": "每项量化观察可追事实和公式，缺暴露不编利润变化；新报告不升级示例估值",
       "next_work": "逐公司实际到预测、资本融资约束、预期差与独立专业复核",
@@ -632,6 +633,74 @@
       ],
       "research_decision_ready": false,
       "permitted_use": "本地知识迭代、信息线索、证据研究与报告草案"
+    },
+    {
+      "id": "F20",
+      "name": "私有远程工作台及持久化",
+      "status": "partial",
+      "decision": "在其他设备登录同一私有平台并继续研究",
+      "inputs": "同版本Python研究内核、SQLite一致性快照、内容寻址原件、Sites身份",
+      "output": "三层工作台、云端研究版本、并发冲突与保存状态",
+      "implementation_paths": [
+        "docs/operations/hosted-service.md",
+        "pfa/cloud_bridge.py",
+        "sites/personal-financial-analyses/lib/cloud.ts",
+        "sites/personal-financial-analyses/client/cloud-worker.js"
+      ],
+      "automated_tests": [
+        "test_cloud_bridge.CloudBridgeContract.test_six_company_reports_use_same_financial_kernel",
+        "test_cloud_bridge.CloudBridgeContract.test_mutation_keeps_version_conflict_and_immutable_report",
+        "test_cloud_bridge.CloudBridgeContract.test_unknown_route_does_not_mutate",
+        "test_cloud_bridge.CloudBridgeContract.test_failed_cached_request_never_supplies_source_bytes",
+        "test_cloud_bridge.CloudBridgeContract.test_snapshot_is_consistent_sqlite"
+      ],
+      "failure_modes": [
+        "公开或匿名读取研究数据",
+        "客户端写入冲突覆盖新版本",
+        "换设备丢失研究记录",
+        "仅静态页面伪装完整应用"
+      ],
+      "acceptance": "私有部署终态成功；同源保护、持久化重载、冲突拒绝、六公司及原件核验实测",
+      "next_work": "记录真实上线与语义复核结果；未通过不升级为研究有效",
+      "references": [
+        "Q1",
+        "Q10"
+      ],
+      "method_review": "工程与控制审查；独立专业判断及投资效果未验证",
+      "research_decision_ready": false,
+      "permitted_use": "个人证据研究及示例情景"
+    },
+    {
+      "id": "F21",
+      "name": "披露覆盖与异常基数审查",
+      "status": "partial",
+      "decision": "不让新文件掩盖旧事实，也不隐藏亏损/零基数变化",
+      "inputs": "已核验实际、原文身份、公开信息元数据、可比期间",
+      "output": "事实/文件截止点分列，逐项未审披露，非正基数绝对变化",
+      "implementation_paths": [
+        "pfa/reports.py",
+        "docs/quality/review-2026-10-25.md"
+      ],
+      "automated_tests": [
+        "test_evolution.ReportContract.test_newer_unrelated_document_does_not_hide_unread_filing",
+        "test_evolution.ReportContract.test_fact_cutoff_is_not_latest_document_date",
+        "test_evolution.ReportContract.test_nonpositive_prior_keeps_absolute_change_without_fake_growth",
+        "test_evolution.ReportContract.test_bank_common_profit_label_preserves_original_attribution"
+      ],
+      "failure_modes": [
+        "用资料日期充当事实日期",
+        "拿到元数据即算正文已读",
+        "亏损和零基数被静默排除"
+      ],
+      "acceptance": "预写反例修复前失败；修复后保留未知、绝对变化与适用边界",
+      "next_work": "记录真实上线与语义复核结果；未通过不升级为研究有效",
+      "references": [
+        "Q1",
+        "Q10"
+      ],
+      "method_review": "工程与控制审查；独立专业判断及投资效果未验证",
+      "research_decision_ready": false,
+      "permitted_use": "个人证据研究及示例情景"
     }
   ]
 }

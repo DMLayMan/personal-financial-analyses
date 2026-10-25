@@ -1,0 +1,44 @@
+test_draft_does_not_replace_adopted_method (test_evolution.KnowledgeContract.test_draft_does_not_replace_adopted_method) ... ok
+test_revision_preserves_history_and_requires_reason (test_evolution.KnowledgeContract.test_revision_preserves_history_and_requires_reason) ... ok
+test_cash_signal_is_traceable_and_does_not_become_a_positive_thesis (test_evolution.ReportContract.test_cash_signal_is_traceable_and_does_not_become_a_positive_thesis) ... ok
+test_fact_cutoff_is_not_latest_document_date (test_evolution.ReportContract.test_fact_cutoff_is_not_latest_document_date) ... FAIL
+test_market_change_marks_saved_report_for_review (test_evolution.ReportContract.test_market_change_marks_saved_report_for_review) ... ok
+test_method_revision_and_new_event_require_report_review (test_evolution.ReportContract.test_method_revision_and_new_event_require_report_review) ... ok
+test_missing_model_never_becomes_an_investment_rating (test_evolution.ReportContract.test_missing_model_never_becomes_an_investment_rating) ... ok
+test_newer_unrelated_document_does_not_hide_unread_filing (test_evolution.ReportContract.test_newer_unrelated_document_does_not_hide_unread_filing) ... FAIL
+test_nonpositive_prior_keeps_absolute_change_without_fake_growth (test_evolution.ReportContract.test_nonpositive_prior_keeps_absolute_change_without_fake_growth) ... FAIL
+test_platform_reference_is_not_presented_as_company_valuation_method (test_evolution.ReportContract.test_platform_reference_is_not_presented_as_company_valuation_method) ... ok
+test_prior_market_revision_is_a_report_change (test_evolution.ReportContract.test_prior_market_revision_is_a_report_change) ... ok
+test_readable_report_escapes_untrusted_content (test_evolution.ReportContract.test_readable_report_escapes_untrusted_content) ... ok
+test_same_observation_refetch_does_not_change_economic_dependencies (test_evolution.ReportContract.test_same_observation_refetch_does_not_change_economic_dependencies) ... ok
+test_stale_dependency_snapshot_is_rejected (test_evolution.ReportContract.test_stale_dependency_snapshot_is_rejected) ... ok
+test_unmapped_new_issuer_exposes_template_gap (test_evolution.ReportContract.test_unmapped_new_issuer_exposes_template_gap) ... ok
+
+======================================================================
+FAIL: test_fact_cutoff_is_not_latest_document_date (test_evolution.ReportContract.test_fact_cutoff_is_not_latest_document_date)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wktt/Documents/ChatGPT/Financial/tests/test_evolution.py", line 156, in test_fact_cutoff_is_not_latest_document_date
+    self.assertNotEqual(summary['fact_cutoff'],'2026-10-24')
+AssertionError: '2026-10-24' == '2026-10-24'
+
+======================================================================
+FAIL: test_newer_unrelated_document_does_not_hide_unread_filing (test_evolution.ReportContract.test_newer_unrelated_document_does_not_hide_unread_filing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wktt/Documents/ChatGPT/Financial/tests/test_evolution.py", line 149, in test_newer_unrelated_document_does_not_hide_unread_filing
+    self.assertIn('unread_filing',[f['id'] for f in report['pending_disclosures']])
+AssertionError: 'unread_filing' not found in []
+
+======================================================================
+FAIL: test_nonpositive_prior_keeps_absolute_change_without_fake_growth (test_evolution.ReportContract.test_nonpositive_prior_keeps_absolute_change_without_fake_growth)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wktt/Documents/ChatGPT/Financial/tests/test_evolution.py", line 165, in test_nonpositive_prior_keeps_absolute_change_without_fake_growth
+    self.assertEqual(len(obs),1)
+AssertionError: 0 != 1
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.556s
+
+FAILED (failures=3)
