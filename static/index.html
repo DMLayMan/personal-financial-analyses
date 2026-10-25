@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="以证据、盈利与反证组织个人公司研究。" />
+    <title>Personal Financial Analyses · 个人金融分析终端</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <aside id="sidebar">
+      <a class="brand" href="#"
+        ><span class="brandmark">P<span>F</span>A</span
+        ><span>PERSONAL FINANCIAL<br />ANALYSES</span></a
+      >
+      <div class="workspace-label">
+        个人研究空间 <span class="live-dot"></span> 本地
+      </div>
+      <button id="home" class="nav-item active">
+        研究工作台 <span>↗</span>
+      </button>
+      <div class="section-label">覆盖公司 <span>06</span></div>
+      <nav id="company-nav" aria-label="覆盖公司"></nav>
+      <div class="sidebar-foot">
+        <strong>证据先行，判断留痕。</strong>
+        <p>公开资料 · 个人研究<br />未配置付费数据及外部模型</p>
+        <span class="version">LOCAL EDITION / 0.2</span>
+      </div>
+    </aside>
+    <main>
+      <header class="topbar">
+        <span>RESEARCH / 研究终端</span>
+        <div>
+          <span class="live-dot"></span> 仅本机访问
+          <button id="refresh" class="icon-button" aria-label="刷新">↻</button>
+        </div>
+      </header>
+      <div id="content" aria-live="polite"><p>正在读取研究记录…</p></div>
+    </main>
+    <div id="toast" role="status" hidden></div>
+    <dialog id="source-dialog">
+      <div class="dialog-head">
+        <h2 id="source-title">原文定位</h2>
+        <button id="close-source" class="icon-button" aria-label="关闭原文">
+          ×
+        </button>
+      </div>
+      <div class="page-controls">
+        <button id="prev-page">上一页</button><span id="source-page"></span
+        ><input
+          id="jump-page"
+          type="number"
+          min="1"
+          aria-label="原文页码"
+        /><button id="go-page">跳转</button
+        ><button id="next-page">下一页</button>
+      </div>
+      <p id="source-note" class="muted"></p>
+      <pre id="source-text"></pre>
+    </dialog>
+  </body>
+</html>
