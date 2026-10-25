@@ -23,3 +23,5 @@
 - Q12：[MSCI GICS](https://www.msci.com/indexes/index-resources/gics)。借鉴行业层级；项目六类为自定义经济机制，未做正式授权映射。
 - Q13：[FRED 2年国债](https://fred.stlouisfed.org/series/DGS2)、[Brent现货](https://fred.stlouisfed.org/series/DCOILBRENTEU)。bp、同日曲线及现货/期货定义分开。
 - Q14：[美联储SVB审查](https://www.federalreserve.gov/publications/review-of-the-federal-reserves-supervision-and-regulation-of-silicon-valley-bank.htm)。风险经验需考察期限/利率/集中融资和流动性联动，事后解释不当作事前预测。
+
+- Q15：[DBS腾讯公开公司摘要](https://www.dbs.bank.in/in/treasures/aics/templatedata/article/generic/data/en/GR/AXJ/700_HK.xml)、[DBS历史汇编](https://www.dbs.com/content/article/pdf/CIO/2025/202505/250528EquitiesWeekly.pdf)、[Goldman Sachs公开删节主题报告](https://www.goldmansachs.com/pdfs/insights/goldman-sachs-research/stablecoin-summer/TopOfMind.pdf)、[UBS历史披露](https://research.ibb.ubs.com/openaccess/compliance/325449_1_new.html)。逐项记录实际读取范围，只借鉴判断、修订和来源纪律，不移植评级或冒称完整内部模型；见[对照](../institutional-report-benchmark.md)。

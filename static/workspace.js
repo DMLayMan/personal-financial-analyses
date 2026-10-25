@@ -58,7 +58,7 @@ function renderFoundation() {
 }
 function foundationOverview() {
   const p = state.platform;
-  return `<div class="axis-cards">${p.axes.map((a, i) => `<button class="axis-card" data-page="${a.id}"><span class="eyebrow">0${i + 1} / ${esc(a.output)}</span><strong>${esc(a.title)}</strong><span>${esc(a.subtitle)}</span><b>进入 →</b></button>`).join("")}</div><div class="note section-gap"><strong>当前核心审查结论</strong><p>${esc(p.review.verdict)}</p>${docButton("review", "查看审查事实与未解决问题")}</div><section class="card section-gap"><div class="card-heading"><h2>从研究问题，到可追查的判断链</h2><button class="small" data-foundation-tab="methods">展开方法 →</button></div>${workflowStrip()}<p class="muted">每步保留输入、证据状态与未知；资料不够时补证或暂缓。输出是否有用，要看关键反证能否改变判断。</p></section><div class="grid section-gap">${p.capabilities.map((c) => `<section class="card capability"><div class="card-heading"><h3>${esc(c.name)}</h3>${tag(c.state, c.state.includes("未") ? "warn" : "neutral")}</div><p>${esc(c.detail)}</p></section>`).join("")}</div><section class="card section-gap"><h2>本平台参考什么</h2><p>借鉴投资思想中的企业经济性、资本回报与逆向审查；借鉴金融终端把数据、图表、研究和工作流连接起来的建设方式。各类原文的适用边界逐条保留。</p><div class="button-row"><button data-foundation-tab="knowledge">理论与文档 →</button><button data-page="markets">数据与大盘 →</button>${docButton("architecture", "完整三层方案")}</div></section>`;
+  return `<section class="card foundation-intro"><p class="eyebrow">A living research system</p><h2>方法持续迭代，判断保留依据。</h2><p>左侧三个方向连接为一条研究链：知识与方法 → 市场和公司原文 → 行业经营机制 → 财务观察、预测与估值 → 反方与报告更新。</p><p class="muted">知识参考可以增修并保留版本；信息源显示真实接入状态；公司报告记录采用的方法、事实、市场输入及前后变化。</p></section><div class="note section-gap"><strong>当前核心审查结论</strong><p>${esc(p.review.verdict)}</p>${docButton("review", "查看审查事实与未解决问题")}</div><section class="card section-gap"><div class="card-heading"><h2>从研究问题，到可追查的判断链</h2><button class="small" data-foundation-tab="methods">展开方法 →</button></div>${workflowStrip()}<p class="muted">每步保留输入、证据状态与未知；资料不够时补证或暂缓。输出是否有用，要看关键反证能否改变判断。</p></section><div class="grid section-gap">${p.capabilities.map((c) => `<section class="card capability"><div class="card-heading"><h3>${esc(c.name)}</h3>${tag(c.state, c.state.includes("未") ? "warn" : "neutral")}</div><p>${esc(c.detail)}</p></section>`).join("")}</div><section class="card section-gap"><h2>本平台参考什么</h2><p>借鉴投资思想中的企业经济性、资本回报与逆向审查；借鉴金融终端把数据、图表、研究和工作流连接起来的建设方式。各类原文的适用边界逐条保留。</p><div class="button-row"><button data-foundation-tab="knowledge">理论与文档 →</button><button data-page="markets">数据与大盘 →</button>${docButton("architecture", "完整三层方案")}</div></section>`;
 }
 function workflowStrip() {
   return `<ol class="workflow-strip">${state.platform.workflow.map((s) => `<li><span>${esc(s.id)}</span><strong>${esc(s.name)}</strong><small>${esc(s.output)}</small></li>`).join("")}</ol>`;
@@ -152,7 +152,8 @@ function marketCard(m) {
 function renderMarkets() {
   const m = state.markets;
   let body = "";
-  if (state.marketTab === "sources") body = sourceMap();
+  if (state.marketTab === "information") body = informationView();
+  else if (state.marketTab === "sources") body = sourceMap();
   else {
     const filtered = m.entries.filter(
       (e) =>
@@ -169,7 +170,7 @@ function renderMarkets() {
       "市场与信息看板",
       "观察大盘和经济环境；沿暴露、时滞与资本约束，追到行业和公司。",
     ) +
-    `<nav class="tabs" aria-label="市场看板"><button data-market-tab="board" class="${state.marketTab === "board" ? "active" : ""}">大盘与关键变量</button><button data-market-tab="sources" class="${state.marketTab === "sources" ? "active" : ""}">信息源与覆盖</button></nav>` +
+    `<nav class="tabs" aria-label="市场看板"><button data-market-tab="board" class="${state.marketTab === "board" ? "active" : ""}">大盘与关键变量</button><button data-market-tab="sources" class="${state.marketTab === "sources" ? "active" : ""}">信息源与覆盖</button><button data-market-tab="information" class="${state.marketTab === "information" ? "active" : ""}">公告与政策信息</button></nav>` +
     body;
 }
 function marketChannelPanel() {

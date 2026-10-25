@@ -1,0 +1,35 @@
+{
+  "run_at": "2026-10-25T09:39:13.406039+00:00",
+  "official_information_items": 70,
+  "sources": [
+    {
+      "id": "fed_press",
+      "coverage": "美国政策/监管；相关性需逐事件判断",
+      "status": "succeeded",
+      "archive_integrity": "matched",
+      "retrieved_at": "2026-10-25T09:08:23.533971+00:00",
+      "sha256": "529e889a916423a3979c1bebdd94c2b8d402889700d8c85cc4d125b7f538d327"
+    },
+    {
+      "id": "sec_msft",
+      "coverage": "微软10-K/10-Q/8-K及股东材料元数据",
+      "status": "succeeded",
+      "archive_integrity": "matched",
+      "retrieved_at": "2026-10-25T09:08:24.178359+00:00",
+      "sha256": "22800a3276f133e71ef0cf04083dd0d8e7e87a073b39a6a0752cfbcd4294dbbd"
+    },
+    {
+      "id": "sec_cost",
+      "coverage": "Costco 10-K/10-Q/8-K及股东材料元数据",
+      "status": "succeeded",
+      "archive_integrity": "matched",
+      "retrieved_at": "2026-10-25T09:08:24.636529+00:00",
+      "sha256": "2a13f96645cc8af181ae56bb77ed5c846d4a1c83edba24a1e32581ca6a97c9cb"
+    }
+  ],
+  "update_mode": "manual_pull",
+  "continuous_realtime": false,
+  "market_observed": 14,
+  "market_catalog_only": 11,
+  "limit": "只读选定元数据与公开快照；正文未自动核验，港A完整公告/新闻/共识及推送未接入。"
+}

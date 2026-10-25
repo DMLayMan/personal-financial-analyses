@@ -23,10 +23,11 @@ from .platform import Platform
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def make_server(research, jobs, port=8765, instance_id="unmanaged", worker=None, markets=None):
+def make_server(research, jobs, port=8765, instance_id="unmanaged", worker=None, markets=None, information=None):
     token = secrets.token_urlsafe(32)
     markets = markets or MarketBook(research.store)
     platform = Platform(research, markets)
+    information = information or platform.information
     class Handler(BaseHTTPRequestHandler):
         server_version = "PersonalFinancialAnalyses/" + __version__
 
@@ -34,14 +35,14 @@ def make_server(research, jobs, port=8765, instance_id="unmanaged", worker=None,
             if str(args[1] if len(args)>1 else "").startswith("5"):
                 super().log_message(fmt, *args)
 
-        def send(self, status, value, content_type="application/json; charset=utf-8"):
+        def send(self, status, value, content_type="application/json; charset=utf-8", content_policy=None):
             body = json.dumps(value, ensure_ascii=False).encode() if content_type.startswith("application/json") else value
             self.send_response(status)
             self.send_header("Content-Type", content_type)
             self.send_header("Content-Length", str(len(body)))
             self.send_header("Cache-Control", "no-store")
             self.send_header("X-Content-Type-Options", "nosniff")
-            self.send_header("Content-Security-Policy", "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; frame-ancestors 'none'; base-uri 'none'; form-action 'self'")
+            self.send_header("Content-Security-Policy", content_policy or "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; frame-ancestors 'none'; base-uri 'none'; form-action 'self'")
             self.end_headers()
             self.wfile.write(body)
 
@@ -65,14 +66,31 @@ def make_server(research, jobs, port=8765, instance_id="unmanaged", worker=None,
                         worker="running" if worker is not None and alive else "not_attached"))
                 if url.path == "/api/bootstrap":
                     return self.send(200, dict(csrf=token, companies=research.dashboard(), version=__version__, ai="规则与人工审议；未配置外部模型服务"))
+                if len(parts)==2 and parts[0]=='reports':
+                    from .report_document import document,content_policy
+                    html=document(platform.report(parts[1]))
+                    return self.send(200,html.encode(),'text/html; charset=utf-8',content_policy(html))
                 if url.path == "/api/platform":
                     return self.send(200, platform.overview())
                 if url.path == "/api/industries":
                     return self.send(200, platform.industries())
                 if url.path == "/api/markets":
                     return self.send(200, markets.read())
+                if url.path == "/api/knowledge":
+                    return self.send(200, platform.knowledge.read())
+                if url.path == "/api/information":
+                    return self.send(200, information.read())
                 if len(parts) == 3 and parts[:2] == ["api", "reports"]:
                     return self.send(200, platform.report(parts[2]))
+                if len(parts)==4 and parts[:2]==['api','reports'] and parts[3]=='document':
+                    from .report_document import document
+                    return self.send(200,dict(html=document(platform.report(parts[2]))))
+                if len(parts)==3 and parts[:2]==['api','report-versions']:
+                    from .report_document import document
+                    with research.store.tx() as db:
+                        snapshot=research.store.get(db,parts[2])
+                    if snapshot['kind']!='research_report':raise ValueError('研究报告版本不存在')
+                    return self.send(200,dict(html=document(snapshot['report']),version=snapshot['version']))
                 if len(parts) == 3 and parts[:2] == ["api", "library"]:
                     return self.send(200, platform.library(parts[2]))
                 if len(parts) == 3 and parts[:2] == ["api", "companies"]:
@@ -85,7 +103,7 @@ def make_server(research, jobs, port=8765, instance_id="unmanaged", worker=None,
                     return self.send(200, document_text(doc, ROOT, int(parse_qs(url.query).get("page", [1])[0])))
                 if len(parts) == 3 and parts[:2] == ["api", "export"]:
                     return self.send(200, research.view(parts[2]))
-                assets = {"/": "index.html", "/app.js": "app.js", "/workspace.js": "workspace.js", "/styles.css": "styles.css"}
+                assets = {"/": "index.html", "/app.js": "app.js", "/workspace.js": "workspace.js", "/evolution.js": "evolution.js", "/styles.css": "styles.css"}
                 if url.path not in assets:
                     return self.send(404, {"error": "地址不存在"})
                 path = ROOT/"static"/assets[url.path]
@@ -114,6 +132,12 @@ def make_server(research, jobs, port=8765, instance_id="unmanaged", worker=None,
                 parts = urlparse(self.path).path.strip("/").split("/")
                 if parts == ["api", "markets", "refresh"]:
                     return self.send(200, {"result": markets.enqueue()})
+                if parts == ["api", "information", "refresh"]:
+                    return self.send(200, {"result": information.enqueue()})
+                if parts == ["api", "knowledge"]:
+                    return self.send(200, {"result": platform.knowledge.save(data)})
+                if len(parts)==4 and parts[:2]==["api","reports"] and parts[3]=='snapshot':
+                    return self.send(200, {"result": platform.save_report(parts[2],data)})
                 if len(parts) != 4 or parts[:2] != ["api", "companies"]:
                     return self.send(404, {"error": "地址不存在"})
                 issuer, action = parts[2:]
@@ -145,19 +169,21 @@ def main():
     research.seed(ROOT/"fixtures/companies.json")
     jobs = Jobs(research, ROOT)
     markets = MarketBook(research.store)
+    from .information import Information
+    information = Information(research.store,ROOT)
     jobs.recover()
     stopping = threading.Event()
     def work():
         while not stopping.is_set():
             try:
-                if markets.one() or jobs.one():
+                if markets.one() or information.one() or jobs.one():
                     continue
             except Exception as exc:
                 print("Background job error:", exc, flush=True)
             stopping.wait(2)
     worker = threading.Thread(target=work, daemon=True)
     worker.start()
-    server = make_server(research, jobs, args.port, args.instance_id, worker, markets)
+    server = make_server(research, jobs, args.port, args.instance_id, worker, markets, information)
     def terminate(signum, frame):
         stopping.set()
         threading.Thread(target=server.shutdown, daemon=True).start()

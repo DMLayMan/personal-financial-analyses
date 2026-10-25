@@ -7,6 +7,7 @@
     <title>Personal Financial Analyses · 个人金融分析终端</title>
     <link rel="stylesheet" href="/styles.css" />
     <script src="/workspace.js" defer></script>
+    <script src="/evolution.js" defer></script>
     <script src="/app.js" defer></script>
   </head>
   <body>
@@ -21,23 +22,37 @@
       <nav class="axis-nav" aria-label="平台三层导航">
         <button id="home" class="nav-item active" data-page="foundation">
           <span class="axis-number">01</span
-          ><span>平台与研究基础<small>方法 · 知识 · 审查</small></span>
+          ><span
+            ><span class="full-label">平台与研究基础</span
+            ><span class="short-label">研究基础</span
+            ><small>方法 · 知识 · 审查</small></span
+          >
         </button>
         <button class="nav-item" data-page="markets">
           <span class="axis-number">02</span
-          ><span>市场与信息看板<small>来源 · 大盘 · 传导</small></span>
+          ><span
+            ><span class="full-label">市场与信息看板</span
+            ><span class="short-label">市场信息</span
+            ><small>来源 · 大盘 · 传导</small></span
+          >
         </button>
         <button class="nav-item" data-page="cases">
           <span class="axis-number">03</span
-          ><span>行业与公司研究<small>行业手册 · 案例报告</small></span>
+          ><span
+            ><span class="full-label">行业与公司研究</span
+            ><span class="short-label">公司报告</span
+            ><small>行业手册 · 案例报告</small></span
+          >
         </button>
       </nav>
-      <div class="section-label">公司研究快捷入口 <span>06</span></div>
-      <nav id="company-nav" aria-label="覆盖公司"></nav>
+      <div id="company-shortcuts" hidden>
+        <div class="section-label">覆盖公司 <span>06</span></div>
+        <nav id="company-nav" aria-label="覆盖公司"></nav>
+      </div>
       <div class="sidebar-foot">
         <strong>证据先行，判断留痕。</strong>
         <p>公开资料 · 个人研究<br />未配置付费数据及外部模型</p>
-        <span class="version">LOCAL EDITION / 0.4</span>
+        <span class="version">LOCAL EDITION / 0.5</span>
       </div>
     </aside>
     <main>

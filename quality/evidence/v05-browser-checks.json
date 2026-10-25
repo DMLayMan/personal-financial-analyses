@@ -1,0 +1,283 @@
+{
+  "run_at": "2026-10-25T09:38:44.484Z",
+  "scope": "本地开发功能与代表性阅读检查，非独立金融或预测验收",
+  "checks": [
+    {
+      "action": "02 市场与信息看板 来源 · 大盘 · 传导",
+      "expected": [
+        "大盘与关键变量"
+      ],
+      "passed": true
+    },
+    {
+      "action": "公告与政策信息",
+      "expected": [
+        "当前接入：公开数据按需获取",
+        "美联储公开新闻RSS",
+        "SEC微软提交记录"
+      ],
+      "passed": true
+    },
+    {
+      "action": "获取最新公告线索",
+      "expected": [
+        "正在获取公开信息"
+      ],
+      "passed": true
+    },
+    {
+      "action": "390px左侧导航与无横向溢出",
+      "passed": true,
+      "sidebar_width": 80
+    },
+    {
+      "scope": "isolated_8876",
+      "action": "知识与文档",
+      "expected": [
+        "可以持续维护的研究方法库"
+      ],
+      "passed": true
+    },
+    {
+      "scope": "isolated_8876",
+      "action": "新增知识或方法",
+      "expected": [
+        "新增研究知识",
+        "本次改变什么"
+      ],
+      "passed": true
+    },
+    {
+      "scope": "isolated_8876",
+      "action": "保存新版本",
+      "expected": [
+        "最新 v1",
+        "已纳入本地参考"
+      ],
+      "passed": true
+    },
+    {
+      "scope": "isolated_8876",
+      "action": "保存新版本",
+      "expected": [
+        "最新 v2",
+        "报告采用 v1"
+      ],
+      "passed": true
+    },
+    {
+      "scope": "isolated_8876",
+      "action": "03 行业与公司研究 行业手册 · 案例报告",
+      "expected": [
+        "行业与公司研究"
+      ],
+      "passed": true
+    },
+    {
+      "scope": "isolated_8876",
+      "action": "保存本轮研究快照",
+      "expected": [
+        "保存研究草案快照",
+        "保存用途"
+      ],
+      "passed": true
+    },
+    {
+      "scope": "isolated_8876",
+      "action": "保存新稿，保留旧版",
+      "expected": [
+        "已存 v1",
+        "本轮经济输入未变化",
+        "下载该版报告"
+      ],
+      "passed": true
+    },
+    {
+      "scope": "isolated_8876",
+      "action": "下载该版报告 ↗",
+      "expected": [],
+      "passed": true
+    },
+    {
+      "scope": "isolated_8876",
+      "action": "下载已存报告HTML",
+      "passed": true,
+      "bytes": 9679
+    },
+    {
+      "scope": "isolated_8876",
+      "action": "01 平台与研究基础 方法 · 知识 · 审查",
+      "expected": [
+        "可以持续维护的研究方法库"
+      ],
+      "passed": true
+    },
+    {
+      "scope": "isolated_8876",
+      "action": "保存新版本",
+      "expected": [
+        "最新 v3",
+        "报告采用 v3"
+      ],
+      "passed": true
+    },
+    {
+      "scope": "isolated_8876",
+      "action": "03 行业与公司研究 行业手册 · 案例报告",
+      "expected": [],
+      "passed": true
+    },
+    {
+      "scope": "isolated_8876",
+      "action": "采用方法修订触发已存报告复核",
+      "passed": true
+    },
+    {
+      "scope": "isolated_8876",
+      "action": "下载该版报告 ↗",
+      "expected": [],
+      "passed": true
+    },
+    {
+      "scope": "isolated_8876",
+      "action": "新方法未改写已存报告HTML",
+      "passed": true
+    },
+    {
+      "action": "02 市场与信息看板 来源 · 大盘 · 传导",
+      "expected": [
+        "大盘与关键变量"
+      ],
+      "passed": true
+    },
+    {
+      "action": "公告与政策信息",
+      "expected": [
+        "SEC微软提交记录",
+        "正文待审",
+        "当前接入：公开数据按需获取"
+      ],
+      "passed": true
+    },
+    {
+      "action": "03 行业与公司研究 行业手册 · 案例报告",
+      "expected": [
+        "软件与云服务",
+        "商业银行"
+      ],
+      "passed": true
+    },
+    {
+      "scope": "main_8765",
+      "action": "公司核心报告 msft",
+      "passed": true
+    },
+    {
+      "scope": "main_8765",
+      "action": "公司核心报告 cost",
+      "passed": true
+    },
+    {
+      "scope": "main_8765",
+      "action": "公司核心报告 tencent",
+      "passed": true
+    },
+    {
+      "scope": "main_8765",
+      "action": "公司核心报告 byd",
+      "passed": true
+    },
+    {
+      "scope": "main_8765",
+      "action": "公司核心报告 catl",
+      "passed": true
+    },
+    {
+      "scope": "main_8765",
+      "action": "公司核心报告 cmb",
+      "passed": true
+    },
+    {
+      "scope": "main_8765",
+      "action": "独立报告HTML渲染与现金数值",
+      "passed": true,
+      "viewport": 1280
+    },
+    {
+      "scope": "main_8765",
+      "action": "现金判断链跳回具体原页",
+      "expected_page": "11",
+      "passed": true
+    },
+    {
+      "action": "关闭原文",
+      "expected": [
+        "核心研究报告"
+      ],
+      "passed": true
+    },
+    {
+      "scope": "main_8765",
+      "action": "恢复默认662px视口后报告左栏/无横向溢出",
+      "passed": true,
+      "layout": {
+        "nav": [
+          {
+            "left": 12,
+            "right": 160,
+            "text": "01\n平台与研究基础\n方法 · 知识 · 审查",
+            "top": 120.4375
+          },
+          {
+            "left": 12,
+            "right": 160,
+            "text": "02\n市场与信息看板\n来源 · 大盘 · 传导",
+            "top": 190.078125
+          },
+          {
+            "left": 12,
+            "right": 160,
+            "text": "03\n行业与公司研究\n行业手册 · 案例报告",
+            "top": 259.71875
+          }
+        ],
+        "scrollWidth": 662,
+        "sidebar": {
+          "bottom": 893,
+          "height": 893,
+          "left": 0,
+          "right": 172,
+          "top": 0,
+          "width": 172,
+          "x": 0,
+          "y": 0
+        },
+        "width": 662
+      }
+    }
+  ],
+  "isolated_writes": "8876 / data/qa/v05.sqlite3；知识增修与快照均未写入正式研究数据库",
+  "viewport_reset": true,
+  "kernel_digest": "00526609613312945fd985738e463952d348bbda6e638457dc21ef06cf2ff5bf",
+  "functional_evidence": "quality/latest-functional.json",
+  "responsive_observations": [
+    {
+      "viewport_width": 390,
+      "sidebar_width": 80,
+      "sidebar_left": 0,
+      "page_scroll_width": 390
+    },
+    {
+      "viewport_width": 662,
+      "sidebar_width": 172,
+      "sidebar_left": 0,
+      "page_scroll_width": 662
+    },
+    {
+      "viewport_width": 1280,
+      "sidebar_width": 250,
+      "sidebar_left": 0,
+      "page_scroll_width": 1280
+    }
+  ]
+}

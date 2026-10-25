@@ -1,0 +1,78 @@
+{
+  "run_at": "2026-10-25T09:33:13.136340+00:00",
+  "scope": "六个真实开发案例，证据研究草案；非专家或投资效果验收",
+  "reports": [
+    {
+      "issuer": "msft",
+      "company": "Microsoft",
+      "dependency_digest": "2634539aba487481b71471f234df4ecd97e5bd91c601cba1a10c89faaba74746",
+      "findings": 3,
+      "actual_inputs": 15,
+      "methods": 7,
+      "pending_disclosures": 2,
+      "fact_cutoff": "2026-07-29",
+      "rating": "not_rated",
+      "research_decision_ready": false
+    },
+    {
+      "issuer": "cost",
+      "company": "Costco",
+      "dependency_digest": "8ea2945f7da08a955f6bbc7702ca6f03bb7a7fe175b51dd57d223bc05086c526",
+      "findings": 3,
+      "actual_inputs": 15,
+      "methods": 7,
+      "pending_disclosures": 2,
+      "fact_cutoff": "2026-10-07",
+      "rating": "not_rated",
+      "research_decision_ready": false
+    },
+    {
+      "issuer": "tencent",
+      "company": "腾讯控股",
+      "dependency_digest": "60f109dcb34ec742d09ef2d43f8bffa4d82310a82e930ee6a1183c0fead98858",
+      "findings": 4,
+      "actual_inputs": 13,
+      "methods": 7,
+      "pending_disclosures": 0,
+      "fact_cutoff": "2026-08-12",
+      "rating": "not_rated",
+      "research_decision_ready": false
+    },
+    {
+      "issuer": "byd",
+      "company": "比亚迪",
+      "dependency_digest": "a33a7527add9a7db1436c4eb4e62aa997706e0c17c642a398a7f3a59283266e5",
+      "findings": 3,
+      "actual_inputs": 17,
+      "methods": 7,
+      "pending_disclosures": 0,
+      "fact_cutoff": "2026-10-08",
+      "rating": "not_rated",
+      "research_decision_ready": false
+    },
+    {
+      "issuer": "catl",
+      "company": "宁德时代",
+      "dependency_digest": "2f88b887bbe6aabab4d5c0915a0051ac598f1c4886c072f913167371be5e853d",
+      "findings": 4,
+      "actual_inputs": 14,
+      "methods": 7,
+      "pending_disclosures": 0,
+      "fact_cutoff": "2026-10-21",
+      "rating": "not_rated",
+      "research_decision_ready": false
+    },
+    {
+      "issuer": "cmb",
+      "company": "招商银行",
+      "dependency_digest": "8ca17f00353828f9c41264a955342fa69bb1ee9b4920298bd804ddac26be0c84",
+      "findings": 3,
+      "actual_inputs": 15,
+      "methods": 8,
+      "pending_disclosures": 0,
+      "fact_cutoff": "2026-08-29",
+      "rating": "not_rated",
+      "research_decision_ready": false
+    }
+  ]
+}

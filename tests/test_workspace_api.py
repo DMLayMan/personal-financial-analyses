@@ -51,5 +51,31 @@ class WorkspaceAPI(unittest.TestCase):
         self.assertEqual(first['id'],second['id'])
         self.assertTrue(second['deduplicated'])
 
+    def test_knowledge_and_report_snapshot_roundtrip_with_frozen_document(self):
+        token=self.read('/api/bootstrap')['csrf']
+        def post(path,data):
+            with urlopen(Request(self.base+path,data=json.dumps(data).encode(),headers={
+                'Content-Type':'application/json','X-PFA-Token':token}),timeout=5) as r:return json.load(r)
+        original=self.read('/api/reports/catl')
+        saved=post('/api/reports/catl/snapshot',dict(dependency_digest=original['dependency_digest'],
+            reason='在隔离验收库保存当前证据研究更新，不升级为投资评级。'))['result']
+        html=self.read('/api/report-versions/'+saved['id'])['html']
+        self.assertIn('未评级',html);self.assertIn('目标价未形成',html)
+        self.assertIn('单季经营现金流显著下降',html)
+        self.assertTrue(self.read('/api/knowledge')['entries'])
+        self.assertFalse(self.read('/api/information')['delivery']['continuous_realtime'])
+        self.assertIn('<!doctype html>',self.read('/api/reports/catl/document')['html'])
+        with urlopen(self.base+'/reports/catl') as r:
+            self.assertIn('text/html',r.headers['Content-Type'])
+            self.assertIn("default-src 'none'",r.headers['Content-Security-Policy'])
+            self.assertIn('sha256-',r.headers['Content-Security-Policy'])
+            self.assertNotIn('unsafe-inline',r.headers['Content-Security-Policy'])
+
+    def test_new_mutations_keep_local_token_protection(self):
+        for path in ('/api/knowledge','/api/information/refresh','/api/reports/catl/snapshot'):
+            with self.assertRaises(HTTPError) as caught:
+                urlopen(Request(self.base+path,data=b'{}',headers={'Content-Type':'application/json'}))
+            self.assertEqual(caught.exception.code,403)
+
 
 if __name__=='__main__':unittest.main()

@@ -1,45 +1,53 @@
 {
-  "run_at": "2026-10-25T06:35:45.931265+00:00",
+  "run_at": "2026-10-25T09:33:04.442118+00:00",
   "command": "scripts/quality_gate.py --live",
-  "tested_base_commit": "49c2926ba5231d809421cde083d40c05be13c8da",
+  "tested_base_commit": "bed066174a1848080e03f4a80fbc38b683389c9d",
   "working_tree_dirty": true,
   "python": "3.12.14",
   "source_manifest": {
     "fixtures/companies.json": "d56c84c7859cc3bb960e24cb9a203f91e0826d3b0655442c8d29e426fc8f7822",
     "knowledge/industries.json": "2964a5a4e42e8e371f74e5226846e9bc5aa4a08189b05df290081c9c81ec323f",
     "knowledge/market-catalog.json": "9b23f3da92357d363d65d08d80ba9b385155a807667a85f78d6cfae2d8626908",
-    "knowledge/platform.json": "69993f64bcaff729a4c7b1433409cff1d142f11dfe2d298901408c5b5b6555f9",
-    "pfa/__init__.py": "8a1747093787a8cf03587e1a875bf5e9d32dd12386600b65c70959a5e7296735",
-    "pfa/assurance.py": "4bf289e88cb93debb5c56b591ffa9247d40f02535b605ccbbf44a294c5b55dd8",
+    "knowledge/platform.json": "01fa624a42b4a240d23816933f028236e5ef57c82eeba91a32c7826934772bb9",
+    "knowledge/report-benchmark.json": "8ec6861dba6408c9dd68e7ddfea37bdcd5b1747ecf7394ccd9e9b9440a2c7a2b",
+    "pfa/__init__.py": "0a440a32f769aa4d350216359b279726118c3dd0302380a554723631ae5baec4",
+    "pfa/assurance.py": "30710353c17b10e518e315b2201944204fccd880269576064f1ae6d55e1b2f99",
+    "pfa/information.py": "64c0c3246a343fb5d1fa1c83b37d40d77896dda717597d32444c610d11a7e00e",
+    "pfa/knowledge.py": "95485dfafe23839a4be906c11dd40eab7da400dd083bf5da6ce50e724eb8a476",
     "pfa/markets.py": "87698fd42cf5e030731c72ced13e2cf62fda5e640e265f867c0550e5c77fd0cd",
     "pfa/models.py": "8ff2a20748d688114847d93a527d8ba8405ff29d128a360582c443b78b4239b1",
     "pfa/monitoring.py": "8ecd727e1b1d37491c53160d13cbb52d1c3dbb4bf3ee197be8a37b84b8addb71",
-    "pfa/platform.py": "a466e9d1ad6d32d349ea4a5d4e0904edbe670c2efd726f0ed49d16fb36bbbe78",
+    "pfa/platform.py": "98a991c4736941ffd082f457ef6c088e3c1cb3946a051f8cdaeffa3547ae17b1",
+    "pfa/report_document.py": "8e194dcc9da5bf263c2192c3165073b5c4f11a28fdb472dc53ee6c4b9f867a43",
+    "pfa/reports.py": "b40d1008630eb177e0df8c7a7105418cef13889ff220f4530d7f57026b0dd44c",
     "pfa/research.py": "0617cf41381c7501ed9a0dd80735b991e7b851bbec0a3b91c52692086f8de2ab",
-    "pfa/server.py": "d959a1e4297cb0b037abc61485e42e9984cc24c36c6d735976db1a7532cfb53b",
-    "pfa/service.py": "12c58b8e8f20f3ca4c77b5e90f90891168ebc36be9a0fa557d977df130122f52",
-    "pfa/sources.py": "6f06e8beeb5d0fe7216d3ce8ad25ce017b70fdc080d09a8d067c3c39180fdc40",
+    "pfa/server.py": "9ad2c9106fcb37d768587448ed57a97b3fc8201ab22a270da6ba848fc3601b24",
+    "pfa/service.py": "e11952cfe0b49b1ea6e34fb0057f794ca7e3753c0b5b5a7991529187d970c8af",
+    "pfa/sources.py": "75fa58ddb6ffd07b1cf01b3206e33bb3eff226af799f96db37dc30baeb97922e",
     "pfa/store.py": "c46c4904438c93e379096bd5cb04291b4534777eabe175d22d7eacba52766377",
-    "quality/features.json": "75fff285fd1a713d7ade9a2fe6929ba7f99d331182a9a55b1ad2163c40bfa451",
+    "quality/features.json": "d6617b304ebe11907223c546618d61cb6483198deab94f728ceeb3ed9d2b7fbb",
     "requirements.txt": "0d54aed8d581d3122fbb3c27f179280bac42f768567876dff9939543217b26aa",
-    "scripts/backup.py": "84803400cc7570b16a9bb1d3ed742fbaf10070ea1216715ebf92a20c0d1b1bb9",
+    "scripts/backup.py": "969e584c2db834977a82cec48b507c6ad6f305e2610fca2a3af114211f9d80b6",
     "scripts/quality_gate.py": "7c46af098d483765217693cbb5944cf41e81184fa3f5fae147647098ae909b51",
     "scripts/refresh_markets.py": "f6de50536a3f1799215e370d07a66dc4c21012abd0af9e1507b029bd15c00f78",
     "scripts/start.sh": "1c2d01768cf1e48e140f2619b693147fcf9274ef4a5436870151ca7513ac2770",
     "scripts/validate.py": "ffd9f5233f5ac62394153a0fdc8029184fe674fda2870b33e58560f091f24a91",
-    "static/app.js": "55efb6b06ab1ead210b5a050db2fee5db2b4d2cbaa36b690a41c0752ac56978d",
-    "static/index.html": "e322ff344a17f5eb275852c44a568a21b65bff3a1a014577c1c1fde37ed1995b",
-    "static/styles.css": "23c0792581f1e308118d81afaf3c54ea0fb21061481063ec52a8fe8b791c9340",
-    "static/workspace.js": "7689b09bc024834f57e508d9d4db3750bbe0bf9c2d38498f725a816fae707952",
+    "static/app.js": "3b064712062a9d43940f5cad0b52cb87b78fa0f68f33c64bbbaf888f1ba22eab",
+    "static/evolution.js": "4f5ab80674f5153fb3d439bdf437f2bb6bba4bdd330b2387e5c24cc54fc1c9f8",
+    "static/index.html": "aa86d04418a9f8369fa5ab5db184f87ec69edb143cf67a9254d7ff0ecaed6136",
+    "static/styles.css": "1253633dea545bf1d5247306974fb31def1a74a91e321b46ffd4209fa6b91ed1",
+    "static/workspace.js": "1a779bdd89180ff5d77b637d0de69393b2e4b863dfbd4941da62f911148b847c",
     "tests/test_audit_controls.py": "a14cbfa9e903d88ade00e3e9f90588da26f1b2cd820a491a7386ab0ce83240ae",
+    "tests/test_evolution.py": "cd7270f860fdfe5d35afbe0b27d67b81216a9c23270679d98c915f56931552e1",
+    "tests/test_information.py": "01c97546ee336152b7e4e4df5fc1d75c75bd1a4985171a5312e9205359b0e5eb",
     "tests/test_markets.py": "ccd8f20c3580f65b28ae3ab9dec354c047392b9873bd97d7bf20ba0358e90407",
     "tests/test_platform.py": "269435be8aef00c1f90c9f23b9ec743a510638fd80b98a0ea439114d45a9cf8d",
     "tests/test_release_controls.py": "ebd501c3468a261afc25a6b3fd6a004c7dfdb32d25b9a335338ebf4a5555d0a8",
     "tests/test_research.py": "b946f9abf4dc015a64913e883557acdb59a28cae60fc32255ea391fb5c03cd25",
-    "tests/test_workspace_api.py": "b017c5b232148ed8acc564bb407fabbe312d5f280edc1802a8884cd785d62783"
+    "tests/test_workspace_api.py": "1a9ce93adf749fbc645e14ed29494f9d664b23fe65d3f60850df1a91c3e37c13"
   },
-  "kernel_digest": "54e01d414eda83131091d68c3b8be9465daf001303e45bf50dd5580cae059395",
-  "tests_run": 60,
+  "kernel_digest": "00526609613312945fd985738e463952d348bbda6e638457dc21ef06cf2ff5bf",
+  "tests_run": 80,
   "test_results": [
     {
       "test": "test_audit_controls.AuditControls.test_annual_growth_requires_matching_accounting_basis",
@@ -67,6 +75,78 @@
     },
     {
       "test": "test_audit_controls.AuditControls.test_validation_fails_required_output_when_raw_hashes_pass",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.KnowledgeContract.test_draft_does_not_replace_adopted_method",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.KnowledgeContract.test_revision_preserves_history_and_requires_reason",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_cash_signal_is_traceable_and_does_not_become_a_positive_thesis",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_market_change_marks_saved_report_for_review",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_method_revision_and_new_event_require_report_review",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_missing_model_never_becomes_an_investment_rating",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_platform_reference_is_not_presented_as_company_valuation_method",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_prior_market_revision_is_a_report_change",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_readable_report_escapes_untrusted_content",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_same_observation_refetch_does_not_change_economic_dependencies",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_stale_dependency_snapshot_is_rejected",
+      "result": "passed"
+    },
+    {
+      "test": "test_evolution.ReportContract.test_unmapped_new_issuer_exposes_template_gap",
+      "result": "passed"
+    },
+    {
+      "test": "test_information.InformationContract.test_company_source_worker_does_not_consume_information_jobs",
+      "result": "passed"
+    },
+    {
+      "test": "test_information.InformationContract.test_duplicates_and_future_items_are_controlled",
+      "result": "passed"
+    },
+    {
+      "test": "test_information.InformationContract.test_feed_metadata_is_not_verified_financial_fact",
+      "result": "passed"
+    },
+    {
+      "test": "test_information.InformationContract.test_global_timeline_limit_does_not_hide_company_filings",
+      "result": "passed"
+    },
+    {
+      "test": "test_information.InformationContract.test_tampered_information_raw_is_marked_unavailable",
+      "result": "passed"
+    },
+    {
+      "test": "test_information.InformationContract.test_wrong_filer_identity_and_external_feed_links_are_rejected",
       "result": "passed"
     },
     {
@@ -274,7 +354,15 @@
       "result": "passed"
     },
     {
+      "test": "test_workspace_api.WorkspaceAPI.test_knowledge_and_report_snapshot_roundtrip_with_frozen_document",
+      "result": "passed"
+    },
+    {
       "test": "test_workspace_api.WorkspaceAPI.test_market_refresh_requires_token_and_deduplicates",
+      "result": "passed"
+    },
+    {
+      "test": "test_workspace_api.WorkspaceAPI.test_new_mutations_keep_local_token_protection",
       "result": "passed"
     },
     {
@@ -410,6 +498,30 @@
       "missing_test_ids": [],
       "research_decision_ready": false,
       "method_review": "本轮实现结构与公开数据示例；研究和预测有效性仍未验证"
+    },
+    {
+      "id": "F17",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "证据观察与版本控制；行业预测、语义质量和前瞻效果未验证"
+    },
+    {
+      "id": "F18",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "证据观察与版本控制；行业预测、语义质量和前瞻效果未验证"
+    },
+    {
+      "id": "F19",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "证据观察与版本控制；行业预测、语义质量和前瞻效果未验证"
     }
   ],
   "source_checks": [
@@ -494,6 +606,10 @@
         "passed": true
       },
       {
+        "route": "/evolution.js",
+        "passed": true
+      },
+      {
         "route": "/api/bootstrap",
         "passed": true
       },
@@ -502,7 +618,15 @@
         "passed": true
       },
       {
+        "route": "/api/knowledge",
+        "passed": true
+      },
+      {
         "route": "/api/markets",
+        "passed": true
+      },
+      {
+        "route": "/api/information",
         "passed": true
       },
       {

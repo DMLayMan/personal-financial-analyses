@@ -2,9 +2,11 @@
 
 Personal Financial Analyses 是面向个人深度研究与中长期投资的商业与金融分析终端，覆盖美股、港股和 A 股。项目以研究问题、原始证据、经营机制、盈利与估值、风险和持续复核为主线。
 
-当前0.4按平台基础、市场信息、行业公司三层组织，可用于本地来源台账、历史算术、示例敏感性与人工研究记录。自查发现0.2在补证、期间、证据分类、验收和交付上存在实质缺陷，已补反例及控制。个股经营驱动、盈利承保、当前公允价值和投资效果仍未通过研究质量验收，见[自查报告](docs/quality/review-2026-10-25.md)。
+当前0.5按平台基础、市场信息、行业公司三层组织，可用于本地来源台账、历史算术、示例敏感性与人工研究记录。自查发现0.2在补证、期间、证据分类、验收和交付上存在实质缺陷，已补反例及控制。个股经营驱动、盈利承保、当前公允价值和投资效果仍未通过研究质量验收，见[自查报告](docs/quality/review-2026-10-25.md)。
 
 直接运行 `./scripts/start.sh` 启动独立后台服务，打开 `http://127.0.0.1:8765`。查看状态用 `.venv/bin/python -m pfa.service status`。用户服务在交付后继续运行，电脑重启后需重新启动；详见[本地运行手册](docs/operations/local-service.md)。
+
+0.5新增知识增修/停用与采用版本、Fed/选定SEC元数据、证据判断链、报告快照/依赖和可独立阅读的HTML。三个主方向在各断点均位于左侧。市场和信息仍按需读取，尚未接连续实时推送。
 
 网站首先展示平台方法、Agent职责合同、知识和审查；第二层是跨市场大盘、来源状态和行业传导；第三层按六种经济机制阅读公司研究报告。公开延迟快照、人工转录和待接入目录分开，不宣称自主Agent已运行或当前证券估值已获验证。
 
@@ -15,7 +17,7 @@ Personal Financial Analyses 是面向个人深度研究与中长期投资的商�
 | 英文名称 | Personal Financial Analyses |
 | 中文工作名 | 个人金融分析终端 |
 | 仓库标识 | personal-financial-analyses |
-| 当前版本 | 0.4.0 |
+| 当前版本 | 0.5.0 |
 | 基线日期 | 2026年10月25日 |
 | 当前阶段 | 三层平台、公开市场快照、行业手册及报告；继续深化经营驱动和研究验证 |
 
@@ -25,13 +27,16 @@ Personal Financial Analyses 是面向个人深度研究与中长期投资的商�
 
 | 文档 | 内容与使用方式 |
 | --- | --- |
+| [报告内核与长期迭代](docs/report-product-design.md) | 知识版本、真实信息接入、判断链、报告快照及扩展门槛 |
+| [机构报告对照](docs/institutional-report-benchmark.md) | 实际读取的DBS/Goldman Sachs/UBS公开样本与采用边界 |
+| [0.5验收](docs/validation/local-v0.5.md) | 左侧导航、知识增修、公开信息和可读报告的实际验证 |
 | [三层平台方案](docs/three-layer-architecture.md) | 平台基础→市场与信息→行业/公司报告的结构、依赖、边界和扩展 |
 | [市场框架](docs/market-framework.md) | 大盘指标、来源、时间/单位、缺失与传导规则 |
 | [行业与报告](docs/industry-research.md) | 六类行业经济机制、研究职责与报告合同 |
 | [0.4验收](docs/validation/local-v0.4.md) | 三层功能、数据可得性及浏览器验证 |
 | [用户需求](docs/requirements.md) | 用户目标、原始要求、确认程度、范围和验收条件，是需求依据 |
 | [当前质量判定](docs/quality/review-2026-10-25.md) | 实际反例、整改、六家公司研究差距与允许用途 |
-| [每项功能与验收](docs/quality/feature-plan.md) | 16项功能、三层基础与六公司驱动桥、事前门槛及实施顺序 |
+| [每项功能与验收](docs/quality/feature-plan.md) | 19项功能、知识/信息/报告版本及六公司驱动桥、事前门槛及实施顺序 |
 | [验证标准](docs/quality/verification-standard.md) | 软件、原文、语义、金融方法、保留集、前瞻及运行分别评估 |
 | [审查参考](docs/quality/references.md) | CFA、2026模型风险指导、NYU估值与SRE原始材料 |
 | [最新功能检查](quality/latest-functional.json) | 实际运行、源码摘要和逐项结果；单独保留研究未验证状态 |

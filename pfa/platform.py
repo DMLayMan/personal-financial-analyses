@@ -5,6 +5,10 @@ from pathlib import Path
 
 from .store import now, digest
 from .assurance import ACTUAL_LABELS, temporal_actual
+from .knowledge import Knowledge
+from .information import Information
+from .reports import ReportEngine
+from .research import Conflict
 
 ROOT=Path(__file__).resolve().parents[1]
 FOUNDATION=json.loads((ROOT/'knowledge/platform.json').read_text())
@@ -20,12 +24,17 @@ LIBRARY={
     'sources': ('数据来源与可得性', 'docs/data-sources.md'),
     'references': ('理论与公开依据', 'docs/references.md'),
     'operations': ('本地运行与部署', 'docs/operations/local-service.md'),
+    'report_design': ('报告内核与持续迭代设计', 'docs/report-product-design.md'),
+    'benchmark': ('公开机构报告对照', 'docs/institutional-report-benchmark.md'),
 }
 
 
 class Platform:
     def __init__(self, research, markets):
         self.research, self.markets=research,markets
+        self.knowledge=Knowledge(research.store)
+        self.information=Information(research.store,root=markets.root)
+        self.reports=ReportEngine(research,self.knowledge,self.information)
 
     def overview(self):
         data=dict(FOUNDATION)
@@ -43,6 +52,7 @@ class Platform:
         data['library']=[dict(id=key,title=value[0],path=value[1]) for key,value in LIBRARY.items()]
         data['features']=json.loads((ROOT/'quality/features.json').read_text())['features']
         data['read_at']=now()
+        data['report_benchmarks']=json.loads((ROOT/'knowledge/report-benchmark.json').read_text())
         return data
 
     @staticmethod
@@ -56,8 +66,25 @@ class Platform:
         return INDUSTRIES
 
     def report(self, issuer):
+        for attempt in range(3):
+            cursor=self.reports.cursor()
+            base,view=self._base_report(issuer)
+            report=self.reports.attach(base,view)
+            if cursor==self.reports.cursor():
+                report['dependency_cursor']=cursor
+                return report
+        raise Conflict('研究输入正在更新，请稍后重新读取报告')
+
+    def save_report(self,issuer,data):
+        return self.reports.save(self.report(issuer),data)
+
+    def _base_report(self, issuer):
         v=self.research.view(issuer)
-        industry=next(i for i in INDUSTRIES['industries'] if issuer in i['companies'])
+        industry=next((i for i in INDUSTRIES['industries'] if issuer in i['companies']),None)
+        if industry is None:
+            industry=dict(id='unmapped',name='待建立行业手册',structure='尚未映射行业经济机制',kpis=[],macro=[],channels=[],
+                bridge='经营、资本与融资驱动尚未建立，不能复制其他公司的预测参数。',valuation='等待适用行业方法。',
+                opposition='尚需构造该业务的最强替代解释。',verification='核验业务分类、原始披露及关键经营指标。',refs=['cfa'])
         model=v['models'][-1] if v['models'] else None
         conclusion=v['conclusions'][-1] if v['conclusions'] else None
         review=v['reviews'][-1] if v['reviews'] else None
@@ -74,7 +101,7 @@ class Platform:
                   for key,text in industry['channels']]
         context=digest(dict(industry=industry,market=[dict(id=m['id'],date=m['date'],value=m['value'],
                        snapshot=m.get('provenance')) for m in market_entries]))
-        return dict(company=v['company'],industry=industry,sections=INDUSTRIES['report_sections'],
+        result=dict(company=v['company'],industry=industry,sections=INDUSTRIES['report_sections'],
                     hypothesis=v['hypothesis'],financials=list(financials.values()),
                     evidence=dict(documents=len(v['documents']),verified=v['quality']['verified'],
                                   candidates=v['quality']['candidates'],conflicts=len(v['quality']['conflicts'])),
@@ -92,3 +119,4 @@ class Platform:
                         dict(step='反方与报告',result='有分步复核记录，尚未经独立专业语义审查' if review else '尚无复核记录；先检查最强替代解释与推翻条件',tab='review')],
                     revision=v['revision'],context_digest=context,generated_at=now(),
                     context_note='行业与市场背景按本次读取组合展示；不会自动重算旧模型或改写已发布结论。报告是研究草案，旧结论版本和依赖状态保留。')
+        return result,v

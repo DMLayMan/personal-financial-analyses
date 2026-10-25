@@ -22,7 +22,7 @@ def backup(destination, db_path=ROOT/"data/pfa.sqlite3"):
         database=Store(db_path).backup(Path(temp)/"pfa.sqlite3")
         manifest={"created_at":now(),"version":__version__,"files":{}}
         files=[(database,"data/pfa.sqlite3")]
-        for directory in ('data/raw','data/market/raw'):
+        for directory in ('data/raw','data/market/raw','data/information/raw'):
             for path in (ROOT/directory).rglob('*'):
                 if path.is_file() and path.suffix.lower() in ('.pdf','.html','.json','.txt'):
                     files.append((path,str(path.relative_to(ROOT))))

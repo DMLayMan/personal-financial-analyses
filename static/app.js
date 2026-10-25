@@ -12,6 +12,10 @@ const state = {
   markets: null,
   industries: null,
   report: null,
+  knowledge: null,
+  information: null,
+  knowledgeEdit: null,
+  informationLink: null,
   companies: [],
   id: null,
   view: null,
@@ -95,16 +99,25 @@ async function refresh() {
   const b = await api("/api/bootstrap");
   state.csrf = b.csrf;
   state.companies = b.companies;
-  [state.platform, state.markets, state.industries] = await Promise.all([
+  [
+    state.platform,
+    state.markets,
+    state.industries,
+    state.knowledge,
+    state.information,
+  ] = await Promise.all([
     api("/api/platform"),
     api("/api/markets"),
     api("/api/industries"),
+    api("/api/knowledge"),
+    api("/api/information"),
   ]);
   renderNav();
   if (state.id) await loadCompany(state.id);
   else renderHome();
 }
 function renderNav() {
+  $("#company-shortcuts").hidden = state.pageName !== "cases";
   const names = {
     msft: "微软",
     cost: "Costco",
@@ -401,6 +414,7 @@ document.addEventListener("click", async (e) => {
   const b = e.target.closest("button");
   if (!b) return;
   try {
+    if (await handleEvolutionClick(b)) return;
     if (await handleWorkspaceClick(b)) return;
     if (b.dataset.company) {
       state.tab = "report";
@@ -484,6 +498,15 @@ document.addEventListener("input", (e) => {
 document.addEventListener("submit", async (e) => {
   const form = e.target;
   if (!form.dataset.form) return;
+  if (
+    ["knowledge", "report-snapshot", "information-link"].includes(
+      form.dataset.form,
+    )
+  ) {
+    e.preventDefault();
+    await submitEvolution(form);
+    return;
+  }
   e.preventDefault();
   const data = Object.fromEntries(new FormData(form));
   if (form.dataset.form === "model") {

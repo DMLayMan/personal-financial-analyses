@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "0.4.0",
+  "version": "0.5.0",
   "as_of": "2026-10-25",
   "allowed_use": "local_evidence_and_illustrative_scenarios",
   "research_decision_ready": false,
@@ -377,7 +377,7 @@
         "test_workspace_api.WorkspaceAPI.test_three_layers_reports_and_whitelisted_documents"
       ],
       "method_review": "本轮实现结构与公开数据示例；研究和预测有效性仍未验证",
-      "acceptance": "三层均可独立进入；平台方法、审查判定、未完成能力有来源",
+      "acceptance": "三层主导航在桌面和窄屏均固定左侧；方法、审查和未完成能力有来源",
       "next_work": "将真实工作流版本与知识更新关联",
       "references": [
         "Q1",
@@ -396,7 +396,12 @@
         "缺失数据被误称实时覆盖",
         "计划中的Agent/模型被说成已运行"
       ],
-      "permitted_use": "本地方法、公开数据观察与研究草稿"
+      "permitted_use": "本地方法、公开数据观察与研究草稿",
+      "browser_acceptance": [
+        "662px三层入口左侧纵排",
+        "公司报告仍可进入",
+        "主区无页面级横向溢出"
+      ]
     },
     {
       "id": "F14",
@@ -513,6 +518,120 @@
         "公司原页按钮跳到相应PDF页",
         "旧结论和示例状态保留"
       ]
+    },
+    {
+      "id": "F17",
+      "name": "知识方法的版本与适用范围",
+      "status": "partial",
+      "decision": "长期增加、修订、停用研究知识并追踪采用版本",
+      "inputs": "来源、适用对象、方法、失效条件和变更理由",
+      "output": "可增修知识条目、版本历史及报告方法引用",
+      "implementation_paths": [
+        "pfa/knowledge.py",
+        "static/evolution.js",
+        "docs/report-product-design.md"
+      ],
+      "automated_tests": [
+        "test_evolution.KnowledgeContract.test_revision_preserves_history_and_requires_reason",
+        "test_evolution.KnowledgeContract.test_draft_does_not_replace_adopted_method"
+      ],
+      "acceptance": "知识纳入不冒充独立方法验证；草案不覆盖已采用版本",
+      "next_work": "更多行业结构化驱动、专业裁定和迁移",
+      "failure_modes": [
+        "用版式和字数代替金融判断",
+        "新方法/事件/市场变化无版本提醒",
+        "人工纳入即宣称研究方法已验证",
+        "一次取数被当作持续实时覆盖"
+      ],
+      "method_review": "证据观察与版本控制；行业预测、语义质量和前瞻效果未验证",
+      "references": [
+        "Q1",
+        "Q10",
+        "Q15"
+      ],
+      "research_decision_ready": false,
+      "permitted_use": "本地知识迭代、信息线索、证据研究与报告草案"
+    },
+    {
+      "id": "F18",
+      "name": "公开信息流与接入状态",
+      "status": "partial",
+      "decision": "判断是否出现需检查的公告/政策变化，并明确实时覆盖缺口",
+      "inputs": "Fed官方RSS、SEC选定公司提交记录、公开行情状态",
+      "output": "可刷新信息流、来源健康、相关事件登记与时效说明",
+      "implementation_paths": [
+        "pfa/information.py",
+        "static/evolution.js",
+        "docs/report-product-design.md"
+      ],
+      "automated_tests": [
+        "test_information.InformationContract.test_duplicates_and_future_items_are_controlled",
+        "test_information.InformationContract.test_feed_metadata_is_not_verified_financial_fact",
+        "test_information.InformationContract.test_company_source_worker_does_not_consume_information_jobs",
+        "test_information.InformationContract.test_wrong_filer_identity_and_external_feed_links_are_rejected",
+        "test_information.InformationContract.test_tampered_information_raw_is_marked_unavailable",
+        "test_information.InformationContract.test_global_timeline_limit_does_not_hide_company_filings"
+      ],
+      "acceptance": "来源上游发布频率与应用刷新频率分开；取到标题不等于读懂公告",
+      "next_work": "港A公告稳定接入、事件相关性、授权实时源与持续更新",
+      "failure_modes": [
+        "用版式和字数代替金融判断",
+        "新方法/事件/市场变化无版本提醒",
+        "人工纳入即宣称研究方法已验证",
+        "一次取数被当作持续实时覆盖"
+      ],
+      "method_review": "证据观察与版本控制；行业预测、语义质量和前瞻效果未验证",
+      "references": [
+        "Q1",
+        "Q10",
+        "Q15"
+      ],
+      "research_decision_ready": false,
+      "permitted_use": "本地知识迭代、信息线索、证据研究与报告草案"
+    },
+    {
+      "id": "F19",
+      "name": "证据链报告与版本依赖",
+      "status": "partial",
+      "decision": "将方法、财务观察、事件和市场背景组成可审查的研究产出",
+      "inputs": "适用历史实际、同行业方法版本、当前市场快照、事件、模型和反方",
+      "output": "判断链、预测估值门槛、研究快照、改版原因和更新提示",
+      "implementation_paths": [
+        "pfa/reports.py",
+        "static/evolution.js",
+        "docs/report-product-design.md",
+        "pfa/report_document.py"
+      ],
+      "automated_tests": [
+        "test_evolution.ReportContract.test_market_change_marks_saved_report_for_review",
+        "test_evolution.ReportContract.test_same_observation_refetch_does_not_change_economic_dependencies",
+        "test_evolution.ReportContract.test_method_revision_and_new_event_require_report_review",
+        "test_evolution.ReportContract.test_missing_model_never_becomes_an_investment_rating",
+        "test_evolution.ReportContract.test_stale_dependency_snapshot_is_rejected",
+        "test_evolution.ReportContract.test_cash_signal_is_traceable_and_does_not_become_a_positive_thesis",
+        "test_evolution.ReportContract.test_readable_report_escapes_untrusted_content",
+        "test_evolution.ReportContract.test_unmapped_new_issuer_exposes_template_gap",
+        "test_evolution.ReportContract.test_platform_reference_is_not_presented_as_company_valuation_method",
+        "test_workspace_api.WorkspaceAPI.test_knowledge_and_report_snapshot_roundtrip_with_frozen_document",
+        "test_workspace_api.WorkspaceAPI.test_new_mutations_keep_local_token_protection",
+        "test_evolution.ReportContract.test_prior_market_revision_is_a_report_change"
+      ],
+      "acceptance": "每项量化观察可追事实和公式，缺暴露不编利润变化；新报告不升级示例估值",
+      "next_work": "逐公司实际到预测、资本融资约束、预期差与独立专业复核",
+      "failure_modes": [
+        "用版式和字数代替金融判断",
+        "新方法/事件/市场变化无版本提醒",
+        "人工纳入即宣称研究方法已验证",
+        "一次取数被当作持续实时覆盖"
+      ],
+      "method_review": "证据观察与版本控制；行业预测、语义质量和前瞻效果未验证",
+      "references": [
+        "Q1",
+        "Q10",
+        "Q15"
+      ],
+      "research_decision_ready": false,
+      "permitted_use": "本地知识迭代、信息线索、证据研究与报告草案"
     }
   ]
 }
