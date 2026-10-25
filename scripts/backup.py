@@ -11,6 +11,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from pfa.store import Store, now
+from pfa import __version__
 
 
 def backup(destination, db_path=ROOT/"data/pfa.sqlite3"):
@@ -19,11 +20,12 @@ def backup(destination, db_path=ROOT/"data/pfa.sqlite3"):
     destination.parent.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory() as temp:
         database=Store(db_path).backup(Path(temp)/"pfa.sqlite3")
-        manifest={"created_at":now(),"version":"0.2.0","files":{}}
+        manifest={"created_at":now(),"version":__version__,"files":{}}
         files=[(database,"data/pfa.sqlite3")]
-        for path in (ROOT/"data/raw").rglob('*'):
-            if path.is_file() and path.suffix.lower() in ('.pdf','.html','.json','.txt'):
-                files.append((path,str(path.relative_to(ROOT))))
+        for directory in ('data/raw','data/market/raw'):
+            for path in (ROOT/directory).rglob('*'):
+                if path.is_file() and path.suffix.lower() in ('.pdf','.html','.json','.txt'):
+                    files.append((path,str(path.relative_to(ROOT))))
         with zipfile.ZipFile(destination,'w',zipfile.ZIP_DEFLATED) as archive:
             for path,name in files:
                 manifest['files'][name]=hashlib.sha256(path.read_bytes()).hexdigest()

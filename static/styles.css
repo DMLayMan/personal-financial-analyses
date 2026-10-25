@@ -898,3 +898,452 @@ pre {
     grid-template-columns: 1fr;
   }
 }
+/* Three first-class research layers, with the company workflow beneath them. */
+.axis-nav {
+  display: grid;
+  gap: 5px;
+  margin: 12px 0 20px;
+}
+.axis-nav .nav-item {
+  gap: 12px;
+  padding: 11px 10px;
+  text-align: left;
+}
+.axis-nav small {
+  display: block;
+  font-size: 10px;
+  font-weight: 400;
+  opacity: 0.65;
+  margin-top: 2px;
+}
+.axis-number {
+  font:
+    11px ui-monospace,
+    monospace;
+  opacity: 0.55;
+}
+.axis-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.axis-card {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: flex-start;
+  padding: 22px;
+  gap: 10px;
+  background: var(--paper);
+  min-height: 180px;
+  border-top: 3px solid var(--green);
+}
+.axis-card strong {
+  font-size: 21px;
+  line-height: 1.4;
+}
+.axis-card > span:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 12px;
+}
+.axis-card b {
+  font-size: 12px;
+  color: var(--green);
+  margin-top: auto;
+}
+.workflow-strip {
+  padding: 0;
+  margin: 24px 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  list-style: none;
+}
+.workflow-strip li {
+  border-left: 2px solid #b1c7b3;
+  padding: 8px 12px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.workflow-strip span,
+.step-id {
+  color: var(--green);
+  font:
+    12px ui-monospace,
+    monospace;
+}
+.workflow-strip strong {
+  font-size: 13px;
+}
+.workflow-strip small {
+  color: var(--muted);
+  font-size: 11px;
+}
+.workflow-step {
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  border-top: 1px solid var(--line);
+  padding: 18px 0;
+}
+.workflow-step h3,
+.knowledge-layers h3 {
+  margin: 0;
+}
+.workflow-step p {
+  margin: 5px 0;
+}
+.reference-list {
+  font-size: 11px;
+  line-height: 2;
+}
+.button-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.knowledge-layers {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.knowledge-layers .card,
+.roadmap .card {
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  gap: 10px;
+}
+.document-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.document-grid button {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 15px;
+  overflow-wrap: anywhere;
+}
+.reference-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 24px;
+}
+.reference-cards article {
+  border-top: 1px solid var(--line);
+  padding: 12px 0;
+}
+.reference-cards h3 {
+  font-size: 14px;
+  margin: 0;
+}
+.reference-cards p {
+  font-size: 12px;
+  color: var(--muted);
+}
+.library-text {
+  white-space: pre-wrap;
+  font:
+    13px/1.9 -apple-system,
+    BlinkMacSystemFont,
+    "PingFang SC",
+    sans-serif;
+  overflow-wrap: anywhere;
+  padding: 8px 0 20px;
+}
+#library-dialog {
+  width: min(1000px, 94vw);
+  max-height: 90vh;
+}
+.finding {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+}
+.finding b {
+  font:
+    12px ui-monospace,
+    monospace;
+  color: var(--green);
+}
+.review-levels,
+.workflow-application {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+.review-levels article {
+  border-left: 2px solid var(--line);
+  padding-left: 12px;
+}
+.review-levels small,
+.review-levels p,
+.workflow-application p {
+  color: var(--muted);
+  font-size: 12px;
+}
+.roadmap {
+  display: grid;
+  gap: 15px;
+}
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.filter-row button {
+  font-size: 12px;
+  padding: 6px 12px;
+}
+.filter-row .selected {
+  border-color: var(--green);
+  background: var(--pale);
+  color: var(--green);
+}
+.board-tools {
+  display: grid;
+  gap: 12px;
+}
+.market-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+.market-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 19px;
+}
+.market-card h3 {
+  font-size: 14px;
+  margin: 0;
+}
+.market-number {
+  font:
+    26px/1.5 ui-monospace,
+    SFMono-Regular,
+    monospace;
+  margin-top: 17px;
+  letter-spacing: -0.7px;
+  overflow-wrap: anywhere;
+}
+.market-number small {
+  font:
+    10px/1.3 -apple-system,
+    sans-serif;
+  color: var(--muted);
+  margin-left: 8px;
+  letter-spacing: 0;
+}
+.market-change {
+  font:
+    12px/1.8 ui-monospace,
+    monospace;
+  color: var(--muted);
+}
+.market-change.attention {
+  color: var(--amber);
+}
+.sparkline {
+  display: block;
+  width: 100%;
+  height: 65px;
+  color: var(--green);
+  margin: 12px 0;
+}
+.spark-empty {
+  height: 89px;
+  display: flex;
+  align-items: center;
+  color: var(--muted);
+  font-size: 11px;
+}
+.market-card details {
+  margin-top: 15px;
+  font-size: 12px;
+}
+.market-card details p {
+  font-size: 12px;
+}
+.channel-button {
+  margin-top: 15px;
+  align-self: flex-start;
+}
+.source-failure {
+  font-size: 11px;
+  color: var(--red);
+  overflow-wrap: anywhere;
+}
+.transmission-panel {
+  border-left: 3px solid var(--green);
+  scroll-margin-top: 20px;
+}
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.industry-card {
+  min-width: 0;
+}
+.industry-card .question {
+  min-height: 55px;
+}
+.kpi-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.kpi-tags .tag {
+  white-space: normal;
+}
+.macro-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding-top: 17px;
+}
+.macro-chips button {
+  font-size: 10px;
+}
+.industry-company {
+  border-top: 1px solid var(--line);
+  margin-top: 18px;
+  padding-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.industry-company .tag {
+  margin-top: 8px;
+}
+.industry-company button {
+  font-size: 12px;
+}
+.report-contract {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.report-contract b {
+  color: var(--green);
+  font:
+    11px ui-monospace,
+    monospace;
+  margin-right: 8px;
+}
+.report-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.macro-report {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  padding: 15px 0;
+}
+.macro-report p {
+  margin: 5px 0;
+}
+.workflow-application article {
+  display: flex;
+  flex-direction: column;
+}
+.workflow-application button {
+  align-self: flex-start;
+  margin-top: auto;
+}
+@media (min-width: 1600px) {
+  .market-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (max-width: 1200px) {
+  .axis-cards {
+    gap: 10px;
+  }
+  .axis-card {
+    padding: 16px;
+  }
+  .axis-card strong {
+    font-size: 18px;
+  }
+  .market-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .review-levels,
+  .workflow-application {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  #home {
+    display: flex;
+  }
+  .axis-nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-bottom: 0;
+    gap: 4px;
+  }
+  .axis-nav .nav-item {
+    padding: 10px 5px;
+    font-size: 11px;
+    justify-content: center;
+    gap: 5px;
+  }
+  .axis-nav small {
+    display: none;
+  }
+  .axis-number {
+    font-size: 9px;
+  }
+  .axis-cards,
+  .industry-grid,
+  .document-grid,
+  .reference-cards {
+    grid-template-columns: 1fr;
+  }
+  .axis-card {
+    min-height: 140px;
+  }
+  .axis-card strong {
+    font-size: 21px;
+  }
+  .workflow-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .market-grid {
+    grid-template-columns: 1fr;
+  }
+  .market-number {
+    font-size: 30px;
+  }
+  .macro-report {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .report-contract {
+    grid-template-columns: 1fr;
+  }
+  .report-toolbar {
+    flex-wrap: wrap;
+  }
+  .review-levels,
+  .workflow-application {
+    grid-template-columns: 1fr;
+  }
+  .industry-card .question {
+    min-height: 0;
+  }
+}

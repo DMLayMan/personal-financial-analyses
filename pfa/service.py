@@ -110,7 +110,7 @@ def stop():
 
 def doctor(port=8765):
     checks = []
-    for route in ("/api/healthz", "/", "/app.js", "/api/bootstrap", "/api/companies/catl"):
+    for route in ("/api/healthz", "/", "/app.js", "/workspace.js", "/api/bootstrap", "/api/platform", "/api/markets", "/api/industries", "/api/reports/catl", "/api/companies/catl"):
         try:
             with urlopen(f"http://127.0.0.1:{port}{route}", timeout=5) as response:
                 body = response.read()

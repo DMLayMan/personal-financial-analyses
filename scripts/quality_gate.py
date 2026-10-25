@@ -22,6 +22,7 @@ def source_manifest():
         paths.extend(p for p in (ROOT/directory).rglob('*') if p.is_file()
                      and p.suffix in ('.py','.sh','.html','.js','.css'))
     paths += [ROOT/'fixtures/companies.json',ROOT/'requirements.txt',ROOT/'quality/features.json']
+    paths += list((ROOT/'knowledge').glob('*.json'))
     return {str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(paths)}
 
 

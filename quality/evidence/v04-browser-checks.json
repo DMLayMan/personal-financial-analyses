@@ -1,0 +1,372 @@
+{
+  "run_at": "2026-10-25T06:40:04.917Z",
+  "url": "http://127.0.0.1:8765/",
+  "viewport": {
+    "height": 893,
+    "scrollWidth": 662,
+    "width": 662
+  },
+  "scope": "本地开发样本与当前662px视口，非跨设备或独立金融质量认证",
+  "issues": [
+    {
+      "description": "三处预期文案断言修正，保留原记录",
+      "resolution": "随后按实际页面状态重查通过"
+    },
+    {
+      "description": "报告PDF第93页按钮实际打开第1页",
+      "resolution": "增加原页参数后回查第93/232页通过"
+    }
+  ],
+  "checks": [
+    {
+      "action": "Agent策略",
+      "expected": [
+        "当前执行状态",
+        "没有运行中的独立AI分析团队",
+        "宏观与行业传导"
+      ],
+      "passed": true
+    },
+    {
+      "action": "知识与文档",
+      "expected": [
+        "可打开的项目文档",
+        "理论、历史与建设参考"
+      ],
+      "passed": true
+    },
+    {
+      "action": "三层平台方案 docs/three-layer-architecture.md",
+      "expected": [
+        "三层平台与研究体系方案",
+        "F13"
+      ],
+      "passed": true
+    },
+    {
+      "action": "关闭文档",
+      "expected": [
+        "知识与文档"
+      ],
+      "passed": true
+    },
+    {
+      "action": "审查与验证",
+      "expected": [
+        "不能混用的四个通过条件",
+        "研究效果",
+        "F16"
+      ],
+      "passed": true
+    },
+    {
+      "action": "建设与扩展",
+      "expected": [
+        "逐公司经营到预测桥",
+        "每次扩展，先写清如何验收"
+      ],
+      "passed": true
+    },
+    {
+      "action": "02 市场与信息看板",
+      "expected": [
+        "大盘与关键变量",
+        "标普500",
+        "沪深300",
+        "人工页面转录序列"
+      ],
+      "passed": true
+    },
+    {
+      "action": "利率与流动性",
+      "expected": [
+        "美国10年国债收益率",
+        "-17.00 bp",
+        "美债10年−2年",
+        "未取得序列"
+      ],
+      "passed": false,
+      "note": "预期文案应为来源目录·待接入；实际未提供虚假数值，修正断言后重查。"
+    },
+    {
+      "action": "利率与流动性",
+      "expected": [
+        "-17.00 bp",
+        "31 bp",
+        "来源目录 · 待接入",
+        "最近获取失败"
+      ],
+      "passed": true
+    },
+    {
+      "action": "美国10年→行业传导",
+      "passed": true
+    },
+    {
+      "action": "信息源与覆盖",
+      "expected": [
+        "核心来源地图",
+        "本次序列状态",
+        "看板序列的真实可得性"
+      ],
+      "passed": false,
+      "note": "来源说明文案为“见序列状态”，修正断言；来源地图和序列表均已出现。"
+    },
+    {
+      "action": "刷新",
+      "expected": [
+        "核心来源地图",
+        "看板序列的真实可得性"
+      ],
+      "passed": true
+    },
+    {
+      "action": "信息源与覆盖",
+      "expected": [
+        "序列状态",
+        "未取得",
+        "核心来源地图"
+      ],
+      "passed": true
+    },
+    {
+      "action": "大盘与关键变量",
+      "expected": [
+        "美国10年国债收益率",
+        "-17.00 bp"
+      ],
+      "passed": true
+    },
+    {
+      "action": "获取最新公开快照",
+      "expected": [
+        "正在获取公开序列",
+        "读取任务状态"
+      ],
+      "passed": true
+    },
+    {
+      "action": "03 行业与公司研究",
+      "expected": [
+        "软件与云服务",
+        "会员制零售",
+        "新能源汽车",
+        "商业银行"
+      ],
+      "passed": true
+    },
+    {
+      "action": "制造与能源转型",
+      "expected": [
+        "新能源汽车",
+        "动力与储能电池",
+        "资金缺口与稀释"
+      ],
+      "passed": true
+    },
+    {
+      "action": "宁德时代 CN/HK · CNY",
+      "expected": [
+        "研究报告",
+        "行业与业务机制",
+        "单季经营现金流显著下降",
+        "旧结论待更新",
+        "可信度按层表达"
+      ],
+      "passed": false,
+      "note": "待更新状态实际写作“旧结论已标记待更新”，原断言少字；后续以该实际状态复查。"
+    },
+    {
+      "action": "PDF第93页 ↗",
+      "expected": [
+        "第 93 /"
+      ],
+      "passed": false
+    },
+    {
+      "action": "关闭原文",
+      "expected": [],
+      "passed": true
+    },
+    {
+      "action": "宁德时代 CN/HK · CNY",
+      "expected": [
+        "研究报告",
+        "行业与业务机制",
+        "研究方法依据",
+        "旧结论已标记待更新",
+        "可信度按层表达"
+      ],
+      "passed": true
+    },
+    {
+      "action": "PDF第93页 ↗",
+      "expected": [
+        "第 93 / 232"
+      ],
+      "passed": true
+    },
+    {
+      "action": "关闭原文",
+      "expected": [
+        "研究报告"
+      ],
+      "passed": true
+    },
+    {
+      "action": "微软 US · USD",
+      "expected": [
+        "软件与云服务",
+        "客户/工作负载",
+        "研究方法依据"
+      ],
+      "passed": true
+    },
+    {
+      "action": "Costco US · USD",
+      "expected": [
+        "会员制零售",
+        "递延收入",
+        "可信度按层表达"
+      ],
+      "passed": true
+    },
+    {
+      "action": "腾讯 HK · CNY",
+      "expected": [
+        "平台与数字消费",
+        "报告FCF",
+        "反方与联合压力"
+      ],
+      "passed": true
+    },
+    {
+      "action": "比亚迪 CN/HK · CNY",
+      "expected": [
+        "新能源汽车",
+        "融资",
+        "行业与业务机制"
+      ],
+      "passed": true
+    },
+    {
+      "action": "招商银行 CN/HK · CNY",
+      "expected": [
+        "商业银行",
+        "CET1",
+        "银行普通股剩余收益示例"
+      ],
+      "passed": true
+    },
+    {
+      "action": "02 市场与信息看板",
+      "expected": [
+        "大盘与关键变量"
+      ],
+      "passed": true
+    },
+    {
+      "action": "读取任务状态 ↻",
+      "expected": [
+        "最近任务：succeeded"
+      ],
+      "passed": true
+    },
+    {
+      "action": "市场页面662px布局",
+      "passed": true,
+      "details": {
+        "headings": [
+          "标普500",
+          "纳斯达克综合",
+          "恒生指数",
+          "恒生科技",
+          "上证综指",
+          "沪深300",
+          "美国10年国债收益率",
+          "美国2年国债收益率",
+          "美国高收益信用利差",
+          "美债10年−2年",
+          "VIX波动率指数",
+          "美元兑人民币",
+          "Brent近月期货",
+          "Brent现货参考",
+          "中国10年国债收益率",
+          "DR007银行间资金利率",
+          "LPR贷款市场报价利率",
+          "香港HIBOR与港元流动性",
+          "美国CPI与核心通胀",
+          "美国就业与工资",
+          "中国PMI/物价/工业",
+          "社融/信贷与货币",
+          "中国地产与消费",
+          "锂价与电池供需",
+          "市场宽度/成交/资金流"
+        ],
+        "scrollWidth": 662,
+        "width": 662
+      }
+    },
+    {
+      "action": "利率与流动性",
+      "expected": [
+        "-17.00 bp",
+        "31 bp",
+        "公开延迟快照"
+      ],
+      "passed": true
+    },
+    {
+      "action": "01 平台与研究基础",
+      "expected": [
+        "平台与研究基础"
+      ],
+      "passed": true
+    },
+    {
+      "action": "理论与工作流",
+      "expected": [
+        "巴菲特",
+        "芒格",
+        "何时需要更多数据，何时停止"
+      ],
+      "passed": true
+    },
+    {
+      "action": "刷新",
+      "expected": [
+        "企业经济性"
+      ],
+      "passed": true
+    },
+    {
+      "action": "审查与验证",
+      "expected": [
+        "报告摘要与当前文件匹配",
+        "研究效果",
+        "尚未通过独立语义评价"
+      ],
+      "passed": true
+    },
+    {
+      "action": "平台基础662px布局",
+      "passed": true,
+      "details": {
+        "height": 893,
+        "scrollWidth": 662,
+        "width": 662
+      }
+    },
+    {
+      "action": "平台总览",
+      "expected": [
+        "从研究问题，到可追查的判断链",
+        "当前核心审查结论"
+      ],
+      "passed": true
+    }
+  ],
+  "kernel_digest": "54e01d414eda83131091d68c3b8be9465daf001303e45bf50dd5580cae059395",
+  "functional_evidence": "quality/latest-functional.json",
+  "final_scope": "代表性操作修正后通过；先前断言修订和已修复错页记录均保留，不计作预测效果"
+}

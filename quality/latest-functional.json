@@ -1,35 +1,45 @@
 {
-  "run_at": "2026-10-25T05:07:27.790090+00:00",
+  "run_at": "2026-10-25T06:35:45.931265+00:00",
   "command": "scripts/quality_gate.py --live",
-  "tested_base_commit": "edfda4910351d0197b906133b7bacde7013bd25b",
+  "tested_base_commit": "49c2926ba5231d809421cde083d40c05be13c8da",
   "working_tree_dirty": true,
   "python": "3.12.14",
   "source_manifest": {
     "fixtures/companies.json": "d56c84c7859cc3bb960e24cb9a203f91e0826d3b0655442c8d29e426fc8f7822",
-    "pfa/__init__.py": "1d672107aaecf75c362eefb527fa3dc6579679fd0bb48728d34c5a38e619405d",
-    "pfa/assurance.py": "36ccef18afc4499e724ee1bf9b6d25b95cd9175a39b81fd99c18221e3dcbf886",
+    "knowledge/industries.json": "2964a5a4e42e8e371f74e5226846e9bc5aa4a08189b05df290081c9c81ec323f",
+    "knowledge/market-catalog.json": "9b23f3da92357d363d65d08d80ba9b385155a807667a85f78d6cfae2d8626908",
+    "knowledge/platform.json": "69993f64bcaff729a4c7b1433409cff1d142f11dfe2d298901408c5b5b6555f9",
+    "pfa/__init__.py": "8a1747093787a8cf03587e1a875bf5e9d32dd12386600b65c70959a5e7296735",
+    "pfa/assurance.py": "4bf289e88cb93debb5c56b591ffa9247d40f02535b605ccbbf44a294c5b55dd8",
+    "pfa/markets.py": "87698fd42cf5e030731c72ced13e2cf62fda5e640e265f867c0550e5c77fd0cd",
     "pfa/models.py": "8ff2a20748d688114847d93a527d8ba8405ff29d128a360582c443b78b4239b1",
     "pfa/monitoring.py": "8ecd727e1b1d37491c53160d13cbb52d1c3dbb4bf3ee197be8a37b84b8addb71",
+    "pfa/platform.py": "a466e9d1ad6d32d349ea4a5d4e0904edbe670c2efd726f0ed49d16fb36bbbe78",
     "pfa/research.py": "0617cf41381c7501ed9a0dd80735b991e7b851bbec0a3b91c52692086f8de2ab",
-    "pfa/server.py": "7f9f69e66b6cc93306e5279910a0756d57c5c2fc0f5b3fab790bdc3ebf63d1a4",
-    "pfa/service.py": "430ac1334ed3007b2fe2293f08f43bcf15ac5e56fccdf83d687b52aa4fca62a5",
-    "pfa/sources.py": "1d7597e953b69d5f04b135017e6ad9fc32b0bccf0ac165236153414be276c0d5",
+    "pfa/server.py": "d959a1e4297cb0b037abc61485e42e9984cc24c36c6d735976db1a7532cfb53b",
+    "pfa/service.py": "12c58b8e8f20f3ca4c77b5e90f90891168ebc36be9a0fa557d977df130122f52",
+    "pfa/sources.py": "6f06e8beeb5d0fe7216d3ce8ad25ce017b70fdc080d09a8d067c3c39180fdc40",
     "pfa/store.py": "c46c4904438c93e379096bd5cb04291b4534777eabe175d22d7eacba52766377",
-    "quality/features.json": "76806e52b58ec08d23edac47bcb21f8b00cc4ac0bb1909daab10a36ee8b75adc",
+    "quality/features.json": "75fff285fd1a713d7ade9a2fe6929ba7f99d331182a9a55b1ad2163c40bfa451",
     "requirements.txt": "0d54aed8d581d3122fbb3c27f179280bac42f768567876dff9939543217b26aa",
-    "scripts/backup.py": "94a46200c5f3cecaa858075286f7920fd2c8f1ba7f977b5cc01598d75ef4c5d6",
-    "scripts/quality_gate.py": "22bae4c5b0646a01e12574c560805563789c7b0abbc4a236812916f4ad977163",
+    "scripts/backup.py": "84803400cc7570b16a9bb1d3ed742fbaf10070ea1216715ebf92a20c0d1b1bb9",
+    "scripts/quality_gate.py": "7c46af098d483765217693cbb5944cf41e81184fa3f5fae147647098ae909b51",
+    "scripts/refresh_markets.py": "f6de50536a3f1799215e370d07a66dc4c21012abd0af9e1507b029bd15c00f78",
     "scripts/start.sh": "1c2d01768cf1e48e140f2619b693147fcf9274ef4a5436870151ca7513ac2770",
     "scripts/validate.py": "ffd9f5233f5ac62394153a0fdc8029184fe674fda2870b33e58560f091f24a91",
-    "static/app.js": "2262a35f5d02420f08d80f83c78e27d5b967c3a741cc7e87e8c026659a501f49",
-    "static/index.html": "e1168d0cc74188b9875bbd3c6c850cc8587c8e3e50968165cc839831b4038b9a",
-    "static/styles.css": "7bda3291a7cd65ace2f0c07b2aa62e9646c4e561ae517271de85215de6308afe",
+    "static/app.js": "55efb6b06ab1ead210b5a050db2fee5db2b4d2cbaa36b690a41c0752ac56978d",
+    "static/index.html": "e322ff344a17f5eb275852c44a568a21b65bff3a1a014577c1c1fde37ed1995b",
+    "static/styles.css": "23c0792581f1e308118d81afaf3c54ea0fb21061481063ec52a8fe8b791c9340",
+    "static/workspace.js": "7689b09bc024834f57e508d9d4db3750bbe0bf9c2d38498f725a816fae707952",
     "tests/test_audit_controls.py": "a14cbfa9e903d88ade00e3e9f90588da26f1b2cd820a491a7386ab0ce83240ae",
+    "tests/test_markets.py": "ccd8f20c3580f65b28ae3ab9dec354c047392b9873bd97d7bf20ba0358e90407",
+    "tests/test_platform.py": "269435be8aef00c1f90c9f23b9ec743a510638fd80b98a0ea439114d45a9cf8d",
     "tests/test_release_controls.py": "ebd501c3468a261afc25a6b3fd6a004c7dfdb32d25b9a335338ebf4a5555d0a8",
-    "tests/test_research.py": "b946f9abf4dc015a64913e883557acdb59a28cae60fc32255ea391fb5c03cd25"
+    "tests/test_research.py": "b946f9abf4dc015a64913e883557acdb59a28cae60fc32255ea391fb5c03cd25",
+    "tests/test_workspace_api.py": "b017c5b232148ed8acc564bb407fabbe312d5f280edc1802a8884cd785d62783"
   },
-  "kernel_digest": "1d805126cecc48b635dc3b4e2b84841fa78e9749b6620edf15827f3e7ffb59d2",
-  "tests_run": 40,
+  "kernel_digest": "54e01d414eda83131091d68c3b8be9465daf001303e45bf50dd5580cae059395",
+  "tests_run": 60,
   "test_results": [
     {
       "test": "test_audit_controls.AuditControls.test_annual_growth_requires_matching_accounting_basis",
@@ -57,6 +67,78 @@
     },
     {
       "test": "test_audit_controls.AuditControls.test_validation_fails_required_output_when_raw_hashes_pass",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_curve_uses_common_dates_and_preserves_input_dates",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_failed_refresh_preserves_old_snapshot_and_labels_it",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_fred_csv_blank_is_missing_not_a_source_outage",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_future_quotes_and_missing_closes_are_not_prices",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_invalid_numeric_response_is_preserved_as_failure_evidence",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_macro_refresh_does_not_enter_company_source_queue",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_market_raw_payload_is_included_in_backup_and_restore",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_missing_values_not_forward_filled",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_rate_changes_use_basis_points",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_tampered_snapshot_is_quarantined",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_threshold_is_review_condition_not_company_direction",
+      "result": "passed"
+    },
+    {
+      "test": "test_markets.MarketLogic.test_wrong_symbol_response_is_rejected",
+      "result": "passed"
+    },
+    {
+      "test": "test_platform.PlatformContract.test_each_case_has_industry_driver_and_report_contract",
+      "result": "passed"
+    },
+    {
+      "test": "test_platform.PlatformContract.test_planned_agent_capabilities_not_claimed_running",
+      "result": "passed"
+    },
+    {
+      "test": "test_platform.PlatformContract.test_report_preserves_stale_and_unvalidated_states",
+      "result": "passed"
+    },
+    {
+      "test": "test_platform.PlatformContract.test_sources_and_method_references_are_traceable",
+      "result": "passed"
+    },
+    {
+      "test": "test_platform.PlatformContract.test_three_axes_are_first_class",
+      "result": "passed"
+    },
+    {
+      "test": "test_platform.PlatformContract.test_verified_management_claim_is_not_reported_as_historical_actual",
       "result": "passed"
     },
     {
@@ -190,6 +272,14 @@
     {
       "test": "test_research.ResearchCase.test_wrong_money_unit_rejected",
       "result": "passed"
+    },
+    {
+      "test": "test_workspace_api.WorkspaceAPI.test_market_refresh_requires_token_and_deduplicates",
+      "result": "passed"
+    },
+    {
+      "test": "test_workspace_api.WorkspaceAPI.test_three_layers_reports_and_whitelisted_documents",
+      "result": "passed"
     }
   ],
   "feature_checks": [
@@ -288,6 +378,38 @@
       "missing_test_ids": [],
       "research_decision_ready": false,
       "method_review": "尚无前瞻结果，禁止从六家流程或历史解释推投资绩效"
+    },
+    {
+      "id": "F13",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "本轮实现结构与公开数据示例；研究和预测有效性仍未验证"
+    },
+    {
+      "id": "F14",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "本轮实现结构与公开数据示例；研究和预测有效性仍未验证"
+    },
+    {
+      "id": "F15",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "本轮实现结构与公开数据示例；研究和预测有效性仍未验证"
+    },
+    {
+      "id": "F16",
+      "implementation_status": "partial",
+      "functional_checks": "passed",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "本轮实现结构与公开数据示例；研究和预测有效性仍未验证"
     }
   ],
   "source_checks": [
@@ -368,7 +490,27 @@
         "passed": true
       },
       {
+        "route": "/workspace.js",
+        "passed": true
+      },
+      {
         "route": "/api/bootstrap",
+        "passed": true
+      },
+      {
+        "route": "/api/platform",
+        "passed": true
+      },
+      {
+        "route": "/api/markets",
+        "passed": true
+      },
+      {
+        "route": "/api/industries",
+        "passed": true
+      },
+      {
+        "route": "/api/reports/catl",
         "passed": true
       },
       {

@@ -6,6 +6,7 @@
     <meta name="description" content="以证据、盈利与反证组织个人公司研究。" />
     <title>Personal Financial Analyses · 个人金融分析终端</title>
     <link rel="stylesheet" href="/styles.css" />
+    <script src="/workspace.js" defer></script>
     <script src="/app.js" defer></script>
   </head>
   <body>
@@ -17,15 +18,26 @@
       <div class="workspace-label">
         个人研究空间 <span class="live-dot"></span> 本地
       </div>
-      <button id="home" class="nav-item active">
-        研究工作台 <span>↗</span>
-      </button>
-      <div class="section-label">覆盖公司 <span>06</span></div>
+      <nav class="axis-nav" aria-label="平台三层导航">
+        <button id="home" class="nav-item active" data-page="foundation">
+          <span class="axis-number">01</span
+          ><span>平台与研究基础<small>方法 · 知识 · 审查</small></span>
+        </button>
+        <button class="nav-item" data-page="markets">
+          <span class="axis-number">02</span
+          ><span>市场与信息看板<small>来源 · 大盘 · 传导</small></span>
+        </button>
+        <button class="nav-item" data-page="cases">
+          <span class="axis-number">03</span
+          ><span>行业与公司研究<small>行业手册 · 案例报告</small></span>
+        </button>
+      </nav>
+      <div class="section-label">公司研究快捷入口 <span>06</span></div>
       <nav id="company-nav" aria-label="覆盖公司"></nav>
       <div class="sidebar-foot">
         <strong>证据先行，判断留痕。</strong>
         <p>公开资料 · 个人研究<br />未配置付费数据及外部模型</p>
-        <span class="version">LOCAL EDITION / 0.3</span>
+        <span class="version">LOCAL EDITION / 0.4</span>
       </div>
     </aside>
     <main>
@@ -39,6 +51,16 @@
       <div id="content" aria-live="polite"><p>正在读取研究记录…</p></div>
     </main>
     <div id="toast" role="status" hidden></div>
+    <dialog id="library-dialog">
+      <div class="dialog-head">
+        <h2 id="library-title">研究文档</h2>
+        <button id="close-library" class="icon-button" aria-label="关闭文档">
+          ×
+        </button>
+      </div>
+      <p id="library-path" class="meta"></p>
+      <div id="library-text" class="library-text"></div>
+    </dialog>
     <dialog id="source-dialog">
       <div class="dialog-head">
         <h2 id="source-title">原文定位</h2>

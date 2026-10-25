@@ -13,11 +13,14 @@ EVIDENCE_LABELS = ACTUAL_LABELS | frozenset({
 
 
 def code_digest():
-    paths = ("research.py", "assurance.py", "models.py", "monitoring.py", "sources.py", "store.py")
+    paths = ("research.py", "assurance.py", "models.py", "monitoring.py", "sources.py", "store.py", "platform.py", "markets.py")
     h = hashlib.sha256()
     for name in paths:
         h.update(name.encode())
         h.update((ROOT/"pfa"/name).read_bytes())
+    for path in sorted((ROOT/'knowledge').glob('*.json')):
+        h.update(path.name.encode())
+        h.update(path.read_bytes())
     return h.hexdigest()
 
 

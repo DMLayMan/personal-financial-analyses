@@ -1,10 +1,21 @@
 "use strict";
 const state = {
   csrf: "",
+  pageName: "foundation",
+  foundationTab: "overview",
+  marketTab: "board",
+  marketGroup: "all",
+  marketRegion: "all",
+  industryGroup: "all",
+  industryId: null,
+  platform: null,
+  markets: null,
+  industries: null,
+  report: null,
   companies: [],
   id: null,
   view: null,
-  tab: "overview",
+  tab: "report",
   doc: null,
   page: 1,
 };
@@ -40,6 +51,7 @@ const when = (v) =>
     : "时间未知";
 const empty = (text) => `<div class="empty">${esc(text)}</div>`;
 const tabs = {
+  report: "研究报告",
   overview: "研究问题",
   evidence: "资料与证据",
   gaps: "主动补证",
@@ -47,6 +59,8 @@ const tabs = {
   review: "反方审查",
   conclusion: "结论与更新",
 };
+const sourcePage = (locator) =>
+  Number(String(locator || "").match(/PDF\s*(?:第|p\.?\s*)(\d+)/i)?.[1]) || 1;
 const scenarioNames = { downside: "下行", base: "基准", upside: "上行" };
 function toast(message, error = false) {
   $("#toast").textContent = message;
@@ -81,6 +95,11 @@ async function refresh() {
   const b = await api("/api/bootstrap");
   state.csrf = b.csrf;
   state.companies = b.companies;
+  [state.platform, state.markets, state.industries] = await Promise.all([
+    api("/api/platform"),
+    api("/api/markets"),
+    api("/api/industries"),
+  ]);
   renderNav();
   if (state.id) await loadCompany(state.id);
   else renderHome();
@@ -100,19 +119,25 @@ function renderNav() {
         `<button class="nav-item company-nav ${state.id === c.id ? "active" : ""}" data-company="${esc(c.id)}"><span class="company-initial">${esc(c.id.slice(0, 2).toUpperCase())}</span><span class="company-name">${esc(names[c.id] || c.name)}<small>${esc(c.market)} · ${esc(c.currency)}</small></span><span class="company-badge">${c.gaps}</span></button>`,
     )
     .join("");
-  $("#home").classList.toggle("active", !state.id);
+  document
+    .querySelectorAll("[data-page]")
+    .forEach((b) =>
+      b.classList.toggle("active", b.dataset.page === state.pageName),
+    );
 }
 function renderHome() {
-  const cs = state.companies;
-  const stale = cs.filter((c) => c.conclusion?.stale).length;
-  $("#content").innerHTML =
-    `<p class="eyebrow">Evidence → mechanism → judgment</p><div class="heading-row"><div><h1>让每个判断，都有来处。</h1><p class="lead">六家公司，一个完整研究流程。先理解如何赚钱，再核验变化如何传导到盈利、估值与风险。</p></div>${tag("本地首版 · 研究流程")}</div><div class="kpis"><div class="kpi"><small>覆盖公司 / 三个市场</small><strong>${cs.length}</strong></div><div class="kpi"><small>已局部核验事实</small><strong>${cs.reduce((n, c) => n + c.verified, 0)}</strong></div><div class="kpi"><small>经营与估值证据缺口</small><strong>${cs.reduce((n, c) => n + c.gaps, 0)}</strong></div><div class="kpi"><small>证据变化后待更新结论</small><strong>${stale}</strong></div></div><div class="note">审查判定：研究方法与投资判断尚未通过质量验收。当前可用于原文台账、算术与示例敏感性；经营驱动、预测更新和反方充分性仍需逐公司验证。核验数字不能替代证明经营解释。</div><div class="grid">${cs.map((c) => `<article class="card company-card"><div class="card-heading"><h2>${esc(c.name)}</h2>${tag(c.market, "neutral")}</div><div class="meta">${esc(c.currency)} · ${c.documents} 份公开原文 · ${c.verified} 项局部核验</div><p class="question">${esc(c.question)}</p>${tag(c.conclusion ? (c.conclusion.stale ? "证据已变化 · 待复核" : c.conclusion.readiness) : "待完成研究链路", c.conclusion?.stale ? "danger" : "warn")}<div class="footer"><span class="muted">${c.gaps} 项补证 · ${c.conflicts} 组冲突</span><button class="small" data-company="${esc(c.id)}">进入研究 →</button></div></article>`).join("")}</div><div class="card section-gap"><h2>研究的三条纪律</h2>${principles()}</div>`;
+  renderWorkspace();
 }
 function principles() {
   return `<div class="principles"><div><h3>能力圈与资本回报</h3><p>业务理解、维持投入和买入条件分别检验，熟悉产品不能替代证据。</p>${link("https://www.berkshirehathaway.com/letters/1996.html", "巴菲特 · 1996 股东信 ↗")}</div><div><h3>逆向思考与激励</h3><p>说明最强反方如何成立，寻找会推翻主判断的观察。</p>${link("https://www.stripe.press/poor-charlies-almanack/talk-four", "芒格 · 原始演讲 ↗")}</div><div><h3>永久损失与持有能力</h3><p>经营、融资与估值联合施压；模型的下行情景不是最大损失上限。</p>${link("https://www.oaktreecapital.com/docs/default-source/memos/2015-06-08-risk-revisited-again.pdf", "霍华德·马克斯 · 风险备忘录 ↗")}</div></div>`;
 }
 async function loadCompany(id) {
-  const v = await api("/api/companies/" + encodeURIComponent(id));
+  const [v, report] = await Promise.all([
+    api("/api/companies/" + encodeURIComponent(id)),
+    api("/api/reports/" + encodeURIComponent(id)),
+  ]);
+  state.report = report;
+  state.pageName = "cases";
   state.id = id;
   state.view = v;
   renderNav();
@@ -132,7 +157,7 @@ function renderCompany() {
       )
       .join(
         "",
-      )}</nav>${{ overview: overview, evidence: evidence, gaps: gaps, models: models, review: review, conclusion: conclusion }[state.tab]()}`;
+      )}</nav>${{ report: reportView, overview: overview, evidence: evidence, gaps: gaps, models: models, review: review, conclusion: conclusion }[state.tab]()}`;
 }
 function overview() {
   const v = state.view,
@@ -201,7 +226,7 @@ function fetchForm(gapKey = "", url = "") {
 }
 function evidence() {
   const v = state.view;
-  return `<div class="grid"><section class="card full"><div class="card-heading"><h2>原始资料与版本</h2>${tag("读取 ≠ 核验 ≠ 持续更新", "neutral")}</div>${v.documents.map((d) => `<article class="doc"><h3>${esc(d.title)}</h3><div class="meta">公开 ${esc(d.published_at || "未知")} · 取得 ${when(d.retrieved_at)} · ${esc(d.basis || "待核对")} / ${esc(d.scope || "待核对")}</div><div class="hash mono">SHA256 ${esc(d.sha256)}</div><div class="doc-actions">${link(d.url, "打开原文 ↗")}<button class="small" data-doc="${esc(d.id)}">查看本地正文</button>${tag("持续获取未验证", "warn")}</div>${d.notes ? `<p class="muted">${esc(Array.isArray(d.notes) ? d.notes.join("；") : d.notes)}</p>` : ""}</article>`).join("")}</section><section class="card full"><details><summary>获取新的公开资料</summary><div class="section-gap">${fetchForm()}</div></details></section><section class="card full"><div class="card-heading"><h2>事实台账</h2><span class="muted">${v.quality.facts.length} 项 · 不同口径分别保存</span></div><input id="fact-filter" class="fact-filter" placeholder="筛选指标、期间或口径" aria-label="筛选事实"><div class="table-wrap"><table><thead><tr><th>指标 / 口径</th><th>期间</th><th class="number">值 / 单位</th><th>核验</th><th>来源与动作</th></tr></thead><tbody>${v.quality.facts.map((f) => `<tr data-fact-search="${esc([f.label, f.metric, f.period_start, f.period_end, f.basis].join(" ").toLowerCase())}"><td>${esc(f.label)}<div class="meta">${esc(f.scope)} / ${esc(f.basis)}</div>${tag(f.evidence_label, "neutral")}</td><td class="mono">${esc(f.period_start || "时点")}<br>${esc(f.period_end)}</td><td class="number mono">${fmt(f.value, f.unit === "ratio")}<div class="meta">${esc(f.unit)}</div></td><td>${tag({ verified: "局部已核验", candidate: "提取候选", rejected: "已撤回" }[f.status], f.status === "verified" ? "" : f.status === "rejected" ? "danger" : "warn")}</td><td><details><summary>原文与核验记录</summary><p>${esc(f.locator)}</p><p>原数：${esc(f.raw_value || f.quote)} ${esc(f.raw_unit || "")}</p><p>${esc(f.note)}</p>${link(f.source.url, "原文 ↗")}<p class="muted">${esc(f.check?.reason || "尚未核验")}</p><button class="small" data-doc="${esc(f.document_id)}">本地正文</button><button class="small" data-check="${esc(f.id)}" data-status="verified">核验</button><button class="small danger" data-check="${esc(f.id)}" data-status="rejected">撤回</button></details></td></tr>`).join("")}</tbody></table></div></section><section class="card full"><details><summary>从原文提取一条新事实（先进入候选）</summary><form data-form="fact" class="section-gap"><div class="form-grid"><label class="wide"><span>所属原文版本</span><select name="document_id">${v.documents.map((d) => `<option value="${esc(d.id)}">${esc(d.title)}</option>`).join("")}</select></label><label><span>标准指标</span><select name="metric">${Object.entries(
+  return `<div class="grid"><section class="card full"><div class="card-heading"><h2>原始资料与版本</h2>${tag("读取 ≠ 核验 ≠ 持续更新", "neutral")}</div>${v.documents.map((d) => `<article class="doc"><h3>${esc(d.title)}</h3><div class="meta">公开 ${esc(d.published_at || "未知")} · 取得 ${when(d.retrieved_at)} · ${esc(d.basis || "待核对")} / ${esc(d.scope || "待核对")}</div><div class="hash mono">SHA256 ${esc(d.sha256)}</div><div class="doc-actions">${link(d.url, "打开原文 ↗")}<button class="small" data-doc="${esc(d.id)}">查看本地正文</button>${tag("持续获取未验证", "warn")}</div>${d.notes ? `<p class="muted">${esc(Array.isArray(d.notes) ? d.notes.join("；") : d.notes)}</p>` : ""}</article>`).join("")}</section><section class="card full"><details><summary>获取新的公开资料</summary><div class="section-gap">${fetchForm()}</div></details></section><section class="card full"><div class="card-heading"><h2>事实台账</h2><span class="muted">${v.quality.facts.length} 项 · 不同口径分别保存</span></div><input id="fact-filter" class="fact-filter" placeholder="筛选指标、期间或口径" aria-label="筛选事实"><div class="table-wrap"><table><thead><tr><th>指标 / 口径</th><th>期间</th><th class="number">值 / 单位</th><th>核验</th><th>来源与动作</th></tr></thead><tbody>${v.quality.facts.map((f) => `<tr data-fact-search="${esc([f.label, f.metric, f.period_start, f.period_end, f.basis].join(" ").toLowerCase())}"><td>${esc(f.label)}<div class="meta">${esc(f.scope)} / ${esc(f.basis)}</div>${tag(f.evidence_label, "neutral")}</td><td class="mono">${esc(f.period_start || "时点")}<br>${esc(f.period_end)}</td><td class="number mono">${fmt(f.value, f.unit === "ratio")}<div class="meta">${esc(f.unit)}</div></td><td>${tag({ verified: "局部已核验", candidate: "提取候选", rejected: "已撤回" }[f.status], f.status === "verified" ? "" : f.status === "rejected" ? "danger" : "warn")}</td><td><details><summary>原文与核验记录</summary><p>${esc(f.locator)}</p><p>原数：${esc(f.raw_value || f.quote)} ${esc(f.raw_unit || "")}</p><p>${esc(f.note)}</p>${link(f.source.url, "原文 ↗")}<p class="muted">${esc(f.check?.reason || "尚未核验")}</p><button class="small" data-doc="${esc(f.document_id)}" data-source-page="${sourcePage(f.locator)}">本地正文</button><button class="small" data-check="${esc(f.id)}" data-status="verified">核验</button><button class="small danger" data-check="${esc(f.id)}" data-status="rejected">撤回</button></details></td></tr>`).join("")}</tbody></table></div></section><section class="card full"><details><summary>从原文提取一条新事实（先进入候选）</summary><form data-form="fact" class="section-gap"><div class="form-grid"><label class="wide"><span>所属原文版本</span><select name="document_id">${v.documents.map((d) => `<option value="${esc(d.id)}">${esc(d.title)}</option>`).join("")}</select></label><label><span>标准指标</span><select name="metric">${Object.entries(
     {
       revenue: "营业收入",
       net_income: "归属净利润",
@@ -376,8 +401,9 @@ document.addEventListener("click", async (e) => {
   const b = e.target.closest("button");
   if (!b) return;
   try {
+    if (await handleWorkspaceClick(b)) return;
     if (b.dataset.company) {
-      state.tab = "overview";
+      state.tab = "report";
       await loadCompany(b.dataset.company);
     } else if (b.id === "home") {
       state.id = null;
@@ -403,7 +429,7 @@ document.addEventListener("click", async (e) => {
       await command("retry", { job_id: b.dataset.retry });
     } else if (b.dataset.doc) {
       state.doc = b.dataset.doc;
-      state.page = 1;
+      state.page = Number(b.dataset.sourcePage) || 1;
       $("#source-dialog").showModal();
       await showSource();
     } else if (b.id === "close-source") {

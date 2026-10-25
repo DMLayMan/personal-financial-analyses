@@ -131,7 +131,7 @@ class Jobs:
 
     def one(self):
         with self.store.tx() as db:
-            row = db.execute("SELECT * FROM jobs WHERE status='queued' AND attempts<3 ORDER BY created_at LIMIT 1").fetchone()
+            row = db.execute("SELECT * FROM jobs WHERE issuer!='_market' AND status='queued' AND attempts<3 ORDER BY created_at LIMIT 1").fetchone()
             if row is None:
                 return False
             row = dict(row)

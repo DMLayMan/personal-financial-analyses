@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "0.3.0",
+  "version": "0.4.0",
   "as_of": "2026-10-25",
   "allowed_use": "local_evidence_and_illustrative_scenarios",
   "research_decision_ready": false,
@@ -289,7 +289,8 @@
       "output": "逐项结果、使用限制与一致备份",
       "automated_tests": [
         "test_audit_controls.AuditControls.test_validation_fails_required_output_when_raw_hashes_pass",
-        "test_research.ResearchCase.test_database_backup_recovery"
+        "test_research.ResearchCase.test_database_backup_recovery",
+        "test_markets.MarketLogic.test_market_raw_payload_is_included_in_backup_and_restore"
       ],
       "method_review": "工程通过与研究通过分开；历史回滚和跨版本迁移仍待完善",
       "acceptance": "哈希通过而必需模型失败必须exit非0；恢复需含原件",
@@ -362,6 +363,156 @@
         "事后知道结局冒充事前预测"
       ],
       "permitted_use": "仅本地工程/资料/示例研究；不支持已验证投资结论"
+    },
+    {
+      "id": "F13",
+      "name": "平台研究基础与三层导航",
+      "status": "partial",
+      "decision": "让用户先理解平台如何研究和审查，再进入案例",
+      "inputs": "研究规程、审查结论、能力状态、知识来源和扩展计划",
+      "output": "平台首页、方法、Agent职责、知识库、审查与路线图",
+      "automated_tests": [
+        "test_platform.PlatformContract.test_three_axes_are_first_class",
+        "test_platform.PlatformContract.test_planned_agent_capabilities_not_claimed_running",
+        "test_workspace_api.WorkspaceAPI.test_three_layers_reports_and_whitelisted_documents"
+      ],
+      "method_review": "本轮实现结构与公开数据示例；研究和预测有效性仍未验证",
+      "acceptance": "三层均可独立进入；平台方法、审查判定、未完成能力有来源",
+      "next_work": "将真实工作流版本与知识更新关联",
+      "references": [
+        "Q1",
+        "Q10"
+      ],
+      "research_decision_ready": false,
+      "implementation_paths": [
+        "pfa/platform.py",
+        "knowledge/platform.json",
+        "static/app.js",
+        "static/workspace.js",
+        "docs/three-layer-architecture.md"
+      ],
+      "failure_modes": [
+        "只堆公司或指标而无方法与传导",
+        "缺失数据被误称实时覆盖",
+        "计划中的Agent/模型被说成已运行"
+      ],
+      "permitted_use": "本地方法、公开数据观察与研究草稿"
+    },
+    {
+      "id": "F14",
+      "name": "跨市场大盘与传导看板",
+      "status": "partial",
+      "decision": "识别市场环境变化如何影响行业和公司",
+      "inputs": "公开指标序列、频率、观察日、单位、来源及获取状态",
+      "output": "指数/利率/信用/汇率/商品/宏观指标、走势、变化和行业传导",
+      "automated_tests": [
+        "test_markets.MarketLogic.test_rate_changes_use_basis_points",
+        "test_markets.MarketLogic.test_missing_values_not_forward_filled",
+        "test_markets.MarketLogic.test_failed_refresh_preserves_old_snapshot_and_labels_it",
+        "test_markets.MarketLogic.test_curve_uses_common_dates_and_preserves_input_dates",
+        "test_markets.MarketLogic.test_future_quotes_and_missing_closes_are_not_prices",
+        "test_markets.MarketLogic.test_tampered_snapshot_is_quarantined",
+        "test_markets.MarketLogic.test_macro_refresh_does_not_enter_company_source_queue",
+        "test_markets.MarketLogic.test_threshold_is_review_condition_not_company_direction",
+        "test_workspace_api.WorkspaceAPI.test_market_refresh_requires_token_and_deduplicates",
+        "test_markets.MarketLogic.test_wrong_symbol_response_is_rejected",
+        "test_markets.MarketLogic.test_invalid_numeric_response_is_preserved_as_failure_evidence",
+        "test_markets.MarketLogic.test_fred_csv_blank_is_missing_not_a_source_outage"
+      ],
+      "method_review": "本轮实现结构与公开数据示例；研究和预测有效性仍未验证",
+      "acceptance": "利率与指数变动区分bp和%；缺失/滞后/失败显式显示；大盘波动不自动变成个股评级",
+      "next_work": "逐源完善A港美覆盖、授权、更新与历史版本",
+      "references": [
+        "Q11",
+        "Q13"
+      ],
+      "research_decision_ready": false,
+      "implementation_paths": [
+        "pfa/markets.py",
+        "knowledge/market-catalog.json",
+        "static/app.js",
+        "static/workspace.js",
+        "docs/three-layer-architecture.md"
+      ],
+      "failure_modes": [
+        "只堆公司或指标而无方法与传导",
+        "缺失数据被误称实时覆盖",
+        "计划中的Agent/模型被说成已运行"
+      ],
+      "permitted_use": "本地方法、公开数据观察与研究草稿"
+    },
+    {
+      "id": "F15",
+      "name": "重点数据与信息源地图",
+      "status": "partial",
+      "decision": "明确为每个研究问题应读什么资料和还有什么缺口",
+      "inputs": "原始披露、行业统计、央行/统计局、行情与研报能力状态",
+      "output": "按用途/地区/频率分类的来源与字段字典",
+      "automated_tests": [
+        "test_platform.PlatformContract.test_sources_and_method_references_are_traceable"
+      ],
+      "method_review": "本轮实现结构与公开数据示例；研究和预测有效性仍未验证",
+      "acceptance": "找到入口、读取成功、字段核验、持续更新和权限分开",
+      "next_work": "把字段缺口、取数任务与来源健康进一步关联",
+      "references": [
+        "Q1",
+        "Q11"
+      ],
+      "research_decision_ready": false,
+      "implementation_paths": [
+        "knowledge/platform.json",
+        "knowledge/market-catalog.json",
+        "pfa/platform.py",
+        "static/workspace.js",
+        "docs/three-layer-architecture.md"
+      ],
+      "failure_modes": [
+        "只堆公司或指标而无方法与传导",
+        "缺失数据被误称实时覆盖",
+        "计划中的Agent/模型被说成已运行"
+      ],
+      "permitted_use": "本地方法、公开数据观察与研究草稿"
+    },
+    {
+      "id": "F16",
+      "name": "行业分类与公司研究报告",
+      "status": "partial",
+      "decision": "按行业机制应用方法与Agent职责形成有证据的公司报告",
+      "inputs": "行业模板、公司原文、方法引用、财务输入与宏观渠道",
+      "output": "行业档案、KPI/驱动桥、案例目录、报告与后续验证",
+      "automated_tests": [
+        "test_platform.PlatformContract.test_each_case_has_industry_driver_and_report_contract",
+        "test_platform.PlatformContract.test_report_preserves_stale_and_unvalidated_states",
+        "test_platform.PlatformContract.test_verified_management_claim_is_not_reported_as_historical_actual"
+      ],
+      "method_review": "本轮实现结构与公开数据示例；研究和预测有效性仍未验证",
+      "acceptance": "六家公司都有行业驱动、方法、补证与报告结构；通用情景不称行业盈利模型已完成",
+      "next_work": "按公司补齐实际到预测的驱动桥及独立审议",
+      "references": [
+        "Q1",
+        "Q12",
+        "Q14"
+      ],
+      "research_decision_ready": false,
+      "implementation_paths": [
+        "knowledge/industries.json",
+        "pfa/platform.py",
+        "static/app.js",
+        "static/workspace.js",
+        "docs/three-layer-architecture.md"
+      ],
+      "failure_modes": [
+        "只堆公司或指标而无方法与传导",
+        "缺失数据被误称实时覆盖",
+        "计划中的Agent/模型被说成已运行",
+        "报告标明具体原页但点击只打开第一页"
+      ],
+      "permitted_use": "本地方法、公开数据观察与研究草稿",
+      "browser_acceptance": [
+        "三个市场代表报告可读",
+        "公司原页按钮跳到相应PDF页",
+        "旧结论和示例状态保留"
+      ]
     }
   ]
 }

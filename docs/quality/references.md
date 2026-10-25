@@ -15,3 +15,11 @@
 | Q9 | [SEC EDGAR数据接口](https://www.sec.gov/search-filings/edgar-application-programming-interfaces) | 发行人、表单、上下文、期间和原文核对；不以latest filed取代正确期间 | 标准化标签不覆盖全部经营KPI，不代表历史当时快照 |
 
 这些来源支持检查方向。项目的功能编号、失败门槛、测试题和阶段安排是本项目的设计，具体执行证据见[自查](review-2026-10-25.md)和[验证标准](verification-standard.md)。
+
+## 0.4三层平台新增依据
+
+- Q10：[Bloomberg产品](https://professional.bloomberg.com/products/)。借鉴数据、经济、图表、研究、分析与工作流的组合，不声称复制或获得其数据。
+- Q11：[FRED数据](https://fred.stlouisfed.org/series/DGS10)。按系列保留定义、单位、日期、提供者与修订，公开可读不代表实时或不限分发。
+- Q12：[MSCI GICS](https://www.msci.com/indexes/index-resources/gics)。借鉴行业层级；项目六类为自定义经济机制，未做正式授权映射。
+- Q13：[FRED 2年国债](https://fred.stlouisfed.org/series/DGS2)、[Brent现货](https://fred.stlouisfed.org/series/DCOILBRENTEU)。bp、同日曲线及现货/期货定义分开。
+- Q14：[美联储SVB审查](https://www.federalreserve.gov/publications/review-of-the-federal-reserves-supervision-and-regulation-of-silicon-valley-bank.htm)。风险经验需考察期限/利率/集中融资和流动性联动，事后解释不当作事前预测。
