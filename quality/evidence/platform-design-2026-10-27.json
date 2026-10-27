@@ -1,0 +1,762 @@
+{
+  "as_of": "2026-10-27",
+  "scope": "F23 documentation organization and assistant content/source review",
+  "checked_at": "2026-10-27T00:25:11.178966+00:00",
+  "documents": {
+    "README.md": "6dd99b594a6e44236cd2ab377c975400e85b068454a4a5e5f37f61055c876ff4",
+    "docs/README.md": "06bb80b18148f176b9f59bc8707c18147c6b69d63304cc87c6721291e9f04db1",
+    "docs/platform-design/PRD.md": "2811050ae2d5c60940f824a28a3043336ac9d3cc0d7eeb648cbc01ed11f13662",
+    "docs/platform-design/README.md": "bb83a8e59c01437e2e0f1d720f4b363f32cf62704018bb188af2bf035ae7fe8e",
+    "docs/platform-design/TECHNICAL-DESIGN.md": "7ba68e94ca67d62bb44695aa865304b3637e4fe6bc27d9c315934f9597d43487",
+    "docs/platform-design/TRACEABILITY.md": "71e41471f08bb2788cbe7e78fdc26ac55a3f6d6f46f7297d86f34079c75fcfe8",
+    "docs/requirements.md": "cbdecf7f5a4454e9d616b5883f3655bc2a325432849eba305c7a775a115c3798",
+    "docs/solution-design.md": "4a7d20d722a27a19c7bf340cb7c7db86fc3ab53f5dae228aad22e1aa5c59b943",
+    "docs/three-layer-architecture.md": "68de6086ff04ab36a7dd9e9648058d9db89f470fc3ef760fc884442d881e154e",
+    "docs/report-product-design.md": "374fda98bff1a97ded20c7902ff4a2f8a651ca7571540d86c4fd35885289e94e",
+    "docs/quality/feature-plan.md": "5ef8085adf89e6cd6566c6ac2507ed4b60239d347b3eab780dcd5a7550e47fad",
+    "docs/validation/platform-design-2026-10-27.md": "23f7684e4b85e09414e72b0af887394688a0520fc794f537472869a027f4dcac"
+  },
+  "local_links_checked": 146,
+  "broken_links": [],
+  "links": [
+    {
+      "file": "README.md",
+      "target": "docs/quality/review-2026-10-25.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/operations/local-service.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/platform-design/README.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/README.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/report-product-design.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/institutional-report-benchmark.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/validation/local-v0.5.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/three-layer-architecture.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/market-framework.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/industry-research.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/validation/local-v0.4.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/requirements.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/quality/review-2026-10-25.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/quality/feature-plan.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/quality/verification-standard.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/quality/references.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "quality/latest-functional.json",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/validation/local-v0.3.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/local-development.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/validation/local-v0.2.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/decisions/0001-local-runtime.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/solution-design.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/research-methodology.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/data-sources.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/validation/pilot-findings.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/readiness.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/references.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "CHANGELOG.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "research-design-2026-10-25/personal-business-research-framework-v1.docx",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "AGENTS.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/quality/review-2026-10-25.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/operations/hosted-service.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/quality/feature-plan.md",
+      "exists": true
+    },
+    {
+      "file": "docs/README.md",
+      "target": "platform-design/README.md",
+      "exists": true
+    },
+    {
+      "file": "docs/README.md",
+      "target": "platform-design/README.md",
+      "exists": true
+    },
+    {
+      "file": "docs/README.md",
+      "target": "requirements.md",
+      "exists": true
+    },
+    {
+      "file": "docs/README.md",
+      "target": "research-methodology.md",
+      "exists": true
+    },
+    {
+      "file": "docs/README.md",
+      "target": "market-framework.md",
+      "exists": true
+    },
+    {
+      "file": "docs/README.md",
+      "target": "industry-research.md",
+      "exists": true
+    },
+    {
+      "file": "docs/README.md",
+      "target": "data-sources.md",
+      "exists": true
+    },
+    {
+      "file": "docs/README.md",
+      "target": "institutional-report-benchmark.md",
+      "exists": true
+    },
+    {
+      "file": "docs/README.md",
+      "target": "quality/",
+      "exists": true
+    },
+    {
+      "file": "docs/README.md",
+      "target": "validation/",
+      "exists": true
+    },
+    {
+      "file": "docs/README.md",
+      "target": "operations/",
+      "exists": true
+    },
+    {
+      "file": "docs/README.md",
+      "target": "decisions/",
+      "exists": true
+    },
+    {
+      "file": "docs/README.md",
+      "target": "solution-design.md",
+      "exists": true
+    },
+    {
+      "file": "docs/README.md",
+      "target": "three-layer-architecture.md",
+      "exists": true
+    },
+    {
+      "file": "docs/README.md",
+      "target": "report-product-design.md",
+      "exists": true
+    },
+    {
+      "file": "docs/README.md",
+      "target": "../research/",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/PRD.md",
+      "target": "../requirements.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/PRD.md",
+      "target": "../quality/review-2026-10-25.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/PRD.md",
+      "target": "TECHNICAL-DESIGN.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/PRD.md",
+      "target": "TRACEABILITY.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/README.md",
+      "target": "PRD.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/README.md",
+      "target": "TECHNICAL-DESIGN.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/README.md",
+      "target": "TRACEABILITY.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/README.md",
+      "target": "../requirements.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/README.md",
+      "target": "../solution-design.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/README.md",
+      "target": "../research-methodology.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/README.md",
+      "target": "../market-framework.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/README.md",
+      "target": "../industry-research.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/README.md",
+      "target": "../../quality/features.json",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/README.md",
+      "target": "../quality/review-2026-10-25.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/README.md",
+      "target": "../quality/focus-research-2026-10-25.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/README.md",
+      "target": "../validation/",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/README.md",
+      "target": "../operations/local-service.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/README.md",
+      "target": "../operations/hosted-service.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TECHNICAL-DESIGN.md",
+      "target": "PRD.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TECHNICAL-DESIGN.md",
+      "target": "../solution-design.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TECHNICAL-DESIGN.md",
+      "target": "../decisions/0001-local-runtime.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "PRD.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "TECHNICAL-DESIGN.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../requirements.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../../quality/features.json",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../institutional-report-benchmark.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../data-sources.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../validation/local-v0.2.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../quality/review-2026-10-25.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../operations/hosted-service.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../validation/hosted-v0.6.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../../research/2026-10-25/",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../quality/focus-research-2026-10-25.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../README.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../../pfa/platform.py",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../three-layer-architecture.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../validation/local-v0.4.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../validation/local-v0.5.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../../pfa/sources.py",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../../pfa/assurance.py",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../../quality/evidence/v02-control-counterexamples.json",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../../pfa/research.py",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../../pfa/models.py",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../industry-research.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../../pfa/markets.py",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../../pfa/information.py",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../../pfa/knowledge.py",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../../pfa/reports.py",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../../pfa/service.py",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../../pfa/cloud_bridge.py",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../operations/hosted-service.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../../knowledge/research-publications.json",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../../pfa/publications.py",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../validation/focus-research-2026-10-25.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../quality/verification-standard.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../requirements.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../quality/feature-plan.md",
+      "exists": true
+    },
+    {
+      "file": "docs/platform-design/TRACEABILITY.md",
+      "target": "../validation/platform-design-2026-10-27.md",
+      "exists": true
+    },
+    {
+      "file": "docs/requirements.md",
+      "target": "platform-design/PRD.md",
+      "exists": true
+    },
+    {
+      "file": "docs/requirements.md",
+      "target": "readiness.md",
+      "exists": true
+    },
+    {
+      "file": "docs/requirements.md",
+      "target": "platform-design/README.md",
+      "exists": true
+    },
+    {
+      "file": "docs/solution-design.md",
+      "target": "platform-design/TECHNICAL-DESIGN.md",
+      "exists": true
+    },
+    {
+      "file": "docs/solution-design.md",
+      "target": "platform-design/README.md",
+      "exists": true
+    },
+    {
+      "file": "docs/solution-design.md",
+      "target": "requirements.md",
+      "exists": true
+    },
+    {
+      "file": "docs/solution-design.md",
+      "target": "research-methodology.md",
+      "exists": true
+    },
+    {
+      "file": "docs/solution-design.md",
+      "target": "decisions/0001-local-runtime.md",
+      "exists": true
+    },
+    {
+      "file": "docs/solution-design.md",
+      "target": "local-development.md",
+      "exists": true
+    },
+    {
+      "file": "docs/solution-design.md",
+      "target": "validation/local-v0.2.md",
+      "exists": true
+    },
+    {
+      "file": "docs/solution-design.md",
+      "target": "quality/feature-plan.md",
+      "exists": true
+    },
+    {
+      "file": "docs/solution-design.md",
+      "target": "quality/review-2026-10-25.md",
+      "exists": true
+    },
+    {
+      "file": "docs/solution-design.md",
+      "target": "three-layer-architecture.md",
+      "exists": true
+    },
+    {
+      "file": "docs/solution-design.md",
+      "target": "report-product-design.md",
+      "exists": true
+    },
+    {
+      "file": "docs/solution-design.md",
+      "target": "institutional-report-benchmark.md",
+      "exists": true
+    },
+    {
+      "file": "docs/solution-design.md",
+      "target": "references.md",
+      "exists": true
+    },
+    {
+      "file": "docs/solution-design.md",
+      "target": "data-sources.md",
+      "exists": true
+    },
+    {
+      "file": "docs/solution-design.md",
+      "target": "readiness.md",
+      "exists": true
+    },
+    {
+      "file": "docs/three-layer-architecture.md",
+      "target": "platform-design/README.md",
+      "exists": true
+    },
+    {
+      "file": "docs/three-layer-architecture.md",
+      "target": "requirements.md",
+      "exists": true
+    },
+    {
+      "file": "docs/three-layer-architecture.md",
+      "target": "solution-design.md",
+      "exists": true
+    },
+    {
+      "file": "docs/three-layer-architecture.md",
+      "target": "market-framework.md",
+      "exists": true
+    },
+    {
+      "file": "docs/three-layer-architecture.md",
+      "target": "industry-research.md",
+      "exists": true
+    },
+    {
+      "file": "docs/three-layer-architecture.md",
+      "target": "validation/local-v0.4.md",
+      "exists": true
+    },
+    {
+      "file": "docs/report-product-design.md",
+      "target": "platform-design/PRD.md",
+      "exists": true
+    },
+    {
+      "file": "docs/report-product-design.md",
+      "target": "platform-design/TECHNICAL-DESIGN.md",
+      "exists": true
+    },
+    {
+      "file": "docs/report-product-design.md",
+      "target": "institutional-report-benchmark.md",
+      "exists": true
+    },
+    {
+      "file": "docs/report-product-design.md",
+      "target": "quality/feature-plan.md",
+      "exists": true
+    },
+    {
+      "file": "docs/quality/feature-plan.md",
+      "target": "../../quality/features.json",
+      "exists": true
+    },
+    {
+      "file": "docs/quality/feature-plan.md",
+      "target": "templates/feature.md",
+      "exists": true
+    },
+    {
+      "file": "docs/quality/feature-plan.md",
+      "target": "verification-standard.md",
+      "exists": true
+    },
+    {
+      "file": "docs/quality/feature-plan.md",
+      "target": "../report-product-design.md",
+      "exists": true
+    },
+    {
+      "file": "docs/quality/feature-plan.md",
+      "target": "../institutional-report-benchmark.md",
+      "exists": true
+    },
+    {
+      "file": "docs/quality/feature-plan.md",
+      "target": "../operations/hosted-service.md",
+      "exists": true
+    },
+    {
+      "file": "docs/quality/feature-plan.md",
+      "target": "focus-research-2026-10-25.md",
+      "exists": true
+    },
+    {
+      "file": "docs/quality/feature-plan.md",
+      "target": "../platform-design/README.md",
+      "exists": true
+    },
+    {
+      "file": "docs/quality/feature-plan.md",
+      "target": "../validation/platform-design-2026-10-27.md",
+      "exists": true
+    },
+    {
+      "file": "docs/validation/platform-design-2026-10-27.md",
+      "target": "../platform-design/README.md",
+      "exists": true
+    },
+    {
+      "file": "docs/validation/platform-design-2026-10-27.md",
+      "target": "../README.md",
+      "exists": true
+    }
+  ],
+  "review_type": "assistant manual source/content cross-check; not independent expert evaluation",
+  "automated_doc_tests_added": false,
+  "existing_quality_gate": {
+    "functional_passed": true,
+    "tests_run": 96,
+    "run_at": "2026-10-27T00:24:24.664551+00:00"
+  },
+  "research_decision_ready": false,
+  "site_deployed": false
+}

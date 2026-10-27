@@ -740,6 +740,38 @@
       "method_review": "同一AI体系交叉研究，非独立机构签字；预测未校准",
       "research_decision_ready": false,
       "permitted_use": "个人深度公司/行业研究与条件敏感性"
+    },
+    {
+      "id": "F23",
+      "name": "产品PRD与技术方案统一文档目录",
+      "status": "implemented",
+      "decision": "在一个入口找到用户目标、完整产品合同、实际架构、扩展设计与验收依据，避免把旧建议或规划当成已实现",
+      "inputs": "现有用户需求、三层/报告方案、0.6源码与部署验收、F01—F22合同；文档整合截止2026-10-27，研究事实截点不变",
+      "output": "docs/platform-design下的总览、详细PRD、技术设计及需求追踪表；保留旧文档并标注主入口",
+      "implementation_paths": [
+        "docs/platform-design/README.md",
+        "docs/platform-design/PRD.md",
+        "docs/platform-design/TECHNICAL-DESIGN.md",
+        "docs/platform-design/TRACEABILITY.md",
+        "docs/README.md"
+      ],
+      "automated_tests": [],
+      "failure_modes": [
+        "只搬链接未形成详细方案",
+        "复制早期PostgreSQL建议冒充实际数据库",
+        "文档入口断链或旧需求编号丢失",
+        "按需读取写成实时监控或人工专题冒充自动Agent",
+        "整理文档被宣称研究与预测通过"
+      ],
+      "acceptance": "人工逐章核实需求/状态/源码映射；检查本地文档链接和Git收录；运行既有质量门，文档人工复核与工程测试分列",
+      "next_work": "逐次功能变更同步PRD、技术设计、追踪及验证记录，未来能力按真实验收更新",
+      "references": [
+        "Q1",
+        "Q10"
+      ],
+      "method_review": "文档整理，不新增金融判断或代码功能；不写镜像文档内容的自动化测试，人工结构/链接核查另留证据",
+      "research_decision_ready": false,
+      "verification_type": "manual_document_review"
     }
   ]
 }

@@ -1,5 +1,7 @@
 # Personal Financial Analyses 方案与技术设计
 
+> 阅读入口（2026-10-27）：本文保留分阶段设计基线，含尚未实施的早期建议；当前实际架构与后续设计已统一到[技术方案](platform-design/TECHNICAL-DESIGN.md)，整体入口见[platform-design](platform-design/README.md)。
+
 版本 0.5
 日期 2026年10月25日
 状态 研究体系设计基线，本地首版已实现部分能力

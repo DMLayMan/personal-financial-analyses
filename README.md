@@ -2,7 +2,7 @@
 
 Personal Financial Analyses 是面向个人深度研究与中长期投资的商业与金融分析终端，覆盖美股、港股和 A 股。项目以研究问题、原始证据、经营机制、盈利与估值、风险和持续复核为主线。
 
-当前0.5按平台基础、市场信息、行业公司三层组织，可用于本地来源台账、历史算术、示例敏感性与人工研究记录。自查发现0.2在补证、期间、证据分类、验收和交付上存在实质缺陷，已补反例及控制。个股经营驱动、盈利承保、当前公允价值和投资效果仍未通过研究质量验收，见[自查报告](docs/quality/review-2026-10-25.md)。
+当前0.6按平台基础、市场信息、行业公司三层组织，可用于本地来源台账、历史算术、示例敏感性与人工研究记录。自查发现0.2在补证、期间、证据分类、验收和交付上存在实质缺陷，已补反例及控制。个股经营驱动、盈利承保、当前公允价值和投资效果仍未通过研究质量验收，见[自查报告](docs/quality/review-2026-10-25.md)。
 
 直接运行 `./scripts/start.sh` 启动独立后台服务，打开 `http://127.0.0.1:8765`。查看状态用 `.venv/bin/python -m pfa.service status`。用户服务在交付后继续运行，电脑重启后需重新启动；详见[本地运行手册](docs/operations/local-service.md)。
 
@@ -25,6 +25,8 @@ Personal Financial Analyses 是面向个人深度研究与中长期投资的商�
 
 ## 文档入口
 
+**产品PRD与技术方案统一放在 [docs/platform-design/](docs/platform-design/README.md)**，包括详细PRD、技术设计和需求/实现/验收追踪。完整文档分类见[docs总入口](docs/README.md)。
+
 | 文档 | 内容与使用方式 |
 | --- | --- |
 | [报告内核与长期迭代](docs/report-product-design.md) | 知识版本、真实信息接入、判断链、报告快照及扩展门槛 |
@@ -36,7 +38,7 @@ Personal Financial Analyses 是面向个人深度研究与中长期投资的商�
 | [0.4验收](docs/validation/local-v0.4.md) | 三层功能、数据可得性及浏览器验证 |
 | [用户需求](docs/requirements.md) | 用户目标、原始要求、确认程度、范围和验收条件，是需求依据 |
 | [当前质量判定](docs/quality/review-2026-10-25.md) | 实际反例、整改、六家公司研究差距与允许用途 |
-| [每项功能与验收](docs/quality/feature-plan.md) | 19项功能、知识/信息/报告版本及六公司驱动桥、事前门槛及实施顺序 |
+| [每项功能与验收](docs/quality/feature-plan.md) | 逐功能合同、知识/信息/报告版本及六公司驱动桥、事前门槛及实施顺序 |
 | [验证标准](docs/quality/verification-standard.md) | 软件、原文、语义、金融方法、保留集、前瞻及运行分别评估 |
 | [审查参考](docs/quality/references.md) | CFA、2026模型风险指导、NYU估值与SRE原始材料 |
 | [最新功能检查](quality/latest-functional.json) | 实际运行、源码摘要和逐项结果；单独保留研究未验证状态 |
@@ -44,7 +46,7 @@ Personal Financial Analyses 是面向个人深度研究与中长期投资的商�
 | [本地运行指南](docs/local-development.md) | 启动、研究操作、模型边界、测试、导出与备份恢复 |
 | [首版验收](docs/validation/local-v0.2.md) | 六家实际流程、原文与异常验收边界 |
 | [本地运行决定](docs/decisions/0001-local-runtime.md) | Python、SQLite及与原设计建议的关系 |
-| [方案与技术设计](docs/solution-design.md) | 当前解决方案、系统边界、数据对象、研究流程和技术实现约束 |
+| [早期方案基线](docs/solution-design.md) | 保留历史领域设计与建议；当前整合方案以platform-design目录为入口 |
 | [研究与决策规程](docs/research-methodology.md) | 此前 V1 规程的文本基线，规定如何研究、补证、判断和复核 |
 | [数据源与验证状态](docs/data-sources.md) | 区分规划、已读取、已核验、可持续更新和使用权限 |
 | [样本验证记录](docs/validation/pilot-findings.md) | 六家样本带来的设计发现及验证边界 |

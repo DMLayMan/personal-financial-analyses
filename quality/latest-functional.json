@@ -1,7 +1,7 @@
 {
-  "run_at": "2026-10-25T13:30:03.199778+00:00",
-  "command": "scripts/quality_gate.py --live",
-  "tested_base_commit": "97227c18e062bb6310391005207249da6dfa1ad1",
+  "run_at": "2026-10-27T00:24:24.664551+00:00",
+  "command": "scripts/quality_gate.py",
+  "tested_base_commit": "327842a29a44cc296c8c2ab78b7b2ba64565ea7c",
   "working_tree_dirty": true,
   "python": "3.12.14",
   "source_manifest": {
@@ -28,7 +28,7 @@
     "pfa/service.py": "e11952cfe0b49b1ea6e34fb0057f794ca7e3753c0b5b5a7991529187d970c8af",
     "pfa/sources.py": "75fa58ddb6ffd07b1cf01b3206e33bb3eff226af799f96db37dc30baeb97922e",
     "pfa/store.py": "c46c4904438c93e379096bd5cb04291b4534777eabe175d22d7eacba52766377",
-    "quality/features.json": "ebe3e36fda17ba3f8a782cd7ee8c3c30edab72e8c4086beb110f4df19609f217",
+    "quality/features.json": "10198dfd7a3c1b117e4f53e8e7471ad199a7ca869f4874ac9015d86dc6e22f79",
     "requirements.txt": "0d54aed8d581d3122fbb3c27f179280bac42f768567876dff9939543217b26aa",
     "research/2026-10-25/adversarial-review.json": "57a71ce18270e792412a8bbb0f6a50a99e9d50e235d0403383b6488b9b22b960",
     "research/2026-10-25/ai-apps-agent.json": "639a5b677b99eb681a96a64030f5031c531db2662b55fe728140b8127e9ddca8",
@@ -657,6 +657,14 @@
       "missing_test_ids": [],
       "research_decision_ready": false,
       "method_review": "同一AI体系交叉研究，非独立机构签字；预测未校准"
+    },
+    {
+      "id": "F23",
+      "implementation_status": "implemented",
+      "functional_checks": "not_implemented",
+      "missing_test_ids": [],
+      "research_decision_ready": false,
+      "method_review": "文档整理，不新增金融判断或代码功能；不写镜像文档内容的自动化测试，人工结构/链接核查另留证据"
     }
   ],
   "source_checks": [
@@ -722,67 +730,14 @@
     }
   ],
   "local_runtime": {
-    "passed": true,
-    "checks": [
-      {
-        "route": "/api/healthz",
-        "passed": true
-      },
-      {
-        "route": "/",
-        "passed": true
-      },
-      {
-        "route": "/app.js",
-        "passed": true
-      },
-      {
-        "route": "/workspace.js",
-        "passed": true
-      },
-      {
-        "route": "/evolution.js",
-        "passed": true
-      },
-      {
-        "route": "/api/bootstrap",
-        "passed": true
-      },
-      {
-        "route": "/api/platform",
-        "passed": true
-      },
-      {
-        "route": "/api/knowledge",
-        "passed": true
-      },
-      {
-        "route": "/api/markets",
-        "passed": true
-      },
-      {
-        "route": "/api/information",
-        "passed": true
-      },
-      {
-        "route": "/api/industries",
-        "passed": true
-      },
-      {
-        "route": "/api/reports/catl",
-        "passed": true
-      },
-      {
-        "route": "/api/companies/catl",
-        "passed": true
-      }
-    ]
+    "passed": null,
+    "reason": "not_requested"
   },
-  "runtime_kernel_matches": true,
+  "runtime_kernel_matches": null,
   "functional_passed": true,
   "cloud_policy_checks": {
     "passed": true,
-    "output": "✔ source identity and redirect targets stay on primary-source allowlist (0.5495ms)\n✔ snapshot manifest rejects traversal, duplicate and oversized files (0.1545ms)\n✔ cross-site and unmarked writes fail before persistence (16.473792ms)\n✔ empty and streaming oversized responses are rejected (0.80875ms)\n✔ content-address digest uses exact bytes (2.008042ms)\nℹ tests 5\nℹ suites 0\nℹ pass 5\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 73.084042\n"
+    "output": "✔ source identity and redirect targets stay on primary-source allowlist (0.535625ms)\n✔ snapshot manifest rejects traversal, duplicate and oversized files (0.304ms)\n✔ cross-site and unmarked writes fail before persistence (19.958959ms)\n✔ empty and streaming oversized responses are rejected (0.783334ms)\n✔ content-address digest uses exact bytes (2.327709ms)\nℹ tests 5\nℹ suites 0\nℹ pass 5\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 78.301542\n"
   },
   "permitted_use": "local_evidence_and_illustrative_scenarios",
   "research_decision_ready": false,
