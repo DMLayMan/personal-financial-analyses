@@ -62,7 +62,7 @@ Personal Financial Analyses 是面向个人深度研究与中长期投资的商�
 
 沿用当前工作目录的 Git 仓库。文档、应用与测试代码、已标记来源的公开选定字段进入版本控制；运行数据库、下载原件、缓存和凭据保留在 Git 之外。0.1保留文档基线，0.2新增本地实现。
 
-当前未配置远端。远端托管位置、归属和可见性在需要同步或协作前确定。
+项目远端为 [DMLayMan/personal-financial-analyses](https://github.com/DMLayMan/personal-financial-analyses)（私有仓库），默认分支为 `main`。完整提交历史已上传，本地开发分支跟踪 `origin/main`。
 
 后续开发须按[AGENTS.md](AGENTS.md)登记功能合同并留存验证结果。可运行 `.venv/bin/python scripts/quality_gate.py --live` 更新本地功能检查；该检查不会把测试通过升级为投资判断可靠。
 
