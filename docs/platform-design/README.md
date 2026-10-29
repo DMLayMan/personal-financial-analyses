@@ -33,4 +33,6 @@
 
 每次实质变更同步更新：用户需求/设计条目→功能合同F编号→源码与数据合同→验收结果→能力状态。产品文档版本、应用版本和研究报告版本各自管理。新财报更新研究版本，不应无理由改写平台需求；产品方案修订也不能让历史研究自动变为有效。
 
-项目主仓库：[DMLayMan/personal-financial-analyses](https://github.com/DMLayMan/personal-financial-analyses)，私有，默认分支`main`。GitHub源码同步与Sites站点发布是两条操作链；本次文档整理不等于线上应用或研究数据已经更新。
+项目主仓库：[DMLayMan/personal-financial-analyses](https://github.com/DMLayMan/personal-financial-analyses)，公开，默认分支`main`。GitHub源码同步与Sites站点发布是两条操作链；本次文档整理不等于线上应用或研究数据已经更新。
+
+2026-10-29更新：按用户要求，GitHub源码仓库改为public；该设置不改变Sites本人私有访问及研究数据的保存边界。
